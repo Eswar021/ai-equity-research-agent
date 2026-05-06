@@ -1,0 +1,18 @@
+{
+  "ticker": "MARUTI.NS",
+  "name": "Maruti Suzuki India Limited",
+  "exchange": "NSI",
+  "currency": "INR",
+  "price": 13426.0,
+  "day_change_pct": -1.13,
+  "52w_high": 17370.0,
+  "52w_low": 12016.0,
+  "return_1m": NaN,
+  "return_3m": NaN,
+  "return_1y": NaN,
+  "volume": 419485,
+  "market_cap": 4221168779264,
+  "sector": "Consumer Cyclical",
+  "industry": "Auto Manufacturers",
+  "fetched_at": "2026-05-06T05:49:28.911140+05:30"
+}

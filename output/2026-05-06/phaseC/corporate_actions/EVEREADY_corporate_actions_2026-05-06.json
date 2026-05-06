@@ -1,0 +1,265 @@
+{
+  "fetched_at": "2026-05-06T05:56:14.868515+05:30",
+  "ticker": "EVEREADY.NS",
+  "nse_actions": [
+    {
+      "symbol": "EVEREADY",
+      "series": "EQ",
+      "purpose": "Dividend - Rs 1.50 Per Share",
+      "ex_date": "29-Jul-2025",
+      "record_date": "29-Jul-2025",
+      "bc_start": "-",
+      "bc_end": "-",
+      "face_value": "5",
+      "company": "Eveready Industries India Limited"
+    },
+    {
+      "symbol": "EVEREADY",
+      "series": "EQ",
+      "purpose": "Dividend - Re 1 Per Share",
+      "ex_date": "26-Jul-2024",
+      "record_date": "27-Jul-2024",
+      "bc_start": "-",
+      "bc_end": "-",
+      "face_value": "5",
+      "company": "Eveready Industries India Limited"
+    },
+    {
+      "symbol": "EVEREADY",
+      "series": "EQ",
+      "purpose": "Annual General Meeting",
+      "ex_date": "26-Jul-2024",
+      "record_date": "-",
+      "bc_start": "29-Jul-2024",
+      "bc_end": "03-Aug-2024",
+      "face_value": "5",
+      "company": "Eveready Industries India Limited"
+    },
+    {
+      "symbol": "EVEREADY",
+      "series": "EQ",
+      "purpose": "Annual General Meeting",
+      "ex_date": "26-Jul-2023",
+      "record_date": "-",
+      "bc_start": "27-Jul-2023",
+      "bc_end": "02-Aug-2023",
+      "face_value": "5",
+      "company": "Eveready Industries India Limited"
+    },
+    {
+      "symbol": "EVEREADY",
+      "series": "EQ",
+      "purpose": "Annual General Meeting",
+      "ex_date": "21-Jun-2022",
+      "record_date": "-",
+      "bc_start": "23-Jun-2022",
+      "bc_end": "29-Jun-2022",
+      "face_value": "5",
+      "company": "Eveready Industries India Limited"
+    },
+    {
+      "symbol": "EVEREADY",
+      "series": "EQ",
+      "purpose": " Annual General Meeting",
+      "ex_date": "20-Sep-2021",
+      "record_date": "-",
+      "bc_start": "22-Sep-2021",
+      "bc_end": "28-Sep-2021",
+      "face_value": "5",
+      "company": "Eveready Industries India Limited"
+    },
+    {
+      "symbol": "EVEREADY",
+      "series": "EQ",
+      "purpose": " Annual General Meeting",
+      "ex_date": "21-Sep-2020",
+      "record_date": "-",
+      "bc_start": "23-Sep-2020",
+      "bc_end": "29-Sep-2020",
+      "face_value": "5",
+      "company": "Eveready Industries India Limited"
+    },
+    {
+      "symbol": "EVEREADY",
+      "series": "EQ",
+      "purpose": " Annual General Meeting",
+      "ex_date": "18-Sep-2019",
+      "record_date": "-",
+      "bc_start": "20-Sep-2019",
+      "bc_end": "26-Sep-2019",
+      "face_value": "5",
+      "company": "Eveready Industries India Limited"
+    },
+    {
+      "symbol": "EVEREADY",
+      "series": "EQ",
+      "purpose": " Annual General Meeting/Dividend- Rs 1.50 Per Share",
+      "ex_date": "26-Jul-2018",
+      "record_date": "-",
+      "bc_start": "30-Jul-2018",
+      "bc_end": "06-Aug-2018",
+      "face_value": "5",
+      "company": "Eveready Industries India Limited"
+    },
+    {
+      "symbol": "EVEREADY",
+      "series": "EQ",
+      "purpose": " Annual General Meeting",
+      "ex_date": "28-Jul-2017",
+      "record_date": "-",
+      "bc_start": "01-Aug-2017",
+      "bc_end": "07-Aug-2017",
+      "face_value": "5",
+      "company": "Eveready Industries India Limited"
+    },
+    {
+      "symbol": "EVEREADY",
+      "series": "EQ",
+      "purpose": " Annual General Meeting/ Dividend - Re 1/- Per Share",
+      "ex_date": "14-Jul-2016",
+      "record_date": "-",
+      "bc_start": "18-Jul-2016",
+      "bc_end": "25-Jul-2016",
+      "face_value": "5",
+      "company": "Eveready Industries India Limited"
+    },
+    {
+      "symbol": "EVEREADY",
+      "series": "EQ",
+      "purpose": " Annual General Meeting/Interim Dividend - Re 1/- Per Share",
+      "ex_date": "05-Aug-2015",
+      "record_date": "-",
+      "bc_start": "07-Aug-2015",
+      "bc_end": "07-Aug-2015",
+      "face_value": "5",
+      "company": "Eveready Industries India Limited"
+    },
+    {
+      "symbol": "EVEREADY",
+      "series": "EQ",
+      "purpose": "Annual General Meeting / Dividend - Re 0.50/- Per Share",
+      "ex_date": "16-Jul-2014",
+      "record_date": "-",
+      "bc_start": "18-Jul-2014",
+      "bc_end": "25-Jul-2014",
+      "face_value": "5",
+      "company": "Eveready Industries India Limited"
+    },
+    {
+      "symbol": "EVEREADY",
+      "series": "EQ",
+      "purpose": "Annual General Meeting",
+      "ex_date": "12-Jul-2013",
+      "record_date": "-",
+      "bc_start": "16-Jul-2013",
+      "bc_end": "26-Jul-2013",
+      "face_value": "5",
+      "company": "Eveready Industries India Limited"
+    },
+    {
+      "symbol": "EVEREADY",
+      "series": "EQ",
+      "purpose": "Annual General Meeting",
+      "ex_date": "13-Jul-2012",
+      "record_date": "-",
+      "bc_start": "17-Jul-2012",
+      "bc_end": "27-Jul-2012",
+      "face_value": "5",
+      "company": "Eveready Industries India Limited"
+    },
+    {
+      "symbol": "EVEREADY",
+      "series": "EQ",
+      "purpose": "Annual General Meeting And Dividend Re.0.50 Per Share",
+      "ex_date": "09-Sep-2011",
+      "record_date": "-",
+      "bc_start": "13-Sep-2011",
+      "bc_end": "23-Sep-2011",
+      "face_value": "5",
+      "company": "Eveready Industries India Limited"
+    },
+    {
+      "symbol": "EVEREADY",
+      "series": "EQ",
+      "purpose": "Annual General Meeting And Dividend Re.0.50 Per Share",
+      "ex_date": "09-Sep-2010",
+      "record_date": "-",
+      "bc_start": "14-Sep-2010",
+      "bc_end": "24-Sep-2010",
+      "face_value": "5",
+      "company": "Eveready Industries India Limited"
+    },
+    {
+      "symbol": "EVEREADY",
+      "series": "EQ",
+      "purpose": "Annual General Meeting",
+      "ex_date": "10-Jul-2009",
+      "record_date": "-",
+      "bc_start": "14-Jul-2009",
+      "bc_end": "24-Jul-2009",
+      "face_value": "5",
+      "company": "Eveready Industries India Limited"
+    },
+    {
+      "symbol": "EVEREADY",
+      "series": "EQ",
+      "purpose": "Annual General Meeting",
+      "ex_date": "16-Jul-2008",
+      "record_date": "-",
+      "bc_start": "18-Jul-2008",
+      "bc_end": "30-Jul-2008",
+      "face_value": "5",
+      "company": "Eveready Industries India Limited"
+    },
+    {
+      "symbol": "EVEREADY",
+      "series": "EQ",
+      "purpose": "Agm",
+      "ex_date": "13-Jul-2007",
+      "record_date": "-",
+      "bc_start": "17-Jul-2007",
+      "bc_end": "27-Jul-2007",
+      "face_value": "5",
+      "company": "Eveready Industries India Limited"
+    }
+  ],
+  "yf_dividends": [
+    {
+      "date": "2006-07-07",
+      "amount": 2.0
+    },
+    {
+      "date": "2010-09-09",
+      "amount": 0.5
+    },
+    {
+      "date": "2011-09-09",
+      "amount": 0.5
+    },
+    {
+      "date": "2014-07-16",
+      "amount": 0.5
+    },
+    {
+      "date": "2015-08-05",
+      "amount": 1.0
+    },
+    {
+      "date": "2016-07-14",
+      "amount": 1.0
+    },
+    {
+      "date": "2018-07-26",
+      "amount": 1.5
+    },
+    {
+      "date": "2024-07-26",
+      "amount": 1.0
+    },
+    {
+      "date": "2025-07-29",
+      "amount": 1.5
+    }
+  ],
+  "yf_splits": []
+}

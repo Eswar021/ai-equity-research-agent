@@ -1,0 +1,204 @@
+{
+  "fetched_at": "2026-05-06T05:56:49.122639+05:30",
+  "ticker": "RAILTEL.NS",
+  "nse_actions": [
+    {
+      "symbol": "RAILTEL",
+      "series": "EQ",
+      "purpose": "Interim Dividend - Re 1 Per Share",
+      "ex_date": "13-Mar-2026",
+      "record_date": "13-Mar-2026",
+      "bc_start": "-",
+      "bc_end": "-",
+      "face_value": "10",
+      "company": "Railtel Corporation Of India Limited"
+    },
+    {
+      "symbol": "RAILTEL",
+      "series": "EQ",
+      "purpose": "Interim Dividend - Re 1 Per Share",
+      "ex_date": "04-Nov-2025",
+      "record_date": "04-Nov-2025",
+      "bc_start": "-",
+      "bc_end": "-",
+      "face_value": "10",
+      "company": "Railtel Corporation Of India Limited"
+    },
+    {
+      "symbol": "RAILTEL",
+      "series": "EQ",
+      "purpose": "Dividend - Re 0.85 Per Share",
+      "ex_date": "13-Aug-2025",
+      "record_date": "13-Aug-2025",
+      "bc_start": "-",
+      "bc_end": "-",
+      "face_value": "10",
+      "company": "Railtel Corporation Of India Limited"
+    },
+    {
+      "symbol": "RAILTEL",
+      "series": "EQ",
+      "purpose": "Interim Dividend - Re 1 Per Share",
+      "ex_date": "02-Apr-2025",
+      "record_date": "02-Apr-2025",
+      "bc_start": "-",
+      "bc_end": "-",
+      "face_value": "10",
+      "company": "Railtel Corporation Of India Limited"
+    },
+    {
+      "symbol": "RAILTEL",
+      "series": "EQ",
+      "purpose": "Interim Dividend - Re 1 Per Share",
+      "ex_date": "06-Nov-2024",
+      "record_date": "06-Nov-2024",
+      "bc_start": "-",
+      "bc_end": "-",
+      "face_value": "10",
+      "company": "Railtel Corporation Of India Limited"
+    },
+    {
+      "symbol": "RAILTEL",
+      "series": "EQ",
+      "purpose": "Dividend - Rs 1.85 Per Share",
+      "ex_date": "14-Aug-2024",
+      "record_date": "14-Aug-2024",
+      "bc_start": "-",
+      "bc_end": "-",
+      "face_value": "10",
+      "company": "Railtel Corporation Of India Limited"
+    },
+    {
+      "symbol": "RAILTEL",
+      "series": "EQ",
+      "purpose": "Interim Dividend - Re 1 Per Share",
+      "ex_date": "03-Nov-2023",
+      "record_date": "04-Nov-2023",
+      "bc_start": "-",
+      "bc_end": "-",
+      "face_value": "10",
+      "company": "Railtel Corporation Of India Limited"
+    },
+    {
+      "symbol": "RAILTEL",
+      "series": "EQ",
+      "purpose": "Dividend - Rs 1.05 Per Share",
+      "ex_date": "24-Aug-2023",
+      "record_date": "24-Aug-2023",
+      "bc_start": "-",
+      "bc_end": "-",
+      "face_value": "10",
+      "company": "Railtel Corporation Of India Limited"
+    },
+    {
+      "symbol": "RAILTEL",
+      "series": "EQ",
+      "purpose": "Interim Dividend - Rs 1.50 Per Share",
+      "ex_date": "08-Feb-2023",
+      "record_date": "08-Feb-2023",
+      "bc_start": "-",
+      "bc_end": "-",
+      "face_value": "10",
+      "company": "Railtel Corporation Of India Limited"
+    },
+    {
+      "symbol": "RAILTEL",
+      "series": "EQ",
+      "purpose": "Dividend - Re 0.65 Per Share",
+      "ex_date": "22-Sep-2022",
+      "record_date": "23-Sep-2022",
+      "bc_start": "-",
+      "bc_end": "-",
+      "face_value": "10",
+      "company": "Railtel Corporation Of India Limited"
+    },
+    {
+      "symbol": "RAILTEL",
+      "series": "EQ",
+      "purpose": "Interim Dividend - Rs 1.75 Per Share",
+      "ex_date": "20-Jan-2022",
+      "record_date": "21-Jan-2022",
+      "bc_start": "-",
+      "bc_end": "-",
+      "face_value": "10",
+      "company": "Railtel Corporation Of India Limited"
+    },
+    {
+      "symbol": "RAILTEL",
+      "series": "EQ",
+      "purpose": " Dividend - Rs 1.20 Per Share",
+      "ex_date": "21-Sep-2021",
+      "record_date": "22-Sep-2021",
+      "bc_start": "-",
+      "bc_end": "-",
+      "face_value": "10",
+      "company": "Railtel Corporation Of India Limited"
+    },
+    {
+      "symbol": "RAILTEL",
+      "series": "EQ",
+      "purpose": " Interim Dividend - Re 1 Per Share",
+      "ex_date": "31-Mar-2021",
+      "record_date": "05-Apr-2021",
+      "bc_start": "-",
+      "bc_end": "-",
+      "face_value": "10",
+      "company": "Railtel Corporation Of India Limited"
+    }
+  ],
+  "yf_dividends": [
+    {
+      "date": "2021-03-31",
+      "amount": 1.0
+    },
+    {
+      "date": "2021-09-21",
+      "amount": 1.2
+    },
+    {
+      "date": "2022-01-20",
+      "amount": 1.75
+    },
+    {
+      "date": "2022-09-22",
+      "amount": 0.65
+    },
+    {
+      "date": "2023-02-08",
+      "amount": 1.5
+    },
+    {
+      "date": "2023-08-24",
+      "amount": 1.05
+    },
+    {
+      "date": "2023-11-03",
+      "amount": 1.0
+    },
+    {
+      "date": "2024-08-14",
+      "amount": 1.85
+    },
+    {
+      "date": "2024-11-06",
+      "amount": 1.0
+    },
+    {
+      "date": "2025-04-02",
+      "amount": 1.0
+    },
+    {
+      "date": "2025-08-13",
+      "amount": 0.85
+    },
+    {
+      "date": "2025-11-04",
+      "amount": 1.0
+    },
+    {
+      "date": "2026-03-13",
+      "amount": 1.0
+    }
+  ],
+  "yf_splits": []
+}

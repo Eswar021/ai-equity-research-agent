@@ -1,0 +1,506 @@
+{
+  "fetched_at": "2026-05-05T00:04:21.008142+05:30",
+  "bulk_deals": [
+    {
+      "date": "04-MAY-2026",
+      "symbol": "AGIIL",
+      "scrip_name": "Agi Infra Limited",
+      "client": "ARIHANT CAPITAL MARKETS LIMITED",
+      "buy_sell": "BUY",
+      "quantity": "2356495",
+      "trade_price": "410.83",
+      "remarks": "-"
+    },
+    {
+      "date": "04-MAY-2026",
+      "symbol": "AGIIL",
+      "scrip_name": "Agi Infra Limited",
+      "client": "HRTI PRIVATE LIMITED",
+      "buy_sell": "BUY",
+      "quantity": "626888",
+      "trade_price": "409.98",
+      "remarks": "-"
+    },
+    {
+      "date": "04-MAY-2026",
+      "symbol": "CEMPRO",
+      "scrip_name": "Cemindia Projects Limited",
+      "client": "NK SECURITIES RESEARCH PRIVATE LIMITED",
+      "buy_sell": "BUY",
+      "quantity": "1342537",
+      "trade_price": "914.87",
+      "remarks": "-"
+    },
+    {
+      "date": "04-MAY-2026",
+      "symbol": "CEMPRO",
+      "scrip_name": "Cemindia Projects Limited",
+      "client": "QE SECURITIES LLP",
+      "buy_sell": "BUY",
+      "quantity": "888926",
+      "trade_price": "903.88",
+      "remarks": "-"
+    },
+    {
+      "date": "04-MAY-2026",
+      "symbol": "CEMPRO",
+      "scrip_name": "Cemindia Projects Limited",
+      "client": "JUNOMONETA FINSOL PRIVATE LIMITED",
+      "buy_sell": "BUY",
+      "quantity": "1136494",
+      "trade_price": "904.02",
+      "remarks": "-"
+    },
+    {
+      "date": "04-MAY-2026",
+      "symbol": "CEMPRO",
+      "scrip_name": "Cemindia Projects Limited",
+      "client": "MICROCURVES TRADING PRIVATE LIMITED",
+      "buy_sell": "BUY",
+      "quantity": "1083526",
+      "trade_price": "913.89",
+      "remarks": "-"
+    },
+    {
+      "date": "04-MAY-2026",
+      "symbol": "GICL",
+      "scrip_name": "Globe Intl Carriers Ltd",
+      "client": "INVENTURE GROWTH & SECURITIES LTD",
+      "buy_sell": "BUY",
+      "quantity": "600000",
+      "trade_price": "40.94",
+      "remarks": "-"
+    },
+    {
+      "date": "04-MAY-2026",
+      "symbol": "IDEAFORGE",
+      "scrip_name": "Ideaforge Techno Ltd",
+      "client": "HRTI PRIVATE LIMITED",
+      "buy_sell": "BUY",
+      "quantity": "292220",
+      "trade_price": "704.17",
+      "remarks": "-"
+    },
+    {
+      "date": "04-MAY-2026",
+      "symbol": "IDEAFORGE",
+      "scrip_name": "Ideaforge Techno Ltd",
+      "client": "SOCIETE GENERALE",
+      "buy_sell": "BUY",
+      "quantity": "243895",
+      "trade_price": "707.11",
+      "remarks": "-"
+    },
+    {
+      "date": "04-MAY-2026",
+      "symbol": "IRMENERGY",
+      "scrip_name": "IRM Energy Limited",
+      "client": "QE SECURITIES LLP",
+      "buy_sell": "BUY",
+      "quantity": "212233",
+      "trade_price": "355.24",
+      "remarks": "-"
+    },
+    {
+      "date": "04-MAY-2026",
+      "symbol": "IRMENERGY",
+      "scrip_name": "IRM Energy Limited",
+      "client": "JUNOMONETA FINSOL PRIVATE LIMITED",
+      "buy_sell": "BUY",
+      "quantity": "474744",
+      "trade_price": "355.02",
+      "remarks": "-"
+    },
+    {
+      "date": "04-MAY-2026",
+      "symbol": "IRMENERGY",
+      "scrip_name": "IRM Energy Limited",
+      "client": "NK SECURITIES RESEARCH PRIVATE LIMITED",
+      "buy_sell": "BUY",
+      "quantity": "325023",
+      "trade_price": "355.20",
+      "remarks": "-"
+    },
+    {
+      "date": "04-MAY-2026",
+      "symbol": "IRMENERGY",
+      "scrip_name": "IRM Energy Limited",
+      "client": "HRTI PRIVATE LIMITED",
+      "buy_sell": "BUY",
+      "quantity": "581592",
+      "trade_price": "353.48",
+      "remarks": "-"
+    },
+    {
+      "date": "04-MAY-2026",
+      "symbol": "KSOLVES",
+      "scrip_name": "Ksolves India Limited",
+      "client": "VARUN MEHRA",
+      "buy_sell": "BUY",
+      "quantity": "186490",
+      "trade_price": "287.02",
+      "remarks": "-"
+    },
+    {
+      "date": "04-MAY-2026",
+      "symbol": "MACOBSTECH",
+      "scrip_name": "Macobs Technologies Ltd",
+      "client": "RAMAN  TALWAR",
+      "buy_sell": "BUY",
+      "quantity": "132000",
+      "trade_price": "244.35",
+      "remarks": "-"
+    },
+    {
+      "date": "04-MAY-2026",
+      "symbol": "MACOBSTECH",
+      "scrip_name": "Macobs Technologies Ltd",
+      "client": "ACME CAPITAL MARKET LIMITED",
+      "buy_sell": "BUY",
+      "quantity": "51200",
+      "trade_price": "242.00",
+      "remarks": "-"
+    },
+    {
+      "date": "04-MAY-2026",
+      "symbol": "MARKOLINES",
+      "scrip_name": "Markolines Pavement Tec L",
+      "client": "VISTAAR TRADING SERVICE PRIVATE LIMITED",
+      "buy_sell": "BUY",
+      "quantity": "120112",
+      "trade_price": "153.92",
+      "remarks": "-"
+    },
+    {
+      "date": "04-MAY-2026",
+      "symbol": "OLIL",
+      "scrip_name": "Oneclick Logistics Ind L",
+      "client": "MATALIA STOCK BROKING PRIVATE LIMITED",
+      "buy_sell": "BUY",
+      "quantity": "37200",
+      "trade_price": "405.62",
+      "remarks": "-"
+    },
+    {
+      "date": "04-MAY-2026",
+      "symbol": "RATNAVEER",
+      "scrip_name": "Ratnaveer Precision Eng L",
+      "client": "ARIHANT CAPITAL MARKETS LIMITED",
+      "buy_sell": "BUY",
+      "quantity": "761602",
+      "trade_price": "175.54",
+      "remarks": "-"
+    },
+    {
+      "date": "04-MAY-2026",
+      "symbol": "RHETAN",
+      "scrip_name": "Rhetan TMT Limited",
+      "client": "NIRAJ HARSUKHLAL SANGHAVI",
+      "buy_sell": "BUY",
+      "quantity": "4881642",
+      "trade_price": "28.00",
+      "remarks": "-"
+    },
+    {
+      "date": "04-MAY-2026",
+      "symbol": "SPRL",
+      "scrip_name": "SP Refractories Limited",
+      "client": "SUKHMATA DHARAMPAL NISHAD",
+      "buy_sell": "BUY",
+      "quantity": "15200",
+      "trade_price": "98.90",
+      "remarks": "-"
+    },
+    {
+      "date": "04-MAY-2026",
+      "symbol": "STANLEY",
+      "scrip_name": "Stanley Lifestyles Ltd",
+      "client": "VISION AHEAD SERVICES PRIVATE LIMITED",
+      "buy_sell": "BUY",
+      "quantity": "300000",
+      "trade_price": "160.36",
+      "remarks": "-"
+    },
+    {
+      "date": "04-MAY-2026",
+      "symbol": "VIDYAWIRES",
+      "scrip_name": "Vidya Wires Limited",
+      "client": "HRTI PRIVATE LIMITED",
+      "buy_sell": "BUY",
+      "quantity": "1077665",
+      "trade_price": "91.55",
+      "remarks": "-"
+    },
+    {
+      "date": "04-MAY-2026",
+      "symbol": "AGIIL",
+      "scrip_name": "Agi Infra Limited",
+      "client": "HRTI PRIVATE LIMITED",
+      "buy_sell": "SELL",
+      "quantity": "604822",
+      "trade_price": "409.70",
+      "remarks": "-"
+    },
+    {
+      "date": "04-MAY-2026",
+      "symbol": "AGIIL",
+      "scrip_name": "Agi Infra Limited",
+      "client": "ARIHANT CAPITAL MARKETS LIMITED",
+      "buy_sell": "SELL",
+      "quantity": "2322726",
+      "trade_price": "410.31",
+      "remarks": "-"
+    },
+    {
+      "date": "04-MAY-2026",
+      "symbol": "CEMPRO",
+      "scrip_name": "Cemindia Projects Limited",
+      "client": "MICROCURVES TRADING PRIVATE LIMITED",
+      "buy_sell": "SELL",
+      "quantity": "1083406",
+      "trade_price": "914.06",
+      "remarks": "-"
+    },
+    {
+      "date": "04-MAY-2026",
+      "symbol": "CEMPRO",
+      "scrip_name": "Cemindia Projects Limited",
+      "client": "QE SECURITIES LLP",
+      "buy_sell": "SELL",
+      "quantity": "872811",
+      "trade_price": "901.04",
+      "remarks": "-"
+    },
+    {
+      "date": "04-MAY-2026",
+      "symbol": "CEMPRO",
+      "scrip_name": "Cemindia Projects Limited",
+      "client": "JUNOMONETA FINSOL PRIVATE LIMITED",
+      "buy_sell": "SELL",
+      "quantity": "1132712",
+      "trade_price": "904.53",
+      "remarks": "-"
+    },
+    {
+      "date": "04-MAY-2026",
+      "symbol": "CEMPRO",
+      "scrip_name": "Cemindia Projects Limited",
+      "client": "NK SECURITIES RESEARCH PRIVATE LIMITED",
+      "buy_sell": "SELL",
+      "quantity": "1342537",
+      "trade_price": "915.31",
+      "remarks": "-"
+    },
+    {
+      "date": "04-MAY-2026",
+      "symbol": "DHARARAIL",
+      "scrip_name": "Dhara Rail Projects Ltd",
+      "client": "INDIA MAX INVESTMENT FUND LIMITED",
+      "buy_sell": "SELL",
+      "quantity": "80000",
+      "trade_price": "124.66",
+      "remarks": "-"
+    },
+    {
+      "date": "04-MAY-2026",
+      "symbol": "GICL",
+      "scrip_name": "Globe Intl Carriers Ltd",
+      "client": "INVENTURE GROWTH & SECURITIES LTD",
+      "buy_sell": "SELL",
+      "quantity": "424849",
+      "trade_price": "41.42",
+      "remarks": "-"
+    },
+    {
+      "date": "04-MAY-2026",
+      "symbol": "IDEAFORGE",
+      "scrip_name": "Ideaforge Techno Ltd",
+      "client": "HRTI PRIVATE LIMITED",
+      "buy_sell": "SELL",
+      "quantity": "310859",
+      "trade_price": "705.22",
+      "remarks": "-"
+    },
+    {
+      "date": "04-MAY-2026",
+      "symbol": "IRMENERGY",
+      "scrip_name": "IRM Energy Limited",
+      "client": "QE SECURITIES LLP",
+      "buy_sell": "SELL",
+      "quantity": "211683",
+      "trade_price": "356.96",
+      "remarks": "-"
+    },
+    {
+      "date": "04-MAY-2026",
+      "symbol": "IRMENERGY",
+      "scrip_name": "IRM Energy Limited",
+      "client": "HRTI PRIVATE LIMITED",
+      "buy_sell": "SELL",
+      "quantity": "486483",
+      "trade_price": "357.09",
+      "remarks": "-"
+    },
+    {
+      "date": "04-MAY-2026",
+      "symbol": "IRMENERGY",
+      "scrip_name": "IRM Energy Limited",
+      "client": "NK SECURITIES RESEARCH PRIVATE LIMITED",
+      "buy_sell": "SELL",
+      "quantity": "325023",
+      "trade_price": "355.31",
+      "remarks": "-"
+    },
+    {
+      "date": "04-MAY-2026",
+      "symbol": "IRMENERGY",
+      "scrip_name": "IRM Energy Limited",
+      "client": "JUNOMONETA FINSOL PRIVATE LIMITED",
+      "buy_sell": "SELL",
+      "quantity": "474851",
+      "trade_price": "355.16",
+      "remarks": "-"
+    },
+    {
+      "date": "04-MAY-2026",
+      "symbol": "KOTYARK",
+      "scrip_name": "Kotyark Industries Ltd",
+      "client": "GAURANG R SHAH HUF",
+      "buy_sell": "SELL",
+      "quantity": "135382",
+      "trade_price": "413.06",
+      "remarks": "-"
+    },
+    {
+      "date": "04-MAY-2026",
+      "symbol": "KRMAYURVED",
+      "scrip_name": "KRM Ayurveda Limited",
+      "client": "PINE OAK GLOBAL FUND",
+      "buy_sell": "SELL",
+      "quantity": "113000",
+      "trade_price": "235.62",
+      "remarks": "-"
+    },
+    {
+      "date": "04-MAY-2026",
+      "symbol": "KSOLVES",
+      "scrip_name": "Ksolves India Limited",
+      "client": "VARUN MEHRA",
+      "buy_sell": "SELL",
+      "quantity": "209490",
+      "trade_price": "282.71",
+      "remarks": "-"
+    },
+    {
+      "date": "04-MAY-2026",
+      "symbol": "MACOBSTECH",
+      "scrip_name": "Macobs Technologies Ltd",
+      "client": "CONNECT FUND",
+      "buy_sell": "SELL",
+      "quantity": "164800",
+      "trade_price": "244.48",
+      "remarks": "-"
+    },
+    {
+      "date": "04-MAY-2026",
+      "symbol": "MARKOLINES",
+      "scrip_name": "Markolines Pavement Tec L",
+      "client": "VISTAAR TRADING SERVICE PRIVATE LIMITED",
+      "buy_sell": "SELL",
+      "quantity": "126220",
+      "trade_price": "153.74",
+      "remarks": "-"
+    },
+    {
+      "date": "04-MAY-2026",
+      "symbol": "NIDAN",
+      "scrip_name": "Nidan Labs and Health Ltd",
+      "client": "VAGHANI VIRAJ",
+      "buy_sell": "SELL",
+      "quantity": "80000",
+      "trade_price": "13.17",
+      "remarks": "-"
+    },
+    {
+      "date": "04-MAY-2026",
+      "symbol": "OLIL",
+      "scrip_name": "Oneclick Logistics Ind L",
+      "client": "MATALIA STOCK BROKING PRIVATE LIMITED",
+      "buy_sell": "SELL",
+      "quantity": "38000",
+      "trade_price": "380.43",
+      "remarks": "-"
+    },
+    {
+      "date": "04-MAY-2026",
+      "symbol": "RATNAVEER",
+      "scrip_name": "Ratnaveer Precision Eng L",
+      "client": "ARIHANT CAPITAL MARKETS LIMITED",
+      "buy_sell": "SELL",
+      "quantity": "761602",
+      "trade_price": "176.08",
+      "remarks": "-"
+    },
+    {
+      "date": "04-MAY-2026",
+      "symbol": "RHETAN",
+      "scrip_name": "Rhetan TMT Limited",
+      "client": "NIRAJ HARSUKHLAL SANGHAVI",
+      "buy_sell": "SELL",
+      "quantity": "3650641",
+      "trade_price": "28.25",
+      "remarks": "-"
+    },
+    {
+      "date": "04-MAY-2026",
+      "symbol": "RICHA",
+      "scrip_name": "Richa Info Systems Ltd",
+      "client": "THAKOR NAYANA CHANDUBHAI",
+      "buy_sell": "SELL",
+      "quantity": "97000",
+      "trade_price": "78.00",
+      "remarks": "-"
+    },
+    {
+      "date": "04-MAY-2026",
+      "symbol": "SAIFL",
+      "scrip_name": "Sameera Agro And Infra L",
+      "client": "SATYA MURTHY SIVALENKA",
+      "buy_sell": "SELL",
+      "quantity": "752000",
+      "trade_price": "8.25",
+      "remarks": "-"
+    },
+    {
+      "date": "04-MAY-2026",
+      "symbol": "SILGO",
+      "scrip_name": "Silgo Retail Limited",
+      "client": "GOLDENDUNES BUILDERS AND DEVELOPERS PRIVATE LIMITED",
+      "buy_sell": "SELL",
+      "quantity": "163224",
+      "trade_price": "78.56",
+      "remarks": "-"
+    },
+    {
+      "date": "04-MAY-2026",
+      "symbol": "SPRL",
+      "scrip_name": "SP Refractories Limited",
+      "client": "AMNESTI MULTISERVICES PRIVATE LIMITED",
+      "buy_sell": "SELL",
+      "quantity": "27200",
+      "trade_price": "98.90",
+      "remarks": "-"
+    },
+    {
+      "date": "04-MAY-2026",
+      "symbol": "VIDYAWIRES",
+      "scrip_name": "Vidya Wires Limited",
+      "client": "HRTI PRIVATE LIMITED",
+      "buy_sell": "SELL",
+      "quantity": "990768",
+      "trade_price": "91.39",
+      "remarks": "-"
+    }
+  ],
+  "block_deals": []
+}

@@ -1,0 +1,217 @@
+{
+  "ticker": "SUNPHARMA",
+  "yf_ticker": "SUNPHARMA.NS",
+  "fetched_at": "2026-05-06T05:52:54.632383+05:30",
+  "price_targets": {
+    "current_price": 1820.8,
+    "target_high": 2528.0,
+    "target_mean": 1992.4688,
+    "target_median": 1989.0,
+    "target_low": 1650.0,
+    "upside_to_mean_pct": 9.4
+  },
+  "earnings_estimates": {
+    "0q": {
+      "avg": 11.81562,
+      "low": 10.6,
+      "high": 13.6,
+      "yearAgoEps": 10.0052,
+      "numberOfAnalysts": 7,
+      "growth": 0.18090001,
+      "currency": "INR"
+    },
+    "+1q": {
+      "avg": 12.64,
+      "low": 12.64,
+      "high": 12.64,
+      "yearAgoEps": 11.9751,
+      "numberOfAnalysts": 1,
+      "growth": 0.0555,
+      "currency": "INR"
+    },
+    "0y": {
+      "avg": 50.39522,
+      "low": 45.9,
+      "high": 56.2,
+      "yearAgoEps": 47.8581,
+      "numberOfAnalysts": 32,
+      "growth": 0.053000003,
+      "currency": "INR"
+    },
+    "+1y": {
+      "avg": 56.58245,
+      "low": 50.3,
+      "high": 62.09985,
+      "yearAgoEps": 50.39522,
+      "numberOfAnalysts": 31,
+      "growth": 0.1228,
+      "currency": "INR"
+    }
+  },
+  "revenue_estimates": {
+    "0q": {
+      "avg": 145223388530,
+      "low": 140164000000,
+      "high": 150585000000,
+      "numberOfAnalysts": 15,
+      "yearAgoRevenue": 129588400000,
+      "growth": 0.120699994,
+      "currency": "INR"
+    },
+    "+1q": {
+      "avg": 152894026000,
+      "low": 152894026000,
+      "high": 152894026000,
+      "numberOfAnalysts": 1,
+      "yearAgoRevenue": 138514000000,
+      "growth": 0.1038,
+      "currency": "INR"
+    },
+    "0y": {
+      "avg": 582127147510,
+      "low": 570750000000,
+      "high": 588860000000,
+      "numberOfAnalysts": 34,
+      "yearAgoRevenue": 525784400000,
+      "growth": 0.107200004,
+      "currency": "INR"
+    },
+    "+1y": {
+      "avg": 649597835930,
+      "low": 622815000000,
+      "high": 668639352840,
+      "numberOfAnalysts": 31,
+      "yearAgoRevenue": 582127147510,
+      "growth": 0.1159,
+      "currency": "INR"
+    }
+  },
+  "earnings_history": [
+    {
+      "quarter": "2025-03-31 00:00:00",
+      "eps_actual": 10.0052,
+      "eps_estimate": 11.48754,
+      "eps_surprise": -1.48,
+      "surprise_pct": -12.9
+    },
+    {
+      "quarter": "2025-06-30 00:00:00",
+      "eps_actual": 11.9751,
+      "eps_estimate": 12.58418,
+      "eps_surprise": -0.61,
+      "surprise_pct": -4.84
+    },
+    {
+      "quarter": "2025-09-30 00:00:00",
+      "eps_actual": 13.0,
+      "eps_estimate": 11.96722,
+      "eps_surprise": 1.03,
+      "surprise_pct": 8.63
+    },
+    {
+      "quarter": "2025-12-31 00:00:00",
+      "eps_actual": 15.4819,
+      "eps_estimate": 12.72765,
+      "eps_surprise": 2.75,
+      "surprise_pct": 21.64
+    }
+  ],
+  "recommendations": [
+    {
+      "period": "0m",
+      "strong_buy": 7,
+      "buy": 22,
+      "hold": 0,
+      "sell": 1,
+      "strong_sell": 2
+    },
+    {
+      "period": "-1m",
+      "strong_buy": 7,
+      "buy": 22,
+      "hold": 0,
+      "sell": 1,
+      "strong_sell": 2
+    },
+    {
+      "period": "-2m",
+      "strong_buy": 9,
+      "buy": 23,
+      "hold": 0,
+      "sell": 2,
+      "strong_sell": 2
+    },
+    {
+      "period": "-3m",
+      "strong_buy": 9,
+      "buy": 24,
+      "hold": 0,
+      "sell": 2,
+      "strong_sell": 2
+    }
+  ],
+  "eps_trend": {
+    "0q": {
+      "current": 11.81562,
+      "7daysAgo": 11.86881,
+      "30daysAgo": 11.65966,
+      "60daysAgo": 11.50746,
+      "90daysAgo": 11.60413,
+      "currency": "INR"
+    },
+    "+1q": {
+      "current": 12.64,
+      "7daysAgo": 12.61,
+      "30daysAgo": 12.61,
+      "60daysAgo": 12.61,
+      "90daysAgo": 12.49,
+      "currency": "INR"
+    },
+    "0y": {
+      "current": 50.39522,
+      "7daysAgo": 50.34041,
+      "30daysAgo": 50.5082,
+      "60daysAgo": 50.43092,
+      "90daysAgo": 50.3487,
+      "currency": "INR"
+    },
+    "+1y": {
+      "current": 56.58245,
+      "7daysAgo": 56.65312,
+      "30daysAgo": 56.72409,
+      "60daysAgo": 56.82092,
+      "90daysAgo": 56.5545,
+      "currency": "INR"
+    }
+  },
+  "eps_revisions": {
+    "0q": {
+      "upLast7days": 0,
+      "upLast30days": 0,
+      "downLast30days": 2,
+      "downLast7Days": 1,
+      "currency": "INR"
+    },
+    "+1q": {
+      "upLast7days": 1,
+      "upLast30days": 1,
+      "downLast30days": 0,
+      "downLast7Days": 0,
+      "currency": "INR"
+    },
+    "0y": {
+      "upLast7days": 6,
+      "upLast30days": 8,
+      "downLast30days": 4,
+      "downLast7Days": 1,
+      "currency": "INR"
+    },
+    "+1y": {
+      "upLast7days": 6,
+      "upLast30days": 10,
+      "downLast30days": 4,
+      "downLast7Days": 2,
+      "currency": "INR"
+    }
+  }
+}

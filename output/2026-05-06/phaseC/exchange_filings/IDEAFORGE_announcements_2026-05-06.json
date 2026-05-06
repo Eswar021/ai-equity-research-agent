@@ -1,0 +1,358 @@
+{
+  "ticker": "IDEAFORGE",
+  "fetched_at": "2026-05-06T05:50:28.860722+05:30",
+  "total_returned": 50,
+  "material_only": true,
+  "announcements": [
+    {
+      "date": "04-May-2026 15:11:28",
+      "type": "Allotment of Securities",
+      "subject": "Ideaforge Technology Limited has informed the Exchange regarding allotment of 88366 securities pursuant to ESOP/ESPS at its meeting held on May 04, 2026",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/IDEAFORGE_04052026151052_Intimation_Allotment_88366_ESOPs_04052026.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "30-Apr-2026 20:27:37",
+      "type": "Press Release",
+      "subject": "Ideaforge Technology Limited has informed the Exchange regarding a press release dated April 30, 2026, titled \"Press Release for the Financial year ended  March 31, 2026\".",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/IDEAFORGE_30042026202729_Press_release_30042026-merged.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "30-Apr-2026 20:22:55",
+      "type": "Outcome of Board Meeting",
+      "subject": "Ideaforge Technology Limited has submitted to the Exchange, the financial results for the period ended March 31, 2026.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/IDEAFORGE_30042026202140_Outcome_30042026.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "14-Apr-2026 11:14:47",
+      "type": "Allotment of Securities",
+      "subject": "Ideaforge Technology Limited has informed the Exchange regarding allotment of 23347 securities pursuant to ESOP/ESPS at its meeting held on April 14, 2026",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/IDEAFORGE_14042026111441_Intimation_Allotment_23347_ESOPs_14042026.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "12-Mar-2026 14:50:07",
+      "type": "Allotment of Securities",
+      "subject": "Ideaforge Technology Limited has informed the Exchange regarding allotment of 756 securities pursuant to ESOP/ESPS at its meeting held on March 12, 2026",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/IDEAFORGE_12032026144959_Intimation_Allotment_756_ESOPs_12032026__1_.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "16-Feb-2026 12:14:28",
+      "type": "Allotment of Securities",
+      "subject": "Ideaforge Technology Limited has informed the Exchange regarding allotment of 7026 securities pursuant to ESOP/ESPS at its meeting held on February 16, 2026",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/IDEAFORGE_16022026121422_Intimation_Allotment_7026_ESOPs_1602026.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "22-Jan-2026 21:27:43",
+      "type": "Press Release",
+      "subject": "Ideaforge Technology Limited has informed the Exchange regarding a press release dated January 22, 2026, titled \"Press Release for the Unaudited Financial Results for the quarter and nine months ended December 31, 2025\".",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/IDEAFORGE_22012026212734_Press_Release31122025.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "22-Jan-2026 21:25:07",
+      "type": "Outcome of Board Meeting",
+      "subject": "Ideaforge Technology Limited has submitted to the Exchange, the financial results for the period ended December 31, 2025.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/IDEAFORGE_22012026212205_Outcome_22012026-merged.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "13-Jan-2026 16:37:44",
+      "type": "Allotment of Securities",
+      "subject": "Ideaforge Technology Limited has informed the Exchange regarding allotment of 14451 securities pursuant to ESOP/ESPS at its meeting held on January 13, 2026",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/IDEAFORGE_13012026163726_Intimation_Allotment_14451_ESOPs_12122026.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "09-Dec-2025 18:14:40",
+      "type": "Allotment of Securities",
+      "subject": "Ideaforge Technology Limited has informed the Exchange regarding allotment of 3140 securities pursuant to ESOP/ESPS at its meeting held on December 09, 2025",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/IDEAFORGE_09122025181411_Intimation_Allotment_3140_ESOPs_09122025.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "11-Nov-2025 15:04:07",
+      "type": "Allotment of Securities",
+      "subject": "Ideaforge Technology Limited has informed the Exchange regarding allotment of 952 securities pursuant to ESOP/ESPS at its meeting held on November 11, 2025",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/IDEAFORGE_11112025150344_Intimation_Allotment_952_ESOPs_11112025.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "06-Nov-2025 17:36:14",
+      "type": "Credit Rating",
+      "subject": "Ideaforge Technology Limited has informed the Exchange about Credit Rating",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/IDEAFORGE_06112025173600_Disclosure_Crisil_Rating_06112025.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "06-Nov-2025 16:45:14",
+      "type": "Credit Rating",
+      "subject": "Ideaforge Technology Limited has informed the Exchange about Credit Rating",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/IDEAFORGE_06112025164501_Disclosure_Crisil_Rating_06112025.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "28-Oct-2025 20:36:50",
+      "type": "Press Release",
+      "subject": "IdeaForge Technology Limited has informed the Exchange regarding a press release dated October 28, 2025, titled \"ideaForge Technology Reports Q2 FY26 Performance\".",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/IDEAFORGE_28102025203550_Press_Release_30092025.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "28-Oct-2025 20:30:31",
+      "type": "Outcome of Board Meeting",
+      "subject": "Ideaforge Technology Limited has submitted to the Exchange, the financial results for the period ended September 30, 2025.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/IDEAFORGE_28102025203017_Outcome_28102025.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "10-Oct-2025 14:45:52",
+      "type": "Allotment of Securities",
+      "subject": "Ideaforge Technology Limited has informed the Exchange regarding allotment of 4669 securities pursuant to ESOP/ESPS at its meeting held on October 10, 2025",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/IDEAFORGE_10102025144514_Intimation_Allotment_4669_ESOPs_10102025.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "16-Sep-2025 15:35:52",
+      "type": "Allotment of Securities",
+      "subject": "Ideaforge Technology Limited has informed the Exchange regarding allotment of 28876 securities pursuant to ESOP/ESPS at its meeting held on September 16, 2025",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/IDEAFORGE_16092025153401_Intimation_Allotment_28876_ESOPs_16092025.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "14-Aug-2025 14:55:37",
+      "type": "Allotment of Securities",
+      "subject": "Ideaforge Technology Limited has informed the Exchange regarding allotment of 11626 securities pursuant to ESOP/ESPS at its meeting held on August 14, 2025",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/IDEAFORGE_14082025145517_Intimation_Allotment_11626_ESOPs_14082025.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "22-Jul-2025 20:57:13",
+      "type": "Press Release",
+      "subject": "Ideaforge Technology Limited has informed the Exchange regarding a press release dated July 22, 2025, titled \"Press Release for the Board Meeting held on July 22, 2025.\".",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/IDEAFORGE_22072025205630_Press_release_22072025.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "22-Jul-2025 20:40:08",
+      "type": "Change in Management",
+      "subject": "Ideaforge Technology Limited has informed the Exchange about change in Management pursuant to appointment of Mr. Vipul Joshi as the Whole - time Director and Promoter of the Company, subject to the approval of the Shareholders.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/IDEAFORGE_22072025203906_Outcome_22072025_signed.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "22-Jul-2025 20:12:15",
+      "type": "Outcome of Board Meeting",
+      "subject": "Ideaforge Technology Limited has submitted to the Exchange, the financial results for the period ended Jun 30, 2025.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/IDEAFORGE_22072025201051_Outcome_22072025_signed.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "14-Jul-2025 12:22:17",
+      "type": "Allotment of Securities",
+      "subject": "Ideaforge Technology Limited has informed the Exchange regarding allotment of 11011 securities pursuant to ESOP/ESPS at its meeting held on July 14, 2025",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/IDEAFORGE_14072025122208_Intimation_Allotment_11011_ESOPs_14072025.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "16-Jun-2025 15:05:53",
+      "type": "Allotment of Securities",
+      "subject": "Ideaforge Technology Limited has informed the Exchange regarding allotment of 18633 securities pursuant to ESOP/ESPS at its meeting held on Jun 16, 2025",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/IDEAFORGE_16062025150440_Intimation_Allotment_18633_ESOPs_16062025.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "20-May-2025 12:40:25",
+      "type": "Credit Rating",
+      "subject": "Ideaforge Technology Limited has informed the Exchange about Credit Rating",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/IDEAFORGE_20052025124011_Disclosure_Crisil_Rating_19052025.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "12-May-2025 12:22:46",
+      "type": "Allotment of Securities",
+      "subject": "Ideaforge Technology Limited has informed the Exchange regarding allotment of 695 securities pursuant to ESOP/ESPS at its meeting held on May 12, 2025",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/IDEAFORGE_12052025122229_Intimation_Allotment_695_ESOPs_12052025.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "08-May-2025 22:05:01",
+      "type": "Press Release",
+      "subject": "Ideaforge Technology Limited has informed the Exchange regarding a press release dated May 08, 2025, titled \"Press Release for the Board Meeting held on May 08, 2025\".",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/IDEAFORGE_08052025220453_Press_release_08052025.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "08-May-2025 21:49:31",
+      "type": "Outcome of Board Meeting",
+      "subject": "Ideaforge Technology Limited has informed the Exchange regarding Outcome of Board Meeting held on May 08, 2025.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/IDEAFORGE_08052025214713_BM_Outcome_08052025.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "22-Apr-2025 17:18:55",
+      "type": "Allotment of Securities",
+      "subject": "Ideaforge Technology Limited has informed the Exchange regarding allotment of 94118 securities pursuant to ESOP/ESPS at its meeting held on April 22, 2025",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/IDEAFORGE_22042025171819_Intimation_Allotment_94118_ESOPs_22042025.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "19-Mar-2025 12:00:22",
+      "type": "Allotment of Securities",
+      "subject": "Ideaforge Technology Limited has informed the Exchange regarding allotment of 3041 securities pursuant to ESOP/ESPS at its meeting held on March 19, 2025",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/IDEAFORGE_19032025120010_Intimation_Allotment_3041_ESOPs_19032025.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "10-Feb-2025 17:49:11",
+      "type": "Allotment of Securities",
+      "subject": "Ideaforge Technology Limited has informed the Exchange regarding allotment of 31716 securities pursuant to ESOP/ESPS at its meeting held on February 10, 2025",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/IDEAFORGE_10022025174833_Intimation_Allotment_31716_ESOPs_10022025.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "07-Feb-2025 10:50:00",
+      "type": "Credit Rating- Revision",
+      "subject": "Ideaforge Technology Limited has informed the Exchange about Credit Rating- Revision",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/IDEAFORGE_07022025104937_Disclosure_Crisil_Rating_07022025.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "28-Jan-2025 19:59:34",
+      "type": "Press Release",
+      "subject": "Ideaforge Technology Limited has informed the Exchange regarding a press release dated January 28, 2025, titled \"Press Release - Financial Performance for the quarter and nine months ended December 31, 2024.\".",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/IDEAFORGE_28012025195914_Press_Release.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "28-Jan-2025 19:32:39",
+      "type": "Outcome of Board Meeting",
+      "subject": "Ideaforge Technology Limited has informed the Exchange regarding  Board meeting held on January 28, 2025 for the approval of the Unaudited (Standalone and Consolidated) Financial Results for the quarter and nine months ended December 31, 2024",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/IDEAFORGE_28012025193213_Outcome_28012025.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "10-Jan-2025 11:58:10",
+      "type": "Allotment of Securities",
+      "subject": "Ideaforge Technology Limited has informed the Exchange regarding allotment of 8198 securities pursuant to ESOP/ESPS at its meeting held on January 10, 2025",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/IDEAFORGE_10012025115744_Intimation_Allotment_8198_ESOPs_10012025.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "16-Dec-2024 12:54:07",
+      "type": "Allotment of Securities",
+      "subject": "Ideaforge Technology Limited has informed the Exchange regarding allotment of 4126 securities pursuant to ESOP/ESPS at its meeting held on December 16, 2024",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/IDEAFORGE_16122024125407_Intimation_Allotment_4126_ESOPs_16122024.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "11-Nov-2024 10:50:37",
+      "type": "Allotment of Securities",
+      "subject": "Ideaforge Technology Limited has informed the Exchange regarding allotment of 2608 securities pursuant to ESOP/ESPS at its meeting held on November 11, 2024",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/IDEAFORGE_11112024105037_Intimation_Allotment_2608_ESOPs_11112024.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "28-Oct-2024 19:45:30",
+      "type": "Press Release",
+      "subject": "Ideaforge Technology Limited has informed the Exchange regarding a press release dated October 28, 2024, titled \"Press Release-Financial Performance for the quarter and half year ended September 30, 2024, of ideaForge Technology Limited\".",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/IDEAFORGE_28102024194530_Press_Release_30092024.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "14-Oct-2024 14:25:51",
+      "type": "Allotment of Securities",
+      "subject": "Ideaforge Technology Limited has informed the Exchange regarding allotment of 1450 securities pursuant to ESOP/ESPS at its meeting held on October 13, 2024",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/IDEAFORGE_14102024142551_IntimationAllotment1450ESOPs14102024.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "16-Sep-2024 11:31:59",
+      "type": "Allotment of Securities",
+      "subject": "Ideaforge Technology Limited has informed the Exchange regarding allotment of 3936 securities pursuant to ESOP/ESPS at its meeting held on September 16, 2024",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/IDEAFORGE_16092024113159_IntimationAllotment3936ESOPs16092024.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "30-Aug-2024 15:13:53",
+      "type": "Credit Rating",
+      "subject": "Ideaforge Technology Limited has informed the Exchange about Credit Rating",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/IDEAFORGE_30082024151353_CrisilRating.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "13-Aug-2024 11:49:40",
+      "type": "Allotment of Securities",
+      "subject": "Ideaforge Technology Limited has informed the Exchange regarding allotment of 38946 securities pursuant to ESOP/ESPS at its meeting held on August 13, 2024",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/IDEAFORGE_13082024114940_IntimationAllotment38946.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "29-Jul-2024 19:10:23",
+      "type": "Press Release",
+      "subject": "Ideaforge Technology Limited has informed the Exchange regarding a press release dated July 29, 2024, titled \"Press Release-Financial Performance for the quarter ended June 30, 2024, pursuant to Regulation 30 of SEBI (LODR) Regulations, 2015\".",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/IDEAFORGE_29072024191023_Press_Release_30062024.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "29-Jul-2024 19:04:18",
+      "type": "Outcome of Board Meeting",
+      "subject": "Ideaforge Technology Limited has informed the Exchange regarding  Board meeting held on July 29, 2024.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/IDEAFORGE_29072024190418_Outcome_29072024.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "12-Jul-2024 17:17:56",
+      "type": "Allotment of Securities",
+      "subject": "Ideaforge Technology Limited has informed the Exchange regarding allotment of 95954 securities pursuant to ESOP/ESPS at its meeting held on July 12, 2024",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/IDEAFORGE_12072024171756_Intimation.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "14-Jun-2024 12:29:11",
+      "type": "Allotment of Securities",
+      "subject": "Ideaforge Technology Limited has informed the Exchange regarding allotment of 1678 securities pursuant to ESOP/ESPS at its meeting held on Jun 14, 2024",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/IDEAFORGE_14062024122911_Intimation.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "17-May-2024 22:27:37",
+      "type": "Allotment of Securities",
+      "subject": "Ideaforge Technology Limited has informed the Exchange regarding allotment of 3000 securities pursuant to ESOP/ESPS at its meeting held on May 17, 2024",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/IDEAFORGE_17052024222737_Intimation.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "14-May-2024 20:51:49",
+      "type": "Press Release",
+      "subject": "Ideaforge Technology Limited has informed the Exchange regarding a press release dated May 14, 2024, titled \"Press Release-Financial Performance for the quarter and year ended March 31, 2024, pursuant to Regulation 30 of SEBI (LODR) Regulations, 2015\".",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/IDEAFORGE_14052024205149_PressRelease.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "14-May-2024 20:36:52",
+      "type": "Outcome of Board Meeting",
+      "subject": "Ideaforge Technology Limited has informed the Exchange regarding  Board meeting held on May 14, 2024.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/IDEAFORGE_14052024203652_Outcome.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "05-Feb-2024 20:12:14",
+      "type": "Press Release",
+      "subject": "Ideaforge Technology Limited has informed the Exchange regarding a press release dated February 05, 2024, titled \"ideaForge Technology reports robust Q3 FY24 Result\".",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/IDEAFORGE_05022024201214_Press_Release_05022024.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "02-Feb-2024 18:15:22",
+      "type": "Allotment of Securities",
+      "subject": "Ideaforge Technology Limited has informed the Exchange regarding allotment of 9492 securities pursuant to ESOP/ESPS at its meeting held on February 02, 2024",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/IDEAFORGE_02022024181522_Intimation_Allotment_9492_ESOPs_02022024.pdf",
+      "has_xbrl": false
+    }
+  ]
+}

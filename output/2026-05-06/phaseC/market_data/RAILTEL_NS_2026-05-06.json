@@ -1,0 +1,18 @@
+{
+  "ticker": "RAILTEL.NS",
+  "name": "RailTel Corporation of India Limited",
+  "exchange": "NSI",
+  "currency": "INR",
+  "price": 340.5,
+  "day_change_pct": 1.32,
+  "52w_high": 478.95,
+  "52w_low": 245.0,
+  "return_1m": NaN,
+  "return_3m": NaN,
+  "return_1y": NaN,
+  "volume": 3602967,
+  "market_cap": 109279526912,
+  "sector": "Communication Services",
+  "industry": "Telecom Services",
+  "fetched_at": "2026-05-06T05:56:17.677770+05:30"
+}

@@ -1,0 +1,12 @@
+{
+  "fetched_at": "2026-05-05T00:04:21.080388+05:30",
+  "ticker": "NIFTY",
+  "underlying_value": null,
+  "timestamp": null,
+  "expiry_dates": [],
+  "pcr": null,
+  "max_pain": null,
+  "atm_iv": null,
+  "top_oi_strikes": {},
+  "option_chain": []
+}

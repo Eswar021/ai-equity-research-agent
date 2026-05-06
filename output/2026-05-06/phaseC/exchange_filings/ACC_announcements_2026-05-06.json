@@ -1,0 +1,358 @@
+{
+  "ticker": "ACC",
+  "fetched_at": "2026-05-06T05:48:38.817275+05:30",
+  "total_returned": 50,
+  "material_only": true,
+  "announcements": [
+    {
+      "date": "30-Apr-2026 17:48:34",
+      "type": "Dividend",
+      "subject": "ACC Limited has informed the Exchange that Board of Directors at its meeting held on April 30, 2026, recommended Final Dividend of Rs. 7.50 per equity share subject to approval of members at the ensuing Annual General Meeting.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/ACC_1_30042026174438_Outcome_of_BM_30042026.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "30-Apr-2026 17:40:08",
+      "type": "Press Release",
+      "subject": "ACC Limited has informed the Exchange regarding a press release dated April 30, 2026, titled \"ACC Delivered Sustained Q4 FY 26 Performance\".",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/ACC_1_30042026173952_Press_Release_Financial_Results_30042026.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "30-Apr-2026 17:23:51",
+      "type": "Outcome of Board Meeting",
+      "subject": "ACC Limited has submitted to the Exchange, the financial results for the quarter and financial year ended March 31, 2026.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/ACC_1_30042026172301_Outcome_of_BM_30042026.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "28-Jan-2026 14:31:27",
+      "type": "Change in Management",
+      "subject": "ACC Limited has informed the Exchange about outcome of Board Meeting held on 28th January 2026 inter-alia containing the change in Senior Management Personnel.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/ACC_1_28012026143120_Outcome_ACC_28012026_1.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "28-Jan-2026 14:27:13",
+      "type": "Press Release",
+      "subject": "ACC Limited has informed the Exchange regarding a press release dated January 28, 2026, titled \"ACC delivers robust performance in Q3 FY26\".",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/ACC_1_28012026142706_Combined_Media_Release.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "28-Jan-2026 14:24:45",
+      "type": "Outcome of Board Meeting",
+      "subject": "ACC Limited has submitted to the Exchange, the Unaudited financial results for the quarter and nine months ended on December 31, 2025.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/ACC_1_28012026142337_Outcome_ACC_28012026_1.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "22-Dec-2025 20:48:09",
+      "type": "Amalgamation/Merger",
+      "subject": "ACC Limited has informed the Exchange about the approval of Scheme of Amalgamation of ACC Limited (Amalgamating Company) with Ambuja Cements Limited (Amalgamated Company).",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/ACC_1_22122025204733_ACC_Outcome_of_BM_22122025_Final.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "02-Dec-2025 19:15:06",
+      "type": "Change in Director(s)",
+      "subject": "ACC Limited has informed the Exchange regarding Change in Director(s) of the company.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/ACC_1_02122025191429_Cessation_of_Ameera_Shah.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "01-Dec-2025 19:49:47",
+      "type": "Change in Director(s)",
+      "subject": "ACC Limited has informed the Exchange regarding Change in Director(s) of the company.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/ACC_1_01122025194913_Change_in_Director_STx.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "21-Nov-2025 22:37:01",
+      "type": "Change in Management",
+      "subject": "ACC Limited has informed the exchange regarding the change in management (Key Managerial Personnel) of the Company.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/ACC_1_21112025223600_Outcome_BM.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "14-Nov-2025 08:50:02",
+      "type": "Press Release",
+      "subject": "ACC Limited has informed the Exchange regarding a press release dated November 14, 2025, titled \" \" Adani Cement is the First Indian Cement Company to become a Taskforce on Nature-related Financial Disclosures (TNFD) Adopter\"\".",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/ACC_1_14112025084932_Cover_Letter.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "12-Nov-2025 08:29:50",
+      "type": "Press Release",
+      "subject": "ACC Limited has informed the Exchange regarding a press release dated November 12, 2025, titled \"\"Adani Cement and Coolbrook to deploy world s first commercial RotoDynamic Heater to advance cement decarbonization\".\".",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/ACC_1_12112025082850_Cover_Letter.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "31-Oct-2025 13:39:55",
+      "type": "Press Release",
+      "subject": "ACC Limited has informed the Exchange regarding a press release dated October 31, 2025, titled \"ACC delivers remarkable performance in Q2 & H1 FY 26\".",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/ACC_1_31102025133946_Press_Release_Financial_Results.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "31-Oct-2025 12:57:58",
+      "type": "Outcome of Board Meeting",
+      "subject": "ACC Limited has submitted to the Exchange, the financial results for the period ended September 30, 2025.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/ACC_1_31102025125639_Outcome_ACC_Q2.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "24-Jul-2025 13:41:43",
+      "type": "Press Release",
+      "subject": "ACC Limited has informed the Exchange regarding a press release dated July 24, 2025, titled \"ACC reports robust quarterly performance\".",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/ACC_1_24072025134104_Disclosure_Media_release_Q1_30062025.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "24-Jul-2025 13:17:47",
+      "type": "Outcome of Board Meeting",
+      "subject": "ACC Limited has submitted to the Exchange, the financial results for the period ended June 30, 2025.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/ACC_1_24072025131721_Outcome_of_BM_24072025_Final.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "08-Jul-2025 16:15:27",
+      "type": "Credit Rating",
+      "subject": "ACC Limited has informed the Exchange about Credit Rating",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/ACC_1_08072025161504_ACC_Intimation_ESG_Ratings.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "24-Apr-2025 14:48:08",
+      "type": "Change in Director(s)",
+      "subject": "ACC Limited has informed the Exchange regarding Change in Director(s) of the company.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/ACC_1_24042025144711_ACC_Outcome.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "24-Apr-2025 14:44:48",
+      "type": "Press Release",
+      "subject": "ACC Limited has informed the Exchange regarding a press release dated April 24, 2025, titled \" ACC delivers highest ever annual PAT @ Rs. 2,402 Crore, up by 3% YoY \".",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/ACC_1_24042025144413_ACC_MediaReleaseQ4.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "24-Apr-2025 14:38:27",
+      "type": "Dividend",
+      "subject": "ACC Limited has informed the Exchange that Board of Directors at its meeting held on April 24, 2025, recommended Final Dividend of Rs. 7.50 per equity share subject to the approval of shareholders.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/ACC_1_24042025143805_ACC_Outcome.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "24-Apr-2025 14:34:53",
+      "type": "Outcome of Board Meeting",
+      "subject": "ACC Limited has informed the Exchange regarding Outcome of Board Meeting held on April 24, 2025 for approval of Audited Financial Results for the quarter and financial year ended 31.03.2025.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/ACC_1_24042025143204_ACC_Outcome.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "28-Mar-2025 19:08:27",
+      "type": "Change in Management",
+      "subject": "ACC Limited has informed the Exchange about change in Management",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/ACC_1_28032025190607_ACC_Outcome.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "28-Mar-2025 19:04:46",
+      "type": "Change in Director(s)",
+      "subject": "ACC Limited has informed the Exchange regarding Change in Director(s) of the company.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/ACC_1_28032025190424_ACC_Outcome.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "28-Mar-2025 19:02:32",
+      "type": "Outcome of Board Meeting",
+      "subject": "ACC Limited has informed the Exchange regarding Outcome of Board Meeting held on March 28, 2025.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/ACC_1_28032025185949_ACC_Outcome.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "27-Jan-2025 13:46:09",
+      "type": "Press Release",
+      "subject": "\"ACC Limited has informed the Exchange regarding a press release dated January 27, 2025, titled \"Media Release on  ACC demonstrates remarkable performance in Q3 FY 25 \".",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/ACC_1_27012025134551_ACC_MediaReleaseQ3.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "27-Jan-2025 13:38:44",
+      "type": "Outcome of Board Meeting",
+      "subject": "ACC Limited has submitted to the Exchange, the financial results for the period ended December 31, 2024.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/ACC_1_27012025133751_ACC_OutcomeQ3.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "24-Oct-2024 13:27:53",
+      "type": "Press Release",
+      "subject": "ACC Limited has informed the Exchange regarding a press release dated October 24, 2024, titled \"Media Release on \"ACC achieves sustainable performance in Q2 FY 25.\"",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/ACC_24102024132753_ACC_MediaRelease_Final.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "29-Jul-2024 17:02:42",
+      "type": "Press Release",
+      "subject": "ACC Limited has informed the Exchange regarding a press release dated July 29, 2024, titled   ACC achieved another steady quarterly performance .",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/ACC_29072024170242_MediaRelease.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "25-Apr-2024 14:58:41",
+      "type": "Dividend Updates",
+      "subject": "ACC Limited has informed the Exchange about recommendation of Dividend for the FY 2023-24",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/ACC_25042024145841_ACCBMOUTCOME.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "25-Apr-2024 14:47:37",
+      "type": "Press Release",
+      "subject": "ACC Limited has informed the Exchange regarding a press release dated April 25, 2024, titled \"ACC delivers lifetime highest annualized PAT \".",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/ACC_25042024144737_Mediareleaseupdated.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "01-Apr-2024 12:28:05",
+      "type": "Press Release",
+      "subject": "ACC Limited has informed the Exchange regarding a press release dated April 01, 2024, titled \"Submission of Media Release on the subject - ACC, Ambuja are  India s Most Trusted Cement Brands .\".",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/ACC_01042024122806_ACCSEletterMediareleasesigned.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "18-Mar-2024 10:48:14",
+      "type": "Press Release",
+      "subject": "ACC Limited has informed the Exchange regarding a press release dated March 18, 2024, titled \"Submission of Media Release on  Geoclean, the waste management arm of ACC and Ambuja Cements Launches Two New Innovative Facilities, Providing Impetus to Sustainable Waste Management .",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/ACC_18032024104814_MediareleaseFINAL.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "25-Jan-2024 14:16:57",
+      "type": "Press Release",
+      "subject": "ACC Limited has informed the Exchange regarding a press release dated January 25, 2024, titled \"Submission of Media Release on the Unaudited Financial Results (Standalone & Consolidated) for the quarter and nine months ended 31st December, 2023.\".",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/ACC_25012024141657_ACCMediaReleaseUnderReg30.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "25-Jan-2024 14:13:08",
+      "type": "Outcome of Board Meeting",
+      "subject": "ACC Limited has informed the Exchange regarding  Board meeting held on January 25, 2024.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/ACC_25012024141308_ACCBMOutcomeReg30.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "08-Jan-2024 09:00:22",
+      "type": "Press Release",
+      "subject": "ACC Limited has informed the Exchange regarding a press release dated January 08, 2024, titled \"ACC Strengthens Market Leadership with Acquisition of Asian Concretes & Cements Pvt Ltd at an Enterprise Value of Rs. 775 Cr.\".",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/ACC_08012024090022_Media_Release.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "08-Jan-2024 08:53:15",
+      "type": "Acquisition",
+      "subject": "ACC Limited has informed the Exchange about Acquisition of Asian Concretes and Cement Private Limited",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/ACC_08012024085315_Acquisition.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "26-Oct-2023 13:54:59",
+      "type": "Press Release",
+      "subject": "ACC Limited has informed the Exchange  press release regarding unaudited financial results (standalone and consolidated) dated 26th October 2023.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/ACC_26102023135459_Signed_Media_Release_ACC.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "26-Oct-2023 13:35:16",
+      "type": "Outcome of Board Meeting",
+      "subject": "ACC Limited has informed the Exchange regarding Outcome of Board Meeting held on October 26, 2023.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/ACC_26102023133516_Signed_Reg_30.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "14-Sep-2023 08:46:13",
+      "type": "Press Release",
+      "subject": "ACC Limited has informed the Exchange regarding a Media release dated September 14, 2023, titled \"Media Release - Commencement of commercial production ofClinker at its new cutting-edge Ametha Cement Plant in Madhya Pradesh\".",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/ACC_14092023084613_Reg_30_Media_Release.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "27-Jul-2023 18:02:30",
+      "type": "Press Release",
+      "subject": "ACC Limited has informed the Exchange regarding a press release dated July 27, 2023, titled \"Media Release- Outcome of the Board Meeting for the quarter ended June 30, 2023 -SEBI (Listing Obligations and Disclosure Requirements) Regulations, 2015\".",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/ACC_27072023180230_Media_release_upload.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "27-Jul-2023 15:07:32",
+      "type": "Outcome of Board Meeting",
+      "subject": "ACC Limited has informed the Exchange regarding Outcome of Board Meeting held on July 27, 2023.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/ACC_27072023150732_Reg_30_signed.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "09-May-2023 11:27:45",
+      "type": "Credit Rating",
+      "subject": "ACC Limited has informed the Exchange about Credit Rating",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/ACC_09052023112745_ACC_credit_rating_signed.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "27-Apr-2023 20:33:37",
+      "type": "Press Release",
+      "subject": "ACC Limited has informed the Exchange regarding a press release dated April 27, 2023, titled \"Outcome of the Board Meeting for the quarter and financial year ended March 31, 2023\".",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/ACC_27042023203337_ACCMediaRelease.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "27-Apr-2023 20:25:31",
+      "type": "Dividend",
+      "subject": "ACC Limited has informed the Exchange that Board of Directors at its meeting held on April 27, 2023, recommended Final Dividend of 9.25 per equity share.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/ACC_27042023202531_ACCOutcomeOfBoardMeeting.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "27-Apr-2023 20:15:27",
+      "type": "Dividend Updates",
+      "subject": "ACC Limited has informed the Exchange about Dividend Updates",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/ACC_27042023201527_ACCOutcomeOfBoardMeeting.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "27-Apr-2023 20:08:15",
+      "type": "Outcome of Board Meeting",
+      "subject": "ACC Limited has informed the Exchange regarding  Board meeting held on April 27, 2023.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/ACC_27042023200815_ACCOutcomeOfBoardMeeting.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "12-Apr-2023 12:50:23",
+      "type": "Press Release",
+      "subject": "ACC Limited has informed the Exchange regarding a press release dated April 12, 2023, titled \"Ambuja Ranked No.1 and ACC at No.2 in  India s Most Trusted Cement Brands 2023  by TRA Research\".",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/ACC_12042023125024_ACCMediaRelease.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "02-Feb-2023 14:22:44",
+      "type": "Press Release",
+      "subject": "ACC Limited has informed the Exchange regarding a press release dated February 02, 2023, titled \"Media Note\".",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/ACC_02022023142244_ACCMediaRelease.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "31-Jan-2023 21:09:37",
+      "type": "Press Release",
+      "subject": "ACC Limited has informed the Exchange regarding a press release dated January 31, 2023, titled \"Announcement under Regulation 30 (LODR)- Press Release / Media Release\".",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/ACC_31012023210937_ACCMediaReleaseUnauditedFinancialResultsDecember2022.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "03-Jan-2023 12:12:09",
+      "type": "Press Release",
+      "subject": "Media Release- ACC ECOMaxX",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/ACC_03012023121209_media.pdf",
+      "has_xbrl": false
+    }
+  ]
+}

@@ -1,0 +1,358 @@
+{
+  "ticker": "EVEREADY",
+  "fetched_at": "2026-05-06T05:55:53.458810+05:30",
+  "total_returned": 50,
+  "material_only": true,
+  "announcements": [
+    {
+      "date": "30-Apr-2026 16:17:23",
+      "type": "Press Release",
+      "subject": "Eveready Industries India Limited has informed the Exchange regarding a press release dated April 30, 2026, titled \"Press Release\".",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/EVEREADY_30042026161654_SEIntimation_Press_Release.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "30-Apr-2026 15:57:46",
+      "type": "Dividend",
+      "subject": "Eveready Industries India Limited has informed the Exchange that Board of Directors at its meeting held on April 30, 2026, recommended Final Dividend of Rs. 2.50 per equity share.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/EVEREADY_30042026155441_SEIntimation_BMOutcome.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "30-Apr-2026 15:57:46",
+      "type": "Outcome of Board Meeting",
+      "subject": "Eveready Industries India Limited has submitted to the Exchange, the financial results for the period ended March 31, 2026.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/EVEREADY_30042026155254_SEIntimation_BMOutcome.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "22-Apr-2026 18:26:09",
+      "type": "Press Release",
+      "subject": "Eveready Industries India Limited has informed the Exchange regarding a press release dated April 22, 2026, titled \"Eveready Commissions India s Only Operating Alkaline Battery Facility in Jammu\".",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/EVEREADY_22042026182533_SEIntimation_Press_Release.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "05-Feb-2026 17:43:43",
+      "type": "Press Release",
+      "subject": "Eveready Industries India Limited has informed the Exchange regarding a press release dated February 05, 2026, titled \"Press Release\".",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/EVEREADY_05022026174149_SEIntimationPressRelease05022026.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "05-Feb-2026 17:19:30",
+      "type": "Outcome of Board Meeting",
+      "subject": "Eveready Industries India Limited has submitted to the Exchange, the financial results for the period ended December 31, 2025.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/EVEREADY_05022026171419_BMOutcome05022026.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "05-Feb-2026 17:19:30",
+      "type": "Outcome of Board Meeting",
+      "subject": "Eveready Industries India Limited has informed the Exchange regarding Outcome of Board Meeting held on February 05, 2026.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/EVEREADY_05022026171535_BMOutcome05022026.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "05-Nov-2025 16:26:53",
+      "type": "Change in Director(s)",
+      "subject": "Eveready Industries India Limited has informed the Exchange regarding Change in Director(s) of the company.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/EVEREADY_05112025162636_SEIntimationBMOutcome_5thNov25.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "05-Nov-2025 16:23:35",
+      "type": "Outcome of Board Meeting",
+      "subject": "Eveready Industries India Limited has submitted to the Exchange, the financial results for the period ended September 30, 2025.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/EVEREADY_05112025162228_SEIntimationBMOutcome_5thNov25.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "01-Nov-2025 13:12:56",
+      "type": "Credit Rating",
+      "subject": "Eveready Industries India Limited has informed the Exchange about Credit Rating",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/EVEREADY_01112025131220_CreditRating.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "18-Oct-2025 10:20:36",
+      "type": "Credit Rating",
+      "subject": "Eveready Industries India Limited has informed the Exchange about Credit Rating",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/EVEREADY_18102025101951_SEIntimation18102025.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "05-Aug-2025 14:07:56",
+      "type": "Outcome of Board Meeting",
+      "subject": "Eveready Industries India Limited has submitted to the Exchange, the financial results for the period ended Jun 30, 2025.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/EVEREADY_05082025140731_OutcomeoftheMeeting05082025.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "09-May-2025 17:05:28",
+      "type": "Press Release",
+      "subject": "Eveready Industries India Limited has informed the Exchange regarding a press release dated May 09, 2025, titled \"Press Release\".",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/EVEREADY_09052025170518_SE_Press_Release.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "09-May-2025 16:44:47",
+      "type": "Outcome of Board Meeting",
+      "subject": "Eveready Industries India Limited has informed the Exchange regarding Outcome of Board Meeting held on May 09, 2025.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/EVEREADY_09052025164117_SE_Outcome.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "09-May-2025 16:44:47",
+      "type": "Dividend",
+      "subject": "Eveready Industries India Limited has informed the Exchange that Board of Directors at its meeting held on May 09, 2025, recommended Final Dividend of Rs. 1.50 per equity share.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/EVEREADY_09052025164200_SE_Outcome.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "05-Feb-2025 14:28:40",
+      "type": "Change in Director(s)",
+      "subject": "Eveready Industries India Limited has informed the Exchange regarding Change in Director(s) of the company.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/EVEREADY_05022025142829_2_ChangeinDirector.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "02-Dec-2024 17:27:40",
+      "type": "Change in Director(s)",
+      "subject": "Eveready Industries India Limited has informed the Exchange regarding Change in Director(s) of the company.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/EVEREADY_02122024172740_SEIntimationSharadKumar02122024.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "12-Nov-2024 15:32:05",
+      "type": "Press Release",
+      "subject": "Eveready Industries India Limited has informed the Exchange regarding a press release dated November 12, 2024, titled \"Press Release\".",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/EVEREADY_12112024153205_3_SE_Press_Release.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "03-Aug-2024 20:01:12",
+      "type": "Change in Management",
+      "subject": "Eveready Industries India Limited has informed the Exchange about change in Management",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/EVEREADY_03082024200112_Mr_Basha.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "03-Aug-2024 14:03:39",
+      "type": "Press Release",
+      "subject": "Eveready Industries India Limited has informed the Exchange regarding a press release dated August 03, 2024, titled \"Press Release\".",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/EVEREADY_03082024140339_2SE_Press_Release.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "01-Aug-2024 18:50:32",
+      "type": "Credit Rating",
+      "subject": "Eveready Industries India Limited has informed the Exchange about Credit Rating",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/EVEREADY_01082024185032_CreditRatings.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "26-Apr-2024 15:53:36",
+      "type": "Press Release",
+      "subject": "Eveready Industries India Limited has informed the Exchange regarding a press release dated April 26, 2024, titled \"Press Release\".",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/EVEREADY_26042024155336_PressRelease.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "26-Apr-2024 15:38:26",
+      "type": "Dividend Updates",
+      "subject": "Eveready Industries India Limited has informed the Exchange about Dividend Updates",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/EVEREADY_26042024153826_SE_Outcome.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "07-Feb-2024 10:58:10",
+      "type": "Press Release",
+      "subject": "Eveready Industries India Limited has informed the Exchange regarding a press release dated February 06, 2024, titled \"Q3 & 9M FY24 xPress Release\".",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/EVEREADY_07022024105810_SE_PressRelease.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "08-Jan-2024 17:26:39",
+      "type": "Change in Director(s)",
+      "subject": "Eveready Industries India Limited has informed the Exchange regarding Change in Director(s) of the company.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/EVEREADY_08012024172639_SE_AppointmentofSK_1_.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "07-Nov-2023 14:24:50",
+      "type": "Press Release",
+      "subject": "Eveready Industries India Limited has informed the Exchange regarding a press release dated November 07, 2023, titled \"Quarter 2 Press Release\".",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/EVEREADY_07112023142450_SEL_PressRelease.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "23-Sep-2023 13:08:08",
+      "type": "Credit Rating",
+      "subject": "Eveready Industries India Limited has informed the Exchange about Credit Rating",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/EVEREADY_23092023130808_creditrating.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "09-May-2023 16:18:52",
+      "type": "Press Release",
+      "subject": "Eveready Industries India Limited has informed the Exchange regarding a press release dated May 09, 2023, titled \"Press Release\".",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/EVEREADY_09052023161852_PressRelease_Q4FY23.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "09-May-2023 15:53:03",
+      "type": "Dividend Updates",
+      "subject": "Eveready Industries India Limited has informed the Exchange about Dividend Updates",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/EVEREADY_09052023155303_SELet_no_dividend.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "09-May-2023 15:49:51",
+      "type": "Outcome of Board Meeting",
+      "subject": "Eveready Industries India Limited has informed the Exchange regarding Outcome of Board Meeting held on May 09, 2023.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/EVEREADY_09052023154951_OutcomeBM_09052023.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "04-May-2023 18:58:34",
+      "type": "Board Meeting Intimation",
+      "subject": "Board Meeting on 9.5.2023",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/EVEREADY_04052023185834_SEL_BM_Notice.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "04-May-2023 15:42:08",
+      "type": "Credit Rating",
+      "subject": "Eveready Industries India Limited has informed the Exchange about Credit Rating",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/EVEREADY_04052023154208_Credit_Ratings.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "28-Apr-2023 11:48:49",
+      "type": "Board Meeting Intimation",
+      "subject": "Board Meeting 09.07.2023",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/EVEREADY_28042023114849_SEL_BM_Notice.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "07-Feb-2023 17:19:36",
+      "type": "Press Release",
+      "subject": "Eveready Industries India Limited has informed the Exchange regarding a press release dated February 07, 2023, titled \"Press Release\".",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/EVEREADY_07022023171936_Pressrelease_Q3_FY23.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "07-Feb-2023 16:35:44",
+      "type": "Outcome of Board Meeting",
+      "subject": "Eveready Industries India Limited has informed the Exchange regarding  Board meeting held on February 07, 2023.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/EVEREADY_07022023163544_OutcomeofBoardMeeting.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "28-Oct-2022 15:41:51",
+      "type": "Press Release",
+      "subject": "Eveready Industries India Limited has informed the Exchange about press release dated 28-Oct-2022 titled Press Release",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/EVEREADY_28102022154151_Press_Release_Q2_FY23.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "28-Oct-2022 15:27:15",
+      "type": "Outcome of Board Meeting",
+      "subject": "Eveready Industries India Limited  has informed the Exchange about Board Meeting held on 28-Oct-2022 to consider financial statements for the period ended September 2022",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/EVEREADY_28102022152715_OutcomeofBoardMeeting_Q2_2022.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "01-Aug-2022 14:17:30",
+      "type": "Press Release",
+      "subject": "Eveready Industries India Limited has informed the Exchange about press release dated 01-Aug-2022 titled Press Release",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/EVEREADY_01082022141730_LetterPressRelease.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "01-Aug-2022 13:37:18",
+      "type": "Outcome of Board Meeting",
+      "subject": "Eveready Industries India Limited  has informed the Exchange about Board Meeting held on 01-Aug-2022 to consider financial statements for the period ended June 2022",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/EVEREADY_01082022133718_Eveready.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "06-Jul-2022 15:01:45",
+      "type": "Open Offer",
+      "subject": "JM Financial  Limited has submitted to  the Exchange a copy of post offer advertisement in accordance with Regulation 18(12) of the Securities and Exchange Board of India (Substantial Acquisition of Shares and Takeovers) Regulations, 2011 (as amended) of the company.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/EVEREADY_06072022150145_Eveready.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "06-Jun-2022 14:42:21",
+      "type": "Credit Rating",
+      "subject": "Eveready Industries India Limited has informed the Exchange about Upgrade of Credit Rating",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/EVEREADY_06062022144221_SELetterCreditRatingJune06,2022.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "01-Jun-2022 17:19:42",
+      "type": "Open Offer",
+      "subject": "Eveready Industries India Limited has informed the Exchange regarding Recommendations of the Committee of the Independent Directors of the Company  on the Open Offer for the acquisition of up to 1,88,98,688 fully paid up equity shares of the Company having face value of INR 5 each  representing 26.00% of the expanded voting share capital of the Company, made by Puran Associates Private Limited (Acquirer 1), VIC Enterprises Private Limited (Acquirer 2), M.B. Finmart Private Limited (Acquirer 3), together with, Gyan Enterprises Private Limited (PAC 1) and Chowdry Associates (PAC 2)  in their capacity as persons acting in concert, to the public shareholders of the Company  under Regulation 26(7) of the SEBI (Substantial Acquisition of Shares and Takeovers) Regulations. 2011.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/EVEREADY_01062022171942_eveready1.zip",
+      "has_xbrl": false
+    },
+    {
+      "date": "25-Apr-2022 19:36:58",
+      "type": "Outcome of Board Meeting",
+      "subject": "Eveready Industries India Limited  has informed the Exchange about Board Meeting held on 25-Apr-2022 to consider financial statements for the period ended March 2022",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/EVEREADY_25042022193653_SEResult.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "25-Apr-2022 18:10:36",
+      "type": "Dividend",
+      "subject": "Dear Sirs,Further to our letter dated April 14, 2022 regarding Audited Standalone and Consolidated Financial Results of the Company, for the quarter and year ended March 31, 2022, which were taken on record by the Board of Directors at its meeting held today, we write to inform you that no Dividend has been recommended by the Board of Directors for the financial year ended March 31, 2022.Thanking you,",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/EVEREADY_25042022181034_SEDividend.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "08-Mar-2022 17:13:53",
+      "type": "Open Offer",
+      "subject": "JM Financial Limited has informed the Exchange about Detailed Public Statement for Open Offer to Public Shareholders of Eveready Industries India Limited",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/EVEREADY_08032022164550_DPS_Eveready_Industries_India_Limited.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "03-Mar-2022 13:11:02",
+      "type": "Open Offer",
+      "subject": "JM Financial Limited ('Manager to the Offer') has submitted to the Exchange a copy of public announcement for the Open Offer to the public shareholders of Eveready Industries India Limited ('Target Company')",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/EVEREADY_28022022162332_Eveready.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "02-Mar-2022 12:03:26",
+      "type": "Open Offer",
+      "subject": "JM Financial Limited ('Manager to the Offer') has submitted to the Exchange a copy of public announcement for the Open Offer to the public shareholders of Eveready Industries India Limited ('Target Company')",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/EVEREADY_02032022120135_EvereadyIndustriesIndiaLtd_PublicAnnouncement.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "04-Feb-2022 19:31:43",
+      "type": "Financial Results Updates",
+      "subject": "UNAUDITED FINANCIAL RESULTS FOR THE QUARTER AND NINE MONTHS ENDED DECEMBER 31, 2021.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/EVEREADY_04022022193143_SEResults04022022.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "04-Feb-2022 19:10:26",
+      "type": "Financial Results Updates",
+      "subject": "UNAUDITED FINANCIAL RESULTS FOR THE QUARTERAND NINE MONTHS ENDED DECEMBER 31, 2021.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/EVEREADY_04022022191026_SEResults04022022.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "10-Nov-2021 15:25:27",
+      "type": "Outcome of Board Meeting",
+      "subject": "Eveready Industries India Limited has informed the Exchange regarding  Board meeting held on November 10, 2021.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/EVEREADY_10112021152527_SELET10112021.pdf",
+      "has_xbrl": false
+    }
+  ]
+}

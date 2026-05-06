@@ -1,0 +1,358 @@
+{
+  "ticker": "SONAMLTD",
+  "fetched_at": "2026-05-06T05:53:45.065320+05:30",
+  "total_returned": 50,
+  "material_only": true,
+  "announcements": [
+    {
+      "date": "01-Apr-2026 17:53:21",
+      "type": "Outcome of Board Meeting",
+      "subject": "SONAM LIMITED has informed the Exchange regarding Outcome of Board Meeting held on April 01, 2026.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SONAMCLOCK_01042026175107_Outcomeofbm_01042026.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "27-Mar-2026 15:06:01",
+      "type": "Change in Director(s)",
+      "subject": "SONAM LIMITED has informed the Exchange regarding Change in Director(s) of the company.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SONAMCLOCK_27032026150554_resignationofid_sonam.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "27-Mar-2026 15:00:10",
+      "type": "Outcome of Board Meeting",
+      "subject": "SONAM LIMITED has informed the Exchange regarding Outcome of Board Meeting held on March 27, 2026.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SONAMCLOCK_27032026150002_resignationofid_sonam.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "17-Jan-2026 13:59:30",
+      "type": "Outcome of Board Meeting",
+      "subject": "SONAM LIMITED has informed the Exchange regarding  Board meeting held on January 17, 2026.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SONAMCLOCK_17012026135922_outcome_17012026.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "17-Jan-2026 13:58:48",
+      "type": "Outcome of Board Meeting",
+      "subject": "SONAM LIMITED has submitted to the Exchange, the financial results for the period ended December 31, 2025.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SONAMCLOCK_17012026135813_outcome_17012026.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "29-Dec-2025 17:13:54",
+      "type": "Change in Director(s)",
+      "subject": "SONAM LIMITED has informed the Exchange regarding Change in Director(s) of the company.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SONAMCLOCK_29122025171344_outcomeofbm_291225_revised.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "29-Dec-2025 17:12:52",
+      "type": "Outcome of Board Meeting",
+      "subject": "SONAM LIMITED has informed the Exchange regarding  Board meeting held on December 29, 2025.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SONAMCLOCK_29122025171157_outcomeofbm_291225_revised.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "29-Dec-2025 16:42:04",
+      "type": "Change in Director(s)",
+      "subject": "SONAM LIMITED has informed the Exchange regarding Change in Director(s) of the company.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SONAMCLOCK_29122025164153_outcomeofbm_291225.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "29-Dec-2025 16:40:04",
+      "type": "Outcome of Board Meeting",
+      "subject": "SONAM LIMITED has informed the Exchange regarding  Board meeting held on December 29, 2025.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SONAMCLOCK_29122025163941_outcomeofbm_291225.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "04-Nov-2025 17:13:17",
+      "type": "Outcome of Board Meeting",
+      "subject": "SONAM LIMITED has informed the Exchange regarding  Board meeting held on November 04, 2025.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SONAMCLOCK_04112025171300_outcomeofbm04112025.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "18-Oct-2025 12:45:11",
+      "type": "Outcome of Board Meeting",
+      "subject": "SONAM LIMITED has submitted to the Exchange, the financial results for the period ended September 30, 2025.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SONAMCLOCK_18102025124307_outcomeofbm_18102025.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "30-Sep-2025 17:58:20",
+      "type": "Change in Director(s)",
+      "subject": "SONAM LIMITED has informed the Exchange regarding Change in Director(s) of the company.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SONAMCLOCK_30092025175810_outcome_ofbm_300925.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "30-Sep-2025 17:56:32",
+      "type": "Outcome of Board Meeting",
+      "subject": "SONAM LIMITED has informed the Exchange regarding  Board meeting held on September 30, 2025.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SONAMCLOCK_30092025175608_outcome_ofbm_300925.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "14-Jul-2025 15:20:58",
+      "type": "Outcome of Board Meeting",
+      "subject": "SONAM LIMITED has submitted to the Exchange, the financial results for the period ended Jun 30, 2025.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SONAMCLOCK_14072025151811_sonamoutcomeofbm_14072025.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "17-Jun-2025 16:11:12",
+      "type": "Outcome of Board Meeting",
+      "subject": "SONAM LIMITED has informed the Exchange regarding Outcome of Board Meeting held on Jun 17, 2025.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SONAMCLOCK_17062025161057_appointment_IA.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "05-Jun-2025 16:56:51",
+      "type": "Outcome of Board Meeting",
+      "subject": "SONAM LIMITED has informed the Exchange regarding  Board meeting held on Jun 05, 2025.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SONAMCLOCK_05062025165643_outcomeofbm_05062025.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "05-Jun-2025 16:55:36",
+      "type": "Outcome of Board Meeting",
+      "subject": "SONAM LIMITED has informed the Exchange regarding Outcome of Board Meeting held on Jun 05, 2025.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SONAMCLOCK_05062025165530_outcomeofbm_05062025.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "02-Jun-2025 15:24:18",
+      "type": "Outcome of Board Meeting",
+      "subject": "SONAM LIMITED has informed the Exchange regarding  revised outcome of Board meeting held on May 31, 2025.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SONAMCLOCK_02062025152336_SONAMREVISEDBM31052025.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "31-May-2025 16:24:03",
+      "type": "Outcome of Board Meeting",
+      "subject": "SONAM LIMITED has informed the Exchange regarding  Board meeting held on May 31, 2025.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SONAMCLOCK_31052025162247_SONAMRESIGNBM31052025.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "10-May-2025 10:17:09",
+      "type": "Outcome of Board Meeting",
+      "subject": "SONAM LIMITED has informed the Exchange regarding Outcome of Board Meeting held on May 09, 2025.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SONAMCLOCK_10052025100545_Outcomeofbm_09052025_compressed.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "09-May-2025 14:41:52",
+      "type": "Outcome of Board Meeting",
+      "subject": "SONAM LIMITED has informed the Exchange regarding  Board meeting held on May 09, 2025.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SONAMCLOCK_09052025144141_Outcomeofbm_09052025.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "30-Jan-2025 14:24:30",
+      "type": "Outcome of Board Meeting",
+      "subject": "SONAM LIMITED has informed the Exchange regarding  Board meeting held on January 30, 2025.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SONAMCLOCK_30012025142341_SONAMOUTCOMEFINANCIAL31122024.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "15-Oct-2024 14:22:22",
+      "type": "Outcome of Board Meeting",
+      "subject": "SONAM LIMITED has informed the Exchange regarding  Board meeting held on October 15, 2024.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SONAMLTD_15102024142222_sonamresult15102024.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "15-Oct-2024 14:21:24",
+      "type": "Outcome of Board Meeting",
+      "subject": "SONAM LIMITED has submitted to the Exchange, the financial results for the period ended September 30, 2024.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SONAMLTD_15102024142124_sonamresult15102024.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "31-Aug-2024 12:23:19",
+      "type": "Outcome of Board Meeting",
+      "subject": "SONAM LIMITED has informed the Exchange regarding  Board meeting held on August 31, 2024.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SONAMLTD_31082024122319_outcomebm_sonam.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "22-Aug-2024 10:32:01",
+      "type": "Reply to Clarification- Financial results",
+      "subject": "The Exchange had sought clarification from SONAM LIMITED for the quarter ended 30-Jun-2024 with respect to Regulation 33 of the SEBI (Listing Obligations and Disclosure Requirements) Regulations, 2015. On basis of above the Company was required to clarify the following:   -1. Financial results submitted is not as per format prescribed by SEBI The response of the Company is enclosed.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SONAMLTD_22082024103201_SONAMLTD_06082024130639_sonam_result.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "19-Aug-2024 10:24:28",
+      "type": "Clarification - Financial Results",
+      "subject": "The Exchange has sought clarification from SONAM LIMITED for the quarter ended 30-Jun-2024 with respect to Regulation 33 of the SEBI (Listing Obligations and Disclosure Requirements) Regulations, 2015. On basis of above the Company is required to clarify the following:  -1. Financial results submitted is not as per format prescribed by SEBI The response of the Company is awaited.",
+      "attachment_url": "-",
+      "has_xbrl": false
+    },
+    {
+      "date": "06-Aug-2024 13:06:39",
+      "type": "Outcome of Board Meeting",
+      "subject": "SONAM LIMITED has informed the Exchange regarding Outcome of Board Meeting held on August 06, 2024.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SONAMLTD_06082024130639_sonam_result.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "16-May-2024 17:17:20",
+      "type": "Outcome of Board Meeting",
+      "subject": "SONAM LIMITED has informed the Exchange regarding Outcome of Board Meeting held on May 16, 2024.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SONAMLTD_16052024171720_outcomeofbm16052024_sonam.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "09-May-2024 15:01:00",
+      "type": "Stock split",
+      "subject": "SONAM LIMITED has informed the Exchange about Stock split-Intimation of New ISIN Number",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SONAMLTD_09052024150100_ISIN.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "14-Feb-2024 14:29:41",
+      "type": "Outcome of Board Meeting",
+      "subject": "SONAM LIMITED has informed the Exchange regarding Outcome of Board Meeting held on February 14, 2024.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SONAMLTD_14022024142941_Sonamoutcome14022024.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "14-Feb-2024 14:24:14",
+      "type": "Stock split",
+      "subject": "SONAM LIMITED has informed the Exchange that the Board of Directors at its meeting held on February 14, 2024, has considered and approved subdivision of 20016000 equity shares of 10 each into 40032000 equity shares of 5 each.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SONAMLTD_14022024142414_Sonamoutcome14022024.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "08-Nov-2023 16:10:03",
+      "type": "Outcome of Board Meeting",
+      "subject": "Sonam Clock Limited has informed the Exchange regarding  Revised outcome of Board meeting held on November 08, 2023.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SONAMCLOCK_08112023161003_outcome30092023.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "08-Nov-2023 15:22:28",
+      "type": "Outcome of Board Meeting",
+      "subject": "Sonam Clock Limited has informed the Exchange regarding  Board meeting held on November 08, 2023.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SONAMCLOCK_08112023152228_BM.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "14-Sep-2023 17:01:35",
+      "type": "Outcome of Board Meeting",
+      "subject": "Sonam Clock Limited has informed the Exchange regarding  Board meeting held on September 14, 2023.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SONAMCLOCK_14092023170135_SONAMCHANGEOFNAMEBM14092023.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "02-Sep-2023 17:24:20",
+      "type": "Outcome of Board Meeting",
+      "subject": "Sonam Clock Limited has informed the Exchange regarding  Board meeting held on September 02, 2023.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SONAMCLOCK_02092023172420_SONAMOUTCOMEBM02092023.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "25-Aug-2023 18:11:14",
+      "type": "Outcome of Board Meeting",
+      "subject": "Sonam Clock Limited has informed the Exchange regarding Revised Outcome of Board Meeting held on August 24, 2023.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SONAMCLOCK_25082023181114_SONAMOUTCOMEREVISED24082023.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "24-Aug-2023 18:21:06",
+      "type": "Outcome of Board Meeting",
+      "subject": "Sonam Clock Limited has informed the Exchange regarding  Board meeting held on August 24, 2023.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SONAMCLOCK_24082023182106_SONAMOUTCOME24082023.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "07-Aug-2023 12:49:31",
+      "type": "Outcome of Board Meeting",
+      "subject": "Sonam Clock Limited has informed the Exchange regarding Outcome of Board Meeting held on August 07, 2023.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SONAMCLOCK_07082023124931_Outcomeofboardmeeting07082023.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "14-Jul-2023 18:21:02",
+      "type": "Outcome of Board Meeting",
+      "subject": "Sonam Clock Limited has informed the Exchange regarding  Board meeting held on July 14, 2023.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SONAMCLOCK_14072023182102_SONAMOUTCOME14072023.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "13-Jun-2023 11:53:03",
+      "type": "Reply to Clarification- Financial results",
+      "subject": "The Exchange had sought clarification from Sonam Clock Limited for the quarter ended 31-Mar-2023 with respect to Regulation 33 of the SEBI (Listing Obligations and Disclosure Requirements) Regulations, 2015. On basis of above the Company was required to clarify the following:   -1. Financial results submitted is not as per format prescribed by SEBI The response of the Company is enclosed.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SONAMCLOCK_13062023115303_SONAMFINANCIALCLARIFICATION31032023FF.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "26-May-2023 09:29:14",
+      "type": "Clarification - Financial Results",
+      "subject": "The Exchange has sought clarification from Sonam Clock Limited for the quarter ended 31-Mar-2023 with respect to Regulation 33 of the SEBI (Listing Obligations and Disclosure Requirements) Regulations, 2015. On basis of above the Company is required to clarify the following:  -1. Financial results submitted is not as per format prescribed by SEBI The response of the Company is awaited.",
+      "attachment_url": "-",
+      "has_xbrl": false
+    },
+    {
+      "date": "19-May-2023 13:18:18",
+      "type": "Outcome of Board Meeting",
+      "subject": "Sonam Clock Limited has informed the Exchange regarding Outcome of Board Meeting held on May 19, 2023.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SONAMCLOCK_19052023131818_SONAMOUTCOMEBM19052023.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "09-Feb-2023 18:19:12",
+      "type": "Outcome of Board Meeting",
+      "subject": "Sonam Clock Limited has informed the Exchange regarding Outcome of Board Meeting held on February 09, 2023.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SONAMCLOCK_09022023181912_Outcomeofboardmeeting09022023sonam.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "31-Jan-2023 15:55:10",
+      "type": "Board Meeting Intimation",
+      "subject": "Financial Results/Other business matters",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SONAMCLOCK_31012023155510_SONAMNOTICEOFBM31012023.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "19-Jan-2023 16:39:23",
+      "type": "Outcome of Board Meeting",
+      "subject": "Sonam Clock Limited has informed the Exchange regarding Outcome of Board Meeting held on January 19, 2023.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SONAMCLOCK_19012023163923_OutcomeoftheBoardMeeting19012023.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "10-Nov-2022 18:14:42",
+      "type": "Outcome of Board Meeting",
+      "subject": "Sonam Clock Limited  has informed the Exchange about Board Meeting held on 10-Nov-2022 to consider financial statements for the period ended September 2022",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SONAMCLOCK_10112022181442_Outcomeoftheboardmeeting10112022.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "10-Aug-2022 18:27:12",
+      "type": "Outcome of Board Meeting",
+      "subject": "Sonam Clock Limited  has informed the Exchange about Board Meeting held on 10-Aug-2022 to consider financial statements for the period ended June 2022",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SONAMCLOCK_10082022182712_Outcomeofboardmeeting10.08.2022.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "18-Jul-2022 14:52:47",
+      "type": "Outcome of Board Meeting",
+      "subject": "Sonam Clock Limited  has informed the Exchange about Board Meeting held on 18-Jul-2022 regarding allotment of Bonus shares.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SONAMCLOCK_18072022145247_SONAMOUTCOMEBM18072022.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "21-Jun-2022 18:08:10",
+      "type": "Outcome of Board Meeting",
+      "subject": "Sonam Clock Limited  has informed the Exchange about Board Meeting held on 21-Jun-2022 to consider Other business matters",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SONAMCLOCK_21062022180803_SONAOUTCOMEBM21062022.pdf",
+      "has_xbrl": false
+    }
+  ]
+}

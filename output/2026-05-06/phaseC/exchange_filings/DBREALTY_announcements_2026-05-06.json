@@ -1,0 +1,358 @@
+{
+  "ticker": "DBREALTY",
+  "fetched_at": "2026-05-06T05:57:09.003946+05:30",
+  "total_returned": 50,
+  "material_only": true,
+  "announcements": [
+    {
+      "date": "31-Mar-2026 11:45:30",
+      "type": "Acquisition",
+      "subject": "Valor Estate Limited has informed the Exchange about Acquisition of entire equity share capital of Radius Estates and Developers Private Limited.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/DBR_31032026114436_SE_Intimation__Acquistion_of_shares_of_Radius.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "12-Mar-2026 18:41:17",
+      "type": "Amalgamation/Merger",
+      "subject": "Effective date of Scheme of Amalgamation",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/DBR_12032026184036_SE_Intimation_of_effective_date_of_amalgamation_of_SADPL_HVPL.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "05-Mar-2026 21:02:27",
+      "type": "Acquisition",
+      "subject": "Intimation of Acquisition",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/DBR_05032026210138_NSE.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "05-Mar-2026 20:57:11",
+      "type": "Outcome of Board Meeting",
+      "subject": "Outcome of Board Meeting held on March 05, 2026.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/DBR_05032026205547_NA.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "11-Feb-2026 20:12:28",
+      "type": "Outcome of Board Meeting",
+      "subject": "Outcome of the Board Meeting held on Wednesday, 11th February, 2026.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/DBR_11022026200806_Outcome_of_the_BM_11022026.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "30-Jan-2026 15:41:54",
+      "type": "Amalgamation/Merger",
+      "subject": "Intimation of receipt of the order from Hon'ble NCLT approving the Scheme of Merger/Amalgamation of Sahyadri Agro and Dairy Private Limited with Horizontal Ventures Private Limited and their respective shareholders",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/DBR_30012026154136_NSE.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "15-Nov-2025 19:07:44",
+      "type": "Press Release",
+      "subject": "Press Release issued by the Company on Financial Results for the second quarter ended on 30th September, 2025",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/DBR_15112025190714_SE_Intimation_Press_Release_on_FS_Q2-26.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "15-Nov-2025 00:10:03",
+      "type": "Outcome of Board Meeting",
+      "subject": "Valor Estate Limited has submitted to the Exchange, the financial results for the period ended September 30, 2025.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/DBR_15112025000257_fr.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "14-Nov-2025 22:54:34",
+      "type": "Acquisition",
+      "subject": "Acquisition of shares by WOS of the Company.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/DBR_14112025225413_NSE.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "14-Nov-2025 22:21:05",
+      "type": "Outcome of Board Meeting",
+      "subject": "Valor Estate Limited has informed the Exchange regarding  Board meeting held on November 14, 2025.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/DBR_14112025221835_NSE.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "12-Nov-2025 14:28:54",
+      "type": "Press Release",
+      "subject": "Press Release issued by Advent Hotels International Limited on the proposed listing on the stock exchanges.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/DBR_12112025142836_Valor_SE_Intimation_Press_release_by_Advent.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "04-Nov-2025 17:22:49",
+      "type": "Acquisition",
+      "subject": "Valor Estate Limited has informed the Exchange about Acquisition",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/DBR_04112025172241_nse.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "28-Oct-2025 19:08:21",
+      "type": "Acquisition",
+      "subject": "Incorporation of Wholly Owned Subsidiary of the Company",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/DBR_28102025190739_SE_Intimation__Incorpotaion_of_WOS.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "07-Oct-2025 19:24:41",
+      "type": "Amalgamation/Merger",
+      "subject": "Intimation of Scheme of Merger between Sahyadri Agro and Dairy Private Limited, a WOS of Horizontal Ventures Private (HVPL) with HVPL, a step down subsidiary of the Company",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/DBR_07102025192342_Intimation_of_Meger_SADPL__HVPL_HN.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "14-Aug-2025 21:40:17",
+      "type": "Press Release",
+      "subject": "Valor Estate Limited has informed the Exchange regarding a press release dated August 14, 2025, titled \"Press Release for the First Quarter Ended on 30th June, 2025\".",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/DBR_14082025213952_Covering_letter_and_Press_release.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "14-Aug-2025 20:14:00",
+      "type": "Outcome of Board Meeting",
+      "subject": "Valor Estate Limited has submitted to the Exchange, the financial results for the period ended Jun 30, 2025.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/DBR_14082025201135_Outcome_of_the_BM_financial_results.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "30-May-2025 21:18:24",
+      "type": "Press Release",
+      "subject": "Valor Estate Limited has informed the Exchange regarding a press release dated May 30, 2025, titled \"Press Release \".",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/DBR_30052025211743_pressrelease.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "30-May-2025 20:45:20",
+      "type": "Outcome of Board Meeting",
+      "subject": "Valor Estate Limited has submitted to the Exchange, the financial results for the period ended March 31, 2025.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/DBR_30052025203929_standaloneconsoleresults.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "12-Feb-2025 20:51:46",
+      "type": "Press Release",
+      "subject": "Valor Estate Limited has informed the Exchange regarding a press release dated February 12, 2025, titled \"Press Release \".",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/DBREALTY_12022025205111_Press_Release.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "14-Nov-2024 21:58:07",
+      "type": "Press Release",
+      "subject": "Valor Estate Limited has informed the Exchange regarding a press release dated November 14, 2024, titled \"press release\".",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/DBREALTY_14112024215807_CoveringletterandPressRelease.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "13-Aug-2024 21:26:41",
+      "type": "Press Release",
+      "subject": "Valor Estate Limited has informed the Exchange regarding a press release dated August 13, 2024, titled \"press release\".",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/DBREALTY_13082024212641_pressrelease.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "06-Jun-2024 18:58:10",
+      "type": "Press Release",
+      "subject": "Valor Estate Limited has informed the Exchange regarding a press release dated Jun 06, 2024, titled \"Press Release- Proposed Demerger of Hospitality Business\".",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/DBREALTY_06062024185810_pressrelease.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "06-Jun-2024 18:08:44",
+      "type": "Acquisition",
+      "subject": "Valor Estate Limited has informed the Exchange about Acquisition",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/DBREALTY_06062024180844_seintimation.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "29-May-2024 22:10:14",
+      "type": "Press Release",
+      "subject": "Valor Estate Limited has informed the Exchange regarding a press release dated May 29, 2024, titled \"Press Release on financial results for the fourth quarter and financial year ended on 31st March, 2024\".",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/DBREALTY_29052024221014_PRESSRELEASE.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "19-Apr-2024 18:26:13",
+      "type": "Acquisition",
+      "subject": "Valor Estate Limited has informed the Exchange about Acquisition of stake in LLP",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/DBREALTY_19042024182613_Intimation.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "12-Apr-2024 18:23:20",
+      "type": "Outcome of Board Meeting",
+      "subject": "Valor Estate Limited has informed the Exchange regarding  Board meeting held on April 12, 2024.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/DBREALTY_12042024182320_SEIntimation12042024.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "30-Mar-2024 18:32:07",
+      "type": "Acquisition",
+      "subject": "D B Realty Limited has informed the Exchange about Acquisition",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/DBREALTY_30032024183207_SEIntimation_Horizontal.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "29-Mar-2024 16:14:33",
+      "type": "Acquisition",
+      "subject": "D B Realty Limited has informed the Exchange about Acquisition",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/DBREALTY_29032024161433_seintimation29032024.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "14-Mar-2024 12:15:02",
+      "type": "Press Release",
+      "subject": "D B Realty Limited has informed the Exchange regarding a press release dated March 14, 2024, titled \"Press Release\".",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/DBREALTY_14032024121502_Press_release_14032024.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "13-Mar-2024 23:59:57",
+      "type": "Outcome of Board Meeting",
+      "subject": "D B Realty Limited has informed the Exchange regarding  Board meeting held on March 13, 2024. - QIP",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/DBREALTY_13032024235957_intimation.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "09-Feb-2024 14:51:15",
+      "type": "Outcome of Board Meeting",
+      "subject": "Outcome of the Board meeting- Corporate Restructuring",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/DBREALTY_09022024145115_Outcomeofbm.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "31-Jan-2024 16:07:40",
+      "type": "Press Release",
+      "subject": "D B Realty Limited has informed the Exchange regarding a press release dated January 31, 2024, titled \"Press Release on financial results for the third quarter and nine months ended on December 31, 2023\".",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/DBREALTY_31012024160740_pressreleasefn.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "17-Jan-2024 12:38:32",
+      "type": "Outcome of Board Meeting",
+      "subject": "D B Realty Limited has informed the Exchange regarding  Board meeting held on January 17, 2024.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/DBREALTY_17012024123833_dbroutcome.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "07-Dec-2023 18:33:33",
+      "type": "Acquisition",
+      "subject": "D B Realty Limited has informed the Exchange about Acquisition",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/DBREALTY_07122023183333_intimation.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "28-Nov-2023 09:19:56",
+      "type": "Press Release",
+      "subject": "D B Realty Limited has informed the Exchange regarding a press release dated November 28, 2023, titled \"Announcement under Regulation 30 (LODR)- Press Release\".",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/DBREALTY_28112023091956_pressrelease2.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "28-Nov-2023 09:16:50",
+      "type": "Press Release",
+      "subject": "D B Realty Limited has informed the Exchange regarding a press release dated November 28, 2023, titled \"Announcement under Regulation 30 (LODR) - Press Release \".",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/DBREALTY_28112023091650_pressrelease1.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "07-Nov-2023 12:30:39",
+      "type": "Press Release (Revised)",
+      "subject": "D B Realty Limited has informed the Exchange regarding a revised press release dated November 07, 2023, titled \"Press Release on financial results for the quarter and half year ended on September 30, 2023\".",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/DBREALTY_07112023123039_Press_release_financial_results.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "07-Nov-2023 12:15:59",
+      "type": "Press Release",
+      "subject": "D B Realty Limited has informed the Exchange regarding a press release dated November 07, 2023, titled \"Press Release on financial results for the quarter and half year ended on September 30, 2023\".",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/DBREALTY_07112023121559_Press_Release_final.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "07-Nov-2023 09:38:45",
+      "type": "Press Release",
+      "subject": "D B Realty Limited has informed the Exchange regarding a press release dated November 07, 2023, titled \"D B Realty Ltd. (DBR) divests 100% stake in Rustomjee Crown Project for approx. Rs. 231.42 Crores\".",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/DBREALTY_07112023093845_PressReleaseRealGem.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "25-Sep-2023 18:56:25",
+      "type": "Acquisition",
+      "subject": "D B Realty Limited has informed the Exchange about Acquisition",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/DBREALTY_25092023185625_SE_Intimation_Acquistion.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "18-Sep-2023 13:08:51",
+      "type": "Press Release",
+      "subject": "D B Realty Limited has informed the Exchange regarding a press release dated September 18, 2023, titled \"Press Release- DB Realty completes equity raise of INR 1544 crores and enters into Partnership with Adani Goodhomes Pvt. Ltd, Godrej Residency Pvt. Ltd. and Others\".",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/DBREALTY_18092023130851_Press_release.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "14-Sep-2023 19:14:16",
+      "type": "Allotment of Securities",
+      "subject": "D B Realty Limited has informed the Exchange regarding allotment of 57000000 securities pursuant to Other at its meeting held on September 14, 2023",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/DBREALTY_14092023191416_Intimationnse.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "13-Sep-2023 19:03:24",
+      "type": "Allotment of Securities",
+      "subject": "D B Realty Limited has informed the Exchange regarding allotment of 25000000 securities pursuant to Other at its meeting held on September 13, 2023",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/DBREALTY_13092023190324_Intimation.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "30-Aug-2023 15:22:00",
+      "type": "Allotment of Securities",
+      "subject": "D B Realty Limited has informed the Exchange regarding allotment of 6941700 securities pursuant to Other at its meeting held on August 30, 2023",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/DBREALTY_30082023152200_Intimation.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "25-Aug-2023 19:38:44",
+      "type": "Allotment of Securities",
+      "subject": "D B Realty Limited has informed the Exchange regarding allotment of 811622 securities pursuant to ESOP/ESPS at its meeting held on August 25, 2023",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/DBREALTY_25082023193844_Intimation.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "11-Aug-2023 20:10:26",
+      "type": "Press Release",
+      "subject": "D B Realty Limited has informed the Exchange regarding a press release dated August 11, 2023, titled \"Press Release\".",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/DBREALTY_11082023201026_pressrelease.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "11-Aug-2023 20:01:09",
+      "type": "Outcome of Board Meeting",
+      "subject": "D B Realty Limited has informed the Exchange regarding Outcome of Board Meeting held on August 11, 2023.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/DBREALTY_11082023200109_intimationofbm.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "10-Aug-2023 18:58:53",
+      "type": "Acquisition",
+      "subject": "D B Realty Limited has informed the Exchange about Acquisition",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/DBREALTY_10082023185853_intimationreg30.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "28-Jul-2023 18:12:41",
+      "type": "Allotment of Securities",
+      "subject": "D B Realty Limited has informed the Exchange regarding allotment of 7262300 securities pursuant to Preferential Issue at its meeting held on July 28, 2023",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/DBREALTY_28072023181241_intimationreg30.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "25-Jul-2023 19:33:55",
+      "type": "Allotment of Securities",
+      "subject": "D B Realty Limited has informed the Exchange regarding allotment of 10870000 Equity shares pursuant to Preferential Issue passed by the Board of Directors through Circular Resolution dated 25th July, 2023",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/DBREALTY_25072023193355_Allotment_of_Shares.pdf",
+      "has_xbrl": false
+    }
+  ]
+}

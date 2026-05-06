@@ -1,0 +1,205 @@
+{
+  "fetched_at": "2026-05-06T05:58:35.621444+05:30",
+  "ticker": "BHAGERIA.NS",
+  "nse_actions": [
+    {
+      "symbol": "BHAGERIA",
+      "series": "EQ",
+      "purpose": "Annual General Meeting/Dividend - Rs 1.50 Per Share",
+      "ex_date": "25-Jul-2025",
+      "record_date": "25-Jul-2025",
+      "bc_start": "-",
+      "bc_end": "-",
+      "face_value": "5",
+      "company": "Bhageria Industries Limited"
+    },
+    {
+      "symbol": "BHAGERIA",
+      "series": "EQ",
+      "purpose": "Annual General Meeting/Dividend - Re 1 Per Share",
+      "ex_date": "23-Aug-2024",
+      "record_date": "-",
+      "bc_start": "24-Aug-2024",
+      "bc_end": "31-Aug-2024",
+      "face_value": "5",
+      "company": "Bhageria Industries Limited"
+    },
+    {
+      "symbol": "BHAGERIA",
+      "series": "EQ",
+      "purpose": "Annual General Meeting/Dividend - Re 1 Per Share",
+      "ex_date": "01-Sep-2023",
+      "record_date": "-",
+      "bc_start": "02-Sep-2023",
+      "bc_end": "09-Sep-2023",
+      "face_value": "5",
+      "company": "Bhageria Industries Limited"
+    },
+    {
+      "symbol": "BHAGERIA",
+      "series": "EQ",
+      "purpose": "Annual General Meeting/Dividend - Rs 4 Per Share",
+      "ex_date": "21-Jul-2022",
+      "record_date": "-",
+      "bc_start": "24-Jul-2022",
+      "bc_end": "30-Jul-2022",
+      "face_value": "5",
+      "company": "Bhageria Industries Limited"
+    },
+    {
+      "symbol": "BHAGERIA",
+      "series": "EQ",
+      "purpose": " Annual General Meeting/Dividend - Rs 3.50 Per Share",
+      "ex_date": "22-Jul-2021",
+      "record_date": "-",
+      "bc_start": "25-Jul-2021",
+      "bc_end": "31-Jul-2021",
+      "face_value": "5",
+      "company": "Bhageria Industries Limited"
+    },
+    {
+      "symbol": "BHAGERIA",
+      "series": "EQ",
+      "purpose": " Annual General Meeting/Dividend - Rs 3 Per Share",
+      "ex_date": "20-Aug-2020",
+      "record_date": "-",
+      "bc_start": "22-Aug-2020",
+      "bc_end": "29-Aug-2020",
+      "face_value": "5",
+      "company": "Bhageria Industries Limited"
+    },
+    {
+      "symbol": "BHAGERIA",
+      "series": "EQ",
+      "purpose": " Annual General Meeting/Dividend - Rs 1.125 Per Share",
+      "ex_date": "23-Aug-2019",
+      "record_date": "-",
+      "bc_start": "27-Aug-2019",
+      "bc_end": "31-Aug-2019",
+      "face_value": "5",
+      "company": "Bhageria Industries Limited"
+    },
+    {
+      "symbol": "BHAGERIA",
+      "series": "EQ",
+      "purpose": " Bonus 1:1",
+      "ex_date": "17-Jul-2019",
+      "record_date": "18-Jul-2019",
+      "bc_start": "-",
+      "bc_end": "-",
+      "face_value": "5",
+      "company": "Bhageria Industries Limited"
+    },
+    {
+      "symbol": "BHAGERIA",
+      "series": "EQ",
+      "purpose": " Interim Dividend - Rs 3.75 Per Share",
+      "ex_date": "31-Jan-2019",
+      "record_date": "01-Feb-2019",
+      "bc_start": "-",
+      "bc_end": "-",
+      "face_value": "5",
+      "company": "Bhageria Industries Limited"
+    },
+    {
+      "symbol": "BHAGERIA",
+      "series": "EQ",
+      "purpose": " Annual General Meeting / Dividend Rs 5.50 Per Share",
+      "ex_date": "13-Jul-2018",
+      "record_date": "-",
+      "bc_start": "17-Jul-2018",
+      "bc_end": "20-Jul-2018",
+      "face_value": "5",
+      "company": "Bhageria Industries Limited"
+    },
+    {
+      "symbol": "BHAGERIA",
+      "series": "EQ",
+      "purpose": " Annual General Meeting/Dividend - Rs 5/- Per Share",
+      "ex_date": "24-Nov-2017",
+      "record_date": "-",
+      "bc_start": "28-Nov-2017",
+      "bc_end": "01-Dec-2017",
+      "face_value": "5",
+      "company": "Bhageria Industries Limited"
+    },
+    {
+      "symbol": "BHAGERIA",
+      "series": "EQ",
+      "purpose": " Fv Splt Frm Rs 10 To Rs 5",
+      "ex_date": "26-Oct-2016",
+      "record_date": "27-Oct-2016",
+      "bc_start": "-",
+      "bc_end": "-",
+      "face_value": "5",
+      "company": "Bhageria Industries Limited"
+    },
+    {
+      "symbol": "BHAGERIA",
+      "series": "EQ",
+      "purpose": " Annual General Meeting/ Dividend -Rs 5/- Per Share",
+      "ex_date": "05-Aug-2016",
+      "record_date": "-",
+      "bc_start": "09-Aug-2016",
+      "bc_end": "12-Aug-2016",
+      "face_value": "5",
+      "company": "Bhageria Industries Limited"
+    }
+  ],
+  "yf_dividends": [
+    {
+      "date": "2016-08-05",
+      "amount": 1.25
+    },
+    {
+      "date": "2017-11-24",
+      "amount": 2.5
+    },
+    {
+      "date": "2018-07-13",
+      "amount": 2.75
+    },
+    {
+      "date": "2019-01-31",
+      "amount": 1.875
+    },
+    {
+      "date": "2019-08-23",
+      "amount": 1.125
+    },
+    {
+      "date": "2020-08-20",
+      "amount": 3.0
+    },
+    {
+      "date": "2021-07-22",
+      "amount": 3.5
+    },
+    {
+      "date": "2022-07-21",
+      "amount": 4.0
+    },
+    {
+      "date": "2023-09-01",
+      "amount": 1.0
+    },
+    {
+      "date": "2024-08-23",
+      "amount": 1.0
+    },
+    {
+      "date": "2025-07-25",
+      "amount": 1.5
+    }
+  ],
+  "yf_splits": [
+    {
+      "date": "2016-10-26",
+      "ratio": 2.0
+    },
+    {
+      "date": "2019-07-17",
+      "ratio": 2.0
+    }
+  ]
+}

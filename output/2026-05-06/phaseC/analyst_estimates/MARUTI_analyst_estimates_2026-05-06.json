@@ -1,0 +1,209 @@
+{
+  "ticker": "MARUTI",
+  "yf_ticker": "MARUTI.NS",
+  "fetched_at": "2026-05-06T05:49:49.583564+05:30",
+  "price_targets": {
+    "current_price": 13426.0,
+    "target_high": 18500.0,
+    "target_mean": 15879.743,
+    "target_median": 15984.0,
+    "target_low": 12500.0,
+    "upside_to_mean_pct": 18.3
+  },
+  "earnings_estimates": {
+    "0q": {
+      "avg": 104.51,
+      "low": 100.2,
+      "high": 112.22,
+      "yearAgoEps": 118.06,
+      "numberOfAnalysts": 3,
+      "growth": -0.1148,
+      "currency": "INR"
+    },
+    "+1q": {
+      "avg": 123.18,
+      "low": 105.0,
+      "high": 155.24,
+      "yearAgoEps": 104.74,
+      "numberOfAnalysts": 3,
+      "growth": 0.1761,
+      "currency": "INR"
+    },
+    "0y": {
+      "avg": 524.214,
+      "low": 473.5,
+      "high": 573.0,
+      "yearAgoEps": 466.9,
+      "numberOfAnalysts": 33,
+      "growth": 0.1228,
+      "currency": "INR"
+    },
+    "+1y": {
+      "avg": 625.90546,
+      "low": 541.77875,
+      "high": 764.4,
+      "yearAgoEps": 521.0627,
+      "numberOfAnalysts": 35,
+      "growth": 0.20120001,
+      "currency": "INR"
+    }
+  },
+  "revenue_estimates": {
+    "0q": {
+      "avg": 488682886000,
+      "low": 488682886000,
+      "high": 488682886000,
+      "numberOfAnalysts": 1,
+      "yearAgoRevenue": 384136000000,
+      "growth": 0.2722,
+      "currency": "INR"
+    },
+    "+1q": {
+      "avg": 517172857000,
+      "low": 517172857000,
+      "high": 517172857000,
+      "numberOfAnalysts": 1,
+      "yearAgoRevenue": 421008000000,
+      "growth": 0.2284,
+      "currency": "INR"
+    },
+    "0y": {
+      "avg": 2062341268210,
+      "low": 1908183000000,
+      "high": 2139856000000,
+      "numberOfAnalysts": 40,
+      "yearAgoRevenue": 1832661000000,
+      "growth": 0.12529999,
+      "currency": "INR"
+    },
+    "+1y": {
+      "avg": 2308217602260,
+      "low": 2068937000000,
+      "high": 2500536000000,
+      "numberOfAnalysts": 36,
+      "yearAgoRevenue": 2062341268210,
+      "growth": 0.1192,
+      "currency": "INR"
+    }
+  },
+  "earnings_history": [
+    {
+      "quarter": "2025-06-30 00:00:00",
+      "eps_actual": 118.06,
+      "eps_estimate": 98.84,
+      "eps_surprise": 19.22,
+      "surprise_pct": 19.45
+    },
+    {
+      "quarter": "2025-09-30 00:00:00",
+      "eps_actual": 104.74,
+      "eps_estimate": 119.08843,
+      "eps_surprise": -14.35,
+      "surprise_pct": -12.05
+    },
+    {
+      "quarter": "2025-12-31 00:00:00",
+      "eps_actual": 120.67,
+      "eps_estimate": 141.14279,
+      "eps_surprise": -20.47,
+      "surprise_pct": -14.51
+    },
+    {
+      "quarter": "2026-03-31 00:00:00",
+      "eps_actual": 114.2,
+      "eps_estimate": 133.84457,
+      "eps_surprise": -19.64,
+      "surprise_pct": -14.68
+    }
+  ],
+  "recommendations": [
+    {
+      "period": "0m",
+      "strong_buy": 7,
+      "buy": 26,
+      "hold": 4,
+      "sell": 1,
+      "strong_sell": 1
+    },
+    {
+      "period": "-1m",
+      "strong_buy": 7,
+      "buy": 26,
+      "hold": 5,
+      "sell": 1,
+      "strong_sell": 1
+    },
+    {
+      "period": "-2m",
+      "strong_buy": 7,
+      "buy": 26,
+      "hold": 5,
+      "sell": 1,
+      "strong_sell": 1
+    }
+  ],
+  "eps_trend": {
+    "0q": {
+      "current": 104.51,
+      "7daysAgo": 100.37,
+      "30daysAgo": 121.365,
+      "60daysAgo": 121.365,
+      "90daysAgo": 124.17,
+      "currency": "INR"
+    },
+    "+1q": {
+      "current": 123.18,
+      "7daysAgo": 132.575,
+      "30daysAgo": 156.485,
+      "60daysAgo": 156.485,
+      "90daysAgo": 160.365,
+      "currency": "INR"
+    },
+    "0y": {
+      "current": 524.214,
+      "7daysAgo": 556.56396,
+      "30daysAgo": 575.63873,
+      "60daysAgo": 582.3468,
+      "90daysAgo": 583.9225,
+      "currency": "INR"
+    },
+    "+1y": {
+      "current": 625.90546,
+      "7daysAgo": 648.4738,
+      "30daysAgo": 659.4833,
+      "60daysAgo": 671.9869,
+      "90daysAgo": 673.37854,
+      "currency": "INR"
+    }
+  },
+  "eps_revisions": {
+    "0q": {
+      "upLast7days": 0,
+      "upLast30days": 0,
+      "downLast30days": 2,
+      "downLast7Days": 1,
+      "currency": "INR"
+    },
+    "+1q": {
+      "upLast7days": 0,
+      "upLast30days": 0,
+      "downLast30days": 1,
+      "downLast7Days": 1,
+      "currency": "INR"
+    },
+    "0y": {
+      "upLast7days": 2,
+      "upLast30days": 0,
+      "downLast30days": 14,
+      "downLast7Days": 20,
+      "currency": "INR"
+    },
+    "+1y": {
+      "upLast7days": 1,
+      "upLast30days": 2,
+      "downLast30days": 28,
+      "downLast7Days": 3,
+      "currency": "INR"
+    }
+  }
+}

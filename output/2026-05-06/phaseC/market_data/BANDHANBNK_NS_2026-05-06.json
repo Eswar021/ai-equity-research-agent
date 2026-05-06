@@ -1,0 +1,18 @@
+{
+  "ticker": "BANDHANBNK.NS",
+  "name": "Bandhan Bank Limited",
+  "exchange": "NSI",
+  "currency": "INR",
+  "price": 206.44,
+  "day_change_pct": -0.15,
+  "52w_high": 212.66,
+  "52w_low": 134.25,
+  "return_1m": NaN,
+  "return_3m": NaN,
+  "return_1y": NaN,
+  "volume": 14082316,
+  "market_cap": 332570427392,
+  "sector": "Financial Services",
+  "industry": "Banks - Regional",
+  "fetched_at": "2026-05-06T05:54:39.267418+05:30"
+}

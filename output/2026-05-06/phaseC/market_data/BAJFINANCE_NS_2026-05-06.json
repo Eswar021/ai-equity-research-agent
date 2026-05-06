@@ -1,0 +1,18 @@
+{
+  "ticker": "BAJFINANCE.NS",
+  "name": "Bajaj Finance Limited",
+  "exchange": "NSI",
+  "currency": "INR",
+  "price": 958.6,
+  "day_change_pct": 0.88,
+  "52w_high": 1102.5,
+  "52w_low": 787.9,
+  "return_1m": NaN,
+  "return_3m": NaN,
+  "return_1y": NaN,
+  "volume": 7289382,
+  "market_cap": 5960456208384,
+  "sector": "Financial Services",
+  "industry": "Credit Services",
+  "fetched_at": "2026-05-06T05:51:47.288091+05:30"
+}

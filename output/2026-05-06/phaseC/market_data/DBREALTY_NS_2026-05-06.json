@@ -1,0 +1,18 @@
+{
+  "ticker": "DBREALTY.NS",
+  "name": "Valor Estate Limited",
+  "exchange": "NSI",
+  "currency": "INR",
+  "price": 122.82,
+  "day_change_pct": -1.17,
+  "52w_high": 252.67,
+  "52w_low": 83.5,
+  "return_1m": NaN,
+  "return_3m": NaN,
+  "return_1y": NaN,
+  "volume": 10684418,
+  "market_cap": 66618400768,
+  "sector": "Real Estate",
+  "industry": "Real Estate - Development",
+  "fetched_at": "2026-05-06T05:56:52.064580+05:30"
+}

@@ -1,0 +1,18 @@
+{
+  "ticker": "SIS.NS",
+  "name": "SIS Limited",
+  "exchange": "NSI",
+  "currency": "INR",
+  "price": 402.1,
+  "day_change_pct": 0.4,
+  "52w_high": 418.85,
+  "52w_low": 257.05,
+  "return_1m": NaN,
+  "return_3m": NaN,
+  "return_1y": NaN,
+  "volume": 311923,
+  "market_cap": 56945356800,
+  "sector": "Industrials",
+  "industry": "Security & Protection Services",
+  "fetched_at": "2026-05-06T05:57:22.902882+05:30"
+}

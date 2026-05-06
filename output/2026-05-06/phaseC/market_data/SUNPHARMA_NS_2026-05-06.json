@@ -1,0 +1,18 @@
+{
+  "ticker": "SUNPHARMA.NS",
+  "name": "Sun Pharmaceutical Industries Limited",
+  "exchange": "NSI",
+  "currency": "INR",
+  "price": 1820.8,
+  "day_change_pct": -0.15,
+  "52w_high": 1849.0,
+  "52w_low": 1548.0,
+  "return_1m": NaN,
+  "return_3m": NaN,
+  "return_1y": NaN,
+  "volume": 3011325,
+  "market_cap": 4368709189632,
+  "sector": "Healthcare",
+  "industry": "Drug Manufacturers - Specialty & Generic",
+  "fetched_at": "2026-05-06T05:52:35.612657+05:30"
+}

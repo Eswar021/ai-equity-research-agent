@@ -1,0 +1,172 @@
+{
+  "ticker": "RAILTEL",
+  "yf_ticker": "RAILTEL.NS",
+  "fetched_at": "2026-05-06T05:56:32.088045+05:30",
+  "price_targets": {
+    "current_price": 340.5,
+    "target_high": 300.0,
+    "target_mean": 262.5,
+    "target_median": 262.5,
+    "target_low": 225.0,
+    "upside_to_mean_pct": -22.9
+  },
+  "earnings_estimates": {
+    "0q": {
+      "avg": null,
+      "low": null,
+      "high": null,
+      "yearAgoEps": null,
+      "numberOfAnalysts": null,
+      "growth": null,
+      "currency": "INR"
+    },
+    "+1q": {
+      "avg": null,
+      "low": null,
+      "high": null,
+      "yearAgoEps": null,
+      "numberOfAnalysts": null,
+      "growth": null,
+      "currency": "INR"
+    },
+    "0y": {
+      "avg": 13.3,
+      "low": 13.3,
+      "high": 13.3,
+      "yearAgoEps": 11.3497,
+      "numberOfAnalysts": 1.0,
+      "growth": 0.1718,
+      "currency": "INR"
+    },
+    "+1y": {
+      "avg": 14.95,
+      "low": 14.7,
+      "high": 15.2,
+      "yearAgoEps": 13.3,
+      "numberOfAnalysts": 2.0,
+      "growth": 0.1241,
+      "currency": "INR"
+    }
+  },
+  "revenue_estimates": {
+    "0q": {
+      "avg": 0,
+      "low": 0,
+      "high": 0,
+      "numberOfAnalysts": 0,
+      "yearAgoRevenue": null,
+      "growth": null,
+      "currency": "INR"
+    },
+    "+1q": {
+      "avg": 0,
+      "low": 0,
+      "high": 0,
+      "numberOfAnalysts": 0,
+      "yearAgoRevenue": null,
+      "growth": null,
+      "currency": "INR"
+    },
+    "0y": {
+      "avg": 49365000000,
+      "low": 49365000000,
+      "high": 49365000000,
+      "numberOfAnalysts": 1,
+      "yearAgoRevenue": 42774800000.0,
+      "growth": 0.1541,
+      "currency": "INR"
+    },
+    "+1y": {
+      "avg": 58586000000,
+      "low": 57052000000,
+      "high": 60120000000,
+      "numberOfAnalysts": 2,
+      "yearAgoRevenue": 49365000000.0,
+      "growth": 0.1868,
+      "currency": "INR"
+    }
+  },
+  "earnings_history": null,
+  "recommendations": [
+    {
+      "period": "0m",
+      "strong_buy": 0,
+      "buy": 0,
+      "hold": 0,
+      "sell": 1,
+      "strong_sell": 1
+    },
+    {
+      "period": "-1m",
+      "strong_buy": 0,
+      "buy": 0,
+      "hold": 0,
+      "sell": 2,
+      "strong_sell": 0
+    }
+  ],
+  "eps_trend": {
+    "0q": {
+      "current": null,
+      "7daysAgo": null,
+      "30daysAgo": null,
+      "60daysAgo": null,
+      "90daysAgo": null,
+      "currency": "INR"
+    },
+    "+1q": {
+      "current": null,
+      "7daysAgo": null,
+      "30daysAgo": null,
+      "60daysAgo": null,
+      "90daysAgo": null,
+      "currency": "INR"
+    },
+    "0y": {
+      "current": 13.3,
+      "7daysAgo": 12.9,
+      "30daysAgo": 12.9,
+      "60daysAgo": 12.9,
+      "90daysAgo": 13.7,
+      "currency": "INR"
+    },
+    "+1y": {
+      "current": 14.95,
+      "7daysAgo": 15.05,
+      "30daysAgo": 15.05,
+      "60daysAgo": 15.05,
+      "90daysAgo": 15.8,
+      "currency": "INR"
+    }
+  },
+  "eps_revisions": {
+    "0q": {
+      "upLast7days": null,
+      "upLast30days": null,
+      "downLast30days": null,
+      "downLast7Days": null,
+      "currency": "INR"
+    },
+    "+1q": {
+      "upLast7days": null,
+      "upLast30days": null,
+      "downLast30days": null,
+      "downLast7Days": null,
+      "currency": "INR"
+    },
+    "0y": {
+      "upLast7days": 0.0,
+      "upLast30days": 0.0,
+      "downLast30days": 1.0,
+      "downLast7Days": 1.0,
+      "currency": "INR"
+    },
+    "+1y": {
+      "upLast7days": 0.0,
+      "upLast30days": 0.0,
+      "downLast30days": 1.0,
+      "downLast7Days": 1.0,
+      "currency": "INR"
+    }
+  }
+}

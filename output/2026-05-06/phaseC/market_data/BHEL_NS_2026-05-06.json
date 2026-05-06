@@ -1,0 +1,18 @@
+{
+  "ticker": "BHEL.NS",
+  "name": "Bharat Heavy Electricals Limited",
+  "exchange": "NSI",
+  "currency": "INR",
+  "price": 374.95,
+  "day_change_pct": -0.56,
+  "52w_high": 399.0,
+  "52w_low": 205.12,
+  "return_1m": NaN,
+  "return_3m": NaN,
+  "return_1y": NaN,
+  "volume": 33269243,
+  "market_cap": 1305599672320,
+  "sector": "Industrials",
+  "industry": "Specialty Industrial Machinery",
+  "fetched_at": "2026-05-06T05:47:46.017721+05:30"
+}

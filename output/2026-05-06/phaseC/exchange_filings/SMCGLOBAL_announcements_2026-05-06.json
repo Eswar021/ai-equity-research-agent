@@ -1,0 +1,358 @@
+{
+  "ticker": "SMCGLOBAL",
+  "fetched_at": "2026-05-06T05:54:10.485245+05:30",
+  "total_returned": 50,
+  "material_only": true,
+  "announcements": [
+    {
+      "date": "02-May-2026 21:53:48",
+      "type": "Change in Management",
+      "subject": "Smc Global Securities Limited has informed the Exchange about change in Management appointment of Internal Auditor of the company for the FY 2026-27",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SMCGLOBAL_02052026214758_InternalAuditor.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "02-May-2026 21:06:37",
+      "type": "Change in Management",
+      "subject": "Smc Global Securities Limited has informed the Exchange about change in Management",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SMCGLOBAL_02052026210617_CISMP.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "02-May-2026 18:42:13",
+      "type": "Outcome of Board Meeting",
+      "subject": "Smc Global Securities Limited has submitted to the Exchange, the financial results for the period ended March 31, 2026.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SMCGLOBAL_02052026183951_OUTCOME_OF_BM_SD.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "02-Feb-2026 21:20:07",
+      "type": "Dividend",
+      "subject": "Smc Global Securities Limited has informed the Exchange that Board of Directors at its meeting held on February 02, 2026, declared Interim Dividend of Rs. 0.60 per equity share.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SMCGLOBAL_02022026211924_Outcome_of_BM_SD.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "02-Feb-2026 21:15:26",
+      "type": "Outcome of Board Meeting",
+      "subject": "Smc Global Securities Limited has submitted to the Exchange, the financial results for the period ended December 31, 2025.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SMCGLOBAL_02022026211316_Outcome_of_BM_SD.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "02-Feb-2026 21:10:47",
+      "type": "Dividend",
+      "subject": "Smc Global Securities Limited has informed the Exchange that Board of Directors at its meeting held on February 02, 2026, declared Interim Dividend of 0.60 per equity share.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SMCGLOBAL_02022026211015_Outcome_of_BM_SD.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "02-Feb-2026 11:56:24",
+      "type": "Reply to Clarification- Financial results",
+      "subject": "The Exchange had sought clarification from Smc Global Securities Limited for the quarter ended 30-Sep-2025 with respect to Regulation 33 of the SEBI (Listing Obligations and Disclosure Requirements) Regulations, 2015. On basis of above the Company was required to clarify the following: -1.Financial results submitted in XBRL with discrepancies   The response of the Company is enclosed.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SMCGLOBAL_28012026173106_Reply.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "12-Jan-2026 11:52:57",
+      "type": "Clarification - Financial Results",
+      "subject": "The Exchange has sought clarification from Smc Global Securities Limited for the quarter ended 30-Sep-2025 with respect to Regulation 33 of the SEBI (Listing Obligations and Disclosure Requirements) Regulations, 2015. On basis of above the Company is required to clarify the following: -1. Financial results submitted in XBRL with discrepancies  The response of the Company is awaited.",
+      "attachment_url": "-",
+      "has_xbrl": true
+    },
+    {
+      "date": "16-Dec-2025 13:09:03",
+      "type": "Press Release",
+      "subject": "Smc Global Securities Limited has informed the Exchange regarding a press release dated December 16, 2025, titled \"Clarification on the price movement. Document attached.\".",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SMCGLOBAL_16122025130855_Clarrification_on_price_movement.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "17-Nov-2025 09:55:34",
+      "type": "Allotment of Securities",
+      "subject": "Smc Global Securities Limited has informed the Exchange regarding allotment of 104700000 securities pursuant to Bonus at its meeting held on November 17, 2025",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SMCGLOBAL_17112025095521_Outcome__Allotment_of_Equity_Shares.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "30-Oct-2025 22:08:50",
+      "type": "Outcome of Board Meeting",
+      "subject": "Smc Global Securities Limited has submitted to the Exchange, the financial results for the period ended September 30, 2025.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SMCGLOBAL_30102025220647_Outcome_of_BM.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "30-Oct-2025 21:56:07",
+      "type": "Outcome of Board Meeting",
+      "subject": "Smc Global Securities Limited has informed the Exchange regarding  Board meeting held on October 30, 2025.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SMCGLOBAL_30102025215528_Outcome_of_BM.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "30-Oct-2025 11:28:06",
+      "type": "Allotment of Securities",
+      "subject": "Smc Global Securities Limited has informed the Exchange regarding allotment of 1338586 securities pursuant to Non Convertible Securities at its meeting held on October 30, 2025",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SMCGLOBAL_30102025112752_Outcome_Allotment.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "24-Sep-2025 17:25:46",
+      "type": "Bonus",
+      "subject": "Smc Global Securities Limited has informed the Exchange that the Board of Directors at its meeting held on September 24, 2025, have considered and approved bonus at the ratio of 1 : 1, i.e 1 Equity Shares for every 1 Equity Shares held.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SMCGLOBAL_24092025172533_Outcome_of_Board_Meeting_24_09_2025_SD.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "24-Sep-2025 17:19:07",
+      "type": "Bonus",
+      "subject": "Smc Global Securities Limited has informed the Exchange that the Board of Directors at its meeting held on September 24, 2025, have considered and approved bonus at the ratio of 1 : 1, i.e 1 Equity Shares for every 1 Equity Shares held.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SMCGLOBAL_24092025171818_Outcome_of_Board_Meeting_24_09_2025_SD.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "20-Aug-2025 19:20:53",
+      "type": "Acquisition",
+      "subject": "Smc Global Securities Limited has informed the Exchange about Acquisition",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SMCGLOBAL_20082025192038_NCDEX.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "26-Jul-2025 17:49:02",
+      "type": "Change in Management",
+      "subject": "Smc Global Securities Limited has informed the Exchange about change in Management",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SMCGLOBAL_26072025174847_Change_in_KMP.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "26-Jul-2025 17:46:13",
+      "type": "Outcome of Board Meeting",
+      "subject": "Smc Global Securities Limited has informed the Exchange regarding  Board meeting held on July 26, 2025.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SMCGLOBAL_26072025174542_Outcome_FRs-SMC_Q1-FY26.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "26-Jul-2025 17:44:38",
+      "type": "Outcome of Board Meeting",
+      "subject": "Smc Global Securities Limited has submitted to the Exchange, the financial results for the period ended Jun 30, 2025.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SMCGLOBAL_26072025174247_Outcome_FRs-SMC_Q1-FY26.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "12-May-2025 16:42:23",
+      "type": "Change in Management",
+      "subject": "Smc Global Securities Limited has informed the Exchange about change in Management",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SMCGLOBAL_12052025163111_Yashpal_Chopra_Additional_designation.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "11-May-2025 19:48:01",
+      "type": "Outcome of Board Meeting",
+      "subject": "Smc Global Securities Limited has informed the Exchange regarding Outcome of Board Meeting held on May 11, 2025.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SMCGLOBAL_11052025194350_Outcome_of_BM_Final_Result_SD.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "11-May-2025 18:59:28",
+      "type": "Dividend",
+      "subject": "Smc Global Securities Limited has informed the Exchange that Board of Directors at its meeting held on May 11, 2025, recommended Final Dividend of 1.2 per equity share.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SMCGLOBAL_11052025185908_Outcome_of_BM_Final_Result_SD.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "24-Apr-2025 13:19:26",
+      "type": "Outcome of Board Meeting",
+      "subject": "Smc Global Securities Limited has informed the Exchange regarding  Board meeting held on April 24, 2025.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SMCGLOBAL_24042025131841_Outcome_Allotment_24th_April_2025.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "27-Feb-2025 18:17:23",
+      "type": "Outcome of Board Meeting",
+      "subject": "Smc Global Securities Limited has informed the Exchange regarding  NCD Committee meeting held on February 27, 2025.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SMCGLOBAL_27022025181647_NCD_Committee_Outcome_27th_Feb_2025.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "29-Jan-2025 19:40:38",
+      "type": "Dividend",
+      "subject": "Smc Global Securities Limited has informed the Exchange that Board of Directors at its meeting held on January 29, 2025, declared Interim Dividend of 1.2 per equity share.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SMCGLOBAL_29012025194002_FR_SMCGLOBAL__1__SD.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "25-Nov-2024 19:25:21",
+      "type": "Credit Rating- Others",
+      "subject": "Smc Global Securities Limited has informed the Exchange about Credit Rating- Others",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SMCGLOBAL_25112024192521_CreditRatingSMC.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "25-Oct-2024 21:23:11",
+      "type": "Change in Management",
+      "subject": "Smc Global Securities Limited has informed the Exchange about change in Management",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SMCGLOBAL_25102024212312_change_in_SMP.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "25-Oct-2024 21:10:18",
+      "type": "Outcome of Board Meeting",
+      "subject": "Smc Global Securities Limited has informed the Exchange regarding  Board meeting held on October 25, 2024.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SMCGLOBAL_25102024211018_Outcome_of_BM.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "05-Sep-2024 17:22:32",
+      "type": "Change in Management",
+      "subject": "Smc Global Securities Limited has informed the Exchange about change in Management",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SMCGLOBAL_05092024172232_RevisedIntimationofchangeinSMP.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "30-Jul-2024 20:28:05",
+      "type": "Change in Management",
+      "subject": "Smc Global Securities Limited has informed the Exchange about change in Management",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SMCGLOBAL_30072024202805_SMPCoverLetter.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "30-Jul-2024 19:46:41",
+      "type": "Outcome of Board Meeting",
+      "subject": "Smc Global Securities Limited has informed the Exchange regarding Outcome of Board Meeting held on July 30, 2024.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SMCGLOBAL_30072024194641_outcomesd.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "13-May-2024 19:13:37",
+      "type": "Dividend Updates",
+      "subject": "Smc Global Securities Limited has informed the Exchange about Dividend Updates",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SMCGLOBAL_13052024191337_OutcomeofBM.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "13-May-2024 17:21:25",
+      "type": "Change in Management",
+      "subject": "Smc Global Securities Limited has informed the Exchange about change in Management",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SMCGLOBAL_13052024172125_SDIntimationofReappointment.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "13-May-2024 14:18:31",
+      "type": "Dividend",
+      "subject": "Smc Global Securities Limited has informed the Exchange that Board of Directors at its meeting held on May 13, 2024, recommended Final Dividend of Rs. 1.20 per equity share.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SMCGLOBAL_13052024141831_SDOutcomeofBM.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "13-May-2024 14:16:58",
+      "type": "Outcome of Board Meeting",
+      "subject": "SMC Global Securities Limited has informed the Exchange regarding  Outcome of the Board meeting held on May 13, 2024.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SMCGLOBAL_13052024141658_SDOutcomeofBM.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "13-May-2024 14:15:24",
+      "type": "Dividend",
+      "subject": "SMC Global Securities Limited has informed the Exchange that Board of Directors at its meeting held on May 13, 2024, recommended Final Dividend of 1.20 per equity share and Audited Financial Results for the quarter and year ended on 31 march 2024.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SMCGLOBAL_13052024141524_SDOutcomeofBM.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "09-Apr-2024 12:51:34",
+      "type": "Acquisition",
+      "subject": "SMC Global Securities Limited has informed the Exchange about Acquisition",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SMCGLOBAL_09042024125134_regulation30SASTdisclosuresd.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "30-Mar-2024 13:59:59",
+      "type": "Change in Director(s)",
+      "subject": "Smc Global Securities Limited has informed the Exchange regarding Change in Director(s) of the company.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SMCGLOBAL_30032024135959_RevisedIntimationofIDappt.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "30-Mar-2024 13:31:27",
+      "type": "Change in Director(s)",
+      "subject": "Smc Global Securities Limited has informed the Exchange regarding Change in Director(s) of the company.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SMCGLOBAL_30032024133127_intimationofAppointmentSD.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "30-Mar-2024 13:14:02",
+      "type": "Outcome of Board Meeting",
+      "subject": "SMC Global Securities Limited has informed the Exchange regarding  Board meeting held on March 30, 2024.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SMCGLOBAL_30032024131402_OUTCOMESD.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "05-Feb-2024 15:26:14",
+      "type": "Dividend",
+      "subject": "SMC Global Securities Limited has informed the Exchange that Board of Directors at its meeting held on February 05, 2024, declared Interim Dividend of 1.2 per equity share.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SMCGLOBAL_05022024152614_OutcomeBMsd.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "05-Feb-2024 13:11:12",
+      "type": "Dividend Updates",
+      "subject": "Smc Global Securities Limited has informed the Exchange about Dividend Updates",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SMCGLOBAL_05022024131112_OutcomeBMsd.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "05-Feb-2024 13:09:24",
+      "type": "Dividend",
+      "subject": "Smc Global Securities Limited has informed the Exchange that Board of Directors at its meeting held on February 05, 2024, declared Interim Dividend of Rs. 1.20 per equity share.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SMCGLOBAL_05022024130924_OutcomeBMsd.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "31-Jan-2024 13:49:39",
+      "type": "Dividend Updates",
+      "subject": "Smc Global Securities Limited has informed the Exchange about Dividend Updates",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SMCGLOBAL_31012024134939_IntimationofBM.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "07-Nov-2023 18:10:37",
+      "type": "Outcome of Board Meeting",
+      "subject": "Smc Global Securities Limited has informed the Exchange regarding  Board meeting held on November 07, 2023.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SMCGLOBAL_07112023181037_outcomeofBMfinalsd.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "18-Oct-2023 19:08:58",
+      "type": "Acquisition",
+      "subject": "Smc Global Securities Limited has informed the Exchange about Acquisition",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SMCGLOBAL_18102023190858_Reg30disclosure18thOct2023.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "07-Sep-2023 14:59:05",
+      "type": "Acquisition",
+      "subject": "Pursuant to Regulation 30 of the SEBI ( Listing Obligations and Disclosure Requirements) Regulations, 2015, this is to inform that the company's shareholding in \" Agarwal Float Glass India Limited\" has been diluted from 10.85% to 8.86% of the Paid capital of the said Company.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SMCGLOBAL_07092023145905_Reg30disclosure7thSep2023Final.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "09-Aug-2023 21:44:29",
+      "type": "Change in Director(s)",
+      "subject": "Smc Global Securities Limited has informed the Exchange regarding Change in Director(s) of the company.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SMCGLOBAL_09082023214429_shruti_Aggarwal_SDD.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "09-Aug-2023 21:32:51",
+      "type": "Outcome of Board Meeting",
+      "subject": "Smc Global Securities Limited has informed the Exchange regarding  Board meeting held on August 09, 2023. outcome is attached.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SMCGLOBAL_09082023213251_OutcomeOfBoardMeetSigned.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "03-Aug-2023 15:24:24",
+      "type": "Credit Rating",
+      "subject": "Pursuant to the Regulation 30 of SEBI(LODR)Regulations, 2015 we would like to inform you that ICRA has assigned [ICRA] A (Stable) rating to SMC Global Securities Limited on consolidated basis.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SMCGLOBAL_03082023152424_Ra.pdf",
+      "has_xbrl": false
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+####################################
+###### General files to ignore ######
+####################################
+#claude and vscode settings
+.claude/
+.vscode/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+
+# macOS
+.DS_Store
+
+################################################
+###### Project related files to ignore ######
+################################################
+# Environment & secrets
+.env
+.env.*
+
+# All Phase A/B/C outputs (large JSON files, regenerated each run)
+# output/
+
+# Cached NSE symbol list (auto-refreshes)
+# context_ext_layer/phaseB_CS/nse_equity_cache.json
+
+# DB / archive
+# db/
+# archive_db/
+
+# Rough / scratch work
+# rough/

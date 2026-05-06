@@ -1,0 +1,358 @@
+{
+  "ticker": "SUNPHARMA",
+  "fetched_at": "2026-05-06T05:52:57.308538+05:30",
+  "total_returned": 50,
+  "material_only": true,
+  "announcements": [
+    {
+      "date": "27-Apr-2026 06:13:36",
+      "type": "Press Release",
+      "subject": "Sun Pharmaceutical Industries Limited has informed the Exchange regarding a press release dated April 27, 2026, titled \"Investor call to discuss the acquisition of Organon & Co.\".",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SUNSEC_27042026061326_PR_for_Investor_Call.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "27-Mar-2026 21:11:33",
+      "type": "Press Release",
+      "subject": "Sun Pharmaceutical Industries Limited has informed the Exchange regarding a press release dated March 27, 2026, titled \"Sun Pharma Highlights Advances in Alopecia Areata, Psoriasis, and Acne Research at 2026 AAD Annual Meeting\".",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SUNSEC_27032026210913_SEintimationPRforAAD.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "21-Mar-2026 11:57:25",
+      "type": "Press Release",
+      "subject": "Sun Pharmaceutical Industries Limited has informed the Exchange regarding a press release dated March 21, 2026, titled \"Sun Pharma launches its semaglutide injection under the brand names, Noveltreat and Sematrinity in India\".",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SUNSEC_21032026115711_SEintimationPRforSemaglutide.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "16-Mar-2026 16:23:48",
+      "type": "Press Release",
+      "subject": "Sun Pharmaceutical Industries Limited has informed the Exchange regarding a press release dated March 16, 2026, titled \"Sun Pharma Announces US FDA Acceptance of Supplemental Biologics License (sBLA) Application for ILUMYA® (tildrakizumab-asmn) for the Treatment of Adults with Active Psoriatic Arthritis\".",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SUNSEC_16032026162216_SEIntimationforPRforILUMYA.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "31-Jan-2026 17:39:59",
+      "type": "Change in Director(s)",
+      "subject": "Sun Pharmaceutical Industries Limited has informed the Exchange regarding Change in Director(s) of the company.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SUNSEC_31012026173748_BMOutcomeOR.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "31-Jan-2026 14:35:31",
+      "type": "Dividend",
+      "subject": "Sun Pharmaceutical Industries Limited has informed the Exchange that Board of Directors at its meeting held on January 31, 2026, declared Interim Dividend of 11 per equity share.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SUNSEC_31012026143506_BMOutcome.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "31-Jan-2026 14:28:16",
+      "type": "Outcome of Board Meeting",
+      "subject": "Sun Pharmaceutical Industries Limited has submitted to the Exchange the Unaudited Financial Results for the quarter and nine months ended 31 December 2025.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SUNSEC_31012026142728_BMOutcome.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "23-Jan-2026 08:21:53",
+      "type": "Press Release",
+      "subject": "Sun Pharmaceutical Industries Limited has informed the Exchange regarding a press release dated January 23, 2026, titled  Sun Pharma receives DCGI approval to manufacture and market generic semaglutide injection in India for chronic weight management, .",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SUNSEC_23012026082042_SEIntimationforPR.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "15-Jan-2026 22:57:47",
+      "type": "Press Release",
+      "subject": "Sun Pharmaceutical Industries Limited has informed the Exchange regarding a press release dated January 15, 2026",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SUNSEC_15012026225621_SEIntimationforPR.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "01-Dec-2025 09:08:07",
+      "type": "Press Release",
+      "subject": "Sun Pharmaceutical Industries Limited has informed the Exchange regarding a press release dated December 01, 2025, titled \"Sun Pharma introduces its global innovative drug, Ilumya® inIndia for treatment of moderate-to-severe Plaque Psoriasis\".",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SUNPHARMA456_01122025090753_IntimationSE20251201_Ilumya_launch_in_India_Signed.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "26-Nov-2025 08:54:39",
+      "type": "Press Release",
+      "subject": "Sun Pharmaceutical Industries Limited has informed the Exchange regarding a press release dated November 26, 2025",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SUNSEC_26112025085357_SE_IntimationPR.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "17-Nov-2025 16:02:19",
+      "type": "Press Release",
+      "subject": "Sun Pharmaceutical Industries Limited has informed the Exchange regarding a press release dated November 17, 2025, titled \"AstraZeneca Pharma India Limited and Sun Pharma partner to help patients living with Hyperkalaemia in India\".",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SUNPHARMA456_17112025160111_IntimationSE20251117_AstraZenca_and_Sun_partner_Hyperkalenia_Signed.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "12-Nov-2025 16:04:09",
+      "type": "Press Release",
+      "subject": "Sun Pharmaceutical Industries Limited has informed the Exchange regarding a press release",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SUNSEC_12112025160353_SE_IntimationforPRs.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "12-Nov-2025 09:18:52",
+      "type": "Press Release",
+      "subject": "Sun Pharmaceutical Industries Limited has informed the Exchange regarding a press release dated November 12, 2025, titled \"Philogen provides update on Fibromun clinical study developments\".",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SUNSEC_12112025091832_SEintimationPR12112025.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "05-Nov-2025 16:05:32",
+      "type": "Outcome of Board Meeting",
+      "subject": "Sun Pharmaceutical Industries Limited has submitted to the Exchange, the financial results for the period ended September 30, 2025.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SUNSEC_05112025155937_BMOutcomesigned.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "31-Jul-2025 14:22:11",
+      "type": "Outcome of Board Meeting",
+      "subject": "Sun Pharmaceutical Industries Limited has submitted to the Exchange, the financial results for the period ended Jun 30, 2025.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SUNSEC_31072025142149_BMoutcomeFinal.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "21-Jul-2025 08:26:07",
+      "type": "Press Release",
+      "subject": "Sun Pharmaceutical Industries Limited has informed the Exchange regarding a press release, titled  Phase 3 Clinical Studies Evaluating Tildrakizumab 100 mg (ILUMYA) in Active Psoriatic Arthritis Meet their Primary Endpoint.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SUNSEC_21072025082457_SEIntimationforPR.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "24-Jun-2025 23:50:55",
+      "type": "Press Release",
+      "subject": "Sun Pharmaceutical Industries Limited has informed the Exchange regarding a press release dated Jun 24, 2025, titled \"Update on Marketing Authorization Application for Nidlegy  in the European Union\".",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SUNPHARMA123_24062025235009_ExchangeintimationforPR.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "13-Jun-2025 18:00:39",
+      "type": "Change in Director(s)",
+      "subject": "Sun Pharmaceutical Industries Limited has informed the Exchange regarding Change in Director(s) of the company.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SUNSEC_13062025180024_SEIntiamtionandCIB.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "03-Jun-2025 17:11:17",
+      "type": "Press Release",
+      "subject": "Sun Pharmaceutical Industries Limited has informed the Exchange regarding a press release dated Jun 03, 2025, titled \"Sun Pharma Announces Top-Line Results from the Phase 2 Clinical Trials Evaluating SCD-044 for Moderate to Severe Psoriasis and Atopic Dermatitis\".",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SUNPHARMA456_03062025171103_IntimationSE20250603_Top-line_Results_of_SCD-044_Signed.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "30-May-2025 19:49:12",
+      "type": "Press Release",
+      "subject": "Sun Pharmaceutical Industries Limited has informed the Exchange regarding a press release dated May 30, 2025, titled \"Completion of Acquisition of Checkpoint Therapeutics\".",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SUNSEC_30052025194835_PR_for_Closure_of_Checkpoint_Acquisition.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "22-May-2025 17:01:04",
+      "type": "Dividend",
+      "subject": "Sun Pharmaceutical Industries Limited has informed the Exchange that Board of Directors at its meeting held on 22 May 2025, recommended Final Dividend of Rs. 5.50  per equity share.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SUNSEC_22052025165854_BMOutcomefinal.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "22-May-2025 16:55:06",
+      "type": "Change in Director(s)",
+      "subject": "Sun Pharmaceutical Industries Limited has informed the Exchange regarding Change in Director(s) of the company.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SUNSEC_22052025165427_BMOutcomefinal.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "22-May-2025 16:51:07",
+      "type": "Outcome of Board Meeting",
+      "subject": "Sun Pharmaceutical Industries Limited has submitted to the Exchange, the financial results for the period ended March 31, 2025.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SUNSEC_22052025164647_BMOutcomefinal.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "16-May-2025 17:47:50",
+      "type": "Press Release",
+      "subject": "Sun Pharmaceutical Industries Limited has informed the Exchange regarding a press release dated May 16, 2025",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SUNSEC_16052025174554_SEintimationforPR.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "12-May-2025 19:18:26",
+      "type": "Press Release",
+      "subject": "Sun Pharmaceutical Industries Limited has informed the Exchange regarding a press release dated May 12, 2025, titled \"Sun Pharma to announce fourth quarter results on May 22, 2025\".",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SUNPHARMA456_12052025191810_IntimationSE20250512_Q4FY25_Financial_Results_Announcement_Signed.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "08-May-2025 12:38:24",
+      "type": "Press Release",
+      "subject": "Sun Pharmaceutical Industries Limited has informed the Exchange regarding a press release dated May 08, 2025, titled \"Sun Pharma Launches Corporate Brand Campaign in India\".",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SUNPHARMA456_08052025123749_IntimationSE20250508_Corporate_brand_campaign_in_India_signed.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "06-May-2025 19:13:21",
+      "type": "Change in Management",
+      "subject": "Sun Pharmaceutical Industries Limited has informed the Exchange about change in Key Managerial Personnel - Chief Financial Officer",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SUNSEC_06052025191105_SEIntimationforchangeinKMP.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "24-Apr-2025 08:30:51",
+      "type": "Press Release",
+      "subject": "Sun Pharmaceutical Industries Limited has informed the Exchange regarding a press release dated April 24, 2025",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SUNSEC_24042025082850_SEIntimationforPRMoebius.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "07-Apr-2025 08:35:01",
+      "type": "Press Release",
+      "subject": "Sun Pharmaceutical Industries Limited has informed the Exchange regarding a press release dated April 07, 2025, titled \"Sun Pharma introduces a novel class of drug, Fexuclue?(Fexuprazan) in India for treatment of Erosive Esophagitis \".",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SUNPHARMA456_07042025083338_IntimationSE20250407_Sunpharma_introduces_Fexuclue_in_India_Signed.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "17-Feb-2025 14:08:55",
+      "type": "Press Release",
+      "subject": "Sun Pharmaceutical Industries Limited has informed the Exchange regarding a press release dated February 17, 2025, titled \"Sun Pharma Amongst Top 5% Of Global Pharmaceutical Companies In S&P Global Sustainability Yearbook 2025\".",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SUNPHARMA456_17022025140823_IntimationSE20250217_SunPhrma_included_2025_Sustainability_Signed.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "04-Feb-2025 16:17:40",
+      "type": "Press Release",
+      "subject": "Sun Pharmaceutical Industries Limited has informed the Exchange regarding a press release dated February 04, 2025, titled \"Intimation under Regulation 30 of SEBI (Listing Obligations and Disclosure Requirements) Regulations, 2015   Press Release\".",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SUNSEC_04022025161728_SEIntimationforPR.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "31-Jan-2025 15:16:44",
+      "type": "Dividend",
+      "subject": "Sun Pharmaceutical Industries Limited has informed the Exchange that Board of Directors at its meeting held on January 31, 2025, declared Interim Dividend of Rs. 10.50 per equity share.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SUNSEC_31012025151547_Outcome.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "25-Oct-2024 18:32:30",
+      "type": "Press Release",
+      "subject": "Sun Pharmaceutical Industries Limited has informed the Exchange regarding a press release dated October 25, 2024, titled \"Studies Show Sun Pharma s WINLEVI? (clascoterone) Cream 1% Reduces Sebum Levels and is Suitable for Combination With Other Commonly Used Topical Acne Medications\".",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SUNPHARMA_25102024183230_IntimationSE20241025_Winlevi_at_Fall_Derma_Conf_2024_Signed.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "25-Oct-2024 18:21:43",
+      "type": "Press Release",
+      "subject": "Sun Pharmaceutical Industries Limited has informed the Exchange regarding a press release dated October 25, 2024, titled \"Sun Pharma Presents LEQSELVITM (deuruxolitinib) Data Highlighting Clinical Efficacy & Durability for Treatment of Alopecia Areata at the 2024 Fall Clinical Dermatology Conference\".",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SUNPHARMA_25102024182143_IntimationSE20241025_Leqselvi_at_Fall_Conf_2024_Signed.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "15-Oct-2024 16:58:37",
+      "type": "Press Release",
+      "subject": "Sun Pharmaceutical Industries Limited has informed the Exchange regarding a press release dated October 15, 2024, titled \"Sun Pharma to announce second quarter results on October 28, 2024\".",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SUNPHARMA_15102024165837_IntimationSE_20241015_Q2FY25_Result_Announcement_Signed.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "01-Oct-2024 09:49:04",
+      "type": "Press Release",
+      "subject": "Sun Pharmaceutical Industries Limited has informed the Exchange regarding a press release dated October 01, 2024, titled \"Press Release   Sun Pharma and Philogen enter into a global Exclusive Commercialization, License, and Supply Agreement for Commercializing the specialty product FIBROMUN\".",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SUNPHARMA_01102024094904_SEIntimationletterPR.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "26-Sep-2024 17:42:09",
+      "type": "Press Release",
+      "subject": "Sun Pharma Presents New Clinical Efficacy and Safety Data in Severe Dermatological Conditions at the 2024 European Academy of Dermatology and Venereology (EADV) Congress",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SUNPHARMA_26092024174209_20240926IntimationSE_Data_present_at_2024_EADV_Congress_Signed.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "06-Sep-2024 12:12:21",
+      "type": "Press Release",
+      "subject": "Sun Pharmaceutical Industries Limited has informed the Exchange regarding a press release dated September 06, 2024",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SUNPHARMA_06092024121221_SEIntimationforFTD.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "23-Aug-2024 14:12:36",
+      "type": "Press Release",
+      "subject": "Sun Pharmaceutical Industries Limited has informed the Exchange regarding a press release dated August 23, 2024, titled \"Sun Pharma introduces a novel treatment, STARIZO (Tedizolid Phosphate) in India for acute bacterial skin and skin structure infections\".",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SUNPHARMA_23082024141236_IntimationSE20240823_Tedizolid_Phosphate_launch_in_India_Signed.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "14-Aug-2024 13:43:02",
+      "type": "Acquisition",
+      "subject": "Sun Pharmaceutical Industries Limited has informed the Exchange about Acquisition",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SUNPHARMA_14082024134302_SEIntimationforacquisitionPharmazz.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "26-Jul-2024 05:10:56",
+      "type": "Press Release",
+      "subject": "Sun Pharmaceutical Industries Limited has informed the Exchange regarding a press release dated July 26, 2024, titled \"Intimation under Regulation 30 of SEBI (Listing Obligations and Disclosure Requirements) Regulations, 2015   U.S. FDA Approves LEQSELVI  (deuruxolitinib)\".",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SUNPHARMA_26072024051056_SEintimationforLEQSELVI.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "16-Jul-2024 16:08:57",
+      "type": "Press Release",
+      "subject": "Sun Pharmaceutical Industries Limited has informed the Exchange regarding a press release dated July 16, 2024, titled \"Sun Pharma to announce first quarter results on August 01, 2024\".",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SUNPHARMA_16072024160857_IntimationSE20240716_Q1FY25_Results_Announcement_Signed.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "04-Jul-2024 12:34:46",
+      "type": "Press Release",
+      "subject": "Sun Pharmaceutical Industries Limited has informed the Exchange regarding a press release dated July 04, 2024, titled \"Validation of Nidlegy  Marketing Authorization Application Submission by EMA\".",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SUNPHARMA_04072024123446_IntimationSE20240704_Nidlegy_MAA_Validation_by_EMA_Signed.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "24-Jun-2024 15:39:11",
+      "type": "Press Release",
+      "subject": "Sun Pharmaceutical Industries Limited has informed the Exchange regarding a press release dated Jun 24, 2024   Completion of Acquisition of all Outstanding Shares of Taro\".",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SUNPHARMA_24062024153911_SEIntimationforacquisitionLibraClosing.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "22-Jun-2024 15:34:25",
+      "type": "Press Release",
+      "subject": "Sun Pharmaceutical Industries Limited has informed the Exchange regarding a press release dated Jun 22, 2024, titled \"Sun Pharma s GL0034 (Utreglutide) Demonstrates Significant Weight Loss, Gluco-metabolic and Lipid Lowering Efficacy in Individuals with Obesity in Oral Presentation at the American Diabetes Association 84th Scientific Sessions\".",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SUNPHARMA_22062024153425_IntimationSE20240622_GL0034_Phase1_result_at_84th_ADA_Signed.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "21-Jun-2024 09:01:21",
+      "type": "Press Release",
+      "subject": "Sun Pharmaceutical Industries Limited has informed the Exchange regarding a press release dated Jun 21, 2024, titled \"Sun Pharma signs non-exclusive patent licensing agreement with Takeda for introducing Novel Gastrointestinal Drug, Voltapraz (Vonoprazan) in India\".",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SUNPHARMA_21062024090121_IntimationSE20240621_patent_agreemnt_with_Takeda_Voltapraz_Signed.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "14-Jun-2024 15:28:26",
+      "type": "Press Release",
+      "subject": "Sun Pharmaceutical Industries Limited has informed the Exchange regarding a press release dated Jun 14, 2024, titled \"Press Release Oral Presentation at EULAR 2024 of Data from Global Phase 2b Clinical Trial Demonstrates Durability of Pain Relief After a Single Injection of MM-II in Patients with Painful Knee Osteoarthritis (OA)\".",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SUNPHARMA_14062024152826_IntimationSE20240614_data_of_MMII_presented_at_EULAR2024_Signed.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "06-Jun-2024 22:36:34",
+      "type": "Acquisition",
+      "subject": "Sun Pharmaceutical Industries Limited has informed the Exchange about Acquisition",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SUNPHARMA_06062024223634_HaystackSEIntimationforacquisition06062024.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "04-Jun-2024 11:36:45",
+      "type": "Press Release",
+      "subject": "Sun Pharmaceutical Industries Limited has informed the Exchange regarding a press release dated Jun 04, 2024, titled \"Nidlegy  Marketing Authorization Application Submitted to EMA\".",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SUNPHARMA_04062024113645_IntimationSE20240604_Nidlegy_MAA_Submited_to_EMA_Signed.pdf",
+      "has_xbrl": false
+    }
+  ]
+}

@@ -1,0 +1,402 @@
+{
+  "fetched_at": "2026-05-06T05:53:22.794545+05:30",
+  "ticker": "SUNPHARMA.NS",
+  "nse_actions": [
+    {
+      "symbol": "SUNPHARMA",
+      "series": "EQ",
+      "purpose": "Interim Dividend - Rs 11 Per Share",
+      "ex_date": "05-Feb-2026",
+      "record_date": "05-Feb-2026",
+      "bc_start": "-",
+      "bc_end": "-",
+      "face_value": "1",
+      "company": "Sun Pharmaceutical Industries Limited"
+    },
+    {
+      "symbol": "SUNPHARMA",
+      "series": "EQ",
+      "purpose": "Dividend - Rs 5.50 Per Share",
+      "ex_date": "07-Jul-2025",
+      "record_date": "07-Jul-2025",
+      "bc_start": "-",
+      "bc_end": "-",
+      "face_value": "1",
+      "company": "Sun Pharmaceutical Industries Limited"
+    },
+    {
+      "symbol": "SUNPHARMA",
+      "series": "EQ",
+      "purpose": "Interim Dividend - Rs 10.50 Per Share",
+      "ex_date": "06-Feb-2025",
+      "record_date": "06-Feb-2025",
+      "bc_start": "-",
+      "bc_end": "-",
+      "face_value": "1",
+      "company": "Sun Pharmaceutical Industries Limited"
+    },
+    {
+      "symbol": "SUNPHARMA",
+      "series": "EQ",
+      "purpose": "Dividend - Rs 5 Per Share",
+      "ex_date": "12-Jul-2024",
+      "record_date": "12-Jul-2024",
+      "bc_start": "-",
+      "bc_end": "-",
+      "face_value": "1",
+      "company": "Sun Pharmaceutical Industries Limited"
+    },
+    {
+      "symbol": "SUNPHARMA",
+      "series": "EQ",
+      "purpose": "Interim Dividend - Rs 8.50 Per Share",
+      "ex_date": "09-Feb-2024",
+      "record_date": "09-Feb-2024",
+      "bc_start": "-",
+      "bc_end": "-",
+      "face_value": "1",
+      "company": "Sun Pharmaceutical Industries Limited"
+    },
+    {
+      "symbol": "SUNPHARMA",
+      "series": "EQ",
+      "purpose": "Dividend - Rs 4 Per Share",
+      "ex_date": "28-Jul-2023",
+      "record_date": "28-Jul-2023",
+      "bc_start": "-",
+      "bc_end": "-",
+      "face_value": "1",
+      "company": "Sun Pharmaceutical Industries Limited"
+    },
+    {
+      "symbol": "SUNPHARMA",
+      "series": "EQ",
+      "purpose": "Interim Dividend - Rs 7.50 Per Share",
+      "ex_date": "08-Feb-2023",
+      "record_date": "08-Feb-2023",
+      "bc_start": "-",
+      "bc_end": "-",
+      "face_value": "1",
+      "company": "Sun Pharmaceutical Industries Limited"
+    },
+    {
+      "symbol": "SUNPHARMA",
+      "series": "EQ",
+      "purpose": "Dividend - Rs 3 Per Share",
+      "ex_date": "19-Aug-2022",
+      "record_date": "22-Aug-2022",
+      "bc_start": "-",
+      "bc_end": "-",
+      "face_value": "1",
+      "company": "Sun Pharmaceutical Industries Limited"
+    },
+    {
+      "symbol": "SUNPHARMA",
+      "series": "EQ",
+      "purpose": "Interim Dividend - Rs 7 Per Share",
+      "ex_date": "09-Feb-2022",
+      "record_date": "10-Feb-2022",
+      "bc_start": "-",
+      "bc_end": "-",
+      "face_value": "1",
+      "company": "Sun Pharmaceutical Industries Limited"
+    },
+    {
+      "symbol": "SUNPHARMA",
+      "series": "EQ",
+      "purpose": " Annual General Meeting/Dividend - Rs 2 Per Share",
+      "ex_date": "23-Aug-2021",
+      "record_date": "-",
+      "bc_start": "25-Aug-2021",
+      "bc_end": "31-Aug-2021",
+      "face_value": "1",
+      "company": "Sun Pharmaceutical Industries Limited"
+    },
+    {
+      "symbol": "SUNPHARMA",
+      "series": "EQ",
+      "purpose": " Interim Dividend - Rs 5.50 Per Share",
+      "ex_date": "09-Feb-2021",
+      "record_date": "10-Feb-2021",
+      "bc_start": "-",
+      "bc_end": "-",
+      "face_value": "1",
+      "company": "Sun Pharmaceutical Industries Limited"
+    },
+    {
+      "symbol": "SUNPHARMA",
+      "series": "EQ",
+      "purpose": " Annual General Meeting/Dividend - Re 1 Per Share",
+      "ex_date": "19-Aug-2020",
+      "record_date": "-",
+      "bc_start": "21-Aug-2020",
+      "bc_end": "27-Aug-2020",
+      "face_value": "1",
+      "company": "Sun Pharmaceutical Industries Limited"
+    },
+    {
+      "symbol": "SUNPHARMA",
+      "series": "EQ",
+      "purpose": " Interim Dividend - Rs 3 Per Share",
+      "ex_date": "17-Feb-2020",
+      "record_date": "18-Feb-2020",
+      "bc_start": "-",
+      "bc_end": "-",
+      "face_value": "1",
+      "company": "Sun Pharmaceutical Industries Limited"
+    },
+    {
+      "symbol": "SUNPHARMA",
+      "series": "EQ",
+      "purpose": " Annual General Meeting/Dividend - Rs 2.75 Per Share",
+      "ex_date": "20-Aug-2019",
+      "record_date": "-",
+      "bc_start": "22-Aug-2019",
+      "bc_end": "28-Aug-2019",
+      "face_value": "1",
+      "company": "Sun Pharmaceutical Industries Limited"
+    },
+    {
+      "symbol": "SUNPHARMA",
+      "series": "EQ",
+      "purpose": " Annual General Meeting/Dividend Rs 2 Per Share",
+      "ex_date": "17-Sep-2018",
+      "record_date": "-",
+      "bc_start": "19-Sep-2018",
+      "bc_end": "26-Sep-2018",
+      "face_value": "1",
+      "company": "Sun Pharmaceutical Industries Limited"
+    },
+    {
+      "symbol": "SUNPHARMA",
+      "series": "EQ",
+      "purpose": " Annual General Meeting/Dividend - Rs 3.50 Per Share",
+      "ex_date": "18-Sep-2017",
+      "record_date": "-",
+      "bc_start": "20-Sep-2017",
+      "bc_end": "26-Sep-2017",
+      "face_value": "1",
+      "company": "Sun Pharmaceutical Industries Limited"
+    },
+    {
+      "symbol": "SUNPHARMA",
+      "series": "EQ",
+      "purpose": " Annual General Meeting/Dividend Re 1/- Per Share",
+      "ex_date": "08-Sep-2016",
+      "record_date": "-",
+      "bc_start": "10-Sep-2016",
+      "bc_end": "17-Sep-2016",
+      "face_value": "1",
+      "company": "Sun Pharmaceutical Industries Limited"
+    },
+    {
+      "symbol": "SUNPHARMA",
+      "series": "EQ",
+      "purpose": " Buy Back",
+      "ex_date": "14-Jul-2016",
+      "record_date": "15-Jul-2016",
+      "bc_start": "-",
+      "bc_end": "-",
+      "face_value": "1",
+      "company": "Sun Pharmaceutical Industries Limited"
+    },
+    {
+      "symbol": "SUNPHARMA",
+      "series": "EQ",
+      "purpose": " Annual General Meeting/ Dividend - Rs 3/- Per Share",
+      "ex_date": "21-Oct-2015",
+      "record_date": "-",
+      "bc_start": "24-Oct-2015",
+      "bc_end": "31-Oct-2015",
+      "face_value": "1",
+      "company": "Sun Pharmaceutical Industries Limited"
+    },
+    {
+      "symbol": "SUNPHARMA",
+      "series": "EQ",
+      "purpose": "Annual General Meeting / Dividend - Rs 1.50/- Per Share",
+      "ex_date": "11-Sep-2014",
+      "record_date": "-",
+      "bc_start": "13-Sep-2014",
+      "bc_end": "27-Sep-2014",
+      "face_value": "1",
+      "company": "Sun Pharmaceutical Industries Limited"
+    }
+  ],
+  "yf_dividends": [
+    {
+      "date": "1996-06-24",
+      "amount": 0.0208
+    },
+    {
+      "date": "1997-06-09",
+      "amount": 0.0292
+    },
+    {
+      "date": "1998-06-30",
+      "amount": 0.05
+    },
+    {
+      "date": "1999-06-03",
+      "amount": 0.05
+    },
+    {
+      "date": "1999-12-01",
+      "amount": 0.0667
+    },
+    {
+      "date": "2000-03-08",
+      "amount": 0.0333
+    },
+    {
+      "date": "2001-07-17",
+      "amount": 0.125
+    },
+    {
+      "date": "2002-08-20",
+      "amount": 0.125
+    },
+    {
+      "date": "2003-09-24",
+      "amount": 0.25
+    },
+    {
+      "date": "2004-12-10",
+      "amount": 0.325
+    },
+    {
+      "date": "2005-09-19",
+      "amount": 0.375
+    },
+    {
+      "date": "2006-09-06",
+      "amount": 0.55
+    },
+    {
+      "date": "2007-03-15",
+      "amount": 0.675
+    },
+    {
+      "date": "2008-08-25",
+      "amount": 1.05
+    },
+    {
+      "date": "2009-08-21",
+      "amount": 1.375
+    },
+    {
+      "date": "2010-09-09",
+      "amount": 1.375
+    },
+    {
+      "date": "2011-09-02",
+      "amount": 1.75
+    },
+    {
+      "date": "2012-08-14",
+      "amount": 2.125
+    },
+    {
+      "date": "2013-09-19",
+      "amount": 2.5
+    },
+    {
+      "date": "2014-09-11",
+      "amount": 1.5
+    },
+    {
+      "date": "2015-10-21",
+      "amount": 3.0
+    },
+    {
+      "date": "2016-09-08",
+      "amount": 1.0
+    },
+    {
+      "date": "2017-09-18",
+      "amount": 3.5
+    },
+    {
+      "date": "2018-09-17",
+      "amount": 2.0
+    },
+    {
+      "date": "2019-08-20",
+      "amount": 2.75
+    },
+    {
+      "date": "2020-02-17",
+      "amount": 3.0
+    },
+    {
+      "date": "2020-08-19",
+      "amount": 1.0
+    },
+    {
+      "date": "2021-02-09",
+      "amount": 5.5
+    },
+    {
+      "date": "2021-08-23",
+      "amount": 2.0
+    },
+    {
+      "date": "2022-02-09",
+      "amount": 7.0
+    },
+    {
+      "date": "2022-08-19",
+      "amount": 3.0
+    },
+    {
+      "date": "2023-02-08",
+      "amount": 7.5
+    },
+    {
+      "date": "2023-07-28",
+      "amount": 4.0
+    },
+    {
+      "date": "2024-02-09",
+      "amount": 8.5
+    },
+    {
+      "date": "2024-07-12",
+      "amount": 5.0
+    },
+    {
+      "date": "2025-02-06",
+      "amount": 10.5
+    },
+    {
+      "date": "2025-07-07",
+      "amount": 5.5
+    },
+    {
+      "date": "2026-02-05",
+      "amount": 11.0
+    }
+  ],
+  "yf_splits": [
+    {
+      "date": "2000-03-08",
+      "ratio": 3.0
+    },
+    {
+      "date": "2003-01-13",
+      "ratio": 2.0
+    },
+    {
+      "date": "2004-05-27",
+      "ratio": 2.0
+    },
+    {
+      "date": "2010-11-25",
+      "ratio": 5.0
+    },
+    {
+      "date": "2013-07-29",
+      "ratio": 2.0
+    }
+  ]
+}

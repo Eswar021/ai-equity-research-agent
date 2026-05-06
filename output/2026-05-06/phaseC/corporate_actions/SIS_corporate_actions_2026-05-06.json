@@ -1,0 +1,155 @@
+{
+  "fetched_at": "2026-05-06T05:58:01.659845+05:30",
+  "ticker": "SIS.NS",
+  "nse_actions": [
+    {
+      "symbol": "SIS",
+      "series": "EQ",
+      "purpose": "Interim Dividend - Rs 7 Per Share",
+      "ex_date": "06-Feb-2026",
+      "record_date": "06-Feb-2026",
+      "bc_start": "-",
+      "bc_end": "-",
+      "face_value": "5",
+      "company": "SIS LIMITED"
+    },
+    {
+      "symbol": "SIS",
+      "series": "EQ",
+      "purpose": "Buy Back",
+      "ex_date": "06-Jun-2025",
+      "record_date": "06-Jun-2025",
+      "bc_start": "-",
+      "bc_end": "-",
+      "face_value": "5",
+      "company": "SIS LIMITED"
+    },
+    {
+      "symbol": "SIS",
+      "series": "EQ",
+      "purpose": "Buy Back",
+      "ex_date": "12-Dec-2023",
+      "record_date": "12-Dec-2023",
+      "bc_start": "-",
+      "bc_end": "-",
+      "face_value": "5",
+      "company": "SIS LIMITED"
+    },
+    {
+      "symbol": "SIS",
+      "series": "EQ",
+      "purpose": "Buy Back",
+      "ex_date": "29-Aug-2022",
+      "record_date": "30-Aug-2022",
+      "bc_start": "-",
+      "bc_end": "-",
+      "face_value": "5",
+      "company": "SIS LIMITED"
+    },
+    {
+      "symbol": "SIS",
+      "series": "EQ",
+      "purpose": " Buyback",
+      "ex_date": "08-Apr-2021",
+      "record_date": "09-Apr-2021",
+      "bc_start": "-",
+      "bc_end": "-",
+      "face_value": "5",
+      "company": "SIS LIMITED"
+    },
+    {
+      "symbol": "SIS",
+      "series": "EQ",
+      "purpose": " Interim Dividend - Rs 2 Per Share",
+      "ex_date": "03-Mar-2020",
+      "record_date": "04-Mar-2020",
+      "bc_start": "-",
+      "bc_end": "-",
+      "face_value": "5",
+      "company": "SIS LIMITED"
+    },
+    {
+      "symbol": "SIS",
+      "series": "EQ",
+      "purpose": " Face Value Split (Sub-Division) - From Rs 10/- Per Share To Rs 5/- Per Share",
+      "ex_date": "15-Jan-2020",
+      "record_date": "16-Jan-2020",
+      "bc_start": "-",
+      "bc_end": "-",
+      "face_value": "5",
+      "company": "SIS LIMITED"
+    },
+    {
+      "symbol": "SIS",
+      "series": "EQ",
+      "purpose": " Annual General Meeting/ Dividend - Rs 3.50 Per Sahre",
+      "ex_date": "19-Jun-2019",
+      "record_date": "-",
+      "bc_start": "21-Jun-2019",
+      "bc_end": "21-Jun-2019",
+      "face_value": "5",
+      "company": "SIS LIMITED"
+    },
+    {
+      "symbol": "SIS",
+      "series": "EQ",
+      "purpose": " Annual General Meeting / Dividend- Rs 1.5 Per Share",
+      "ex_date": "20-Jun-2018",
+      "record_date": "-",
+      "bc_start": "22-Jun-2018",
+      "bc_end": "28-Jun-2018",
+      "face_value": "5",
+      "company": "SIS LIMITED"
+    },
+    {
+      "symbol": "SIS",
+      "series": "EQ",
+      "purpose": " Interim Dividend - Rs 2/- Per Share",
+      "ex_date": "07-Feb-2018",
+      "record_date": "08-Feb-2018",
+      "bc_start": "-",
+      "bc_end": "-",
+      "face_value": "5",
+      "company": "SIS LIMITED"
+    },
+    {
+      "symbol": "SIS",
+      "series": "EQ",
+      "purpose": " Annual General Meeting",
+      "ex_date": "15-Sep-2017",
+      "record_date": "-",
+      "bc_start": "19-Sep-2017",
+      "bc_end": "25-Sep-2017",
+      "face_value": "5",
+      "company": "SIS LIMITED"
+    }
+  ],
+  "yf_dividends": [
+    {
+      "date": "2018-02-07",
+      "amount": 1.0
+    },
+    {
+      "date": "2018-06-20",
+      "amount": 0.75
+    },
+    {
+      "date": "2019-06-19",
+      "amount": 1.75
+    },
+    {
+      "date": "2020-03-03",
+      "amount": 2.0
+    },
+    {
+      "date": "2026-02-06",
+      "amount": 7.0
+    }
+  ],
+  "yf_splits": [
+    {
+      "date": "2020-01-15",
+      "ratio": 2.0
+    }
+  ]
+}

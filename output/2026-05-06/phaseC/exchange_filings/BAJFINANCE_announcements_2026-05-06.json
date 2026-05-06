@@ -1,0 +1,358 @@
+{
+  "ticker": "BAJFINANCE",
+  "fetched_at": "2026-05-06T05:52:06.378975+05:30",
+  "total_returned": 50,
+  "material_only": true,
+  "announcements": [
+    {
+      "date": "29-Apr-2026 17:12:42",
+      "type": "Change in Director(s)",
+      "subject": "Bajaj Finance Limited has informed the Exchange regarding Change in Director(s) of the company.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/BAJFINANCE_29042026171229_SEIntimationRRB.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "29-Apr-2026 17:09:35",
+      "type": "Change in Director(s)",
+      "subject": "Bajaj Finance Limited has informed the Exchange regarding Change in Director(s) of the company.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/BAJFINANCE_29042026170917_CHANGEINDIRECTORPRAMITJHAVERI.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "29-Apr-2026 17:05:53",
+      "type": "Outcome of Board Meeting",
+      "subject": "Bajaj Finance Limited has informed the Exchange regarding Outcome of Board Meeting held on April 29, 2026.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/BAJFINANCE_29042026170516_SEIntimationRRB.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "29-Apr-2026 17:01:55",
+      "type": "Outcome of Board Meeting",
+      "subject": "Bajaj Finance Limited has informed the Exchange regarding Outcome of Board Meeting held on April 29, 2026.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/BAJFINANCE_29042026170104_CHANGEINDIRECTORPRAMITJHAVERI.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "29-Apr-2026 16:57:24",
+      "type": "Outcome of Board Meeting",
+      "subject": "Bajaj Finance Limited has informed the Exchange regarding Outcome of Board Meeting held on April 29, 2026.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/BAJFINANCE_29042026165631_Fundraising.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "29-Apr-2026 16:40:34",
+      "type": "Dividend",
+      "subject": "Bajaj Finance Limited has informed the Exchange that Board of Directors at its meeting held on April 29, 2026, recommended Final Dividend of Rs. 6 per equity share.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/BAJFINANCE_29042026163927_BSENSEOUTCOME.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "29-Apr-2026 16:34:28",
+      "type": "Outcome of Board Meeting",
+      "subject": "Bajaj Finance Limited has submitted to the Exchange, the financial results for the period ended March 31, 2026.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/BAJFINANCE_29042026163247_BSENSEOUTCOME.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "17-Mar-2026 20:58:22",
+      "type": "Change in Management",
+      "subject": "Bajaj Finance Limited has informed the Exchange about change in Management",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/BAJFINANCE_17032026205813_ClassificationasSMPTusharDeb_signed.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "03-Feb-2026 17:11:40",
+      "type": "Outcome of Board Meeting",
+      "subject": "Bajaj Finance Limited has submitted to the Exchange, the financial results for the period ended December 31, 2025. The Board Meeting today commenced at 3:45 p.m. and consideration of unaudited financial results for the quarter and nine months ended 31 December 2025 was approved at 4:55 p.m. The proceedings of the Board Meeting are in progress at the time of filing of this disclosure.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/BAJFINANCE_03022026170438_BMOutcome_03022026_final.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "27-Jan-2026 12:46:34",
+      "type": "Allotment of Securities",
+      "subject": "Bajaj Finance Limited has informed the Exchange regarding allotment of 512000 securities pursuant to Secured Redeemable Non Convertible Debentures at its meeting held on January 27, 2026",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/BAJFINANCE_27012026124446_Reg30_Intimation_of_allotment_of_NCD_290-8.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "10-Nov-2025 19:11:32",
+      "type": "Change in Management",
+      "subject": "Bajaj Finance Limited has informed the Exchange about change in Management",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/BAJFINANCE_10112025191047_ReAppointmentofCCO.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "10-Nov-2025 19:04:13",
+      "type": "Change in Management",
+      "subject": "Bajaj Finance Limited has informed the Exchange about change in Management",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/BAJFINANCE_10112025190337_AppointmentofDyCEO.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "10-Nov-2025 19:00:07",
+      "type": "Change in Management",
+      "subject": "Bajaj Finance Limited has informed the Exchange about change in Management",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/BAJFINANCE_10112025185945_AppointmentofCHROJenifer.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "10-Nov-2025 17:12:17",
+      "type": "Outcome of Board Meeting",
+      "subject": "Bajaj Finance Limited has informed the Exchange regarding  Board meeting held on November 10, 2025.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/BAJFINANCE_10112025171200_OutcomeQ2FY2026.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "10-Nov-2025 17:09:32",
+      "type": "Outcome of Board Meeting",
+      "subject": "Bajaj Finance Limited has submitted to the Exchange, the financial results for the period ended September 30, 2025.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/BAJFINANCE_10112025170715_OutcomeQ2FY2026.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "15-Aug-2025 13:22:04",
+      "type": "Credit Rating- Revision",
+      "subject": "Bajaj Finance Limited has informed the Exchange about Credit Rating- Revision",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/BAJFINANCE_15082025132143_BFL_Intimation_for_Credit_Rating_Signed.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "05-Aug-2025 09:59:28",
+      "type": "Credit Rating- New",
+      "subject": "BAJFINANCE: Bajaj Finance Limited has informed the Exchange about New Credit Rating- Moody s Ratings vide their press release dated 4 August 2025, has assigned the Company a new rating  Baa3 Corporate family rating (CFR)  with outlook as  Stable .",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/BAJFINANCE_05082025095843_Intimation_for_Credit_Rating.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "24-Jul-2025 15:31:42",
+      "type": "Outcome of Board Meeting",
+      "subject": "Bajaj Finance Limited has informed the Exchange regarding  Board meeting held on July 24, 2025.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/BAJFINANCE_24072025153030_BSENSEOutcome.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "24-Jul-2025 15:29:02",
+      "type": "Outcome of Board Meeting",
+      "subject": "Bajaj Finance Limited has submitted to the Exchange, the unaudited financial results for the period ended Jun 30, 2025.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/BAJFINANCE_24072025152811_BSENSEOutcome.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "21-Jul-2025 19:08:41",
+      "type": "Change in Director(s)",
+      "subject": "Bajaj Finance Limited has informed the Exchange regarding Change in Director(s) of the company.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/BAJFINANCE_21072025190831_BSE_NSE_Intimation_Change_in_Directorate_Signed.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "17-Jun-2025 16:37:26",
+      "type": "Allotment of Securities",
+      "subject": "Bajaj Finance Limited has informed the Exchange regarding allotment of 4,97,14,29,216 equity shares of Re. 1, pursuant to Bonus at the meeting held on 17 June 2025",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/BAJFINANCE_17062025163606_SEIntimation_Bonus_Allotment_June2025.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "29-Apr-2025 18:50:27",
+      "type": "Stock split",
+      "subject": "Bajaj Finance Limited has informed the Exchange that the Board of Directors at its meeting held on April 29, 2025, has considered and approved subdivision of 1 equity shares of Rs. 2 each into 2 equity shares of Re. 1 each.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/BAJFINANCE_29042025184926_BoardMeetingOutcomeApril2025.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "29-Apr-2025 18:45:57",
+      "type": "Bonus",
+      "subject": "Bajaj Finance Limited has informed the Exchange that the Board of Directors at its meeting held on April 29, 2025, have considered and approved bonus at the ratio of 4 : 1, i.e 4 Equity Shares for every 1 Equity Shares held.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/BAJFINANCE_29042025184511_BoardMeetingOutcomeApril2025.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "29-Apr-2025 18:35:11",
+      "type": "Dividend",
+      "subject": "Bajaj Finance Limited has informed the Exchange that Board of Directors at its meeting held on April 29, 2025, declared Special (Interim) Dividend of Rs. 12 per equity share.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/BAJFINANCE_29042025183437_BoardMeetingOutcomeApril2025.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "29-Apr-2025 18:30:06",
+      "type": "Dividend",
+      "subject": "Bajaj Finance Limited has informed the Exchange that Board of Directors at its meeting held on April 29, 2025, recommended Final Dividend of Rs. 44 per equity share.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/BAJFINANCE_29042025182853_BoardMeetingOutcomeApril2025.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "29-Apr-2025 18:21:50",
+      "type": "Outcome of Board Meeting",
+      "subject": "Bajaj Finance Limited has informed the Exchange regarding Outcome of Board meeting held on 29 April 2025, for approving Audited Financial Results of the Company for the quarter and year ended 31 March 2025.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/BAJFINANCE_29042025182004_BoardMeetingOutcomeApril2025.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "29-Apr-2025 18:07:55",
+      "type": "Change in Management",
+      "subject": "Bajaj Finance Limited has informed the Exchange about change in Management",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/BAJFINANCE_29042025180729_ChangeinSMTSEintimation.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "29-Apr-2025 18:03:37",
+      "type": "Bonus",
+      "subject": "Bajaj Finance Limited has informed the Exchange that the Board of Directors at its meeting held on April 29, 2025, have considered and approved bonus at the ratio of 4 : 1, i.e 4 Equity Shares for every 1 Equity Shares held.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/BAJFINANCE_29042025180324_BoardMeetingOutcomeApril2025.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "29-Apr-2025 18:01:42",
+      "type": "Stock split",
+      "subject": "Bajaj Finance Limited has informed the Exchange that the Board of Directors at its meeting held on April 29, 2025, has considered and approved subdivision of 621428652 equity shares of 2 each into 1242857304 equity shares of 1 each.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/BAJFINANCE_29042025180058_BoardMeetingOutcomeApril2025.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "29-Apr-2025 17:50:27",
+      "type": "Dividend",
+      "subject": "Bajaj Finance Limited has informed the Exchange that Board of Directors at its meeting held on April 29, 2025, declared Special (Interim) Dividend of 12 per equity share.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/BAJFINANCE_29042025174946_BoardMeetingOutcomeApril2025.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "29-Apr-2025 17:47:05",
+      "type": "Dividend",
+      "subject": "Bajaj Finance Limited has informed the Exchange that Board of Directors at its meeting held on April 29, 2025, recommended Final Dividend of 44 per equity share.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/BAJFINANCE_29042025174647_BoardMeetingOutcomeApril2025.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "29-Apr-2025 17:44:44",
+      "type": "Outcome of Board Meeting",
+      "subject": "Bajaj Finance Limited has informed the Exchange regarding Board meeting held on 29 April 2025, for approving Audited Financial Results of the Company for the quarter and year ended 31 March 2025.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/BAJFINANCE_29042025174347_BoardMeetingOutcomeApril2025.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "26-Mar-2025 16:52:30",
+      "type": "Allotment of Securities",
+      "subject": "Bajaj Finance Limited has informed the Exchange regarding allotment of 15,50,000 securities upon conversion of warrants allotted on preferential basis at its meeting held on March 26, 2025",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/BAJFINANCE_26032025165034_Reg30IntimationofallotmentofEquityshares_260325__002_.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "20-Mar-2025 19:31:17",
+      "type": "Change in Director(s)",
+      "subject": "Bajaj Finance Limited has informed the Exchange regarding Change in Director(s) of the company.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/BAJFINANCE_20032025193059_Changeindirector20032025.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "18-Mar-2025 09:47:18",
+      "type": "Credit Rating- Revision",
+      "subject": "Bajaj Finance Limited has informed the Exchange about Credit Rating- Revision",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/BAJFINANCE_18032025094359_SE_Draft_Change_in_Credit_Rating_Final_Signed.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "29-Jan-2025 17:24:19",
+      "type": "Outcome of Board Meeting",
+      "subject": "Bajaj Finance Limited has informed the Exchange regarding Outcome of Board Meeting held on January 29, 2025.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/BAJFINANCE_29012025172310_BFL_FinancialResultsQ3_29012025.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "29-Jan-2025 17:18:21",
+      "type": "Outcome of Board Meeting",
+      "subject": "Bajaj Finance Limited has informed the Exchange regarding Board meeting held on 29 January 2025, for approving unaudited Financial Results of the Company for the quarter and nine months ended 31 December 2024.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/BAJFINANCE_29012025171738_BFL_FinancialResultsQ3_29012025.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "20-Jan-2025 11:22:20",
+      "type": "Press Release",
+      "subject": "Bajaj Finance Limited has informed the Exchange regarding a press release dated January 20, 2025, titled \"Bharti Airtel and Bajaj Finance enter into a strategic partnership to create one of India's Largest Digital Platforms for Financial Services\".",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/BAJFINANCE_20012025112207_PressRelease2025.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "22-Oct-2024 17:38:19",
+      "type": "Outcome of Board Meeting",
+      "subject": "Bajaj Finance Limited has informed the Exchange regarding Outcome of Board Meeting held on October 22, 2024.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/BAJFINANCE_22102024173819_OUTCOMEBSENSE22102024.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "22-Oct-2024 17:32:33",
+      "type": "Outcome of Board Meeting",
+      "subject": "Bajaj Finance Limited has informed the Exchange regarding  Board meeting held on October 22, 2024.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/BAJFINANCE_22102024173233_OUTCOMEBSENSE22102024.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "17-Oct-2024 22:47:35",
+      "type": "Credit Rating- New",
+      "subject": "Bajaj Finance Limited has informed the Exchange about Credit Rating assigned by Moody's Ratings to the Company for the first time.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/BAJFINANCE_17102024224735_IntimationforCreditRating_Moody.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "23-Jul-2024 15:41:12",
+      "type": "Outcome of Board Meeting",
+      "subject": "Bajaj Finance Limited has informed the Exchange regarding Outcome of Board Meeting held on July 23, 2024.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/BAJFINANCE_23072024154112_BSENSEOUTCOMEJULY2024.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "23-Jul-2024 15:38:14",
+      "type": "Outcome of Board Meeting",
+      "subject": "Bajaj Finance Limited has informed the Exchange regarding  Board meeting held on July 23, 2024.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/BAJFINANCE_23072024153814_BSENSEOUTCOMEJULY2024.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "25-Apr-2024 18:11:39",
+      "type": "Dividend Updates",
+      "subject": "Bajaj Finance Limited has informed the Exchange about Dividend Updates",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/BAJFINANCE_25042024181139_Resultsuploading.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "25-Apr-2024 18:08:27",
+      "type": "Change in Management",
+      "subject": "Bajaj Finance Limited has informed the Exchange about change in Management",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/BAJFINANCE_25042024180827_OutcomeSMT.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "25-Apr-2024 18:04:27",
+      "type": "Change in Director(s)",
+      "subject": "Bajaj Finance Limited has informed the Exchange regarding Change in Director(s) of the company.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/BAJFINANCE_25042024180427_Outcome2DIRECTORAUDITOR.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "25-Apr-2024 17:55:02",
+      "type": "Date of payment of dividend",
+      "subject": "Bajaj Finance Limited has informed the Exchange about Date of payment of dividend",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/BAJFINANCE_25042024175502_Resultsuploading.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "25-Apr-2024 17:38:54",
+      "type": "Dividend",
+      "subject": "Bajaj Finance Limited has informed the Exchange that Board of Directors at its meeting held on April 25, 2024, recommended Final Dividend of Rs. 36 per equity share.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/BAJFINANCE_25042024173854_Resultsuploading.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "25-Apr-2024 17:32:23",
+      "type": "Dividend",
+      "subject": "Bajaj Finance Limited has informed the Exchange that Board of Directors at its meeting held on April 25, 2024, recommended Final Dividend of 36 per equity share.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/BAJFINANCE_25042024173223_Resultsuploading.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "25-Apr-2024 17:29:43",
+      "type": "Outcome of Board Meeting",
+      "subject": "Bajaj Finance Limited has informed the Exchange regarding  Board meeting held on April 25, 2024.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/BAJFINANCE_25042024172943_Resultsuploading.pdf",
+      "has_xbrl": false
+    }
+  ]
+}

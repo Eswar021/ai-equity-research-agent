@@ -1,0 +1,284 @@
+{
+  "feed_name": "yahoo_finance",
+  "url": "https://finance.yahoo.com/rss/topfinstories",
+  "fetched_at": "2026-05-05T00:11:56.823570+05:30",
+  "total": 46,
+  "articles": [
+    {
+      "title": "Amex GBT agrees to $6.3 billion take-private deal with Long Lake",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/amex-gbt-agrees-6-3-163512714.html",
+      "published": "2026-05-04T16:35:12Z",
+      "summary": ""
+    },
+    {
+      "title": "Some CEOs are receiving millions in bonuses after tariff costs were 'neutralized' — consumers get nothing",
+      "url": "https://finance.yahoo.com/economy/policy/articles/ceos-receiving-millions-bonuses-tariff-094500029.html",
+      "published": "2026-05-03T09:45:00Z",
+      "summary": ""
+    },
+    {
+      "title": "What Analysts Think About Genius Sports Limited (GENI)",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/analysts-think-genius-sports-limited-095527373.html",
+      "published": "2026-05-03T09:55:27Z",
+      "summary": ""
+    },
+    {
+      "title": "What Makes Recursion Pharmaceuticals, Inc. (RXRX) A Strong Penny Stock",
+      "url": "https://finance.yahoo.com/sectors/healthcare/articles/makes-recursion-pharmaceuticals-inc-rxrx-095529747.html",
+      "published": "2026-05-03T09:55:29Z",
+      "summary": ""
+    },
+    {
+      "title": "New Game Pipeline Could Transform Bilibili Inc. (BILI), Here’s the Bull Case",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/game-pipeline-could-transform-bilibili-095545004.html",
+      "published": "2026-05-03T09:55:45Z",
+      "summary": ""
+    },
+    {
+      "title": "2 Reasons GameStop Should Buy eBay, 1 Reason It Won't",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/2-reasons-gamestop-buy-ebay-094700406.html",
+      "published": "2026-05-03T09:47:00Z",
+      "summary": ""
+    },
+    {
+      "title": "90% of Analysts Are Bullish on JD.com, Inc. (JD), Here’s Why",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/90-analysts-bullish-jd-com-095538862.html",
+      "published": "2026-05-03T09:55:38Z",
+      "summary": ""
+    },
+    {
+      "title": "Inside the Street’s Take on Grab Holdings Limited (GRAB)",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/inside-street-grab-holdings-limited-095523946.html",
+      "published": "2026-05-03T09:55:23Z",
+      "summary": ""
+    },
+    {
+      "title": "From Bitcoin to AI: Keel Infrastructure Corp. (KEEL)’s Big Bet",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/bitcoin-ai-keel-infrastructure-corp-095530512.html",
+      "published": "2026-05-03T09:55:30Z",
+      "summary": ""
+    },
+    {
+      "title": "UBS Stays Neutral on JinkoSolar Holding Co., Ltd. (JKS) After Earnings, What Are They Seeing?",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/ubs-stays-neutral-jinkosolar-holding-095552461.html",
+      "published": "2026-05-03T09:55:52Z",
+      "summary": ""
+    },
+    {
+      "title": "Analyst Report: Trane Technologies plc",
+      "url": "https://finance.yahoo.com/research/reports/ARGUS_3086_AnalystReport_1777916646000?yptr=yahoo&ncid=yahooproperties_plusresear_nm5q6ze1cei",
+      "published": "2026-05-04T17:44:06Z",
+      "summary": ""
+    },
+    {
+      "title": "Warren Buffett's Successor, Greg Abel, Sends Investors a $397 Billion Warning. History Says the Stock Market Will Do This Next.",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/warren-buffetts-successor-greg-abel-094400140.html",
+      "published": "2026-05-03T09:44:00Z",
+      "summary": ""
+    },
+    {
+      "title": "Is MannKind Corporation (MNKD) The Best Fundamentally Strong Penny Stock to Invest In Now?",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/mannkind-corporation-mnkd-best-fundamentally-095525966.html",
+      "published": "2026-05-03T09:55:25Z",
+      "summary": ""
+    },
+    {
+      "title": "Morgan Stanley Slashes iQIYI, Inc. (IQ) Forecasts, Is the Worst Still Ahead?",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/morgan-stanley-slashes-iqiyi-inc-095550857.html",
+      "published": "2026-05-03T09:55:50Z",
+      "summary": ""
+    },
+    {
+      "title": "Is Baidu, Inc. (BIDU) The Best Chinese Stock to Buy According to Hedge Funds?",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/baidu-inc-bidu-best-chinese-095537091.html",
+      "published": "2026-05-03T09:55:37Z",
+      "summary": ""
+    },
+    {
+      "title": "What’s Behind Goldman Sachs’ Bullish Stance on WeRide Inc. (WRD)",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/behind-goldman-sachs-bullish-stance-095547047.html",
+      "published": "2026-05-03T09:55:47Z",
+      "summary": ""
+    },
+    {
+      "title": "Analyst Report: Verisk Analytics Inc",
+      "url": "https://finance.yahoo.com/research/reports/ARGUS_4520_AnalystReport_1777916646000?yptr=yahoo&ncid=yahooproperties_plusresear_nm5q6ze1cei",
+      "published": "2026-05-04T17:44:06Z",
+      "summary": ""
+    },
+    {
+      "title": "How Social Security Gets Taxed and Legal Ways to Avoid It",
+      "url": "https://finance.yahoo.com/economy/policy/articles/social-security-gets-taxed-legal-095200609.html",
+      "published": "2026-05-03T09:52:00Z",
+      "summary": ""
+    },
+    {
+      "title": "Daqo New Energy Corp. (DQ) Under Pressure: Roth Capital Warns of What’s Next",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/daqo-energy-corp-dq-under-095543619.html",
+      "published": "2026-05-03T09:55:43Z",
+      "summary": ""
+    },
+    {
+      "title": "Clarivate Plc (CLVT): A Penny Stock That Just Surprised",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/clarivate-plc-clvt-penny-stock-095535558.html",
+      "published": "2026-05-03T09:55:35Z",
+      "summary": ""
+    },
+    {
+      "title": "Ur-Energy Inc. (URG) Well-Positioned for Tight Uranium Market, Says H.C. Wainwright",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/ur-energy-inc-urg-well-095533591.html",
+      "published": "2026-05-03T09:55:33Z",
+      "summary": ""
+    },
+    {
+      "title": "Why Are Analysts Turning Positive on Chagee Holdings Limited (CHA)",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/why-analysts-turning-positive-chagee-095548201.html",
+      "published": "2026-05-03T09:55:48Z",
+      "summary": ""
+    },
+    {
+      "title": "Analyst Report: Carrier Global Corp",
+      "url": "https://finance.yahoo.com/research/reports/ARGUS_5875_AnalystReport_1777916646000?yptr=yahoo&ncid=yahooproperties_plusresear_nm5q6ze1cei",
+      "published": "2026-05-04T17:44:06Z",
+      "summary": ""
+    },
+    {
+      "title": "BofA Lifts New Oriental Education & Technology Group Inc. (EDU) Target After Revenue Surprise",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/bofa-lifts-oriental-education-technology-095540470.html",
+      "published": "2026-05-03T09:55:40Z",
+      "summary": ""
+    },
+    {
+      "title": "AMC Entertainment Holdings Inc.’s (AMC) Outlook Improves, Yet Challenges Persist",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/amc-entertainment-holdings-inc-amc-095532870.html",
+      "published": "2026-05-03T09:55:32Z",
+      "summary": ""
+    },
+    {
+      "title": "Here’s Why XPeng Inc. (XPEV) Is Among the Best Chinese Stocks to Buy According to Hedge Funds",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/why-xpeng-inc-xpev-among-095542752.html",
+      "published": "2026-05-03T09:55:42Z",
+      "summary": ""
+    },
+    {
+      "title": "What to Expect in Markets This Week: April Jobs Report, Host of Earnings From Consumer Giants Coming Up",
+      "url": "https://finance.yahoo.com/economy/policy/articles/expect-markets-week-april-jobs-100000554.html",
+      "published": "2026-05-03T10:00:00Z",
+      "summary": ""
+    },
+    {
+      "title": "Legendary investor who made an estimated $100 million on 1987 crash says investors could see 'negative 10-year returns'",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/legendary-investor-made-estimated-100-091500814.html",
+      "published": "2026-05-03T09:15:00Z",
+      "summary": ""
+    },
+    {
+      "title": "Analyst Report: SLB Ltd",
+      "url": "https://finance.yahoo.com/research/reports/ARGUS_3392_AnalystReport_1777916646000?yptr=yahoo&ncid=yahooproperties_plusresear_nm5q6ze1cei",
+      "published": "2026-05-04T17:44:06Z",
+      "summary": ""
+    },
+    {
+      "title": "Two people won Powerball, but another 89 won $1 million — here's what to do if you land a similar windfall",
+      "url": "https://finance.yahoo.com/markets/articles/two-people-won-powerball-another-101000016.html",
+      "published": "2026-05-03T10:10:00Z",
+      "summary": ""
+    },
+    {
+      "title": "Truist Reaffirms Buy on Eli Lilly (LLY) After Trial Success",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/ruist-reaffirms-buy-eli-lilly-075147313.html",
+      "published": "2026-05-03T08:51:47Z",
+      "summary": ""
+    },
+    {
+      "title": "GSK (GSK) Completes $950M Acquisition to Expand Drug Pipeline",
+      "url": "https://finance.yahoo.com/sectors/healthcare/articles/gsk-gsk-completes-950m-acquisition-075214045.html",
+      "published": "2026-05-03T07:52:14Z",
+      "summary": ""
+    },
+    {
+      "title": "Trump Wants to Control the Fed. History Says That's How Bear Markets Are Born.",
+      "url": "https://finance.yahoo.com/economy/policy/articles/trump-wants-control-fed-history-093200525.html",
+      "published": "2026-05-03T09:32:00Z",
+      "summary": ""
+    },
+    {
+      "title": "Unilever (UL) Rated Buy by BofA on Valuation Gap",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/unilever-ul-rated-buy-bofa-075211627.html",
+      "published": "2026-05-03T07:52:11Z",
+      "summary": ""
+    },
+    {
+      "title": "Shell (SHEL) Rated Buy by TD Cowen over $20B Buyback Expectations",
+      "url": "https://finance.yahoo.com/sectors/energy/articles/shell-shel-rated-buy-td-075212725.html",
+      "published": "2026-05-03T07:52:12Z",
+      "summary": ""
+    },
+    {
+      "title": "Tyson Foods (TSN) Upgraded to Overweight on Growth Potential",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/tyson-foods-tsn-upgraded-overweight-075209727.html",
+      "published": "2026-05-03T07:52:09Z",
+      "summary": ""
+    },
+    {
+      "title": "Mondelez (MDLZ) Rated Buy by BTIG on Stable Valuation",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/mondelez-mdlz-rated-buy-btig-075207303.html",
+      "published": "2026-05-03T07:52:07Z",
+      "summary": ""
+    },
+    {
+      "title": "Stock Indexes Are Contorting Themselves to Include SpaceX and OpenAI",
+      "url": "https://www.wsj.com/finance/stocks/stock-indexes-are-contorting-themselves-to-include-spacex-and-openai-92136b13?siteid=yhoof2&yptr=yahoo",
+      "published": "2026-05-03T09:30:00Z",
+      "summary": ""
+    },
+    {
+      "title": "Stifel, Jefferies Back Altria (MO) on Pricing Strength and Growth Strategy",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/stifel-jefferies-back-altria-mo-075205619.html",
+      "published": "2026-05-03T07:52:05Z",
+      "summary": ""
+    },
+    {
+      "title": "Guggenheim Reaffirms Buy on Pfizer (PFE) Ahead of Pipeline Catalysts",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/guggenheim-reaffirms-buy-pfizer-pfe-075202522.html",
+      "published": "2026-05-03T07:52:02Z",
+      "summary": ""
+    },
+    {
+      "title": "BofA Sees Efficiency Gains Driving Progressive Corp (PGR) Upside Potential",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/bofa-sees-efficiency-gains-driving-075204846.html",
+      "published": "2026-05-03T07:52:04Z",
+      "summary": ""
+    },
+    {
+      "title": "Mizuho Boosts Price Target for Costco (COST) Amid Strong Sales Momentum",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/mizuho-boosts-price-target-costco-075150886.html",
+      "published": "2026-05-03T07:51:50Z",
+      "summary": ""
+    },
+    {
+      "title": "I’m a Financial Planner: 4 Types of Bills My Retired Clients Waste Money on That They Should Cancel",
+      "url": "https://finance.yahoo.com/markets/articles/m-financial-planner-4-types-100227472.html",
+      "published": "2026-05-03T10:02:27Z",
+      "summary": ""
+    },
+    {
+      "title": "UBS Highlights Strong Earnings Momentum for PepsiCo (PEP)",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/ubs-highlights-strong-earnings-momentum-075200805.html",
+      "published": "2026-05-03T07:52:00Z",
+      "summary": ""
+    },
+    {
+      "title": "BofA Highlights Energy Growth Driving Caterpillar (CAT) Upside",
+      "url": "https://finance.yahoo.com/sectors/energy/articles/bofa-highlights-energy-growth-driving-075148214.html",
+      "published": "2026-05-03T07:51:48Z",
+      "summary": ""
+    },
+    {
+      "title": "Barclays Flags Growth Targets and Execution Focus for Verizon (VZ)",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/barclays-flags-growth-targets-execution-075159195.html",
+      "published": "2026-05-03T07:51:59Z",
+      "summary": ""
+    }
+  ]
+}

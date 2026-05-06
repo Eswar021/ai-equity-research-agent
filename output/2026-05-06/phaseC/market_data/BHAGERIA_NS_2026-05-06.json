@@ -1,0 +1,18 @@
+{
+  "ticker": "BHAGERIA.NS",
+  "name": "Bhageria Industries Limited",
+  "exchange": "NSI",
+  "currency": "INR",
+  "price": 165.16,
+  "day_change_pct": -1.01,
+  "52w_high": 244.6,
+  "52w_low": 127.51,
+  "return_1m": NaN,
+  "return_3m": NaN,
+  "return_1y": NaN,
+  "volume": 27673,
+  "market_cap": 7208272896,
+  "sector": "Basic Materials",
+  "industry": "Specialty Chemicals",
+  "fetched_at": "2026-05-06T05:58:04.255909+05:30"
+}

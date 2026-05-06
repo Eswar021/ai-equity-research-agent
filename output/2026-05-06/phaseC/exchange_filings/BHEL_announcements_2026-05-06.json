@@ -1,0 +1,358 @@
+{
+  "ticker": "BHEL",
+  "fetched_at": "2026-05-06T05:48:06.087180+05:30",
+  "total_returned": 50,
+  "material_only": true,
+  "announcements": [
+    {
+      "date": "04-May-2026 11:28:16",
+      "type": "Dividend",
+      "subject": "Bharat Heavy Electricals Limited has informed the Exchange that Board of Directors at its meeting held on May 04, 2026, recommended Final Dividend of Rs. 1.40 per equity share.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/BHEL_04052026112804_BHELQ4FR.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "04-May-2026 11:24:21",
+      "type": "Outcome of Board Meeting",
+      "subject": "BHELQ4 Financial Results",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/BHEL_04052026112323_BHELQ4FR.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "27-Apr-2026 15:07:48",
+      "type": "Change in Director(s)",
+      "subject": "Bharat Heavy Electricals Limited has informed the Exchange regarding Change in Director(s) of the company.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/BHEL_27042026150721_SE_intimation_asfasign.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "25-Apr-2026 19:58:38",
+      "type": "Change in Management",
+      "subject": "Bharat Heavy Electricals Limited has informed the Exchange about change in Management",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/BHELCC_25042026195824_Info_to_SE_25_04_2026.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "17-Apr-2026 21:56:13",
+      "type": "Press Release",
+      "subject": "BHEL Registers Strong Revenue Growth in FY 2025 26",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/BHELCC_17042026215437_Info_to_SE_17_04_2026_03.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "31-Mar-2026 10:04:09",
+      "type": "Credit Rating",
+      "subject": "Bharat Heavy Electricals Limited has informed the Exchange about Credit Rating",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/BHELCC_31032026100326_Info_for_SE_31_03_2026.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "28-Mar-2026 10:55:08",
+      "type": "Change in Director(s)",
+      "subject": "Bharat Heavy Electricals Limited has informed the Exchange regarding Change in Director(s) of the company.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/BHEL_28032026105428_SE_intimation_for_Cessation_of_IDs.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "26-Mar-2026 14:11:02",
+      "type": "Change in Management",
+      "subject": "Bharat Heavy Electricals Limited has informed the Exchange about change in Management",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/BHELCC_26032026141051_Info_for_SE_26_03_2026.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "25-Mar-2026 10:12:03",
+      "type": "Change in Management",
+      "subject": "Bharat Heavy Electricals Limited has informed the Exchange about change in Management",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/BHELCC_25032026101142_Info_for_SE_25_03_2026.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "19-Mar-2026 16:19:18",
+      "type": "Change in Director(s)",
+      "subject": "Bharat Heavy Electricals Limited has informed the Exchange regarding Change in Director(s) of the company.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/BHEL_19032026161854_SEintimation.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "19-Mar-2026 14:59:10",
+      "type": "Outcome of Board Meeting",
+      "subject": "Bharat Heavy Electricals Limited has informed the Exchange regarding Outcome of Board Meeting held on March 19, 2026.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/BHEL_19032026145839_bmoutcome19032026.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "25-Jan-2026 08:56:42",
+      "type": "Change in Management",
+      "subject": "Bharat Heavy Electricals Limited has informed the Exchange about change in Management",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/BHELCC_25012026085605_BHELChangeinManagement.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "19-Jan-2026 11:40:10",
+      "type": "Outcome of Board Meeting",
+      "subject": "Bharat Heavy Electricals Limited has submitted to the Exchange, the financial results for the period ended December 31, 2025.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/BHEL_19012026113829_BHELQ3FRS.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "15-Jan-2026 11:52:03",
+      "type": "Press Release",
+      "subject": "Bharat Heavy Electricals Limited has informed the Exchange regarding a press release dated January 15, 2026, titled \"BHEL commences supply of Semi-High-Speed Underslung Traction Transformers for Vande Bharat Sleeper Train Project\".",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/BHELCC_15012026115018_PressReleaseBHEL.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "08-Jan-2026 11:47:23",
+      "type": "Press Release",
+      "subject": "Bharat Heavy Electricals Limited has informed the Exchange regarding a press release dated January 08, 2026, titled \"Press Release\".",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/BHELCC_08012026114659_BHELPressRelease.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "25-Dec-2025 09:48:09",
+      "type": "Change in Management",
+      "subject": "Bharat Heavy Electricals Limited has informed the Exchange about change in Management",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/BHELCC_25122025094752_BHEL_ChangeinManagement.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "15-Dec-2025 22:43:46",
+      "type": "Change in Management",
+      "subject": "Bharat Heavy Electricals Limited has informed the Exchange about change in Management",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/BHELCC_15122025224208_BHEL_InformatonforSE.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "15-Dec-2025 14:35:23",
+      "type": "Change in Management",
+      "subject": "Bharat Heavy Electricals Limited has informed the Exchange about change in Management",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/BHELCC_15122025143514_BHELChangeinManagement.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "10-Dec-2025 21:29:16",
+      "type": "Change in Management",
+      "subject": "Bharat Heavy Electricals Limited has informed the Exchange about change in Management",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/BHELCC_10122025212841_BHEL_InformatonforSE.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "02-Dec-2025 11:22:18",
+      "type": "Change in Management",
+      "subject": "Bharat Heavy Electricals Limited has informed the Exchange about change in Management",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/BHELCC_02122025112015_ChangeinManagement_BHEL.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "25-Nov-2025 10:06:54",
+      "type": "Change in Management",
+      "subject": "Bharat Heavy Electricals Limited has informed the Exchange about change in Management",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/BHELCC_25112025100458_ChangeinManagement.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "29-Oct-2025 17:00:47",
+      "type": "Outcome of Board Meeting",
+      "subject": "Bharat Heavy Electricals Limited has submitted to the Exchange, the financial results for the period ended September 30, 2025.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/BHEL_29102025165959_BHELH1FRs.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "25-Sep-2025 18:04:27",
+      "type": "Outcome of Board Meeting",
+      "subject": "Bharat Heavy Electricals Limited has informed the Exchange regarding outcome of  Board meeting held on September 25, 2025.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/BHEL_25092025180410_OutcomeofBM.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "25-Sep-2025 09:41:34",
+      "type": "Change in Management",
+      "subject": "Bharat Heavy Electricals Limited has informed the Exchange about change in Management",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/BHELCC_25092025093912_BHELChangesInManagment.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "25-Aug-2025 11:51:58",
+      "type": "Change in Management",
+      "subject": "Bharat Heavy Electricals Limited has informed the Exchange about change in Management",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/BHELCC_25082025115135_BHELChangeInManag.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "06-Aug-2025 18:19:34",
+      "type": "Outcome of Board Meeting",
+      "subject": "Bharat Heavy Electricals Limited has submitted to the Exchange, the financial results for the period ended Jun 30, 2025.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/BHEL_06082025181820_BHELQ1FRS.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "05-Aug-2025 16:47:55",
+      "type": "Credit Rating",
+      "subject": "Bharat Heavy Electricals Limited has informed the Exchange about Credit Rating",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/BHELCC_05082025164741_BHELCreditRating.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "25-Jul-2025 11:00:32",
+      "type": "Change in Management",
+      "subject": "Bharat Heavy Electricals Limited has informed the Exchange about change in Management",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/BHELCC_25072025110023_BHELChangeinManagement.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "25-Jun-2025 09:32:36",
+      "type": "Change in Management",
+      "subject": "Bharat Heavy Electricals Limited has informed the Exchange about change in Management",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/BHELCC_25062025093218_BHELChangesinManagement.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "25-May-2025 07:14:24",
+      "type": "Change in Management",
+      "subject": "Bharat Heavy Electricals Limited has informed the Exchange about change in Management",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/BHELCC_25052025071406_BHELChangeinManagement.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "16-May-2025 16:14:47",
+      "type": "Change in Management",
+      "subject": "Bharat Heavy Electricals Limited has informed the Exchange about change in Management",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/BHELCC_16052025161436_ChangeinManagement.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "16-May-2025 14:29:08",
+      "type": "Dividend",
+      "subject": "Bharat Heavy Electricals Limited has informed the Exchange that Board of Directors at its meeting held on May 16, 2025, recommended Final Dividend of Rs. 0.50 per equity share.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/BHEL_16052025142831_BHELQ4results.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "16-May-2025 14:24:48",
+      "type": "Outcome of Board Meeting",
+      "subject": "Bharat Heavy Electricals Limited has informed the Exchange regarding Outcome of Board Meeting held on May 16, 2025.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/BHEL_16052025142234_BHELQ4results.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "01-May-2025 11:59:32",
+      "type": "Change in Management",
+      "subject": "Bharat Heavy Electricals Limited has informed the Exchange about change in Management",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/BHELCC_01052025115526_ChangesinManagement.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "30-Apr-2025 19:16:19",
+      "type": "Outcome of Board Meeting",
+      "subject": "Bharat Heavy Electricals Limited has informed the Exchange regarding  Board meeting held on April 30, 2025.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/BHEL_30042025191600_Outcome_of_Board_Meeting.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "25-Apr-2025 09:26:41",
+      "type": "Change in Management",
+      "subject": "Bharat Heavy Electricals Limited has informed the Exchange about change in Management",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/BHELCC_25042025092609_BHELInfoforStockExchanges.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "24-Apr-2025 19:00:05",
+      "type": "Press Release",
+      "subject": "Bharat Heavy Electricals Limited has informed the Exchange regarding a press release dated April 24, 2025, titled \"Minor fire incident in BHEL Bhopal\".",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/BHELCC_24042025185711_BHELInfoforStockExchanges.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "20-Apr-2025 14:12:32",
+      "type": "Press Release (Revised)",
+      "subject": "Bharat Heavy Electricals Limited has informed the Exchange regarding a revised press release dated April 20, 2025, titled \"BHEL achieves strong revenue growth and record order inflows in FY 2024 25\".",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/BHELCC_20042025140935_BHELPressReleaseREVISED.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "20-Apr-2025 11:00:17",
+      "type": "Press Release",
+      "subject": "Bharat Heavy Electricals Limited has informed the Exchange regarding a press release dated April 20, 2025, titled \"BHEL achieves strong revenue growth and record order inflows in FY 2024 25\".",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/BHELCC_20042025105755_BHELPressRelease.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "04-Apr-2025 13:27:17",
+      "type": "Change in Management",
+      "subject": "Bharat Heavy Electricals Limited has informed the Exchange about change in Management",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/BHELCC_04042025132537_ChangeinManagement.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "03-Apr-2025 15:28:02",
+      "type": "Press Release",
+      "subject": "Bharat Heavy Electricals Limited has informed the Exchange regarding a press release dated April 03, 2025, titled \"BHEL signs contract for ? 800 kV, 6000 MW Bhadla-Fatehpur LCC HVDC Terminal Station along with AC Transmission at Bhadla and Fatehpur\".",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/BHELCC_03042025152739_BHELContractSigning.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "29-Mar-2025 16:37:02",
+      "type": "Change in Director(s)",
+      "subject": "Bharat Heavy Electricals Limited has informed the Exchange regarding Change in Director(s) of the company.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/BHEL_29032025163433_SEIDappointment.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "25-Feb-2025 10:02:04",
+      "type": "Change in Management",
+      "subject": "Bharat Heavy Electricals Limited has informed the Exchange about change in Management",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/BHELCC_25022025100150_BHELAppointment.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "25-Feb-2025 09:57:00",
+      "type": "Change in Management",
+      "subject": "Bharat Heavy Electricals Limited has informed the Exchange about change in Management",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/BHELCC_25022025095647_ChangeinManagement.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "25-Jan-2025 08:07:46",
+      "type": "Change in Management",
+      "subject": "Bharat Heavy Electricals Limited has informed the Exchange about change in Management",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/BHELCC_25012025080726_ChangeinManagement2.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "25-Jan-2025 08:04:25",
+      "type": "Change in Management",
+      "subject": "Bharat Heavy Electricals Limited has informed the Exchange about change in Management",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/BHELCC_25012025080405_ChangeinManagement1.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "10-Jan-2025 15:12:57",
+      "type": "Press Release",
+      "subject": "Bharat Heavy Electricals Limited has informed the Exchange regarding a press release dated January 10, 2025, titled \"Signing of an MoU with ONGC\".",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/BHELCC_10012025151136_PressRelease.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "06-Jan-2025 21:13:37",
+      "type": "Change in Management",
+      "subject": "Bharat Heavy Electricals Limited has informed the Exchange about change in Management",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/BHELCC_06012025211304_BHELInformationforSE.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "25-Nov-2024 05:11:57",
+      "type": "Change in Management",
+      "subject": "Bharat Heavy Electricals Limited has informed the Exchange about change in Management",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/BHEL_25112024051157_ChangeinManagement.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "11-Oct-2024 15:47:23",
+      "type": "Change in Management",
+      "subject": "Bharat Heavy Electricals Limited has informed the Exchange about change in Management",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/BHEL_11102024154723_BHELInformationforSE.pdf",
+      "has_xbrl": false
+    }
+  ]
+}

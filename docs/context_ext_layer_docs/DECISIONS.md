@@ -1,0 +1,22 @@
+# Design Decisions
+
+Quick reference for non-obvious choices. Each entry answers "why did we do it this way?"
+
+---
+
+| Decision | What we chose | Why |
+|---|---|---|
+| **LLM provider** | OpenAI gpt-5-nano | Gemini 2.5 Flash free tier has a 20 req/day hard limit. This limit was exhausted in the first test run (~10 articles). Paid OpenAI at nano pricing runs 864 articles for ~$0.13–0.15 total. |
+| **Structured output** | Pydantic + `with_structured_output()` | Early versions asked the LLM to "return valid JSON." Models returned malformed JSON (markdown fences, trailing commas, explanatory text). Required 30+ lines of fragile repair logic. Pydantic schema enforced at API level eliminates all of that. |
+| **Pipeline built once** | Before the item loop, not inside it | `llm.with_structured_output()` construction is not free. Building it inside a loop of 864 items added measurable overhead. Built once and reused across all items. |
+| **Fuzzy match threshold = 82** | High threshold | At threshold 70: "IndiGo" matched "Indo-National" (NIPPOBATRY.NS), "SpiceJet" matched "Spacenet Enterprises" (SPCENET.NS). Threshold 82 eliminates these while true matches (Sun Pharma → SUNPHARMA.NS, L&T → LT.NS) still resolve correctly. The alias dictionary handles short names that genuinely score below 82. |
+| **Null ticker preserved** | Signal kept with `ticker = null` | Unresolved tickers still carry valid LLM signals (event type, sentiment, key claim). Discarding them wastes the LLM call. Null-ticker signals are preserved for potential name-based lookup in Phase C or D. |
+| **Max candidates = 25** | Top 25 by \|score\| | 104 tickers passed the minimum score threshold. 15 was too narrow — missed tickers ranked 16–25 that had strong signals. 25 is reasonable Phase C coverage without the deep-dive becoming too slow. |
+| **Sort by \|score\| not score** | Absolute value | A score of −60 (ACC with earnings miss signals) is as actionable as +75 (BHEL with earnings beat). Sorting by absolute value ensures both strong buy and strong avoid candidates surface in the top 25. |
+| **Content filter: 40-char body minimum** | Additional to 80-char total | 27 RSS articles from Investing.com and Yahoo Finance passed the 80-char total filter but had empty or near-empty summary fields ("Click to read more", null). These reached the LLM with no content and produced either empty signals (wasted call) or hallucinated signals (noise). The 40-char body filter blocks them. |
+| **Sector bonus applied in Phase C** | After market_data.py fetch | yfinance sector labels are fetched in Phase C. Running a separate batch yfinance call during B3 just for sectors would duplicate Phase C's work and add time to Phase B. The compromise: B3 scores on signal strength only; Phase C applies sector alignment after fetching market data. |
+| **Output in dated folders** | `output/{YYYY-MM-DD}/` | Each daily run produces a self-contained snapshot. Dated folders mean yesterday's data is never overwritten, runs are easy to compare, and partial re-runs (e.g. re-running Phase B with `--skip-signals`) read and write to the same day's folder. |
+| **LLM logs in `phaseB/signal_logs/`** | Inside phaseB output | LLM logs (prompt + response per article) are Phase B artifacts. A top-level `logs/` folder groups them with unrelated system logs. Placing them in `phaseB/signal_logs/` makes the provenance clear and keeps all Phase B outputs together. |
+| **ticker_extractor in `utils/`** | `context_ext_layer/utils/` | Ticker resolution is used internally by Phase B's news_signal_extractor but is not a pipeline step. Separating it into a utilities folder distinguishes support code from pipeline modules and makes it importable by future phases (C, D) without importing from phaseB_CS. |
+| **RSS title-only articles filtered** | Require body ≥ 40 chars | RSS feeds are "thin" sources — titles + summaries only, no full article body. Sending a title-only item to the LLM wastes a call. Phase B uses RSS for signals where the summary is substantive enough (≥40 chars) to contain an actual claim. For deeper content on RSS articles, `generic.py` can fetch the full page by URL. |
+| **screener.in scrape (no API)** | Web scrape via BeautifulSoup | screener.in has no public API. The web scrape is the only way to get the 10-year financial tables. The `--skip-screener` flag exists because it is the slowest Phase C step (~10–15 sec/ticker) and can be skipped when only market and signals data is needed. |

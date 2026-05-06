@@ -1,0 +1,358 @@
+{
+  "ticker": "BANDHANBNK",
+  "fetched_at": "2026-05-06T05:55:01.232518+05:30",
+  "total_returned": 50,
+  "material_only": true,
+  "announcements": [
+    {
+      "date": "28-Apr-2026 15:52:38",
+      "type": "Dividend",
+      "subject": "Bandhan Bank Limited has informed the Exchange that Board of Directors at its meeting held on April 28, 2026, recommended Dividend of Rs. 1.5 per equity share.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/BANDHANBNK_28042026155228_1_SE_Disclosure_BM_Outcome_Dividend.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "28-Apr-2026 15:52:38",
+      "type": "Outcome of Board Meeting",
+      "subject": "Bandhan Bank Limited has submitted to the Exchange, the Annual Audited Financial Results for the quarter and financial year ended March 31, 2026.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/BANDHANBNK_28042026154938_SE_Disclosure_BM_Outcome_AFR_Dividend_PressRelease_SMP_PB_280426_vf.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "27-Apr-2026 13:39:12",
+      "type": "Outcome of Board Meeting",
+      "subject": "Bandhan Bank Limited has informed the Exchange regarding Outcome of Board Meeting held on April 27, 2026 - Change in Senior Management.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/BANDHANBNK_27042026133838_SE_Disclosure_BM_Outcome_270426_Interim_IAD_sd.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "01-Apr-2026 17:21:02",
+      "type": "Change in Management",
+      "subject": "Bandhan Bank Limited has informed the Exchange about Change in Senior Management.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/BANDHANBNK_01042026172031_SE_Disclosure_Change_in_SMP_resignation_01042026_sd.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "25-Mar-2026 20:38:06",
+      "type": "Change in Director(s)",
+      "subject": "Bandhan Bank Limited has informed the Exchange regarding Change in Director(s) of the company.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/BANDHANBNK_25032026203514_SE_Disclosure_Appointment_ID_250326_sd.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "12-Feb-2026 17:35:31",
+      "type": "Outcome of Board Meeting",
+      "subject": "Bandhan Bank Limited has informed the Exchange regarding Appointments of Independent Director and Chief of Internal Vigilance (Interim).",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/BANDHANBNK_12022026173407_SE_Disclosure_BM_Outcome_120226_ID_CIV_sd.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "22-Jan-2026 15:43:04",
+      "type": "Outcome of Board Meeting",
+      "subject": "Bandhan Bank Limited has informed the Exchange, that pursuant to the provisions of Regulation 33 and other applicable provisions of the SEBI LODR, please be informed that the Board of Directors of Bandhan Bank Limited, at its meeting held today, i.e., Thursday, January 22, 2026, has, inter alia, considered and approved the Unaudited Financial Results of the Bank, for the quarter (Q3) and nine months ended December 31, 2025..",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/BANDHANBNK_22012026154152_SE_Disclosure_BM_Outcome_UFR_PressRelease_220126_final.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "14-Jan-2026 18:19:23",
+      "type": "Change in Management",
+      "subject": "Bandhan Bank Limited has informed the Exchange about Change in Senior Management.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/BANDHANBNK_14012026181840_SE_Disclosure_Change_in_SMP_resignation_14012026_sd.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "15-Dec-2025 19:18:57",
+      "type": "Change in Director(s)",
+      "subject": "Bandhan Bank Limited has informed the Exchange regarding Change in Director(s) of the company.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/BANDHANBNK_15122025191427_SE_Disclosure_15122025_sd.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "27-Nov-2025 20:18:45",
+      "type": "Outcome of Board Meeting",
+      "subject": "Bandhan Bank Limited has informed the Exchange regarding Sale of identified NPA and Written-off Portfolios of the Bank.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/BANDHANBNK_27112025201732_SE_Disclosure_BM_Outcome_ARCSale_271125_sd.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "25-Nov-2025 17:32:33",
+      "type": "Change in Management",
+      "subject": "BANDHANBNK: Bandhan Bank Limited has informed the Exchange about Change in Senior Management.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/BANDHANBNK_25112025173120_SE_Disclosure_Change_in_SMP_resignation_25112025_Ramaswamy_sd.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "30-Oct-2025 16:47:01",
+      "type": "Outcome of Board Meeting",
+      "subject": "Bandhan Bank Limited has submitted to the Exchange, the Unaudited Financial Results for the quarter and half-year ended September 30, 2025.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/BANDHANBNK_30102025164550_UFR_Q2FY2026_Bandhan.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "30-Sep-2025 23:40:18",
+      "type": "Credit Rating",
+      "subject": "Bandhan Bank Limited has informed the Exchange about Credit Rating",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/BANDHANBNK_30092025233821_SE_Disclosure_Credit_Rating_30092025_sd.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "25-Sep-2025 21:14:03",
+      "type": "Change in Director(s)",
+      "subject": "Bandhan Bank Limited has informed the Exchange regarding Change in Director(s) of the company.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/BANDHANBNK_25092025211243_SE_Disclosure_BM_Outcome_DirectorsAppointments_sd.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "06-Sep-2025 16:23:44",
+      "type": "Change in Management",
+      "subject": "Bandhan Bank Limited has informed the Exchange about Change in Senior Management.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/BANDHANBNK_06092025162309_SE_Disclosure_Change_in_SMP_SGN_06092025_sd.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "27-Aug-2025 19:42:50",
+      "type": "Change in Director(s)",
+      "subject": "Bandhan Bank Limited has informed the Exchange regarding Change in Director(s) of the company.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/BANDHANBNK_27082025194048_SE_Disclosure_Change_in_BFHL_Nominee_27082025_sd.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "18-Jul-2025 15:41:49",
+      "type": "Outcome of Board Meeting",
+      "subject": "Bandhan Bank Limited has submitted to the Exchange, the Unaudited Financial Results for the quarter ended June 30, 2025.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/BANDHANBNK_18072025154009_Unaudited_Financial_Results_for_June_2025.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "14-Jul-2025 16:23:17",
+      "type": "Change in Management",
+      "subject": "Bandhan Bank Limited has informed the Exchange about update on change in Senior Management.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/BANDHANBNK_14072025162241_SE_Disclosure_CRO_Joining_14072025_sd.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "12-Jul-2025 20:50:18",
+      "type": "Change in Director(s)",
+      "subject": "Bandhan Bank Limited has informed the Exchange regarding Change in Director(s) of the company.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/BANDHANBNK_12072025204703_SE_Disclosure_Reg30_Retirement_of_Aparajita_Mitra_120725_sd.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "27-Jun-2025 20:41:54",
+      "type": "Change in Director(s)",
+      "subject": "Bandhan Bank Limited has informed the Exchange regarding Change in Director(s) of the company.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/BANDHANBNK_27062025204026_SE_Disclosure_BM_Outcome_sd.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "27-Jun-2025 20:33:31",
+      "type": "Outcome of Board Meeting",
+      "subject": "Bandhan Bank Limited has informed the Exchange regarding Outcome of Board meeting held on June 27, 2025. The Board has approved the appointment of Independent Director of the Bank, subject to approval of Shareholders. Further, the Board has also recommended to the Shareholders, the appointments of Joint Statutory Auditor and Secretarial Auditor of the Bank.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/BANDHANBNK_27062025203142_SE_Disclosure_BM_Outcome_sd.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "20-Jun-2025 19:30:20",
+      "type": "Change in Director(s)",
+      "subject": "Bandhan Bank Limited has informed the Exchange regarding Change in Director(s) of the company.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/BANDHANBNK_20062025192959_SE_Disclosure_Reg30_Change_in_Directorate_sd.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "14-Jun-2025 18:44:18",
+      "type": "Change in Director(s)",
+      "subject": "Bandhan Bank Limited has informed the Exchange regarding Change in Director(s) of the company.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/BANDHANBNK_14062025183308_SE_Disclosure_Reg30_Retirement_of_Philip_Mathew_140625_sd.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "19-May-2025 20:14:58",
+      "type": "Change in Management",
+      "subject": "Bandhan Bank Limited has informed the Exchange about Update on Change in Senior Management.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/BANDHANBNK_19052025201249_SE_Disclosure_CAE_Joining_19052025_sd.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "30-Apr-2025 15:45:03",
+      "type": "Dividend",
+      "subject": "Bandhan Bank Limited has informed the Exchange that Board of Directors at its meeting held on April 30, 2025, recommended Final Dividend of Rs. 1.5 per equity share.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/BANDHANBNK_30042025154448_Outcome_Board_Meeting_Dividend_BBL.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "30-Apr-2025 15:42:43",
+      "type": "Outcome of Board Meeting",
+      "subject": "Bandhan Bank Limited has informed the Exchange regarding Outcome of Board Meeting held on April 30, 2025 - Financial Results.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/BANDHANBNK_30042025153957_Audited_Financial_Results_Bandhan_Bank_2025.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "31-Jan-2025 15:43:50",
+      "type": "Outcome of Board Meeting",
+      "subject": "Bandhan Bank Limited has informed the Exchange regarding  outcome of the Board meeting held on January 31, 2025.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/BANDHANBNK_31012025154310_SE_Intimation_Unaudited_Financial_Results_Q3_BBL_Final.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "29-Jan-2025 18:59:03",
+      "type": "Outcome of Board Meeting",
+      "subject": "Bandhan Bank Limited has informed the Exchange regarding Outcome of Board Meeting held on January 29, 2025.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/BANDHANBNK_29012025185251_SE_Disclosure_Interim_CRO_Authority_for_Materiality_290125_sd.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "26-Jan-2025 16:24:08",
+      "type": "Change in Management",
+      "subject": "Bandhan Bank Limited has informed the Exchange about change in Senior Management.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/BANDHANBNK_26012025162303_SE_Intimation_CRO_change_26012025_sd.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "09-Jan-2025 19:04:46",
+      "type": "Allotment of Securities",
+      "subject": "Bandhan Bank Limited has informed the Exchange regarding Allotment of Equity Shares of the Bank pursuant to Exercise of Options under Bandhan Bank Employee Stock Option Plan Series 1.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/BANDHANBNK_09012025190329_SE_IntimationESOPAllotmentJan2025_sd.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "25-Oct-2024 15:37:27",
+      "type": "Change in Management",
+      "subject": "Bandhan Bank Limited has informed the Exchange about change in Senior Management",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/BANDHANBNK_25102024153727_SE_Disclosure_Change_in_Head_Legal_25102024_Final.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "25-Oct-2024 15:33:53",
+      "type": "Change in Director(s)",
+      "subject": "Bandhan Bank Limited has informed the Exchange regarding Change in Director(s) of the company.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/BANDHANBNK_25102024153353_SE_Disclosure_BM_Outcome_MD_CEO_Appointment_25102024_Final.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "05-Oct-2024 16:10:35",
+      "type": "Change in Director(s)",
+      "subject": "Bandhan Bank Limited has informed the Exchange regarding Change in Director(s) of the company.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/BANDHANBNK_05102024161035_SE_Disclosure_Extension_of_term_of_Interim_MD_CEO_05102024_sd.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "01-Oct-2024 18:43:36",
+      "type": "Credit Rating- Revision",
+      "subject": "Bandhan Bank Limited has informed the Exchange about Revision in Credit Rating",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/BANDHANBNK_01102024184336_SE_Disclosure_Credit_Rating_01102024_sd.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "09-Sep-2024 11:02:57",
+      "type": "Press Release",
+      "subject": "Bandhan Bank Limited has informed the Exchange regarding a press release dated September 09, 2024, titled \"Bandhan Bank goes live with collection of Goods and Services Tax (GST)\".",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/BANDHANBNK_09092024110257_SE_PressRelease_09092024_sd.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "22-Aug-2024 16:29:28",
+      "type": "Press Release",
+      "subject": "Bandhan Bank Limited has informed the Exchange regarding a press release dated August 22, 2024, titled \"Bandhan Bank celebrates Foundation Day with two new launches\".",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/BANDHANBNK_22082024162928_SE_PressRelease_sd.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "08-Jul-2024 17:48:31",
+      "type": "Press Release",
+      "subject": "Bandhan Bank Limited has informed the Exchange regarding a press release dated July 08, 2024, titled \"Bandhan Bank Launches Enhanced Trade Products\".",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/BANDHANBNK_08072024174831_SE_PressRelease_08072024_sd.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "06-Jul-2024 16:12:18",
+      "type": "Change in Director(s)",
+      "subject": "Bandhan Bank Limited has informed the Exchange regarding Change in Director(s) of the company.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/BANDHANBNK_06072024161218_SE_Disclosure_Apptointment_of_Interim_MDCEO_06072024_sd.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "24-Jun-2024 22:30:43",
+      "type": "Change in Director(s)",
+      "subject": "Bandhan Bank Limited has informed the Exchange regarding Change in Director(s) of the company.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/BANDHANBNK_24062024223043_SE_Disclosure_Apptointment_of_RBI_Nominee_Director_24062024_sd.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "17-May-2024 15:40:55",
+      "type": "Dividend",
+      "subject": "Bandhan Bank Limited has informed the Exchange that its Board of Directors, at its meeting held on May 17, 2024, has recommended Final Dividend of Rs. 1.5 per equity share.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/BANDHANBNK_17052024154055_SE_Disclosure_Mar24_Results_Dividend_17052024_Final.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "10-Apr-2024 19:20:17",
+      "type": "Change in Management",
+      "subject": "Bandhan Bank Limited has informed the Exchange about change in Management",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/BANDHANBNK_10042024192017_SE_Intimation_Sr_Management_Final_signed.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "30-Mar-2024 19:52:41",
+      "type": "Change in Management",
+      "subject": "Bandhan Bank Limited has informed the Exchange about update on change in Senior Management",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/BANDHANBNK_30032024195241_SE_Intimation_Shantanu_Sengupta_sd.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "09-Feb-2024 15:37:17",
+      "type": "Change in Director(s)",
+      "subject": "Bandhan Bank Limited has informed the Exchange regarding Change in Director(s) of the company.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/BANDHANBNK_09022024153718_SE_CovLetter.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "16-Dec-2023 17:53:26",
+      "type": "Credit Rating",
+      "subject": "Bandhan Bank Limited has informed the Exchange about Credit Rating",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/BANDHANBNK_16122023175326_SE_Disclosure_Credit_Rating_16122023.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "24-Nov-2023 18:09:37",
+      "type": "Change in Director(s)",
+      "subject": "Bandhan Bank Limited has informed the Exchange regarding Change in Director(s) of the company.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/BANDHANBNK_24112023180937_SEDisclosure_Reapptof_MD_24112023final.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "23-Aug-2023 20:53:40",
+      "type": "Press Release",
+      "subject": "Press Release- Bandhan Bank completes 8 years; opens a branch in Leh, Ladakh.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/BANDHANBNK_23082023205340_SE_PressRelease_8yrs.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "14-Jul-2023 15:40:13",
+      "type": "Press Release",
+      "subject": "In continuation to our letter ref. no. BBL/180/2023-24 dated July 14, 2023 and pursuant to the provisions of Regulation 30 and other applicable provisions of SEBI (Listing Obligations and Disclosure Requirements) Regulations, 2015, we hereby submit, the Press Release on the Unaudited Financial Results of the Bank, for the quarter (Q1) ended June 30, 2023.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/BANDHANBNK_14072023154013_SE_PressRelease_Q1_BandhanBank.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "28-Jun-2023 12:20:11",
+      "type": "Press Release",
+      "subject": "Bandhan Bank Limited has informed the Exchange regarding a press release dated Jun 28, 2023, titled \"Bandhan Bank triples its branch presence in less than 8 years\".",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/BANDHANBNK_28062023122011_SE_PressRelease_branchexpansion.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "19-May-2023 16:05:28",
+      "type": "Press Release",
+      "subject": "Bandhan Bank Limited has informed the Exchange regarding a press release dated May 19, 2023, titled \"Press Release on the Audited Financial Results of Bandhan Bank Limited (the  Bank ) for the quarter (Q4) and Financial Year ended March 31, 2023\".",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/BANDHANBNK_19052023160529_pressrelease.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "19-May-2023 15:39:13",
+      "type": "Dividend",
+      "subject": "Bandhan Bank Limited has informed the Exchange that Board of Directors at its meeting held on May 19, 2023, recommended Final Dividend of 1.50 per equity share.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/BANDHANBNK_19052023153913_SE_Intimation_Results_Dividend.pdf",
+      "has_xbrl": false
+    }
+  ]
+}

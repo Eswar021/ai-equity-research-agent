@@ -1,0 +1,358 @@
+{
+  "ticker": "SIS",
+  "fetched_at": "2026-05-06T05:57:40.332085+05:30",
+  "total_returned": 50,
+  "material_only": true,
+  "announcements": [
+    {
+      "date": "01-May-2026 01:17:18",
+      "type": "Press Release",
+      "subject": "SIS Limited has informed the Exchange regarding a press release dated April 30, 2026, titled \"Press Release Audited financial results for the quarter ended March 31, 2026\".",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SIS_01052026011653_Intimation.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "01-May-2026 00:34:58",
+      "type": "Outcome of Board Meeting",
+      "subject": "SIS Limited has submitted to the Exchange, the audited financial results of the Company for the quarter and year ended March 31, 2026.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SIS_01052026003336_OUTCOME.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "13-Mar-2026 15:56:57",
+      "type": "Allotment of Securities",
+      "subject": "SIS Limited has informed the Exchange regarding allotment of 25,739 equity shares pursuant to the exercise of employee stock options.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SIS_13032026155513_Intimation.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "29-Jan-2026 19:21:41",
+      "type": "Press Release",
+      "subject": "SIS Limited has informed the Exchange regarding a press release dated January 29, 2026, titled \"Press Release unaudited financial results for the quarter ended December 31, 2025.\"",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SIS_29012026192044_Intimation.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "29-Jan-2026 18:55:40",
+      "type": "Change in Director(s)",
+      "subject": "SIS LIMITED has informed the Exchange regarding Change in Director(s) of the company.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SIS_29012026185317_Outcome_of_BM_-_Jan_2026.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "29-Jan-2026 18:34:35",
+      "type": "Dividend",
+      "subject": "SIS Limited has informed the Exchange that the Board of Directors at its meeting held on January 29, 2026, has declared an interim dividend of INR 7/- (Rupees Seven Only) per equity share of INR 5/- each for the financial year 2025-26.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SIS_29012026183355_Outcome_of_BM_-_Jan_2026.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "29-Jan-2026 18:16:34",
+      "type": "Outcome of Board Meeting",
+      "subject": "SIS Limited has submitted to the Exchange, the unaudited financial results of the Company for the quarter and nine months ended December 31, 2025.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SIS_29012026181503_Outcome_of_BM_-_Jan_2026.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "02-Jan-2026 19:26:38",
+      "type": "Allotment of Securities",
+      "subject": "SIS LIMITED has informed the Exchange regarding allotment of 181,889 Equity Shares pursuant to the exercise of employee stock options.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SIS_02012026192456_Intimation.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "25-Nov-2025 15:31:39",
+      "type": "Change in Director(s)",
+      "subject": "SIS LIMITED has informed the Exchange regarding Change in Director(s) of the company.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SIS_25112025153017_Intimation.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "05-Nov-2025 19:34:46",
+      "type": "Press Release",
+      "subject": "SIS LIMITED has informed the Exchange regarding a press release dated November 5, 2025, titled \"Press Release unaudited financial results for the quarter ended September 30, 2025.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SIS_05112025193429_Initmation.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "05-Nov-2025 19:05:36",
+      "type": "Outcome of Board Meeting",
+      "subject": "SIS LIMITED has informed the Exchange the financial results for the quarter and half year ended September 30, 2025.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SIS_05112025185715_OUTCOME.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "10-Sep-2025 22:15:46",
+      "type": "Allotment of Securities",
+      "subject": "SIS LIMITED has informed the Exchange regarding allotment of 57,735 Equity Shares pursuant to the exercise of employee stock options.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SIS_10092025221355_Intimation.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "05-Sep-2025 22:48:33",
+      "type": "Outcome of Board Meeting",
+      "subject": "SIS LIMITED has informed the Exchange regarding acquisition of A P Securitas Private Limited.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SIS_05092025224342_Intimation.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "30-Jul-2025 19:54:47",
+      "type": "Press Release",
+      "subject": "SIS LIMITED has informed the Exchange regarding the press release dated July 30, 2025, titled \"Press Release - un-audited financial results for the quarter ended June 30, 2025\".",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SIS_30072025195428_Intimation.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "30-Jul-2025 19:06:59",
+      "type": "Outcome of Board Meeting",
+      "subject": "SIS LIMITED has submitted to the Exchange, the financial results for the period ended Jun 30, 2025.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SIS_30072025190257_Outcome.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "11-Jul-2025 18:07:33",
+      "type": "Allotment of Securities",
+      "subject": "SIS LIMITED has informed the Exchange regarding allotment of 19,345 Equity Shares pursuant to the exercise of employee stock options. ",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SIS_11072025180705_Intimation.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "26-Jun-2025 18:38:56",
+      "type": "Post Buyback Public Announcement",
+      "subject": "SIS LIMITED has informed the Exchange about post Buyback Public Announcement",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SIS_26062025183422_Intimation.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "12-Jun-2025 18:34:24",
+      "type": "Buyback",
+      "subject": "SIS LIMITED has informed the Exchange about Newspaper Advertisement regarding corrigendum to the Letter of Offer dated June 11, 2025, published on June 12, 2025, for Buyback of Equity Shares",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SIS_12062025183204_Intimation.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "11-Jun-2025 21:59:03",
+      "type": "Buyback",
+      "subject": "SIS LIMITED has informed the Exchange about submission of advertisement in relation to the dispatch of the letter of offer along with tender form for the buyback of equity shares",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SIS_11062025215043_Intimation.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "02-Jun-2025 22:53:56",
+      "type": "Public Announcement - Buyback of Shares",
+      "subject": "SIS LIMITED has informed the Exchange about submission of Public Announcement dated May 30, 2025 for the Buyback of Equity Shares on June 2, 2025 in newspapers.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SIS_02062025224820_IntimationPA.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "01-May-2025 16:30:48",
+      "type": "Press Release",
+      "subject": "SIS LIMITED has informed the Exchange regarding a press release dated May 01, 2025, titled \"Press Release   Audited financial results for the quarter and year endedMarch 31, 2025\".",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SIS_01052025163037_Intimation.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "01-May-2025 16:10:56",
+      "type": "Outcome of Board Meeting",
+      "subject": "Outcome of the Board meeting-financial results of the Company for the quarter and financial year ended March 31, 2025.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SIS_01052025160113_Outcome.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "26-Mar-2025 23:25:43",
+      "type": "Allotment of Securities",
+      "subject": "SIS LIMITED has informed the Exchange regarding allotment of 25,000 Secured Redeemable Rated Listed Non-Convertible Debentures ( NCDs ) having a face value of INR 1,00,000/- (Indian Rupees One Lakh only) each, aggregating to INR 250,00,00,000/- (Indian Rupees Two Hundred Fifty Crores Only) on private placement basis to the identified investors.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SIS_26032025231935_Outcome_of_NCDs_-March_2025.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "25-Mar-2025 19:22:57",
+      "type": "Buyback",
+      "subject": "SIS LIMITED has informed the Exchange about Outcome of the Board Meeting regarding Buyback of shares",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SIS_25032025192241_Outcome.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "28-Jan-2025 18:03:11",
+      "type": "Press Release",
+      "subject": "SIS LIMITED has informed the Exchange regarding a press release dated January 28, 2025, titled \"Press Release - Un-audited Financial Results for the quarter ended December 31, 2024\".",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SIS_28012025180235_Intimation.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "28-Jan-2025 17:45:46",
+      "type": "Outcome of Board Meeting",
+      "subject": "Outcome of the Board meeting held on January 28, 2025",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SIS_28012025174526_Outcome.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "27-Jan-2025 11:56:36",
+      "type": "Allotment of Securities",
+      "subject": "SIS LIMITED has informed the Exchange regarding allotment of 700 securities pursuant to ESOP/ESPS at its meeting held on January 27, 2025",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SIS_27012025115620_Outcome.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "25-Nov-2024 11:27:25",
+      "type": "Outcome of Board Meeting",
+      "subject": "SIS LIMITED has informed the Exchange that the Board of Directors of the Company, at its meeting held on August 2, 2024, approved the proposal to raise funds through the issuance of Non-Convertible Debentures ( NCDs ) on a private placement basis for an amount of up to INR 190 Crores.  In the meeting held today, the Board further considered and approved the proposal to raise additional funds through the issuance of NCDs on a private placement basis for an amount of up to INR 60 Crores, aggregating the issuance of NCDs to INR 250 Crores.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SIS_25112024112725_Outcome.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "28-Oct-2024 18:33:10",
+      "type": "Press Release",
+      "subject": "SIS LIMITED has informed the Exchange regarding a press release dated October 28, 2024, titled \"un-audited financial results for the quarter ended September 30, 2024\".",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SIS_28102024183311_PressRelease.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "04-Oct-2024 20:48:44",
+      "type": "Allotment of Securities",
+      "subject": "SIS LIMITED has informed the Exchange regarding allotment of 4,423 securities pursuant to ESOP on October 04, 2024.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SIS_04102024204844_IntimationAllotment.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "02-Aug-2024 20:11:49",
+      "type": "Outcome of Board Meeting",
+      "subject": "SIS LIMITED has informed the Exchange that the Board of Directors of the Company, at their meeting held today, August 2, 2024, considered and approved the proposal to raise funds through the issuance of Non-Convertible Debentures on a private placement basis for an amount of up to INR 190 Crores, subject to the approval of the members.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SIS_02082024201149_Intimation.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "24-Jul-2024 18:54:36",
+      "type": "Press Release",
+      "subject": "SIS LIMITED has informed the Exchange regarding a press release dated July 24, 2024, titled \"Press Release Un-audited financial results for the quarter ended June 30, 2024\".",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SIS_24072024185436_Intimation.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "24-Jul-2024 15:30:58",
+      "type": "Allotment of Securities",
+      "subject": "SIS LIMITED has informed the Exchange regarding allotment of 24164 securities pursuant to ESOP/ESPS at its meeting held on July 24, 2024",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SIS_24072024153058_Intimation.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "25-Jun-2024 18:24:26",
+      "type": "Change in Director(s)",
+      "subject": "SIS LIMITED has informed the Exchange regarding Change in Director(s) of the company.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SIS_25062024182426_Intimation.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "21-May-2024 18:22:00",
+      "type": "Outcome of Board Meeting",
+      "subject": "SIS LIMITED has informed the Exchange regarding Outcome of Board Meeting held on May 21, 2024.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SIS_21052024182200_Outcome.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "01-May-2024 20:36:13",
+      "type": "Press Release",
+      "subject": "SIS LIMITED has informed the Exchange regarding a press release dated May 01, 2024, titled \"Press Release - Audited Financial Results for the quarter and year ended March 31, 2024\".",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SIS_01052024203613_Intimation.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "28-Mar-2024 17:41:52",
+      "type": "Acquisition",
+      "subject": "SIS LIMITED has informed the Exchange that the Investment Committee of SIS Limited ( SIS ) has, in its meeting held today, approved an investment of upto Rs. 10.16 crores in Agarsha Senior Care Private Limited ( Agarsha ), by way of (a) subscription to Compulsorily ConvertiblePreference Shares ( CCPS ) as a primary investment; and (b) acquisition of the equity sharesfrom the existing shareholders as a secondary investment, The Investment Committee of SIS Limited has, in its meeting held today, approved an Investment of Rs. 10.16 crores in Agarsha Senior CarePrivate Limited (\"Agarsha\"), by way (a) subscription to Compulsorily Convertible Preference Shares ( CCPS ) as a primary investment; and (b) acquisition of the equity shares from the existing shareholders as a secondary investment, The Investment Committee of SIS Limited has, in its meeting held today, approved an Investment of Rs. 10.16 crores in Agarsha Senior CarePrivate Limited (\"Agarsha\"), by way (a) subscription to Compulsorily Convertible Preference Shares ( CCPS ) as a primary investment; and (b) acquisition of the equity shares from the existing shareholders as a secondary investment, for the acquisition of 4.00% shareholding in Agarsha.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SIS_28032024174152_Intimation.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "30-Jan-2024 20:48:04",
+      "type": "Press Release",
+      "subject": "SIS LIMITED has informed the Exchange regarding a press release dated January 30, 2024, titled \"Unaudited financial results for the quarter and nine months ended December 31, 2023\".",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SIS_30012024204804_Intimation.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "30-Jan-2024 20:19:46",
+      "type": "Outcome of Board Meeting",
+      "subject": "SIS LIMITED has informed the Exchange regarding Outcome of Board Meeting held on January 30, 2024.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SIS_30012024201946_Intimation.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "20-Jan-2024 13:51:04",
+      "type": "Press Release",
+      "subject": "SIS LIMITED has informed the Exchange regarding a press release dated January 20, 2024, titled \"SIS, a market leader in security, facility management and cash logistics, is pleased to announce its association as the official private security provider to the Ram Mandir Trust in Ayodhya\".",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SIS_20012024135104_Intimation.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "03-Jan-2024 16:27:31",
+      "type": "Post Buyback Public Announcement",
+      "subject": "SIS LIMITED has informed the Exchange about post Buyback Public Announcement",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SIS_03012024162731_Intimation.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "02-Jan-2024 14:11:49",
+      "type": "Change in Management",
+      "subject": "SIS LIMITED has informed the Exchange that In continuation of intimation dated December 12, 2023,  Mr. Bharat Bakhshi, President   M&A, concluded his last working day on December 29, 2023",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SIS_02012024141149_Intimation.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "13-Dec-2023 21:32:19",
+      "type": "Buyback",
+      "subject": "SIS LIMITED has informed the Exchange about Letter of Offer for Buyback of Equity Shares",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SIS_13122023213219_Intimation.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "12-Dec-2023 15:59:24",
+      "type": "Change in Management",
+      "subject": "SIS LIMITED has informed the Exchange about change in Management in the Company",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SIS_12122023155924_IntimationChangeinSMP.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "04-Dec-2023 16:24:33",
+      "type": "Public Announcement - Buyback of Shares",
+      "subject": "SIS LIMITED has informed the Exchange about public Announcement - Buyback of Shares",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SIS_04122023162433_Intimation.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "30-Nov-2023 18:29:12",
+      "type": "Outcome of Board Meeting",
+      "subject": "SIS LIMITED has informed the Exchange regarding  the outcome of the Board meeting held on November 30, 2023.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SIS_30112023182912_OutcomeFinal.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "24-Nov-2023 11:37:27",
+      "type": "Acquisition",
+      "subject": "SIS LIMITED has informed the Exchange that the Investment Committee of SIS Limited ( SIS ) has, in its meeting held today, approved an investment of upto Rs. 3.5 crores in Entitled Solutions Private Limited ( Entitled ), by way of subscription to Compulsorily Convertible Debentures.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SIS_24112023113727_Intimation.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "30-Oct-2023 18:38:53",
+      "type": "Press Release",
+      "subject": "SIS LIMITED has informed the Exchange regarding a press release dated October 30, 2023, titled \"Press Release - Un-audited financial results for the quarter and half-year ended September 30, 2023\".",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SIS_30102023183853_PressRelease.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "26-Jul-2023 16:28:35",
+      "type": "Press Release",
+      "subject": "SIS LIMITED has informed the Exchange regarding a press release dated July 26, 2023, titled \"Un-audited financial results for the quarter ended June 30, 2023\".",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SIS_26072023162835_Intimation.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "26-Jul-2023 16:04:57",
+      "type": "Outcome of Board Meeting",
+      "subject": "SIS LIMITED has informed the Exchange that based on the recommendation of the Nomination and Remuneration Committee, the Board has approved the continuation of directorship of Mr. Uday Singh beyond 75 years of age, subject to the approval of the shareholders.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/SIS_26072023160457_OutcomeFOrExchanges.pdf",
+      "has_xbrl": false
+    }
+  ]
+}

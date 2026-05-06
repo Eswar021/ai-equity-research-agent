@@ -1,0 +1,330 @@
+{
+  "ticker": "CSLFINANCE",
+  "fetched_at": "2026-05-06T05:51:21.001101+05:30",
+  "total_returned": 46,
+  "material_only": true,
+  "announcements": [
+    {
+      "date": "28-Apr-2026 13:24:43",
+      "type": "Allotment of Securities",
+      "subject": "CSL Finance Limited has informed the Exchange regarding allotment of 30000 securities pursuant to Non Convertible Securities at its meeting held on April 28, 2026",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/CSLFINANCELIMITED_28042026132433_OUTCOME.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "01-Apr-2026 11:30:47",
+      "type": "Credit Rating",
+      "subject": "CSL Finance Limited has informed the Exchange about Credit Rating",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/CSLFINANCELIMITED_01042026112935_Credit_Rating_final.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "18-Mar-2026 13:54:13",
+      "type": "Outcome of Board Meeting",
+      "subject": "CSL Finance Limited has informed the Exchange regarding Outcome of Board Meeting held on March 18, 2026.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/CSLFINANCELIMITED_18032026135255_outcomefinal.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "13-Feb-2026 16:00:57",
+      "type": "Outcome of Board Meeting",
+      "subject": "CSL Finance Limited has submitted to the Exchange, the financial results for the period ended December 31, 2025.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/CSLFINANCELIMITED_13022026155912_OUTCOMEFINAL.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "13-Feb-2026 15:43:24",
+      "type": "Outcome of Board Meeting",
+      "subject": "CSL Finance Limited has informed the Exchange regarding  Outcome of the Board meeting held on February 13, 2026.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/CSLFINANCELIMITED_13022026154023_OUTCOMEFINAL.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "13-Nov-2025 18:01:21",
+      "type": "Outcome of Board Meeting",
+      "subject": "CSL Finance Limited has submitted to the Exchange, the financial results for the period ended September 30, 2025.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/CSLFINANCELIMITED_13112025175844_finaloutcome.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "13-Nov-2025 17:55:01",
+      "type": "Outcome of Board Meeting",
+      "subject": "CSL Finance Limited has informed the Exchange regarding Outcome of Board Meeting held on November 13, 2025.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/CSLFINANCELIMITED_13112025175255_finaloutcome.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "13-Nov-2025 16:29:39",
+      "type": "Outcome of Board Meeting",
+      "subject": "CSL Finance Limited has informed the Exchange regarding  Board meeting held on November 13, 2025.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/CSLFINANCELIMITED_13112025162919_finaloutcome.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "23-Sep-2025 16:32:38",
+      "type": "Change in Director(s)",
+      "subject": "CSL Finance Limited has informed the Exchange regarding Change in Director(s) of the company.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/CSLFINANCELIMITED_23092025163226_Change_In_management_FINAL.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "12-Aug-2025 17:38:29",
+      "type": "Change in Director(s)",
+      "subject": "CSL Finance Limited has informed the Exchange regarding Change in Director(s) of the company.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/CSLFINANCELIMITED_12082025173759_FINALOUTCOME.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "12-Aug-2025 16:54:30",
+      "type": "Outcome of Board Meeting",
+      "subject": "CSL Finance Limited has submitted to the Exchange, the financial results for the period ended Jun 30, 2025.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/CSLFINANCELIMITED_12082025165020_FINALOUTCOME.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "08-Aug-2025 11:10:17",
+      "type": "Credit Rating",
+      "subject": "CSL Finance Limited has informed the Exchange about Credit Rating",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/CSLFINANCELIMITED_08082025110959_FINALCOVERLETTER.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "26-Jun-2025 14:49:35",
+      "type": "Change in Management",
+      "subject": "CSL Finance Limited has informed the Exchange about change in Management",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/CSLFINANCELIMITED_26062025144920_Stock_Exchange_Letter_appointment_of_CCO_Signed.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "26-Jun-2025 14:20:42",
+      "type": "Change in Director(s)",
+      "subject": "CSL Finance Limited has informed the Exchange regarding Change in Director(s) of the company.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/CSLFINANCELIMITED_26062025142030_Intimation_of_appointment_of_ID_signed.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "23-Jun-2025 16:37:36",
+      "type": "Change in Management",
+      "subject": "CSL Finance Limited has informed the Exchange about change in Management",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/CSLFINANCELIMITED_23062025163719_Resignation_Intimation_Stock_Exchanges.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "23-May-2025 16:02:45",
+      "type": "Change in Management",
+      "subject": "CSL Finance Limited has informed the Exchange about change in Management",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/CSLFINANCELIMITED_23052025160230_FinalFINANCIALS.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "23-May-2025 15:00:04",
+      "type": "Dividend",
+      "subject": "CSL Finance Limited has informed the Exchange that Board of Directors at its meeting held on May 23, 2025, recommended Final Dividend of Rs. 3.0 per equity share.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/CSLFINANCELIMITED_23052025145813_FinalFINANCIALS.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "23-May-2025 15:00:04",
+      "type": "Outcome of Board Meeting",
+      "subject": "To consider and approve Audited Financial Results and declaration of Dividend subject to the Shareholders approval in ensuing AGM.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/CSLFINANCELIMITED_23052025145425_FinalFINANCIALS.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "18-Mar-2025 13:45:24",
+      "type": "Outcome of Board Meeting",
+      "subject": "CSL Finance Limited has informed the Exchange regarding  Board meeting held on March 18, 2025.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/CSLFINANCELIMITED_18032025134511_BM_Outcome_signed.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "11-Feb-2025 14:38:53",
+      "type": "Change in Management",
+      "subject": "CSL Finance Limited has informed the Exchange about change in Management",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/CSLFINANCELIMITED_11022025143839_ChangeinManagement.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "11-Feb-2025 14:10:22",
+      "type": "Outcome of Board Meeting",
+      "subject": "CSL Finance Limited has informed the Exchange regarding  Board meeting held on February 11, 2025.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/CSLFINANCELIMITED_11022025141009_OutcomeSigned.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "07-Jan-2025 18:06:04",
+      "type": "Change in Management",
+      "subject": "CSL Finance Limited has informed the Exchange about change in Management",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/CSLFINANCELIMITED_07012025180554_COVERLETTERFINAL.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "06-Jan-2025 17:55:57",
+      "type": "Change in Management",
+      "subject": "CSL Finance Limited has informed the Exchange about change in Management",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/CSLFINANCELIMITED_06012025175549_CoverLetter.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "02-Jan-2025 18:20:21",
+      "type": "Change in Management",
+      "subject": "CSL Finance Limited has informed the Exchange about change in Management",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/CSLFINANCELIMITED_02012025182008_CoverLetter.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "02-Jan-2025 16:14:22",
+      "type": "Change in Management",
+      "subject": "CSL Finance Limited has informed the Exchange about change in Management",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/CSLFINANCELIMITED_02012025161411_Revised_Disclosure.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "01-Jan-2025 15:05:45",
+      "type": "Change in Management",
+      "subject": "CSL Finance Limited has informed the Exchange about change in Management",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/CSLFINANCELIMITED_01012025150505_FinalCover_Letter.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "09-Nov-2024 15:57:38",
+      "type": "Outcome of Board Meeting",
+      "subject": "CSL Finance Limited has informed the Exchange regarding  Board meeting held on November 09, 2024.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/CSLFINANCE_09112024155739_OutcomeofBM09112024.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "31-Jul-2024 14:51:52",
+      "type": "Change in Management",
+      "subject": "CSL Finance Limited has informed the Exchange about change in Management",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/CSLFINANCE_31072024145152_Outcome_Final_signed.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "31-Jul-2024 14:40:29",
+      "type": "Outcome of Board Meeting",
+      "subject": "Outcome of Board Meeting held on July 31, 2024.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/CSLFINANCE_31072024144029_Outcome_Final_signed.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "15-May-2024 14:55:10",
+      "type": "Change in Management",
+      "subject": "CSL Finance Limited has informed the Exchange about change in Management",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/CSLFINANCE_15052024145510_FinalOutcome.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "15-May-2024 14:41:35",
+      "type": "Dividend Updates",
+      "subject": "CSL Finance Limited has informed the Exchange about Dividend Updates",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/CSLFINANCE_15052024144135_FinalOutcome.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "15-May-2024 14:36:05",
+      "type": "Outcome of Board Meeting",
+      "subject": "CSL Finance Limited has informed the Exchange regarding Outcome of Board Meeting held on May 15, 2024.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/CSLFINANCE_15052024143605_FinalOutcome.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "15-May-2024 14:21:28",
+      "type": "Outcome of Board Meeting",
+      "subject": "CSL Finance Limited has informed the Exchange regarding  Board meeting held on May 15, 2024.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/CSLFINANCE_15052024142128_FinalOutcome.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "22-Mar-2024 18:04:14",
+      "type": "Credit Rating",
+      "subject": "CSL Finance Limited has informed the Exchange about Credit Rating",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/CSLFINANCE_22032024180414_CreditRatingIntimation.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "25-Aug-2023 15:50:44",
+      "type": "Outcome of Board Meeting",
+      "subject": "CSL Finance Limited has informed the Exchange regarding  Board meeting held on August 25, 2023.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/CSLFINANCE_25082023155044_Outcomeoftheboardmeeting.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "12-Aug-2023 16:16:11",
+      "type": "Outcome of Board Meeting",
+      "subject": "CSL Finance Limited has informed the Exchange regarding Outcome of Board Meeting held on August 11, 2023.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/CSLFINANCE_12082023161611_REVISIONALLOTMENTOUTCOME.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "07-Aug-2023 12:42:04",
+      "type": "Outcome of Board Meeting",
+      "subject": "CSL Finance Limited has informed the Exchange regarding  Board meeting held on August 07, 2023.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/CSLFINANCE_07082023124204_OutcomeofBoardMeeting07082023FinancialResults.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "27-Jul-2023 10:04:38",
+      "type": "Outcome of Board Meeting",
+      "subject": "CSL Finance Limited has informed the Exchange regarding  Board meeting held on July 27, 2023.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/CSLFINANCE_27072023100438_OutcomeOfAllotmentofSecurities.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "27-Jun-2023 13:21:32",
+      "type": "Outcome of Board Meeting",
+      "subject": "CSL Finance Limited has informed the Exchange regarding  Board meeting held on Jun 27, 2023.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/CSLFINANCE_27062023132132_BMOUTCOME27062023.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "29-May-2023 12:39:40",
+      "type": "Dividend Updates",
+      "subject": "CSL Finance Limited has informed the Exchange about Dividend Updates",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/CSLFINANCE_29052023123940_OutcomeBM29May23.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "29-May-2023 12:34:31",
+      "type": "Dividend",
+      "subject": "CSL Finance Limited has informed the Exchange that Board of Directors at its meeting held on May 29, 2023, recommended Final Dividend of Rs. 2.50 per equity share.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/CSLFINANCE_29052023123431_OutcomeBM29May23.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "22-May-2023 17:35:13",
+      "type": "Reply to Clarification- Financial results",
+      "subject": "The Exchange had sought clarification from CSL Finance Limited for the quarter ended 31-Mar-2023 with respect to Regulation 33 of the SEBI (Listing Obligations and Disclosure Requirements) Regulations, 2015. On basis of above the Company was required to clarify the following:   -1. The company has not submitted the Statement of Modified Opinion or in case of unmodified opinion(s), a declaration to that effect to the Stock Exchange. The response of the Company is enclosed.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/CSLFINANCE_22052023173513_ReplyNSE.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "19-May-2023 15:06:46",
+      "type": "Clarification - Financial Results",
+      "subject": "The Exchange has sought clarification from CSL Finance Limited for the quarter ended 31-Mar-2023 with respect to Regulation 33 of the SEBI (Listing Obligations and Disclosure Requirements) Regulations, 2015. On basis of above the Company is required to clarify the following:  -1. The company has not submitted the Statement of Modified Opinion or in case of unmodified opinion(s), a declaration to that effect to the Stock Exchange. The response of the Company is awaited.",
+      "attachment_url": "-",
+      "has_xbrl": false
+    },
+    {
+      "date": "31-Dec-2022 11:19:22",
+      "type": "Credit Rating",
+      "subject": "CSL Finance Limited has informed the Exchange about Credit Rating",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/CSLFINANCE_31122022111922_CreditratingintimationReg30.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "09-Nov-2022 13:48:54",
+      "type": "Outcome of Board Meeting",
+      "subject": "CSL Finance Limited  has informed the Exchange about Board Meeting held on 09-Nov-2022, inter-alia, to consider and approve the un-audited financial results for the quarter and half year ended September 30, 2022 and Other business matters.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/CSLFINANCE_09112022134854_OutcomeofBoardMeetingheldonNovember09,2022.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "09-Aug-2022 13:49:36",
+      "type": "Outcome of Board Meeting",
+      "subject": "CSL Finance Limited  has informed the Exchange about Board Meeting held on 09-Aug-2022  which commenced at 12.30 pm and concluded at 1.30 pm, inter-alia, to consider and approve  the un-audited financial results for the quarter ended June 2022.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/CSLFINANCE_09082022134936_OutocmeofBoardMeetingheldon09.08.2022.pdf",
+      "has_xbrl": false
+    }
+  ]
+}

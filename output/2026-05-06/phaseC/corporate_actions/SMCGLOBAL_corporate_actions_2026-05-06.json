@@ -1,0 +1,197 @@
+{
+  "fetched_at": "2026-05-06T05:54:36.405258+05:30",
+  "ticker": "SMCGLOBAL.NS",
+  "nse_actions": [
+    {
+      "symbol": "SMCGLOBAL",
+      "series": "EQ",
+      "purpose": "Interim Dividend - Re 0.60 Per Share",
+      "ex_date": "06-Feb-2026",
+      "record_date": "06-Feb-2026",
+      "bc_start": "-",
+      "bc_end": "-",
+      "face_value": "2",
+      "company": "SMC Global Securities Limited"
+    },
+    {
+      "symbol": "SMCGLOBAL",
+      "series": "EQ",
+      "purpose": "Bonus 1:1",
+      "ex_date": "14-Nov-2025",
+      "record_date": "14-Nov-2025",
+      "bc_start": "-",
+      "bc_end": "-",
+      "face_value": "2",
+      "company": "SMC Global Securities Limited"
+    },
+    {
+      "symbol": "SMCGLOBAL",
+      "series": "EQ",
+      "purpose": "Dividend - Rs 1.20 Per Share",
+      "ex_date": "13-Jun-2025",
+      "record_date": "13-Jun-2025",
+      "bc_start": "-",
+      "bc_end": "-",
+      "face_value": "2",
+      "company": "SMC Global Securities Limited"
+    },
+    {
+      "symbol": "SMCGLOBAL",
+      "series": "EQ",
+      "purpose": "Interim Dividend - Rs 1.20 Per Share",
+      "ex_date": "05-Feb-2025",
+      "record_date": "05-Feb-2025",
+      "bc_start": "-",
+      "bc_end": "-",
+      "face_value": "2",
+      "company": "SMC Global Securities Limited"
+    },
+    {
+      "symbol": "SMCGLOBAL",
+      "series": "EQ",
+      "purpose": "Dividend - Rs 1.2 Per Share",
+      "ex_date": "07-Jun-2024",
+      "record_date": "07-Jun-2024",
+      "bc_start": "-",
+      "bc_end": "-",
+      "face_value": "2",
+      "company": "SMC Global Securities Limited"
+    },
+    {
+      "symbol": "SMCGLOBAL",
+      "series": "EQ",
+      "purpose": "Annual General Meeting",
+      "ex_date": "07-Jun-2024",
+      "record_date": "-",
+      "bc_start": "08-Jun-2024",
+      "bc_end": "12-Jun-2024",
+      "face_value": "2",
+      "company": "SMC Global Securities Limited"
+    },
+    {
+      "symbol": "SMCGLOBAL",
+      "series": "EQ",
+      "purpose": "Interim Dividend - Rs 1.20 Per Share",
+      "ex_date": "13-Feb-2024",
+      "record_date": "13-Feb-2024",
+      "bc_start": "-",
+      "bc_end": "-",
+      "face_value": "2",
+      "company": "SMC Global Securities Limited"
+    },
+    {
+      "symbol": "SMCGLOBAL",
+      "series": "EQ",
+      "purpose": "Annual General Meeting",
+      "ex_date": "16-Jun-2023",
+      "record_date": "-",
+      "bc_start": "17-Jun-2023",
+      "bc_end": "21-Jun-2023",
+      "face_value": "2",
+      "company": "SMC Global Securities Limited"
+    },
+    {
+      "symbol": "SMCGLOBAL",
+      "series": "EQ",
+      "purpose": "Dividend - Rs 1.20 Per Share",
+      "ex_date": "16-Jun-2023",
+      "record_date": "16-Jun-2023",
+      "bc_start": "-",
+      "bc_end": "-",
+      "face_value": "2",
+      "company": "SMC Global Securities Limited"
+    },
+    {
+      "symbol": "SMCGLOBAL",
+      "series": "EQ",
+      "purpose": "Interim Dividend - Rs 1.20 Per Share",
+      "ex_date": "14-Nov-2022",
+      "record_date": "15-Nov-2022",
+      "bc_start": "-",
+      "bc_end": "-",
+      "face_value": "2",
+      "company": "SMC Global Securities Limited"
+    },
+    {
+      "symbol": "SMCGLOBAL",
+      "series": "EQ",
+      "purpose": "Dividend - Rs 1.20 Per Share",
+      "ex_date": "09-Jun-2022",
+      "record_date": "-",
+      "bc_start": "11-Jun-2022",
+      "bc_end": "15-Jun-2022",
+      "face_value": "2",
+      "company": "SMC Global Securities Limited"
+    },
+    {
+      "symbol": "SMCGLOBAL",
+      "series": "EQ",
+      "purpose": " Interim Dividend - Rs 1.20 Per Share",
+      "ex_date": "15-Nov-2021",
+      "record_date": "16-Nov-2021",
+      "bc_start": "-",
+      "bc_end": "-",
+      "face_value": "2",
+      "company": "SMC Global Securities Limited"
+    },
+    {
+      "symbol": "SMCGLOBAL",
+      "series": "EQ",
+      "purpose": " Dividend - Re 0.80 Per Share",
+      "ex_date": "15-Jul-2021",
+      "record_date": "-",
+      "bc_start": "17-Jul-2021",
+      "bc_end": "21-Jul-2021",
+      "face_value": "2",
+      "company": "SMC Global Securities Limited"
+    }
+  ],
+  "yf_dividends": [
+    {
+      "date": "2021-07-15",
+      "amount": 0.4
+    },
+    {
+      "date": "2021-11-15",
+      "amount": 0.6
+    },
+    {
+      "date": "2022-06-09",
+      "amount": 0.6
+    },
+    {
+      "date": "2022-11-14",
+      "amount": 0.6
+    },
+    {
+      "date": "2023-06-16",
+      "amount": 0.6
+    },
+    {
+      "date": "2024-02-13",
+      "amount": 0.6
+    },
+    {
+      "date": "2024-06-07",
+      "amount": 0.6
+    },
+    {
+      "date": "2025-02-05",
+      "amount": 0.6
+    },
+    {
+      "date": "2025-06-13",
+      "amount": 0.6
+    },
+    {
+      "date": "2026-02-06",
+      "amount": 0.6
+    }
+  ],
+  "yf_splits": [
+    {
+      "date": "2025-11-14",
+      "ratio": 2.0
+    }
+  ]
+}

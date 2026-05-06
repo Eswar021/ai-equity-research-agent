@@ -1,0 +1,390 @@
+{
+  "fetched_at": "2026-05-06T05:48:17.593675+05:30",
+  "ticker": "BHEL.NS",
+  "nse_actions": [
+    {
+      "symbol": "BHEL",
+      "series": "EQ",
+      "purpose": "Dividend - Re 0.50 Per Share",
+      "ex_date": "01-Aug-2025",
+      "record_date": "01-Aug-2025",
+      "bc_start": "-",
+      "bc_end": "-",
+      "face_value": "2",
+      "company": "Bharat Heavy Electricals Limited"
+    },
+    {
+      "symbol": "BHEL",
+      "series": "EQ",
+      "purpose": "Dividend - Rs 0.25 Per Share",
+      "ex_date": "09-Aug-2024",
+      "record_date": "09-Aug-2024",
+      "bc_start": "-",
+      "bc_end": "-",
+      "face_value": "2",
+      "company": "Bharat Heavy Electricals Limited"
+    },
+    {
+      "symbol": "BHEL",
+      "series": "EQ",
+      "purpose": "Dividend - Re 0.40 Per Share",
+      "ex_date": "11-Aug-2023",
+      "record_date": "11-Aug-2023",
+      "bc_start": "-",
+      "bc_end": "-",
+      "face_value": "2",
+      "company": "Bharat Heavy Electricals Limited"
+    },
+    {
+      "symbol": "BHEL",
+      "series": "EQ",
+      "purpose": "Dividend - Re 0.40 Per Share",
+      "ex_date": "15-Sep-2022",
+      "record_date": "16-Sep-2022",
+      "bc_start": "-",
+      "bc_end": "-",
+      "face_value": "2",
+      "company": "Bharat Heavy Electricals Limited"
+    },
+    {
+      "symbol": "BHEL",
+      "series": "EQ",
+      "purpose": " Annual General Meeting",
+      "ex_date": "15-Sep-2021",
+      "record_date": "16-Sep-2021",
+      "bc_start": "-",
+      "bc_end": "-",
+      "face_value": "2",
+      "company": "Bharat Heavy Electricals Limited"
+    },
+    {
+      "symbol": "BHEL",
+      "series": "EQ",
+      "purpose": " Annual General Meeting",
+      "ex_date": "18-Sep-2020",
+      "record_date": "21-Sep-2020",
+      "bc_start": "-",
+      "bc_end": "-",
+      "face_value": "2",
+      "company": "Bharat Heavy Electricals Limited"
+    },
+    {
+      "symbol": "BHEL",
+      "series": "EQ",
+      "purpose": " Annual General Meeting/Dividend - Rs 1.20 Per Share",
+      "ex_date": "11-Sep-2019",
+      "record_date": "-",
+      "bc_start": "13-Sep-2019",
+      "bc_end": "19-Sep-2019",
+      "face_value": "2",
+      "company": "Bharat Heavy Electricals Limited"
+    },
+    {
+      "symbol": "BHEL",
+      "series": "EQ",
+      "purpose": " Interim Dividend - Re 0.80 Per Share",
+      "ex_date": "12-Feb-2019",
+      "record_date": "13-Feb-2019",
+      "bc_start": "-",
+      "bc_end": "-",
+      "face_value": "2",
+      "company": "Bharat Heavy Electricals Limited"
+    },
+    {
+      "symbol": "BHEL",
+      "series": "EQ",
+      "purpose": " Buyback",
+      "ex_date": "05-Nov-2018",
+      "record_date": "06-Nov-2018",
+      "bc_start": "-",
+      "bc_end": "-",
+      "face_value": "2",
+      "company": "Bharat Heavy Electricals Limited"
+    },
+    {
+      "symbol": "BHEL",
+      "series": "EQ",
+      "purpose": " Annual General Meeting/Dividend- Rs 1.02 Per Share",
+      "ex_date": "11-Sep-2018",
+      "record_date": "-",
+      "bc_start": "13-Sep-2018",
+      "bc_end": "19-Sep-2018",
+      "face_value": "2",
+      "company": "Bharat Heavy Electricals Limited"
+    },
+    {
+      "symbol": "BHEL",
+      "series": "EQ",
+      "purpose": " Interim Dividend Re 0.80 Per Share (Purpose Revised)",
+      "ex_date": "15-Feb-2018",
+      "record_date": "17-Feb-2018",
+      "bc_start": "-",
+      "bc_end": "-",
+      "face_value": "2",
+      "company": "Bharat Heavy Electricals Limited"
+    },
+    {
+      "symbol": "BHEL",
+      "series": "EQ",
+      "purpose": " Bonus 1:2  ",
+      "ex_date": "28-Sep-2017",
+      "record_date": "30-Sep-2017",
+      "bc_start": "-",
+      "bc_end": "-",
+      "face_value": "2",
+      "company": "Bharat Heavy Electricals Limited"
+    },
+    {
+      "symbol": "BHEL",
+      "series": "EQ",
+      "purpose": " Annual General Meeting/Dividend - Re 0.78/- Per Share (Book Closure Dates Revised)",
+      "ex_date": "23-Aug-2017",
+      "record_date": "-",
+      "bc_start": "26-Aug-2017",
+      "bc_end": "30-Aug-2017",
+      "face_value": "2",
+      "company": "Bharat Heavy Electricals Limited"
+    },
+    {
+      "symbol": "BHEL",
+      "series": "EQ",
+      "purpose": " Interim Dividend Re 0.80 Per Share (Purpose Revised)",
+      "ex_date": "14-Feb-2017",
+      "record_date": "15-Feb-2017",
+      "bc_start": "-",
+      "bc_end": "-",
+      "face_value": "2",
+      "company": "Bharat Heavy Electricals Limited"
+    },
+    {
+      "symbol": "BHEL",
+      "series": "EQ",
+      "purpose": " Annual General Meeting/Dividend - Re 0.40/- Per Share",
+      "ex_date": "14-Sep-2016",
+      "record_date": "-",
+      "bc_start": "16-Sep-2016",
+      "bc_end": "22-Sep-2016",
+      "face_value": "2",
+      "company": "Bharat Heavy Electricals Limited"
+    },
+    {
+      "symbol": "BHEL",
+      "series": "EQ",
+      "purpose": "Annual General Meeting/Dividend Re 0.62 Per Share",
+      "ex_date": "14-Sep-2015",
+      "record_date": "-",
+      "bc_start": "16-Sep-2015",
+      "bc_end": "22-Sep-2015",
+      "face_value": "2",
+      "company": "Bharat Heavy Electricals Limited"
+    },
+    {
+      "symbol": "BHEL",
+      "series": "EQ",
+      "purpose": "Interim Dividend - Re 0.54/- Per Share (Purpose Revised)",
+      "ex_date": "16-Feb-2015",
+      "record_date": "18-Feb-2015",
+      "bc_start": "-",
+      "bc_end": "-",
+      "face_value": "2",
+      "company": "Bharat Heavy Electricals Limited"
+    },
+    {
+      "symbol": "BHEL",
+      "series": "EQ",
+      "purpose": "Annual General Meeting / Final Dividend - Rs 1.52/- Per Share",
+      "ex_date": "08-Sep-2014",
+      "record_date": "-",
+      "bc_start": "10-Sep-2014",
+      "bc_end": "19-Sep-2014",
+      "face_value": "2",
+      "company": "Bharat Heavy Electricals Limited"
+    },
+    {
+      "symbol": "BHEL",
+      "series": "EQ",
+      "purpose": "Interim Dividend - Rs 1.31/- Per Share (Purpose Revised)",
+      "ex_date": "07-Feb-2014",
+      "record_date": "10-Feb-2014",
+      "bc_start": "-",
+      "bc_end": "-",
+      "face_value": "2",
+      "company": "Bharat Heavy Electricals Limited"
+    },
+    {
+      "symbol": "BHEL",
+      "series": "EQ",
+      "purpose": "Annual General Meeting And Final Dividend Rs.3.29 Per Share",
+      "ex_date": "06-Sep-2013",
+      "record_date": "-",
+      "bc_start": "11-Sep-2013",
+      "bc_end": "20-Sep-2013",
+      "face_value": "2",
+      "company": "Bharat Heavy Electricals Limited"
+    }
+  ],
+  "yf_dividends": [
+    {
+      "date": "2004-03-16",
+      "amount": 0.2
+    },
+    {
+      "date": "2004-09-06",
+      "amount": 0.2
+    },
+    {
+      "date": "2004-12-24",
+      "amount": 0.2333
+    },
+    {
+      "date": "2005-09-06",
+      "amount": 0.3
+    },
+    {
+      "date": "2005-12-22",
+      "amount": 0.2667
+    },
+    {
+      "date": "2006-03-22",
+      "amount": 0.5667
+    },
+    {
+      "date": "2006-09-01",
+      "amount": 0.1333
+    },
+    {
+      "date": "2007-02-13",
+      "amount": 0.8333
+    },
+    {
+      "date": "2007-08-30",
+      "amount": 0.8
+    },
+    {
+      "date": "2008-02-13",
+      "amount": 1.2
+    },
+    {
+      "date": "2008-09-01",
+      "amount": 0.8333
+    },
+    {
+      "date": "2009-02-17",
+      "amount": 1.2
+    },
+    {
+      "date": "2009-09-01",
+      "amount": 1.0667
+    },
+    {
+      "date": "2010-02-09",
+      "amount": 1.4667
+    },
+    {
+      "date": "2010-09-01",
+      "amount": 1.64
+    },
+    {
+      "date": "2011-03-18",
+      "amount": 1.7667
+    },
+    {
+      "date": "2011-08-10",
+      "amount": 2.3867
+    },
+    {
+      "date": "2011-09-02",
+      "amount": 2.3867
+    },
+    {
+      "date": "2012-03-06",
+      "amount": 1.8133
+    },
+    {
+      "date": "2012-09-06",
+      "amount": 2.4533
+    },
+    {
+      "date": "2013-02-05",
+      "amount": 1.4133
+    },
+    {
+      "date": "2013-09-06",
+      "amount": 2.1933
+    },
+    {
+      "date": "2014-02-07",
+      "amount": 0.8733
+    },
+    {
+      "date": "2014-09-08",
+      "amount": 1.0133
+    },
+    {
+      "date": "2015-02-16",
+      "amount": 0.36
+    },
+    {
+      "date": "2015-09-14",
+      "amount": 0.4133
+    },
+    {
+      "date": "2016-09-14",
+      "amount": 0.2667
+    },
+    {
+      "date": "2017-02-14",
+      "amount": 0.5333
+    },
+    {
+      "date": "2017-08-23",
+      "amount": 0.52
+    },
+    {
+      "date": "2018-02-15",
+      "amount": 0.8
+    },
+    {
+      "date": "2018-09-11",
+      "amount": 1.02
+    },
+    {
+      "date": "2019-02-12",
+      "amount": 0.8
+    },
+    {
+      "date": "2019-09-11",
+      "amount": 1.2
+    },
+    {
+      "date": "2022-09-15",
+      "amount": 0.4
+    },
+    {
+      "date": "2023-08-11",
+      "amount": 0.4
+    },
+    {
+      "date": "2024-08-09",
+      "amount": 0.25
+    },
+    {
+      "date": "2025-08-01",
+      "amount": 0.5
+    }
+  ],
+  "yf_splits": [
+    {
+      "date": "2007-05-31",
+      "ratio": 2.0
+    },
+    {
+      "date": "2011-10-03",
+      "ratio": 5.0
+    },
+    {
+      "date": "2017-09-28",
+      "ratio": 1.5
+    }
+  ]
+}

@@ -1,0 +1,206 @@
+{
+  "generated_at": "2026-05-05T01:17:14.225808+05:30",
+  "sources": {
+    "india_macro": "/Users/manikantamb/_MyFiles/Work_/MyWork_Local/Stock_Researcher/output/phaseA/macro_data/india_macro_2026-05-05.json",
+    "us_macro": "/Users/manikantamb/_MyFiles/Work_/MyWork_Local/Stock_Researcher/output/phaseA/macro_data/us_macro_2026-05-05.json",
+    "fii_dii": "/Users/manikantamb/_MyFiles/Work_/MyWork_Local/Stock_Researcher/output/phaseA/fii_dii/fii_dii_2026-05-05.json",
+    "fno_nifty": "/Users/manikantamb/_MyFiles/Work_/MyWork_Local/Stock_Researcher/output/phaseA/fno_data/NIFTY_fno_2026-05-05.json"
+  },
+  "raw_data": {
+    "nifty_50": 24119.3,
+    "nifty_pe": 21.03,
+    "nifty_pb": 3.3,
+    "ad_ratio": 2.42,
+    "breadth_index": "NIFTY 500",
+    "advances": 354,
+    "declines": 146,
+    "unchanged": 4,
+    "vix_india": 18.3,
+    "fii_net_cr": 2835.62,
+    "fii_buy_cr": 19660.47,
+    "fii_sell_cr": 16824.85,
+    "dii_net_cr": 4764.16,
+    "usd_inr": 95.067,
+    "crude_brent_usd": 114.64,
+    "gold_usd": 4525.4,
+    "fed_funds_rate": 3.64,
+    "us_10y_yield": 4.4,
+    "us_2y_yield": 3.88,
+    "us_cpi": 330.293,
+    "yield_curve_10y2y": 0.51,
+    "nifty_pcr": null,
+    "nifty_max_pain": null,
+    "nifty_atm_iv": null
+  },
+  "signals": {
+    "breadth": "bullish",
+    "vix": "elevated",
+    "fii": "buying",
+    "crude": "high",
+    "usd_inr": "very_weak",
+    "yield_curve": "normal",
+    "rate_env": "elevated",
+    "nifty_pe": "fair"
+  },
+  "market_posture": "risk_on",
+  "sectors": {
+    "favored": [
+      "it",
+      "banking",
+      "auto",
+      "metal",
+      "realty",
+      "infra",
+      "oil_gas"
+    ],
+    "avoid": [
+      "pharma"
+    ]
+  },
+  "sector_pe": {
+    "NIFTY REALTY": {
+      "pe": 37.76,
+      "pb": 3.89,
+      "pe_signal": "fair",
+      "change_pct": 2.41,
+      "change_1y": -7.81,
+      "advances": 9,
+      "declines": 1
+    },
+    "NIFTY METAL": {
+      "pe": 22.53,
+      "pb": 3.4,
+      "pe_signal": "expensive",
+      "change_pct": 1.09,
+      "change_1y": 52.29,
+      "advances": 11,
+      "declines": 4
+    },
+    "NIFTY NEXT 50": {
+      "pe": 19.75,
+      "pb": 3.75,
+      "pe_signal": "fair",
+      "change_pct": 0.92,
+      "change_1y": 9.09,
+      "advances": 35,
+      "declines": 15
+    },
+    "NIFTY PHARMA": {
+      "pe": 35.2,
+      "pb": 5.12,
+      "pe_signal": "fair",
+      "change_pct": 0.89,
+      "change_1y": 8.55,
+      "advances": 13,
+      "declines": 7
+    },
+    "NIFTY SMLCAP 100": {
+      "pe": 30.3,
+      "pb": 3.54,
+      "pe_signal": "expensive",
+      "change_pct": 0.7,
+      "change_1y": 10.28,
+      "advances": 68,
+      "declines": 32
+    },
+    "NIFTY MIDCAP 100": {
+      "pe": 35.51,
+      "pb": 4.75,
+      "pe_signal": "expensive",
+      "change_pct": 0.63,
+      "change_1y": 12.02,
+      "advances": 63,
+      "declines": 37
+    },
+    "NIFTY FIN SERVICE": {
+      "pe": 16.7,
+      "pb": 2.77,
+      "pe_signal": "fair",
+      "change_pct": 0.61,
+      "change_1y": -1.29,
+      "advances": 15,
+      "declines": 5
+    },
+    "NIFTY INFRA": {
+      "pe": 21.81,
+      "pb": 3.16,
+      "pe_signal": "fair",
+      "change_pct": 0.55,
+      "change_1y": 7.69,
+      "advances": 19,
+      "declines": 11
+    },
+    "NIFTY 50": {
+      "pe": 21.03,
+      "pb": 3.3,
+      "pe_signal": "fair",
+      "change_pct": 0.51,
+      "change_1y": -0.93,
+      "advances": 37,
+      "declines": 13
+    },
+    "NIFTY AUTO": {
+      "pe": 30.84,
+      "pb": 4.46,
+      "pe_signal": "expensive",
+      "change_pct": 0.42,
+      "change_1y": 16.79,
+      "advances": 7,
+      "declines": 8
+    },
+    "NIFTY FMCG": {
+      "pe": 36.22,
+      "pb": 9.03,
+      "pe_signal": "fair",
+      "change_pct": 0.38,
+      "change_1y": -8.86,
+      "advances": 9,
+      "declines": 6
+    },
+    "NIFTY OIL AND GAS": {
+      "pe": 9.77,
+      "pb": 1.6,
+      "pe_signal": "cheap",
+      "change_pct": 0.33,
+      "change_1y": 4.19,
+      "advances": 10,
+      "declines": 5
+    },
+    "NIFTY BANK": {
+      "pe": 13.88,
+      "pb": 1.87,
+      "pe_signal": "fair",
+      "change_pct": 0.03,
+      "change_1y": -0.43,
+      "advances": 8,
+      "declines": 6
+    },
+    "NIFTY PSU BANK": {
+      "pe": 8.27,
+      "pb": 1.37,
+      "pe_signal": "cheap",
+      "change_pct": -0.32,
+      "change_1y": 29.01,
+      "advances": 4,
+      "declines": 8
+    },
+    "NIFTY MEDIA": {
+      "pe": 30.41,
+      "pb": 1.53,
+      "pe_signal": "expensive",
+      "change_pct": -0.54,
+      "change_1y": -4.81,
+      "advances": 5,
+      "declines": 5
+    },
+    "NIFTY IT": {
+      "pe": 19.94,
+      "pb": 5.39,
+      "pe_signal": "fair",
+      "change_pct": -0.95,
+      "change_1y": -18.99,
+      "advances": 2,
+      "declines": 8
+    }
+  }
+}

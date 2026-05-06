@@ -1,0 +1,81 @@
+{
+  "fetched_at": "2026-05-06T05:53:49.439956+05:30",
+  "ticker": "SONAMLTD.NS",
+  "nse_actions": [
+    {
+      "symbol": "SONAMLTD",
+      "series": "EQ",
+      "purpose": "Annual General Meeting",
+      "ex_date": "20-Sep-2024",
+      "record_date": "-",
+      "bc_start": "21-Sep-2024",
+      "bc_end": "27-Sep-2024",
+      "face_value": "5",
+      "company": "SONAM LIMITED"
+    },
+    {
+      "symbol": "SONAMLTD",
+      "series": "EQ",
+      "purpose": "Face Value Split (Sub-Division) - From Rs 10/- Per Share To Rs 5/- Per Share",
+      "ex_date": "10-May-2024",
+      "record_date": "10-May-2024",
+      "bc_start": "-",
+      "bc_end": "-",
+      "face_value": "5",
+      "company": "SONAM LIMITED"
+    },
+    {
+      "symbol": "SONAMLTD",
+      "series": "EQ",
+      "purpose": "Annual General Meeting",
+      "ex_date": "15-Sep-2023",
+      "record_date": "-",
+      "bc_start": "16-Sep-2023",
+      "bc_end": "22-Sep-2023",
+      "face_value": "5",
+      "company": "SONAM LIMITED"
+    },
+    {
+      "symbol": "SONAMLTD",
+      "series": "EQ",
+      "purpose": "Bonus 1:1",
+      "ex_date": "14-Jul-2022",
+      "record_date": "16-Jul-2022",
+      "bc_start": "-",
+      "bc_end": "-",
+      "face_value": "5",
+      "company": "SONAM LIMITED"
+    },
+    {
+      "symbol": "SONAMLTD",
+      "series": "EQ",
+      "purpose": "Annual General Meeting",
+      "ex_date": "28-Jun-2022",
+      "record_date": "-",
+      "bc_start": "30-Jun-2022",
+      "bc_end": "06-Jul-2022",
+      "face_value": "5",
+      "company": "SONAM LIMITED"
+    }
+  ],
+  "yf_dividends": [
+    {
+      "date": "2018-11-27",
+      "amount": 0.125
+    },
+    {
+      "date": "2019-08-19",
+      "amount": 0.125
+    }
+  ],
+  "yf_splits": [
+    {
+      "date": "2022-07-14",
+      "ratio": 2.0
+    },
+    {
+      "date": "2024-05-10",
+      "ratio": 2.0
+    }
+  ]
+}

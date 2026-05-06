@@ -1,0 +1,342 @@
+{
+  "fetched_at": "2026-05-05T00:04:11.222863+05:30",
+  "market_breadth": {
+    "index": "NIFTY 500",
+    "advances": 354,
+    "declines": 146,
+    "unchanged": 4,
+    "ad_ratio": 2.42,
+    "change_pct": 0.65
+  },
+  "nse_indices": [
+    {
+      "name": "NIFTY REALTY",
+      "last": 812.7,
+      "change_pct": 2.41,
+      "change_pct_1y": -7.81,
+      "advances": 9,
+      "declines": 1,
+      "unchanged": 0,
+      "pe": 37.76,
+      "pb": 3.89,
+      "dividend_yield": 0.36,
+      "year_high": 1049.7,
+      "year_low": 638.65
+    },
+    {
+      "name": "NIFTY METAL",
+      "last": 12972.7,
+      "change_pct": 1.09,
+      "change_pct_1y": 52.29,
+      "advances": 11,
+      "declines": 4,
+      "unchanged": 4,
+      "pe": 22.53,
+      "pb": 3.4,
+      "dividend_yield": 1.57,
+      "year_high": 13164.3,
+      "year_low": 8256.2
+    },
+    {
+      "name": "NIFTY NEXT 50",
+      "last": 70283.85,
+      "change_pct": 0.92,
+      "change_pct_1y": 9.09,
+      "advances": 35,
+      "declines": 15,
+      "unchanged": 4,
+      "pe": 19.75,
+      "pb": 3.75,
+      "dividend_yield": 1.42,
+      "year_high": 71536.8,
+      "year_low": 59896.1
+    },
+    {
+      "name": "NIFTY PHARMA",
+      "last": 23475.55,
+      "change_pct": 0.89,
+      "change_pct_1y": 8.55,
+      "advances": 13,
+      "declines": 7,
+      "unchanged": 0,
+      "pe": 35.2,
+      "pb": 5.12,
+      "dividend_yield": 0.67,
+      "year_high": 23548.95,
+      "year_low": 20576.05
+    },
+    {
+      "name": "NIFTY SMLCAP 100",
+      "last": 18132.5,
+      "change_pct": 0.7,
+      "change_pct_1y": 10.28,
+      "advances": 68,
+      "declines": 32,
+      "unchanged": 0,
+      "pe": 30.3,
+      "pb": 3.54,
+      "dividend_yield": 0.66,
+      "year_high": 19224.95,
+      "year_low": 14986
+    },
+    {
+      "name": "NIFTY MIDCAP 100",
+      "last": 60159.75,
+      "change_pct": 0.63,
+      "change_pct_1y": 12.02,
+      "advances": 63,
+      "declines": 37,
+      "unchanged": 0,
+      "pe": 35.51,
+      "pb": 4.75,
+      "dividend_yield": 0.68,
+      "year_high": 61548.85,
+      "year_low": 52032.85
+    },
+    {
+      "name": "NIFTY FIN SERVICE",
+      "last": 25814.4,
+      "change_pct": 0.61,
+      "change_pct_1y": -1.29,
+      "advances": 15,
+      "declines": 5,
+      "unchanged": 0,
+      "pe": 16.7,
+      "pb": 2.77,
+      "dividend_yield": 0.89,
+      "year_high": 28562.5,
+      "year_low": 23373.95
+    },
+    {
+      "name": "NIFTY INFRA",
+      "last": 9470.95,
+      "change_pct": 0.55,
+      "change_pct_1y": 7.69,
+      "advances": 19,
+      "declines": 11,
+      "unchanged": 0,
+      "pe": 21.81,
+      "pb": 3.16,
+      "dividend_yield": 0.97,
+      "year_high": 9792.6,
+      "year_low": 8426.65
+    },
+    {
+      "name": "NIFTY 50",
+      "last": 24119.3,
+      "change_pct": 0.51,
+      "change_pct_1y": -0.93,
+      "advances": 37,
+      "declines": 13,
+      "unchanged": 0,
+      "pe": 21.03,
+      "pb": 3.3,
+      "dividend_yield": 1.29,
+      "year_high": 26373.2,
+      "year_low": 22182.55
+    },
+    {
+      "name": "NIFTY AUTO",
+      "last": 26027.7,
+      "change_pct": 0.42,
+      "change_pct_1y": 16.79,
+      "advances": 7,
+      "declines": 8,
+      "unchanged": 0,
+      "pe": 30.84,
+      "pb": 4.46,
+      "dividend_yield": 1.22,
+      "year_high": 29179.1,
+      "year_low": 22220.7
+    },
+    {
+      "name": "NIFTY FMCG",
+      "last": 51266,
+      "change_pct": 0.38,
+      "change_pct_1y": -8.86,
+      "advances": 9,
+      "declines": 6,
+      "unchanged": 0,
+      "pe": 36.22,
+      "pb": 9.03,
+      "dividend_yield": 1.61,
+      "year_high": 58485.05,
+      "year_low": 45334.15
+    },
+    {
+      "name": "NIFTY OIL AND GAS",
+      "last": 11733.1,
+      "change_pct": 0.33,
+      "change_pct_1y": 4.19,
+      "advances": 10,
+      "declines": 5,
+      "unchanged": 0,
+      "pe": 9.77,
+      "pb": 1.6,
+      "dividend_yield": 2.26,
+      "year_high": 13607.2,
+      "year_low": 6645.9
+    },
+    {
+      "name": "NIFTY BANK",
+      "last": 54878.5,
+      "change_pct": 0.03,
+      "change_pct_1y": -0.43,
+      "advances": 8,
+      "declines": 6,
+      "unchanged": 0,
+      "pe": 13.88,
+      "pb": 1.87,
+      "dividend_yield": 1.07,
+      "year_high": 61764.85,
+      "year_low": 49954.85
+    },
+    {
+      "name": "NIFTY PSU BANK",
+      "last": 8455.8,
+      "change_pct": -0.32,
+      "change_pct_1y": 29.01,
+      "advances": 4,
+      "declines": 8,
+      "unchanged": 0,
+      "pe": 8.27,
+      "pb": 1.37,
+      "dividend_yield": 2.31,
+      "year_high": 9918.65,
+      "year_low": 6062
+    },
+    {
+      "name": "NIFTY MEDIA",
+      "last": 1448.1,
+      "change_pct": -0.54,
+      "change_pct_1y": -4.81,
+      "advances": 5,
+      "declines": 5,
+      "unchanged": 0,
+      "pe": 30.41,
+      "pb": 1.53,
+      "dividend_yield": 1.21,
+      "year_high": 1786.15,
+      "year_low": 1245.05
+    },
+    {
+      "name": "NIFTY IT",
+      "last": 29076.1,
+      "change_pct": -0.95,
+      "change_pct_1y": -18.99,
+      "advances": 2,
+      "declines": 8,
+      "unchanged": 0,
+      "pe": 19.94,
+      "pb": 5.39,
+      "dividend_yield": 3.7,
+      "year_high": 40301.4,
+      "year_low": 28288.05
+    }
+  ],
+  "market_rates": {
+    "usd_inr": {
+      "symbol": "INR=X",
+      "value": 95.067,
+      "unit": "INR per USD"
+    },
+    "us_10y_yield": {
+      "symbol": "^TNX",
+      "value": 4.446,
+      "unit": "%"
+    },
+    "vix_india": {
+      "symbol": "^INDIAVIX",
+      "value": 18.3,
+      "unit": "index"
+    },
+    "nifty_50": {
+      "symbol": "^NSEI",
+      "value": 24119.3,
+      "unit": "index"
+    },
+    "sensex": {
+      "symbol": "^BSESN",
+      "value": 77269.4,
+      "unit": "index"
+    }
+  },
+  "commodity_prices": {
+    "gold_usd": {
+      "symbol": "GC=F",
+      "value": 4525.4,
+      "unit": "USD/oz"
+    },
+    "silver_usd": {
+      "symbol": "SI=F",
+      "value": 73.09,
+      "unit": "USD/oz"
+    },
+    "crude_wti_usd": {
+      "symbol": "CL=F",
+      "value": 106.46,
+      "unit": "USD/barrel"
+    },
+    "crude_brent_usd": {
+      "symbol": "BZ=F",
+      "value": 114.64,
+      "unit": "USD/barrel"
+    },
+    "natural_gas_usd": {
+      "symbol": "NG=F",
+      "value": 2.873,
+      "unit": "USD/MMBtu"
+    },
+    "copper_usd": {
+      "symbol": "HG=F",
+      "value": 5.8595,
+      "unit": "USD/lb"
+    },
+    "aluminium_usd": {
+      "symbol": "ALI=F",
+      "value": 3455.5,
+      "unit": "USD/MT"
+    },
+    "iron_ore_usd": {
+      "symbol": "TIO=F",
+      "value": 161.91,
+      "unit": "USD/MT"
+    },
+    "coal_usd": {
+      "symbol": "MTF=F",
+      "value": 104.75,
+      "unit": "USD/MT"
+    }
+  },
+  "india_macro": {
+    "india_cpi_inflation_pct": [
+      {
+        "year": "2024",
+        "value": 4.95
+      },
+      {
+        "year": "2023",
+        "value": 5.65
+      },
+      {
+        "year": "2022",
+        "value": 6.7
+      }
+    ],
+    "india_gdp_growth_pct": [
+      {
+        "year": "2024",
+        "value": 6.49
+      },
+      {
+        "year": "2023",
+        "value": 9.19
+      },
+      {
+        "year": "2022",
+        "value": 7.61
+      }
+    ]
+  },
+  "rbi_repo_rate": null
+}

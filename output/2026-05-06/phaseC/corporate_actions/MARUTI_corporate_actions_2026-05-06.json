@@ -1,0 +1,317 @@
+{
+  "fetched_at": "2026-05-06T05:50:05.925431+05:30",
+  "ticker": "MARUTI.NS",
+  "nse_actions": [
+    {
+      "symbol": "MARUTI",
+      "series": "EQ",
+      "purpose": "Dividend - Rs 135 Per Share",
+      "ex_date": "01-Aug-2025",
+      "record_date": "01-Aug-2025",
+      "bc_start": "-",
+      "bc_end": "-",
+      "face_value": "5",
+      "company": "Maruti Suzuki India Limited"
+    },
+    {
+      "symbol": "MARUTI",
+      "series": "EQ",
+      "purpose": "Dividend - Rs 125 Per Share",
+      "ex_date": "02-Aug-2024",
+      "record_date": "-",
+      "bc_start": "03-Aug-2024",
+      "bc_end": "27-Aug-2024",
+      "face_value": "5",
+      "company": "Maruti Suzuki India Limited"
+    },
+    {
+      "symbol": "MARUTI",
+      "series": "EQ",
+      "purpose": "Dividend - Rs 90 Per Share",
+      "ex_date": "03-Aug-2023",
+      "record_date": "-",
+      "bc_start": "04-Aug-2023",
+      "bc_end": "29-Aug-2023",
+      "face_value": "5",
+      "company": "Maruti Suzuki India Limited"
+    },
+    {
+      "symbol": "MARUTI",
+      "series": "EQ",
+      "purpose": "Dividend - Rs 60 Per Share",
+      "ex_date": "03-Aug-2022",
+      "record_date": "-",
+      "bc_start": "05-Aug-2022",
+      "bc_end": "31-Aug-2022",
+      "face_value": "5",
+      "company": "Maruti Suzuki India Limited"
+    },
+    {
+      "symbol": "MARUTI",
+      "series": "EQ",
+      "purpose": " Dividend - Rs 45 Per Share",
+      "ex_date": "05-Aug-2021",
+      "record_date": "-",
+      "bc_start": "07-Aug-2021",
+      "bc_end": "24-Aug-2021",
+      "face_value": "5",
+      "company": "Maruti Suzuki India Limited"
+    },
+    {
+      "symbol": "MARUTI",
+      "series": "EQ",
+      "purpose": " Dividend - Rs 60 Per Share",
+      "ex_date": "13-Aug-2020",
+      "record_date": "-",
+      "bc_start": "15-Aug-2020",
+      "bc_end": "26-Aug-2020",
+      "face_value": "5",
+      "company": "Maruti Suzuki India Limited"
+    },
+    {
+      "symbol": "MARUTI",
+      "series": "EQ",
+      "purpose": " Dividend - Rs 80 Per Share",
+      "ex_date": "14-Aug-2019",
+      "record_date": "-",
+      "bc_start": "17-Aug-2019",
+      "bc_end": "27-Aug-2019",
+      "face_value": "5",
+      "company": "Maruti Suzuki India Limited"
+    },
+    {
+      "symbol": "MARUTI",
+      "series": "EQ",
+      "purpose": " Dividend Rs 80/- Per Share",
+      "ex_date": "14-Aug-2018",
+      "record_date": "-",
+      "bc_start": "17-Aug-2018",
+      "bc_end": "23-Aug-2018",
+      "face_value": "5",
+      "company": "Maruti Suzuki India Limited"
+    },
+    {
+      "symbol": "MARUTI",
+      "series": "EQ",
+      "purpose": " Dividend - Rs 75/- Per Share",
+      "ex_date": "24-Aug-2017",
+      "record_date": "-",
+      "bc_start": "29-Aug-2017",
+      "bc_end": "05-Sep-2017",
+      "face_value": "5",
+      "company": "Maruti Suzuki India Limited"
+    },
+    {
+      "symbol": "MARUTI",
+      "series": "EQ",
+      "purpose": " Final Dividend - Rs 35/- Per Share",
+      "ex_date": "31-Aug-2016",
+      "record_date": "-",
+      "bc_start": "02-Sep-2016",
+      "bc_end": "08-Sep-2016",
+      "face_value": "5",
+      "company": "Maruti Suzuki India Limited"
+    },
+    {
+      "symbol": "MARUTI",
+      "series": "EQ",
+      "purpose": "Annual General Meeting / Dividend - Rs 25/- Per Share",
+      "ex_date": "26-Aug-2015",
+      "record_date": "-",
+      "bc_start": "28-Aug-2015",
+      "bc_end": "04-Sep-2015",
+      "face_value": "5",
+      "company": "Maruti Suzuki India Limited"
+    },
+    {
+      "symbol": "MARUTI",
+      "series": "EQ",
+      "purpose": "Annual General Meeting / Dividend - Rs 12/- Per Share",
+      "ex_date": "27-Aug-2014",
+      "record_date": "-",
+      "bc_start": "01-Sep-2014",
+      "bc_end": "04-Sep-2014",
+      "face_value": "5",
+      "company": "Maruti Suzuki India Limited"
+    },
+    {
+      "symbol": "MARUTI",
+      "series": "EQ",
+      "purpose": "E-Voting",
+      "ex_date": "31-Jul-2014",
+      "record_date": "01-Aug-2014",
+      "bc_start": "-",
+      "bc_end": "-",
+      "face_value": "5",
+      "company": "Maruti Suzuki India Limited"
+    },
+    {
+      "symbol": "MARUTI",
+      "series": "EQ",
+      "purpose": "Annual General Meeting / Final Dividend Rs.8/- Per Equity Share",
+      "ex_date": "13-Aug-2013",
+      "record_date": "-",
+      "bc_start": "16-Aug-2013",
+      "bc_end": "27-Aug-2013",
+      "face_value": "5",
+      "company": "Maruti Suzuki India Limited"
+    },
+    {
+      "symbol": "MARUTI",
+      "series": "EQ",
+      "purpose": "Annual General Meeting/ Dividend Rs.7.50 Per Share",
+      "ex_date": "14-Aug-2012",
+      "record_date": "-",
+      "bc_start": "17-Aug-2012",
+      "bc_end": "28-Aug-2012",
+      "face_value": "5",
+      "company": "Maruti Suzuki India Limited"
+    },
+    {
+      "symbol": "MARUTI",
+      "series": "EQ",
+      "purpose": "Dividend-Rs.7.50 Per Share",
+      "ex_date": "24-Aug-2011",
+      "record_date": "-",
+      "bc_start": "26-Aug-2011",
+      "bc_end": "08-Sep-2011",
+      "face_value": "5",
+      "company": "Maruti Suzuki India Limited"
+    },
+    {
+      "symbol": "MARUTI",
+      "series": "EQ",
+      "purpose": "Annual General Meeting And Final Dividend Rs.6/- Per Share",
+      "ex_date": "24-Aug-2010",
+      "record_date": "-",
+      "bc_start": "26-Aug-2010",
+      "bc_end": "07-Sep-2010",
+      "face_value": "5",
+      "company": "Maruti Suzuki India Limited"
+    },
+    {
+      "symbol": "MARUTI",
+      "series": "EQ",
+      "purpose": "Agm/Div-Rs.3.50 Per Share",
+      "ex_date": "18-Aug-2009",
+      "record_date": "-",
+      "bc_start": "21-Aug-2009",
+      "bc_end": "02-Sep-2009",
+      "face_value": "5",
+      "company": "Maruti Suzuki India Limited"
+    },
+    {
+      "symbol": "MARUTI",
+      "series": "EQ",
+      "purpose": "Agm/Dividend - 100%",
+      "ex_date": "14-Aug-2008",
+      "record_date": "-",
+      "bc_start": "20-Aug-2008",
+      "bc_end": "02-Sep-2008",
+      "face_value": "5",
+      "company": "Maruti Suzuki India Limited"
+    },
+    {
+      "symbol": "MARUTI",
+      "series": "EQ",
+      "purpose": "Agm/Fin Div-Rs4.50 Per Sh",
+      "ex_date": "22-Aug-2007",
+      "record_date": "-",
+      "bc_start": "24-Aug-2007",
+      "bc_end": "06-Sep-2007",
+      "face_value": "5",
+      "company": "Maruti Suzuki India Limited"
+    }
+  ],
+  "yf_dividends": [
+    {
+      "date": "2004-07-08",
+      "amount": 1.5
+    },
+    {
+      "date": "2005-08-25",
+      "amount": 2.0
+    },
+    {
+      "date": "2006-08-23",
+      "amount": 3.5
+    },
+    {
+      "date": "2007-08-22",
+      "amount": 4.5
+    },
+    {
+      "date": "2008-08-14",
+      "amount": 5.0
+    },
+    {
+      "date": "2009-08-18",
+      "amount": 3.5
+    },
+    {
+      "date": "2010-08-24",
+      "amount": 6.0
+    },
+    {
+      "date": "2011-08-24",
+      "amount": 7.5
+    },
+    {
+      "date": "2012-08-14",
+      "amount": 7.5
+    },
+    {
+      "date": "2013-08-13",
+      "amount": 8.0
+    },
+    {
+      "date": "2014-08-27",
+      "amount": 12.0
+    },
+    {
+      "date": "2015-08-26",
+      "amount": 25.0
+    },
+    {
+      "date": "2016-08-31",
+      "amount": 35.0
+    },
+    {
+      "date": "2017-08-24",
+      "amount": 75.0
+    },
+    {
+      "date": "2018-08-14",
+      "amount": 80.0
+    },
+    {
+      "date": "2019-08-14",
+      "amount": 80.0
+    },
+    {
+      "date": "2020-08-13",
+      "amount": 60.0
+    },
+    {
+      "date": "2021-08-05",
+      "amount": 45.0
+    },
+    {
+      "date": "2022-08-03",
+      "amount": 60.0
+    },
+    {
+      "date": "2023-08-03",
+      "amount": 90.0
+    },
+    {
+      "date": "2024-08-02",
+      "amount": 125.0
+    },
+    {
+      "date": "2025-08-01",
+      "amount": 135.0
+    }
+  ],
+  "yf_splits": []
+}

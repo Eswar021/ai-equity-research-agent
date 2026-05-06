@@ -1,0 +1,18 @@
+{
+  "ticker": "EVEREADY.NS",
+  "name": "Eveready Industries India Limited",
+  "exchange": "NSI",
+  "currency": "INR",
+  "price": 317.4,
+  "day_change_pct": -1.67,
+  "52w_high": 475.2,
+  "52w_low": 259.65,
+  "return_1m": NaN,
+  "return_3m": NaN,
+  "return_1y": NaN,
+  "volume": 156520,
+  "market_cap": 23070937088,
+  "sector": "Industrials",
+  "industry": "Electrical Equipment & Parts",
+  "fetched_at": "2026-05-06T05:55:27.440703+05:30"
+}

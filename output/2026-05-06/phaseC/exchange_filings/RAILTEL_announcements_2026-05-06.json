@@ -1,0 +1,358 @@
+{
+  "ticker": "RAILTEL",
+  "fetched_at": "2026-05-06T05:56:35.904519+05:30",
+  "total_returned": 50,
+  "material_only": true,
+  "announcements": [
+    {
+      "date": "30-Apr-2026 17:40:03",
+      "type": "Dividend",
+      "subject": "Railtel Corporation Of India Limited has informed the Exchange that Board of Directors at its meeting held on April 30, 2026, recommended Final Dividend of Rs. 1.25 per equity share.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/RAILTEL_30042026173951_FinancialResults31032026pdf.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "30-Apr-2026 17:36:31",
+      "type": "Outcome of Board Meeting",
+      "subject": "Railtel Corporation Of India Limited has submitted to the Exchange, the financial results for the period ended March 31, 2026.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/RAILTEL_30042026173205_Intimation_FS_31032026_-_Copy.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "13-Apr-2026 18:57:42",
+      "type": "Change in Management",
+      "subject": "Railtel Corporation Of India Limited has informed the Exchange about change in Management",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/RAILTEL_13042026185729_OutcomeofBoardMeeting_09Mar2026_SMP-1.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "09-Mar-2026 14:41:58",
+      "type": "Dividend",
+      "subject": "Railtel Corporation Of India Limited has informed the Exchange that Board of Directors at its meeting held on March 09, 2026, declared Interim Dividend of Re. 1 per equity share.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/RAILTEL_09032026144146_OutcomeofBoardMeeting_09Mar2026.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "18-Feb-2026 16:25:24",
+      "type": "Credit Rating- Revision",
+      "subject": "Railtel Corporation Of India Limited has informed the Exchange about Credit Rating- Revision",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/RAILTEL_18022026131752_Intimation_Credit_Rating_2026.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "02-Feb-2026 17:38:02",
+      "type": "Outcome of Board Meeting",
+      "subject": "Railtel Corporation Of India Limited has submitted to the Exchange, the financial results for the period ended December 31, 2025.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/RAILTEL_02022026173445_Intimation_Outcome.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "10-Jan-2026 22:30:51",
+      "type": "Change in Management",
+      "subject": "Railtel Corporation Of India Limited has informed the Exchange about change in Senior Management due to change in designation",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/RAILTEL_10012026223022_Intimation_SE_Change_mgt.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "28-Nov-2025 18:37:47",
+      "type": "Change in Management",
+      "subject": "Railtel Corporation Of India Limited has informed the Exchange about change in Management",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/RAILTEL_28112025182426_Intimation_Appt_CVO.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "29-Oct-2025 19:15:33",
+      "type": "Dividend",
+      "subject": "Railtel Corporation Of India Limited has informed the Exchange that Board of Directors at its meeting held on October 29, 2025, declared Interim Dividend of Re. 1 per equity share.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/RAILTEL_29102025191455_Intimation_Outcome_BM_29102025.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "29-Oct-2025 19:13:00",
+      "type": "Outcome of Board Meeting",
+      "subject": "Railtel Corporation Of India Limited has submitted to the Exchange, the financial results for the period ended September 30, 2025.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/RAILTEL_29102025191044_Intimation_Outcome_BM_29102025.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "28-Jul-2025 16:48:08",
+      "type": "Outcome of Board Meeting",
+      "subject": "Railtel Corporation Of India Limited has submitted to the Exchange, the financial results for the period ended Jun 30, 2025.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/RAILTEL_28072025164524_Outcome_Board_Meeting_28072025.pdf",
+      "has_xbrl": true
+    },
+    {
+      "date": "20-Jun-2025 19:14:45",
+      "type": "Change in Management",
+      "subject": "Railtel Corporation Of India Limited has informed the Exchange about Dr. Chandramani Sharma, Chief Vigilance Officer of the Company, upon completion of his deputation tenure, hehas been repatriated to his parent cadre. Accordingly, he ceased to be the Senior Management of the Company.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/RAILTEL_20062025191429_Intimation_Cessation_Senior_Management.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "15-Jun-2025 12:33:47",
+      "type": "Dividend",
+      "subject": "Railtel Corporation Of India Limited has informed the Exchange that Board of Directors at its meeting held on Jun 15, 2025, recommended Final Dividend of 0.85 per equity share.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/RAILTEL_15062025123326_Intimation_SE.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "10-Jun-2025 20:00:08",
+      "type": "Change in Management",
+      "subject": "Railtel Corporation Of India Limited has informed the Exchange about change in Senior Management",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/RAILTEL_10062025195947_Intimation_Senior_management_10062025.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "01-May-2025 19:18:55",
+      "type": "Outcome of Board Meeting",
+      "subject": "Railtel Corporation Of India Limited has informed the Exchange regarding Outcome of Board Meeting held on May 01, 2025.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/RAILTEL_01052025191208_Annual_Result_2024-25.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "30-Apr-2025 19:14:44",
+      "type": "Change in Management",
+      "subject": "Railtel Corporation Of India Limited has informed the Exchange about change in Management",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/RAILTEL_30042025191429_Cessation_SM.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "12-Mar-2025 13:55:21",
+      "type": "Dividend",
+      "subject": "Railtel Corporation Of India Limited has informed the Exchange that Board of Directors at its meeting held on March 12, 2025, declared Interim Dividend of 1 per equity share.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/RAILTEL_12032025135505_Intimation_BoD_Div_12032025.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "21-Feb-2025 20:13:13",
+      "type": "Credit Rating- Others",
+      "subject": "Railtel Corporation Of India Limited has informed the Exchange about Credit Rating- Others",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/RAILTEL_21022025201259_Credit_Rating.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "18-Dec-2024 17:21:55",
+      "type": "Reply to Clarification- Financial results",
+      "subject": "The Exchange had sought clarification from Railtel Corporation Of India Limited for the quarter ended 30-Sep-2024 with respect to Regulation 33 of the SEBI (Listing Obligations and Disclosure Requirements) Regulations, 2015. On basis of above the Company was required to clarify the following:   -1. Limited Review Report/ Independent Auditor's Report is not in the format prescribed by SEBI The response of the Company is enclosed.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/RAILTEL_18122024172155_Clarification_letter_to_NSE.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "04-Dec-2024 20:18:45",
+      "type": "Clarification - Financial Results",
+      "subject": "The Exchange has sought clarification from Railtel Corporation Of India Limited for the quarter ended 30-Sep-2024 with respect to Regulation 33 of the SEBI (Listing Obligations and Disclosure Requirements) Regulations, 2015. On basis of above the Company is required to clarify the following:  -1. Limited Review Report/ Independent Auditor's Report is not in the format prescribed by SEBI The response of the Company is awaited.",
+      "attachment_url": "-",
+      "has_xbrl": false
+    },
+    {
+      "date": "28-Oct-2024 21:54:27",
+      "type": "Dividend",
+      "subject": "Railtel Corporation Of India Limited has informed the Exchange that Board of Directors at its meeting held on October 28, 2024, declared Interim Dividend of Re. 1 per equity share.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/RAILTEL_28102024215427_RailTel2QFY25.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "08-Jul-2024 16:43:15",
+      "type": "Dividend",
+      "subject": "Railtel Corporation Of India Limited has informed the Exchange that Board of Directors at its meeting held on July 08, 2024, recommended Final Dividend of 1.85 per equity share.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/RAILTEL_08072024164315_OutcomeofBoardMeetingdt08072024.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "05-Mar-2024 12:26:30",
+      "type": "Credit Rating",
+      "subject": "Railtel Corporation Of India Limited has informed the Exchange about Credit Rating",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/RAILTEL_05032024122630_SignedIntimationregardingcreditrating050324.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "07-Nov-2023 18:02:43",
+      "type": "Change in Director(s)",
+      "subject": "Railtel Corporation Of India Limited has informed the Exchange regarding Change in Director(s) of the company.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/RAILTEL_07112023180243_Signedintimationcessationofrakeshranjan.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "26-Oct-2023 19:41:35",
+      "type": "Dividend",
+      "subject": "Railtel Corporation Of India Limited has informed the Exchange that Board of Directors at its meeting held on October 26, 2023, declared Interim Dividend of 1 per equity share.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/RAILTEL_26102023194135_Results30092023signed.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "04-Aug-2023 18:58:59",
+      "type": "Dividend Updates",
+      "subject": "Railtel Corporation Of India Limited has informed the Exchange about Record Date for final dividend",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/RAILTEL_04082023185859_SignedIntimationof23rdAGM04082023_.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "09-Jul-2023 10:55:08",
+      "type": "Dividend",
+      "subject": "Railtel Corporation Of India Limited has informed the Exchange that Board of Directors at its meeting held on July 09, 2023, recommended Final Dividend of 1.05 per equity share.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/RAILTEL_09072023105508_SignedDividendintimation.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "04-Jul-2023 19:05:27",
+      "type": "Change in Director(s)",
+      "subject": "Railtel Corporation Of India Limited has informed the Exchange regarding Change in Director(s) of the company.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/RAILTEL_04072023190527_SignedIntimationappointmentofYPStomar.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "21-Feb-2023 18:47:02",
+      "type": "Credit Rating",
+      "subject": "Railtel Corporation Of India Limited has informed the Exchange about Credit Rating",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/RAILTEL_21022023184702_SignedIntimationofcreditrating.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "31-Jan-2023 18:43:55",
+      "type": "Dividend Updates",
+      "subject": "Pursuant to Regulation 30 and 42 of the SEBI (Listing Obligations & Disclosure Requirements) Regulations, 2015, the Board of Directors has declared the interim dividend of FY 2022-23 at the rate of 15% of paid-up share capital (Rs. 1.50 per share).  Further, the Board of Directors has also approved Wednesday, 08th February, 2023 as the  Record Date  for the purpose of payment of interim dividend of FY 2022-23.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/RAILTEL_31012023184355_SignedResults.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "10-Nov-2022 17:55:03",
+      "type": "Outcome of Board Meeting",
+      "subject": "Railtel Corporation Of India Limited  has informed the Exchange about Board Meeting held on 10-Nov-2022 to consider financial statements for the period ended September 2022",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/RAILTEL_10112022175503_OutcomeofBOD10112022.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "10-Aug-2022 18:15:00",
+      "type": "Outcome of Board Meeting",
+      "subject": "Railtel Corporation Of India Limited  has informed the Exchange about Board Meeting held on 10-Aug-2022 to consider financial statements for the period ended June 2022",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/RAILTEL_10082022181500_FinancialResults.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "09-Jul-2022 13:25:11",
+      "type": "Outcome of Board Meeting",
+      "subject": "Pursuant to Regulation 30 of SEBI (Listing Obligations & Disclosure Requirements) Regulations, 2015, this is to inform that the Board of Directors of the Company at its meeting held today i.e. Saturday, 09th July, 2022 has recommended a Final Dividend at the rate of 6.5% of paid-up share capital (Rs. 0.65/- per share) for the financial year 2021-22.  This Final Dividend is in addition to Interim Dividend of Rs. 1.75/- per share already paid by the Company for the financial year 2021-22.  The Final Dividend is subject to approval of shareholders in the ensuing Annual General Meeting (AGM).  The Final Dividend would be paid within 30 days from the date of its declaration at the AGM. ",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/RAILTEL_09072022132511_OutcomeofBoardMeetingdated09.07.2022.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "09-Jul-2022 13:25:09",
+      "type": "Dividend",
+      "subject": "Railtel Corporation Of India Limited has informed the Exchange that Board of Directors at its meeting held on 09-Jul-2022, declared Dividend of Rs. 0.65 per equity share.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/RAILTEL_09072022132509_OutcomeofBoardMeetingdated09.07.2022.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "06-Jul-2022 13:06:51",
+      "type": "Press Release",
+      "subject": "Railtel Corporation Of India Limited has informed the Exchange about press release dated 06-Jul-2022 titled finalization of agencies to execute for the work of Video Surveillance System (VSS) at 756 major Railway Stations. ",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/RAILTEL_06072022130651_PressReleaseDated06072022.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "14-Feb-2022 18:00:35",
+      "type": "Outcome of Board Meeting",
+      "subject": "Railtel Corporation Of India Limited has informed the Exchange regarding  Board meeting held on February 14, 2022 to considered and approved the un-audited Financial Results (Standalone and Consolidated) for the quarter and nine months ended on 31st December, 2021.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/RAILTEL_14022022180035_Results.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "11-Feb-2022 17:59:11",
+      "type": "Press Release",
+      "subject": "Railtel Corporation Of India Limited has informed the Exchange regarding a press release dated February 10, 2022, titled \"RailTel s Annual Report for 2020-21 wins 'Plaque Shield' in ICAI Awards for Excellence in Financial Reporting\".",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/RAILTEL_11022022175911_PressReleaseAwardAnnualReport.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "10-Jan-2022 12:43:53",
+      "type": "Dividend Updates",
+      "subject": "Railtel Corporation Of India Limited has informed the Exchange about Dividend Updates",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/RAILTEL_10012022124353_signedoutcomedividend.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "10-Jan-2022 12:35:51",
+      "type": "Dividend",
+      "subject": "Railtel Corporation Of India Limited has informed the Exchange that Board of Directors at its meeting held on January 10, 2022, declared Interim Dividend of 1.75 per equity share.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/RAILTEL_10012022123551_signedoutcomedividend.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "10-Jan-2022 12:34:20",
+      "type": "Dividend Updates",
+      "subject": "Pursuant to Regulation 30 and 42 of SEBI (Listing Obligations & Disclosure Requirements) Regulations, 2015, this is to inform that the Board of Directors of the Company at its meeting held today i.e. Monday, 10th January, 2022 has declared an Interim Dividend at the rate of 17.5% of paid-up share capital (Rs. 1.75 /- per share) for the FY 2021-22.  Further, the Board of Directors has also approved Friday, 21st January, 2022 as  Record Date  for the purpose of payment of Interim Dividend of FY 2021-22.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/RAILTEL_10012022123420_signedoutcomedividend.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "10-Dec-2021 11:50:10",
+      "type": "Credit Rating",
+      "subject": "Railtel Corporation Of India Limited has informed the Exchange about Credit Rating",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/RAILTEL_10122021115010_Intimationofcreditrating.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "24-Nov-2021 12:52:17",
+      "type": "Change in Director(s)",
+      "subject": "Railtel Corporation Of India Limited has informed the Exchange regarding Change in Director(s) of the company.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/RAILTEL_24112021125217_AppointmentofDrSubhashSharma.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "22-Nov-2021 18:13:12",
+      "type": "Change in Director(s)",
+      "subject": "Railtel Corporation Of India Limited has informed the Exchange regarding Change in Director(s) of the company.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/RAILTEL_22112021181312_AppointmentofShriNManoharan.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "11-Nov-2021 19:27:43",
+      "type": "Outcome of Board Meeting",
+      "subject": "Railtel Corporation Of India Limited has informed the Exchange regarding  Board meeting held on November 11, 2021. A copy of un-audited Financial Results (Standalone and Consolidated) for the quarter and half year ended 30th September, 2021 and Limited Review Report thereon, issued by M/s. PSMG & Associates, Chartered Accountants, is enclosed herewith. The financial results are also being published in the Newspapers in the prescribed format.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/RAILTEL_11112021192743_FinancialResultsfor30092021.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "12-Aug-2021 18:22:16",
+      "type": "Outcome of Board Meeting",
+      "subject": "Pursuant to Regulation 30 of SEBI (Listing Obligations & Disclosure Requirements) Regulations, 2015, this is to inform that the Board of Directors of the Company at its meeting held today i.e. Thursday, 12th August, 2021 has, inter-alia, considered and approved the un-audited Financial Results (Standalone and Consolidated) for the quarter ended on 30th June, 2021 along with the Limited Review Report.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/RAILTEL_12082021182216_FS.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "26-Jun-2021 23:28:41",
+      "type": "Clarification - Financial Results",
+      "subject": "The Exchange has sought clarification from Railtel Corporation Of India Limited for the quarter ended 31-Mar-2021 with respect to Regulation 33 of the SEBI (Listing Obligations and Disclosure Requirements) Regulations, 2015.  On basis of above the Company is required to clarify the following:    -1. Consolidated Balance sheet statement not submitted  -2. Standalone Balance sheet statement not submitted.  -3. Statement of Cash Flow not submitted  The response of the Company is awaited.",
+      "attachment_url": "-",
+      "has_xbrl": false
+    },
+    {
+      "date": "25-Jun-2021 20:49:36",
+      "type": "Dividend Updates",
+      "subject": "The Board of Directors have recommended a final dividend at the rate of 12 % of paid-up share capital (Rs. 1.20/- per share) for the financial year 2020-21.  This Final Dividend is in addition to Interim Dividend of Rs. 1/- per share already paid by the Company for the financial year 2020-21.  The final dividend is subject to approval of shareholders in the ensuing Annual General Meeting (AGM).  The final dividend would be paid within 30 days from the date of its declaration at the AGM.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/RAILTEL_25062021204936_FSperiodended31032021.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "25-Jun-2021 20:48:25",
+      "type": "Financial Results Updates",
+      "subject": "The Board of Directors, has considered and approved the Audited Financial Results (Standalone and Consolidated) for the quarter and financial year ended on 31st March, 2021 (on the recommendation of the Audit Committee held on same day prior to the Board Meeting). A copy of Audited Financial Results (Standalone and Consolidated) for the quarter and financial year ended 31st March, 2021 and Auditors' Report thereon, issued by Auditor alongwith a declaration from Chief Financial Officer of the Company that Statutory Auditors have given the Audit Report with Unmodified opinion, is enclosed herewith. The financial results are also being published in the Newspapers in the prescribed format.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/RAILTEL_25062021204825_FSperiodended31032021.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "25-Jun-2021 20:46:06",
+      "type": "Dividend",
+      "subject": "Railtel Corporation Of India Limited has informed the Exchange that Board of Directors at its meeting held on Jun 25, 2021, recommended Final Dividend of 1.20 per equity share.",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/RAILTEL_25062021204606_FSperiodended31032021.pdf",
+      "has_xbrl": false
+    },
+    {
+      "date": "24-Mar-2021 17:26:19",
+      "type": "Press Release",
+      "subject": "Railtel Corporation Of India Limited has informed the Exchange regarding a press release dated March 23, 2021, titled \"Please find attached herewith a copy of Press Release dated 23/03/2021 issued by the Company in connection with the Audited Financial Results for the quarter and nine months ended on 31st December, 2020, which were approved by the Board of Directors of the Company in its meeting held on 22/03/2021\".",
+      "attachment_url": "https://nsearchives.nseindia.com/corporate/RAILTEL_24032021172618_PressReleasedated23032021.pdf",
+      "has_xbrl": false
+    }
+  ]
+}

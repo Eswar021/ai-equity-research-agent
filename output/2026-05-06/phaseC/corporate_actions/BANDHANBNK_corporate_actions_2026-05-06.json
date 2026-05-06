@@ -1,0 +1,121 @@
+{
+  "fetched_at": "2026-05-06T05:55:24.579656+05:30",
+  "ticker": "BANDHANBNK.NS",
+  "nse_actions": [
+    {
+      "symbol": "BANDHANBNK",
+      "series": "EQ",
+      "purpose": "Dividend - Rs 1.50 Per Share",
+      "ex_date": "14-Aug-2025",
+      "record_date": "14-Aug-2025",
+      "bc_start": "-",
+      "bc_end": "-",
+      "face_value": "10",
+      "company": "Bandhan Bank Limited"
+    },
+    {
+      "symbol": "BANDHANBNK",
+      "series": "EQ",
+      "purpose": "Annual General Meeting/Dividend - Rs 1.50 Per Share",
+      "ex_date": "13-Aug-2024",
+      "record_date": "-",
+      "bc_start": "14-Aug-2024",
+      "bc_end": "20-Aug-2024",
+      "face_value": "10",
+      "company": "Bandhan Bank Limited"
+    },
+    {
+      "symbol": "BANDHANBNK",
+      "series": "EQ",
+      "purpose": "Annual General Meeting/Dividend - Rs 1.50 Per Share",
+      "ex_date": "11-Aug-2023",
+      "record_date": "-",
+      "bc_start": "12-Aug-2023",
+      "bc_end": "18-Aug-2023",
+      "face_value": "10",
+      "company": "Bandhan Bank Limited"
+    },
+    {
+      "symbol": "BANDHANBNK",
+      "series": "EQ",
+      "purpose": "Annual General Meeting",
+      "ex_date": "02-Aug-2022",
+      "record_date": "-",
+      "bc_start": "04-Aug-2022",
+      "bc_end": "10-Aug-2022",
+      "face_value": "10",
+      "company": "Bandhan Bank Limited"
+    },
+    {
+      "symbol": "BANDHANBNK",
+      "series": "EQ",
+      "purpose": " Annual General Meeting/Dividend - Re 1 Per Share",
+      "ex_date": "29-Jul-2021",
+      "record_date": "-",
+      "bc_start": "31-Jul-2021",
+      "bc_end": "06-Aug-2021",
+      "face_value": "10",
+      "company": "Bandhan Bank Limited"
+    },
+    {
+      "symbol": "BANDHANBNK",
+      "series": "EQ",
+      "purpose": " Annual General Meeting",
+      "ex_date": "13-Aug-2020",
+      "record_date": "-",
+      "bc_start": "15-Aug-2020",
+      "bc_end": "21-Aug-2020",
+      "face_value": "10",
+      "company": "Bandhan Bank Limited"
+    },
+    {
+      "symbol": "BANDHANBNK",
+      "series": "EQ",
+      "purpose": " Annual General Meeting/Dividend - Rs 3 Per Share",
+      "ex_date": "20-Jun-2019",
+      "record_date": "-",
+      "bc_start": "22-Jun-2019",
+      "bc_end": "28-Jun-2019",
+      "face_value": "10",
+      "company": "Bandhan Bank Limited"
+    },
+    {
+      "symbol": "BANDHANBNK",
+      "series": "EQ",
+      "purpose": " Dividend Re 1/- Per Share",
+      "ex_date": "12-Jul-2018",
+      "record_date": "13-Jul-2018",
+      "bc_start": "-",
+      "bc_end": "-",
+      "face_value": "10",
+      "company": "Bandhan Bank Limited"
+    }
+  ],
+  "yf_dividends": [
+    {
+      "date": "2018-07-12",
+      "amount": 1.0
+    },
+    {
+      "date": "2019-06-20",
+      "amount": 3.0
+    },
+    {
+      "date": "2021-07-29",
+      "amount": 1.0
+    },
+    {
+      "date": "2023-08-11",
+      "amount": 1.5
+    },
+    {
+      "date": "2024-08-13",
+      "amount": 1.5
+    },
+    {
+      "date": "2025-08-14",
+      "amount": 1.5
+    }
+  ],
+  "yf_splits": []
+}

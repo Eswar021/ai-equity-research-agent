@@ -1,0 +1,217 @@
+{
+  "ticker": "ACC",
+  "yf_ticker": "ACC.NS",
+  "fetched_at": "2026-05-06T05:48:36.225439+05:30",
+  "price_targets": {
+    "current_price": 1392.6,
+    "target_high": 2447.0,
+    "target_mean": 1801.5312,
+    "target_median": 1782.5,
+    "target_low": 1200.0,
+    "upside_to_mean_pct": 29.4
+  },
+  "earnings_estimates": {
+    "0q": {
+      "avg": 21.065,
+      "low": 12.3,
+      "high": 29.83,
+      "yearAgoEps": 20.42,
+      "numberOfAnalysts": 2,
+      "growth": 0.031600002,
+      "currency": "INR"
+    },
+    "+1q": {
+      "avg": 9.06,
+      "low": 9.06,
+      "high": 9.06,
+      "yearAgoEps": 59.07,
+      "numberOfAnalysts": 1,
+      "growth": -0.84660006,
+      "currency": "INR"
+    },
+    "0y": {
+      "avg": 90.28352,
+      "low": 74.7,
+      "high": 112.35218,
+      "yearAgoEps": 113.43,
+      "numberOfAnalysts": 10,
+      "growth": -0.2041,
+      "currency": "INR"
+    },
+    "+1y": {
+      "avg": 118.9901,
+      "low": 85.0,
+      "high": 153.1,
+      "yearAgoEps": 90.28352,
+      "numberOfAnalysts": 14,
+      "growth": 0.318,
+      "currency": "INR"
+    }
+  },
+  "revenue_estimates": {
+    "0q": {
+      "avg": 70440917000,
+      "low": 70440917000,
+      "high": 70440917000,
+      "numberOfAnalysts": 1,
+      "yearAgoRevenue": 60658300000,
+      "growth": 0.16129999,
+      "currency": "INR"
+    },
+    "+1q": {
+      "avg": 63672464000,
+      "low": 63672464000,
+      "high": 63672464000,
+      "numberOfAnalysts": 1,
+      "yearAgoRevenue": 58524600000,
+      "growth": 0.088,
+      "currency": "INR"
+    },
+    "0y": {
+      "avg": 276328023870,
+      "low": 270583167060,
+      "high": 293196000000,
+      "numberOfAnalysts": 14,
+      "yearAgoRevenue": 257664800000,
+      "growth": 0.072399996,
+      "currency": "INR"
+    },
+    "+1y": {
+      "avg": 297191813310,
+      "low": 268290000000,
+      "high": 332213000000,
+      "numberOfAnalysts": 14,
+      "yearAgoRevenue": 274870155080,
+      "growth": 0.081199996,
+      "currency": "INR"
+    }
+  },
+  "earnings_history": [
+    {
+      "quarter": "2025-06-30 00:00:00",
+      "eps_actual": 20.42,
+      "eps_estimate": 29.52,
+      "eps_surprise": -9.1,
+      "surprise_pct": -30.83
+    },
+    {
+      "quarter": "2025-09-30 00:00:00",
+      "eps_actual": 59.45,
+      "eps_estimate": 17.1,
+      "eps_surprise": 42.35,
+      "surprise_pct": 247.66
+    },
+    {
+      "quarter": "2025-12-31 00:00:00",
+      "eps_actual": 21.1848,
+      "eps_estimate": 30.92,
+      "eps_surprise": -9.74,
+      "surprise_pct": -31.49
+    },
+    {
+      "quarter": "2026-03-31 00:00:00",
+      "eps_actual": 13.3618,
+      "eps_estimate": 33.71,
+      "eps_surprise": -20.35,
+      "surprise_pct": -60.36
+    }
+  ],
+  "recommendations": [
+    {
+      "period": "0m",
+      "strong_buy": 6,
+      "buy": 10,
+      "hold": 9,
+      "sell": 4,
+      "strong_sell": 3
+    },
+    {
+      "period": "-1m",
+      "strong_buy": 6,
+      "buy": 11,
+      "hold": 8,
+      "sell": 4,
+      "strong_sell": 3
+    },
+    {
+      "period": "-2m",
+      "strong_buy": 6,
+      "buy": 12,
+      "hold": 9,
+      "sell": 4,
+      "strong_sell": 3
+    },
+    {
+      "period": "-3m",
+      "strong_buy": 7,
+      "buy": 13,
+      "hold": 9,
+      "sell": 4,
+      "strong_sell": 3
+    }
+  ],
+  "eps_trend": {
+    "0q": {
+      "current": 21.065,
+      "7daysAgo": 41.07,
+      "30daysAgo": 41.07,
+      "60daysAgo": 43.165,
+      "90daysAgo": 43.165,
+      "currency": "INR"
+    },
+    "+1q": {
+      "current": 9.06,
+      "7daysAgo": -0.96,
+      "30daysAgo": -0.96,
+      "60daysAgo": 1.69,
+      "90daysAgo": 1.69,
+      "currency": "INR"
+    },
+    "0y": {
+      "current": 90.28352,
+      "7daysAgo": 113.53685,
+      "30daysAgo": 116.91296,
+      "60daysAgo": 119.3587,
+      "90daysAgo": 119.62011,
+      "currency": "INR"
+    },
+    "+1y": {
+      "current": 111.09234,
+      "7daysAgo": 121.59677,
+      "30daysAgo": 125.45504,
+      "60daysAgo": 129.07529,
+      "90daysAgo": 129.31943,
+      "currency": "INR"
+    }
+  },
+  "eps_revisions": {
+    "0q": {
+      "upLast7days": 0,
+      "upLast30days": 0,
+      "downLast30days": 1,
+      "downLast7Days": 1,
+      "currency": "INR"
+    },
+    "+1q": {
+      "upLast7days": 0,
+      "upLast30days": 0,
+      "downLast30days": 0,
+      "downLast7Days": 0,
+      "currency": "INR"
+    },
+    "0y": {
+      "upLast7days": 0,
+      "upLast30days": 0,
+      "downLast30days": 5,
+      "downLast7Days": 3,
+      "currency": "INR"
+    },
+    "+1y": {
+      "upLast7days": 0,
+      "upLast30days": 0,
+      "downLast30days": 5,
+      "downLast7Days": 3,
+      "currency": "INR"
+    }
+  }
+}

@@ -1,0 +1,201 @@
+{
+  "ticker": "SIS",
+  "yf_ticker": "SIS.NS",
+  "fetched_at": "2026-05-06T05:57:37.972545+05:30",
+  "price_targets": {
+    "current_price": 402.1,
+    "target_high": 430.0,
+    "target_mean": 413.25,
+    "target_median": 415.0,
+    "target_low": 393.0,
+    "upside_to_mean_pct": 2.8
+  },
+  "earnings_estimates": {
+    "0q": {
+      "avg": null,
+      "low": null,
+      "high": null,
+      "yearAgoEps": null,
+      "numberOfAnalysts": null,
+      "growth": null,
+      "currency": "INR"
+    },
+    "+1q": {
+      "avg": null,
+      "low": null,
+      "high": null,
+      "yearAgoEps": null,
+      "numberOfAnalysts": null,
+      "growth": null,
+      "currency": "INR"
+    },
+    "0y": {
+      "avg": 30.6,
+      "low": 23.0,
+      "high": 34.1,
+      "yearAgoEps": 29.95834,
+      "numberOfAnalysts": 4.0,
+      "growth": 0.0214,
+      "currency": "INR"
+    },
+    "+1y": {
+      "avg": 35.85,
+      "low": 26.9,
+      "high": 40.0,
+      "yearAgoEps": 30.6,
+      "numberOfAnalysts": 4.0,
+      "growth": 0.1716,
+      "currency": "INR"
+    }
+  },
+  "revenue_estimates": {
+    "0q": {
+      "avg": 0,
+      "low": 0,
+      "high": 0,
+      "numberOfAnalysts": 0,
+      "yearAgoRevenue": null,
+      "growth": null,
+      "currency": "INR"
+    },
+    "+1q": {
+      "avg": 0,
+      "low": 0,
+      "high": 0,
+      "numberOfAnalysts": 0,
+      "yearAgoRevenue": null,
+      "growth": null,
+      "currency": "INR"
+    },
+    "0y": {
+      "avg": 174445533920,
+      "low": 156266135660,
+      "high": 184197000000,
+      "numberOfAnalysts": 4,
+      "yearAgoRevenue": 159815300000.0,
+      "growth": 0.0915,
+      "currency": "INR"
+    },
+    "+1y": {
+      "avg": 191595182820,
+      "low": 170896731260,
+      "high": 199823000000,
+      "numberOfAnalysts": 4,
+      "yearAgoRevenue": 174445533920.0,
+      "growth": 0.0983,
+      "currency": "INR"
+    }
+  },
+  "earnings_history": [
+    {
+      "quarter": "2025-06-30 00:00:00",
+      "eps_actual": 6.41,
+      "eps_estimate": null,
+      "eps_surprise": null,
+      "surprise_pct": null
+    },
+    {
+      "quarter": "2025-09-30 00:00:00",
+      "eps_actual": 5.68,
+      "eps_estimate": 6.6,
+      "eps_surprise": -0.92,
+      "surprise_pct": -13.94
+    },
+    {
+      "quarter": "2025-12-31 00:00:00",
+      "eps_actual": 7.1464,
+      "eps_estimate": 7.15,
+      "eps_surprise": -0.0,
+      "surprise_pct": -0.05
+    },
+    {
+      "quarter": "2026-03-31 00:00:00",
+      "eps_actual": 7.42102,
+      "eps_estimate": 5.95,
+      "eps_surprise": 1.47,
+      "surprise_pct": 24.72
+    }
+  ],
+  "recommendations": [
+    {
+      "period": "0m",
+      "strong_buy": 1,
+      "buy": 3,
+      "hold": 0,
+      "sell": 0,
+      "strong_sell": 0
+    },
+    {
+      "period": "-1m",
+      "strong_buy": 1,
+      "buy": 3,
+      "hold": 0,
+      "sell": 0,
+      "strong_sell": 0
+    }
+  ],
+  "eps_trend": {
+    "0q": {
+      "current": null,
+      "7daysAgo": null,
+      "30daysAgo": null,
+      "60daysAgo": null,
+      "90daysAgo": null,
+      "currency": "INR"
+    },
+    "+1q": {
+      "current": null,
+      "7daysAgo": null,
+      "30daysAgo": null,
+      "60daysAgo": null,
+      "90daysAgo": null,
+      "currency": "INR"
+    },
+    "0y": {
+      "current": 30.6,
+      "7daysAgo": 31.025,
+      "30daysAgo": 31.525,
+      "60daysAgo": 31.525,
+      "90daysAgo": 31.475,
+      "currency": "INR"
+    },
+    "+1y": {
+      "current": 35.85,
+      "7daysAgo": 35.275,
+      "30daysAgo": 35.875,
+      "60daysAgo": 35.875,
+      "90daysAgo": 30.4,
+      "currency": "INR"
+    }
+  },
+  "eps_revisions": {
+    "0q": {
+      "upLast7days": null,
+      "upLast30days": null,
+      "downLast30days": null,
+      "downLast7Days": null,
+      "currency": "INR"
+    },
+    "+1q": {
+      "upLast7days": null,
+      "upLast30days": null,
+      "downLast30days": null,
+      "downLast7Days": null,
+      "currency": "INR"
+    },
+    "0y": {
+      "upLast7days": 1.0,
+      "upLast30days": 1.0,
+      "downLast30days": 2.0,
+      "downLast7Days": 2.0,
+      "currency": "INR"
+    },
+    "+1y": {
+      "upLast7days": 2.0,
+      "upLast30days": 1.0,
+      "downLast30days": 2.0,
+      "downLast7Days": 1.0,
+      "currency": "INR"
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "ticker": "SONAMLTD.NS",
+  "name": "Sonam Limited",
+  "exchange": "NSI",
+  "currency": "INR",
+  "price": 51.38,
+  "day_change_pct": 2.49,
+  "52w_high": 62.35,
+  "52w_low": 37.0,
+  "return_1m": NaN,
+  "return_3m": NaN,
+  "return_1y": NaN,
+  "volume": 15126,
+  "market_cap": 2056844160,
+  "sector": "Consumer Cyclical",
+  "industry": "Furnishings, Fixtures & Appliances",
+  "fetched_at": "2026-05-06T05:53:25.921363+05:30"
+}

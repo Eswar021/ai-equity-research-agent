@@ -1,0 +1,806 @@
+{
+  "generated_at": "2026-05-05T03:33:37.151635+05:30",
+  "market_posture": "risk_on",
+  "phase_b_inputs": {
+    "signals_file": "/Users/manikantamb/_MyFiles/Work_/MyWork_Local/Stock_Researcher/output/phaseB/signals/signals_2026-05-05.json",
+    "regime_file": "/Users/manikantamb/_MyFiles/Work_/MyWork_Local/Stock_Researcher/output/phaseB/market_regime/market_regime_2026-05-05.json",
+    "bulk_deals_file": "/Users/manikantamb/_MyFiles/Work_/MyWork_Local/Stock_Researcher/output/phaseA/bulk_deals/bulk_block_deals_2026-05-05.json"
+  },
+  "scoring_config": {
+    "source_weights": {
+      "moneycontrol": 3.0,
+      "economic_times": 3.0,
+      "rss": 2.0,
+      "newsdata_io": 1.5,
+      "mediastack": 1.5,
+      "gmail": 2.0,
+      "youtube": 1.0
+    },
+    "severity_weights": {
+      "high": 3.0,
+      "medium": 2.0,
+      "low": 1.0
+    },
+    "bulk_buy_score": 5.0,
+    "bulk_sell_score": -5.0,
+    "sector_bonus": 4.0,
+    "sector_penalty": -3.0,
+    "min_threshold": 3.0
+  },
+  "regime_summary": {
+    "posture": "risk_on",
+    "signals": {
+      "breadth": "bullish",
+      "vix": "elevated",
+      "fii": "buying",
+      "crude": "high",
+      "usd_inr": "very_weak",
+      "yield_curve": "normal",
+      "rate_env": "elevated",
+      "nifty_pe": "fair"
+    },
+    "favored_sectors": [
+      "it",
+      "banking",
+      "auto",
+      "metal",
+      "realty",
+      "infra",
+      "oil_gas"
+    ],
+    "avoid_sectors": [
+      "pharma"
+    ]
+  },
+  "total_candidates": 15,
+  "candidates": [
+    {
+      "ticker": "BHEL.NS",
+      "company": "Bharat Heavy Electricals Limited",
+      "score": 75.0,
+      "sector_adj": 4.0,
+      "final_score": 79.0,
+      "signal_count": 14,
+      "source_count": 4,
+      "sources": [
+        "economic_times",
+        "mediastack",
+        "moneycontrol",
+        "rss"
+      ],
+      "event_types": [
+        "earnings_beat",
+        "dividend",
+        "other"
+      ],
+      "key_signals": [
+        {
+          "source": "moneycontrol",
+          "event_type": "earnings_beat",
+          "sentiment": "positive",
+          "severity": "high",
+          "key_claim": "Mar'26 quarterly results: Net Sales ₹12,310.37 cr (up 36.88% YoY); Net Profit ₹1,290.47 cr (up 155.82% YoY); EPS ₹3.71; strong YoY growth suggests earnings beat.",
+          "item_title": "BHEL Consolidated March 2026 Net Sales at Rs 12,310.37 crore, up 36.88% Y-o-Y",
+          "item_url": "https://www.moneycontrol.com/news/business/earnings/bhel-consolidated-march-2026-net-sales-at-rs-12310-37-crore-up-36-88-y-o-y-13907795.html"
+        },
+        {
+          "source": "moneycontrol",
+          "event_type": "earnings_beat",
+          "sentiment": "positive",
+          "severity": "high",
+          "key_claim": "Q4 net profit Rs 1,283 crore vs poll estimate Rs 826 crore; profit more than doubled YoY; revenue Rs 12,310 crore (slightly below est) with strong YoY growth; EBITDA Rs 1,754 crore; margin 14.2%.",
+          "item_title": "BHEL stock hits upper circuit, jumps 10% after Q4 profit more than doubles, beats estimates",
+          "item_url": "https://www.moneycontrol.com/news/business/stocks/bhel-stock-hits-upper-circuit-jumps-10-after-q4-profit-more-than-doubles-beats-estimates-13907394.html"
+        },
+        {
+          "source": "moneycontrol",
+          "event_type": "earnings_beat",
+          "sentiment": "positive",
+          "severity": "high",
+          "key_claim": "Q4 net profit Rs 1,283 crore vs poll estimate Rs 826 crore; profit more than doubled YoY; revenue Rs 12,310 crore (up 37% YoY); EBITDA Rs 1,754 crore; margins 14.2%.",
+          "item_title": "BHEL stock hits upper circuit, jumps 10% after Q4 profit more than doubles, beats estimates",
+          "item_url": "https://www.moneycontrol.com/news/business/stocks/bhel-stock-hits-upper-circuit-jumps-10-after-q4-profit-more-than-doubles-beats-estimates-13907394.html"
+        }
+      ],
+      "bulk_deal": null,
+      "regime_posture": "risk_on",
+      "rank": 1,
+      "sector": "Industrials",
+      "sector_key": "infra"
+    },
+    {
+      "ticker": "ACC.NS",
+      "company": "ACC Limited",
+      "score": -60.0,
+      "sector_adj": 4.0,
+      "final_score": -56.0,
+      "signal_count": 7,
+      "source_count": 1,
+      "sources": [
+        "moneycontrol"
+      ],
+      "event_types": [
+        "earnings_miss",
+        "guidance_cut"
+      ],
+      "key_signals": [
+        {
+          "source": "moneycontrol",
+          "event_type": "earnings_miss",
+          "sentiment": "negative",
+          "severity": "high",
+          "key_claim": "ACC 4QFY26 earnings miss: EBITDA down ~23% YoY to INR6.2b (~22% miss); adj. PAT down ~51% YoY to INR2.5b (~42% miss); FY27 demand growth expected ~5% due to weak monsoon.",
+          "item_title": "Neutral ACC; target of Rs 1310: Motilal Oswal",
+          "item_url": "https://www.moneycontrol.com/news/business/neutral-acc-target-of-rs-1310-motilal-oswal-13907889.html"
+        },
+        {
+          "source": "moneycontrol",
+          "event_type": "earnings_miss",
+          "sentiment": "negative",
+          "severity": "high",
+          "key_claim": "Q4 consolidated net profit fell 68.3% YoY to Rs 238.3 crore; revenue up 18% to Rs 7,124.5 crore.",
+          "item_title": "Buzzing Stocks: Vodafone Idea shares up 5% as DoT reduces AGR dues; Maruti Suzuki gains 4% on strong sales",
+          "item_url": "https://www.moneycontrol.com/news/business/stocks/buzzing-stocks-vodafone-idea-shares-up-5-as-dot-reduces-agr-dues-maruti-suzuki-gains-4-on-strong-sales-13907057.html"
+        },
+        {
+          "source": "moneycontrol",
+          "event_type": "earnings_miss",
+          "sentiment": "negative",
+          "severity": "high",
+          "key_claim": "ACC Q4: Consolidated profit down 68.3% YoY to Rs 238.3 crore; revenue up 18% to Rs 7,124.5 crore.",
+          "item_title": " Stocks to Watch Today: Maruti Suzuki, Aster DM Health, IndiaMART, RailTel Corporation, ACC, Eveready...",
+          "item_url": "https://www.moneycontrol.com/news/business/markets/stocks-to-watch-today-maruti-suzuki-aster-dm-health-indiamart-railtel-corporation-acc-eveready-industries-avenue-supermarts-in-focus-on-4-may-13906713.html"
+        }
+      ],
+      "bulk_deal": null,
+      "regime_posture": "risk_on",
+      "rank": 2,
+      "sector": "Basic Materials",
+      "sector_key": "metal"
+    },
+    {
+      "ticker": "MARUTI.NS",
+      "company": "Maruti Suzuki India Limited",
+      "score": 52.0,
+      "sector_adj": 4.0,
+      "final_score": 56.0,
+      "signal_count": 7,
+      "source_count": 3,
+      "sources": [
+        "economic_times",
+        "moneycontrol",
+        "youtube"
+      ],
+      "event_types": [
+        "earnings_beat",
+        "other",
+        "macro_impact",
+        "earnings_inline"
+      ],
+      "key_signals": [
+        {
+          "source": "moneycontrol",
+          "event_type": "earnings_beat",
+          "sentiment": "positive",
+          "severity": "high",
+          "key_claim": "Maruti Suzuki reported a 33.3% YoY jump in total sales to 2.39 lakh units (vs 1.79 lakh).",
+          "item_title": "Price Action: Vodafone Idea, Maruti Suzuki rally up to 6%; Sona BLW, Cochin Shipyard decline",
+          "item_url": "https://www.moneycontrol.com/news/business/markets/price-action-vodafone-idea-maruti-suzuki-rally-up-to-6-percent-sona-blw-cochin-shipyard-decline-13907233.html"
+        },
+        {
+          "source": "moneycontrol",
+          "event_type": "other",
+          "sentiment": "positive",
+          "severity": "high",
+          "key_claim": "April sales 239,646 units, +33.29% YoY; stock surged ~4%.",
+          "item_title": "Sensex gains 350 pts, Nifty above 24,100: BJP's poll show among key factors behind market rise",
+          "item_url": "https://www.moneycontrol.com/news/business/markets/sensex-rises-900-pts-nifty-above-24-250-bjp-s-early-poll-show-among-key-factors-behind-market-rally-13907207.html"
+        },
+        {
+          "source": "moneycontrol",
+          "event_type": "other",
+          "sentiment": "positive",
+          "severity": "high",
+          "key_claim": "April sales surged 33.3% YoY to 2.39 lakh units; domestic sales up 31.4%, exports up 43.5%.",
+          "item_title": "Buzzing Stocks: Vodafone Idea shares up 5% as DoT reduces AGR dues; Maruti Suzuki gains 4% on strong sales",
+          "item_url": "https://www.moneycontrol.com/news/business/stocks/buzzing-stocks-vodafone-idea-shares-up-5-as-dot-reduces-agr-dues-maruti-suzuki-gains-4-on-strong-sales-13907057.html"
+        }
+      ],
+      "bulk_deal": null,
+      "regime_posture": "risk_on",
+      "rank": 3,
+      "sector": "Consumer Cyclical",
+      "sector_key": "auto"
+    },
+    {
+      "ticker": "IDEAFORGE.NS",
+      "company": "Ideaforge Technology Limited",
+      "score": 51.0,
+      "sector_adj": 4.0,
+      "final_score": 55.0,
+      "signal_count": 9,
+      "source_count": 3,
+      "sources": [
+        "bulk_deals",
+        "moneycontrol",
+        "rss"
+      ],
+      "event_types": [
+        "bulk_buy",
+        "earnings_beat"
+      ],
+      "key_signals": [
+        {
+          "source": "moneycontrol",
+          "event_type": "earnings_beat",
+          "sentiment": "positive",
+          "severity": "high",
+          "key_claim": "Ideaforge Technology: Mar-26 standalone net sales Rs 140.86 cr (+492.57% YoY); net profit Rs 60.42 cr (+396.19% YoY); EPS Rs 13.82; EBITDA Rs 75.12 cr (+670.82% YoY).",
+          "item_title": "Ideaforge Tech Standalone March 2026 Net Sales at Rs 140.86 crore, up 492.57% Y-o-Y",
+          "item_url": "https://www.moneycontrol.com/news/business/earnings/ideaforge-tech-standalone-march-2026-net-sales-at-rs-140-86-crore-up-492-57-y-o-y-13907819.html"
+        },
+        {
+          "source": "moneycontrol",
+          "event_type": "earnings_beat",
+          "sentiment": "positive",
+          "severity": "high",
+          "key_claim": "Ideaforge Technology (NSE: IDEAFORGE) reported March 2026 consolidated quarterly results: net sales Rs 141.04 crore, up 594.45% YoY; net profit Rs 59.99 crore (vs prior year loss of Rs 25.71 crore); EPS basic Rs 13.72; EBITDA Rs 74.16 crore (+about 526% YoY).",
+          "item_title": "Ideaforge Tech Consolidated March 2026 Net Sales at Rs 141.04 crore, up 594.45% Y-o-Y",
+          "item_url": "https://www.moneycontrol.com/news/business/earnings/ideaforge-tech-consolidated-march-2026-net-sales-at-rs-141-04-crore-up-594-45-y-o-y-13907757.html"
+        },
+        {
+          "source": "moneycontrol",
+          "event_type": "earnings_beat",
+          "sentiment": "positive",
+          "severity": "high",
+          "key_claim": "Q4 net profit of Rs 60 crore vs net loss of Rs 26 crore in the year-ago quarter; revenue Rs 141 crore vs Rs 20 crore; EBITDA Rs 62 crore vs Rs -22 crore.",
+          "item_title": "IdeaForge shares settle at 20% upper circuit as drone tech firm swings to profit in Q4",
+          "item_url": "https://www.moneycontrol.com/news/business/markets/ideaforge-shares-settle-at-20-upper-circuit-as-drone-tech-firm-swings-to-profit-in-q4-13908078.html"
+        }
+      ],
+      "bulk_deal": {
+        "deals": 3,
+        "buys": 2,
+        "sells": 1,
+        "clients": [
+          "HRTI PRIVATE LIMITED",
+          "SOCIETE GENERALE"
+        ],
+        "date": "04-MAY-2026"
+      },
+      "regime_posture": "risk_on",
+      "rank": 4,
+      "sector": "Technology",
+      "sector_key": "it"
+    },
+    {
+      "ticker": "CSLFINANCE.NS",
+      "company": "CSL Finance Limited",
+      "score": -38.0,
+      "sector_adj": 4.0,
+      "final_score": -34.0,
+      "signal_count": 7,
+      "source_count": 3,
+      "sources": [
+        "economic_times",
+        "moneycontrol",
+        "rss"
+      ],
+      "event_types": [
+        "earnings_miss",
+        "dividend"
+      ],
+      "key_signals": [
+        {
+          "source": "moneycontrol",
+          "event_type": "earnings_miss",
+          "sentiment": "negative",
+          "severity": "high",
+          "key_claim": "CDSL Consolidated Mar-2026 net sales 262.85 crore, up 17.11% YoY; net profit 80.22 crore, down 20.03% YoY from 100.31 crore in Mar-2025; EBITDA 122.28 crore, down 23.6% YoY.",
+          "item_title": "CDSL Consolidated March 2026 Net Sales at Rs 262.85 crore, up 17.11% Y-o-Y",
+          "item_url": "https://www.moneycontrol.com/news/business/earnings/cdsl-consolidated-march-2026-net-sales-at-rs-262-85-crore-up-17-11-y-o-y-13907763.html"
+        },
+        {
+          "source": "economic_times",
+          "event_type": "earnings_miss",
+          "sentiment": "negative",
+          "severity": "high",
+          "key_claim": "Q4 FY26 net profit declined 20% YoY to Rs 80.22 crore; revenue grew 17.1% to Rs 262.85 crore; EBITDA rose 6.7% to Rs 116.75 crore; margins narrowed to 44.4% from 48.7%.",
+          "item_title": "CDSL shares dip over 3% after Q4 net profit tanks 20% to Rs 80 crore, margins under pressure",
+          "item_url": "https://economictimes.indiatimes.com/markets/stocks/news/cdsl-shares-in-focus-after-q4-net-profit-tanks-20-to-rs-80-crore-margins-under-pressure/articleshow/130744338.cms"
+        },
+        {
+          "source": "economic_times",
+          "event_type": "earnings_miss",
+          "sentiment": "negative",
+          "severity": "high",
+          "key_claim": "CDSL Q4 FY26 net profit declined 20% YoY to Rs 80.22 crore; revenue up 17% YoY; EBITDA up 6.7%.",
+          "item_title": "Stocks in news: Kotak Mahindra Bank, DMart, Vodafone Idea, Nestle India, Coal India",
+          "item_url": "https://economictimes.indiatimes.com/markets/stocks/news/stocks-in-news-kotak-mahindra-bank-dmart-vodafone-idea-nestle-india-coal-india/articleshow/130742435.cms"
+        }
+      ],
+      "bulk_deal": null,
+      "regime_posture": "risk_on",
+      "rank": 5,
+      "sector": "Financial Services",
+      "sector_key": "banking"
+    },
+    {
+      "ticker": "BAJFINANCE.NS",
+      "company": "Bajaj Finance Limited",
+      "score": 25.0,
+      "sector_adj": 4.0,
+      "final_score": 29.0,
+      "signal_count": 5,
+      "source_count": 3,
+      "sources": [
+        "economic_times",
+        "moneycontrol",
+        "youtube"
+      ],
+      "event_types": [
+        "other",
+        "macro_impact",
+        "earnings_inline"
+      ],
+      "key_signals": [
+        {
+          "source": "moneycontrol",
+          "event_type": "other",
+          "sentiment": "positive",
+          "severity": "high",
+          "key_claim": "Bajaj Auto April sales up 40% YoY; stock at 18-month high.",
+          "item_title": "Sensex gains 350 pts, Nifty above 24,100: BJP's poll show among key factors behind market rise",
+          "item_url": "https://www.moneycontrol.com/news/business/markets/sensex-rises-900-pts-nifty-above-24-250-bjp-s-early-poll-show-among-key-factors-behind-market-rally-13907207.html"
+        },
+        {
+          "source": "economic_times",
+          "event_type": "macro_impact",
+          "sentiment": "positive",
+          "severity": "high",
+          "key_claim": "Bajaj Auto April total sales jumped 40% YoY to ~5.14 lakh units; exports up 83% YoY; domestic up 13% YoY; stock up ~5%.",
+          "item_title": "Maruti Suzuki, Bajaj Auto, other auto stocks jump up to 5% after strong April sales",
+          "item_url": "https://economictimes.indiatimes.com/markets/stocks/news/maruti-suzuki-bajaj-auto-other-auto-stocks-jump-up-to-5-after-strong-april-sales/articleshow/130770166.cms"
+        },
+        {
+          "source": "moneycontrol",
+          "event_type": "other",
+          "sentiment": "positive",
+          "severity": "low",
+          "key_claim": "Bajaj Auto rose on strong April sales data.",
+          "item_title": "Taking Stock: Market bounces back; Nifty above 24,100, Sensex gains 356 pts",
+          "item_url": "https://www.moneycontrol.com/news/business/markets/taking-stock-market-bounces-back-nifty-above-24-100-sensex-gains-356-pts-13907834.html"
+        }
+      ],
+      "bulk_deal": null,
+      "regime_posture": "risk_on",
+      "rank": 6,
+      "sector": "Financial Services",
+      "sector_key": "banking"
+    },
+    {
+      "ticker": "SONAMLTD.NS",
+      "company": "SONAM LIMITED",
+      "score": 21.8,
+      "sector_adj": 4.0,
+      "final_score": 25.8,
+      "signal_count": 5,
+      "source_count": 2,
+      "sources": [
+        "moneycontrol",
+        "youtube"
+      ],
+      "event_types": [
+        "earnings_beat",
+        "guidance_raise",
+        "other"
+      ],
+      "key_signals": [
+        {
+          "source": "moneycontrol",
+          "event_type": "earnings_beat",
+          "sentiment": "positive",
+          "severity": "medium",
+          "key_claim": "4QFY26 consolidated PAT INR1.9b vs est INR1.8b; beat driven by higher-than-expected BEV revenue growth.",
+          "item_title": "Neutral SONA BLW Precision Forging; target of Rs 546: Motilal Oswal",
+          "item_url": "https://www.moneycontrol.com/news/business/neutral-sona-blw-precision-forging-target-of-rs-546-motilal-oswal-13908158.html"
+        },
+        {
+          "source": "moneycontrol",
+          "event_type": "guidance_raise",
+          "sentiment": "positive",
+          "severity": "medium",
+          "key_claim": "Motilal Oswal raises FY27E/FY28E earnings by 1%/6% after 4Q results.",
+          "item_title": "Neutral SONA BLW Precision Forging; target of Rs 546: Motilal Oswal",
+          "item_url": "https://www.moneycontrol.com/news/business/neutral-sona-blw-precision-forging-target-of-rs-546-motilal-oswal-13908158.html"
+        },
+        {
+          "source": "moneycontrol",
+          "event_type": "guidance_raise",
+          "sentiment": "positive",
+          "severity": "medium",
+          "key_claim": "Raised FY27E/FY28E earnings by 1%/6% following quarterly beat.",
+          "item_title": "Neutral SONA BLW Precision Forging; target of Rs 546: Motilal Oswal",
+          "item_url": "https://www.moneycontrol.com/news/business/neutral-sona-blw-precision-forging-target-of-rs-546-motilal-oswal-13908158.html"
+        }
+      ],
+      "bulk_deal": null,
+      "regime_posture": "risk_on",
+      "rank": 7,
+      "sector": "Consumer Cyclical",
+      "sector_key": "auto"
+    },
+    {
+      "ticker": "SMCGLOBAL.NS",
+      "company": "SMC Global Securities Limited",
+      "score": 18.0,
+      "sector_adj": 4.0,
+      "final_score": 22.0,
+      "signal_count": 2,
+      "source_count": 1,
+      "sources": [
+        "moneycontrol"
+      ],
+      "event_types": [
+        "earnings_beat"
+      ],
+      "key_signals": [
+        {
+          "source": "moneycontrol",
+          "event_type": "earnings_beat",
+          "sentiment": "positive",
+          "severity": "high",
+          "key_claim": "Standalone Mar-2026: Net sales Rs 249.93 crore, up 25.57% YoY; Net profit Rs 20.68 crore, up 140.12% YoY; EPS Rs 0.99.",
+          "item_title": "SMC Global Secu Standalone March 2026 Net Sales at Rs 249.93 crore, up 25.57% Y-o-Y",
+          "item_url": "https://www.moneycontrol.com/news/business/earnings/smc-global-secu-standalone-march-2026-net-sales-at-rs-249-93-crore-up-25-57-y-o-y-13907857.html"
+        },
+        {
+          "source": "moneycontrol",
+          "event_type": "earnings_beat",
+          "sentiment": "positive",
+          "severity": "high",
+          "key_claim": "Mar-2026 consolidated net sales 516.94 crore, up 22.65% YoY; net profit 21.46 crore, up 465.68% YoY; EPS 1.01; March 2026 results",
+          "item_title": "SMC Global Secu Consolidated March 2026 Net Sales at Rs 516.94 crore, up 22.65% Y-o-Y",
+          "item_url": "https://www.moneycontrol.com/news/business/earnings/smc-global-secu-consolidated-march-2026-net-sales-at-rs-516-94-crore-up-22-65-y-o-y-13907768.html"
+        }
+      ],
+      "bulk_deal": null,
+      "regime_posture": "risk_on",
+      "rank": 8,
+      "sector": "Financial Services",
+      "sector_key": "banking"
+    },
+    {
+      "ticker": "BANDHANBNK.NS",
+      "company": "Bandhan Bank Limited",
+      "score": 18.0,
+      "sector_adj": 4.0,
+      "final_score": 22.0,
+      "signal_count": 3,
+      "source_count": 2,
+      "sources": [
+        "economic_times",
+        "moneycontrol"
+      ],
+      "event_types": [
+        "macro_impact",
+        "earnings_beat"
+      ],
+      "key_signals": [
+        {
+          "source": "moneycontrol",
+          "event_type": "macro_impact",
+          "sentiment": "positive",
+          "severity": "medium",
+          "key_claim": "West Bengal election momentum spurred Bandhan Bank stock moves with gains up to 10% as BJP led in the state.",
+          "item_title": "Senco Gold, CESC, Emami, others: West Bengal-based stocks rise up to 10% as BJP eyes historic win",
+          "item_url": "https://www.moneycontrol.com/news/business/markets/senco-gold-cesc-emami-others-west-bengal-based-stocks-rise-up-to-10-as-bjp-eyes-historic-win-13907915.html"
+        },
+        {
+          "source": "economic_times",
+          "event_type": "macro_impact",
+          "sentiment": "positive",
+          "severity": "medium",
+          "key_claim": "Bandhan Bank shares jumped about 7% amid broader West Bengal market optimism stemming from election results.",
+          "item_title": "Baazar Style, Senco Gold, other stocks jump up to 9% on BJP's early lead in West Bengal elections. Here's ",
+          "item_url": "https://economictimes.indiatimes.com/markets/stocks/news/baazar-style-senco-gold-other-stocks-jump-up-to-9-on-bjps-early-lead-in-west-bengal-elections-heres-why/articleshow/130780982.cms"
+        },
+        {
+          "source": "economic_times",
+          "event_type": "earnings_beat",
+          "sentiment": "positive",
+          "severity": "medium",
+          "key_claim": "Bandhan Bank reported a strong set of quarterly results, fuelling a sharp rally in its share price.",
+          "item_title": "West Bengal election results put these 43 stocks under spotlight. Will BJP's win be a trigger?",
+          "item_url": "https://economictimes.indiatimes.com/markets/stocks/news/west-bengal-election-results-outs-these-43-stocks-under-spotlight-will-bjps-win-be-a-trigger/articleshow/130766868.cms"
+        }
+      ],
+      "bulk_deal": null,
+      "regime_posture": "risk_on",
+      "rank": 9,
+      "sector": "Financial Services",
+      "sector_key": "banking"
+    },
+    {
+      "ticker": "EVEREADY.NS",
+      "company": "Eveready Industries India Limited",
+      "score": 18.0,
+      "sector_adj": 4.0,
+      "final_score": 22.0,
+      "signal_count": 2,
+      "source_count": 1,
+      "sources": [
+        "moneycontrol"
+      ],
+      "event_types": [
+        "earnings_beat"
+      ],
+      "key_signals": [
+        {
+          "source": "moneycontrol",
+          "event_type": "earnings_beat",
+          "sentiment": "positive",
+          "severity": "high",
+          "key_claim": "Eveready Industries India Q4: Profit grows nearly 14-fold to Rs 141.8 crore; revenue up 9.4% to Rs 327.2 crore; exceptional gains Rs 102.7 crore.",
+          "item_title": " Stocks to Watch Today: Maruti Suzuki, Aster DM Health, IndiaMART, RailTel Corporation, ACC, Eveready...",
+          "item_url": "https://www.moneycontrol.com/news/business/markets/stocks-to-watch-today-maruti-suzuki-aster-dm-health-indiamart-railtel-corporation-acc-eveready-industries-avenue-supermarts-in-focus-on-4-may-13906713.html"
+        },
+        {
+          "source": "moneycontrol",
+          "event_type": "earnings_beat",
+          "sentiment": "positive",
+          "severity": "high",
+          "key_claim": "Q4 profit up nearly 14-fold to Rs 141.8 crore; revenue up 9.4% to Rs 327.2 crore; exceptional gains Rs 102.7 crore",
+          "item_title": " Stocks to Watch Today: Maruti Suzuki, Aster DM Health, IndiaMART, RailTel Corporation, ACC, Eveready...",
+          "item_url": "https://www.moneycontrol.com/news/business/markets/stocks-to-watch-today-maruti-suzuki-aster-dm-health-indiamart-railtel-corporation-acc-eveready-industries-avenue-supermarts-in-focus-on-4-may-13906713.html"
+        }
+      ],
+      "bulk_deal": null,
+      "regime_posture": "risk_on",
+      "rank": 10,
+      "sector": "Industrials",
+      "sector_key": "infra"
+    },
+    {
+      "ticker": "DBREALTY.NS",
+      "company": "Valor Estate Limited",
+      "score": 18.0,
+      "sector_adj": 4.0,
+      "final_score": 22.0,
+      "signal_count": 2,
+      "source_count": 1,
+      "sources": [
+        "economic_times"
+      ],
+      "event_types": [
+        "other",
+        "merger_acquisition"
+      ],
+      "key_signals": [
+        {
+          "source": "economic_times",
+          "event_type": "other",
+          "sentiment": "positive",
+          "severity": "high",
+          "key_claim": "Bombay High Court upholds Miraland Developers' ownership of 205-acre Mira Bhayandar land, dismissing Salt Department appeal; litigation settles in Valor Estate's favour, reducing uncertainty around a large land bank and enabling development/monetisation.",
+          "item_title": "Valor Estate shares locked in 20% upper circuit. What’s behind the sharp surge today?",
+          "item_url": "https://economictimes.indiatimes.com/markets/stocks/news/valor-estate-shares-locked-in-20-upper-circuit-whats-behind-the-sharp-surge-today/articleshow/130772449.cms"
+        },
+        {
+          "source": "economic_times",
+          "event_type": "merger_acquisition",
+          "sentiment": "positive",
+          "severity": "high",
+          "key_claim": "MIG Realtors Private Limited (Valor Estate subsidiary) entered into transaction documents with Adani Goodhomes Private Limited to acquire Radius Estates and Developers Private Limited; Radius Estates to become wholly owned subsidiary of MIG and indirect subsidiary of Valor Estate; completion targeted by Dec 2027, subject to conditions including pledged share release.",
+          "item_title": "Valor Estate shares locked in 20% upper circuit. What’s behind the sharp surge today?",
+          "item_url": "https://economictimes.indiatimes.com/markets/stocks/news/valor-estate-shares-locked-in-20-upper-circuit-whats-behind-the-sharp-surge-today/articleshow/130772449.cms"
+        }
+      ],
+      "bulk_deal": null,
+      "regime_posture": "risk_on",
+      "rank": 11,
+      "sector": "Real Estate",
+      "sector_key": "realty"
+    },
+    {
+      "ticker": "SUNPHARMA.NS",
+      "company": "Sun Pharmaceutical Industries Limited",
+      "score": 24.0,
+      "sector_adj": -3.0,
+      "final_score": 21.0,
+      "signal_count": 3,
+      "source_count": 2,
+      "sources": [
+        "moneycontrol",
+        "rss"
+      ],
+      "event_types": [
+        "earnings_beat"
+      ],
+      "key_signals": [
+        {
+          "source": "moneycontrol",
+          "event_type": "earnings_beat",
+          "sentiment": "positive",
+          "severity": "high",
+          "key_claim": "Standalone March 2026 results: net sales ₹199.81 cr (up 23.67% YoY), net profit ₹9.54 cr (up 35.81% YoY), EBITDA ₹21.51 cr (up 33.44% YoY), EPS Basic ₹0.40 (from ₹0.29)",
+          "item_title": "Sudarshan Standalone March 2026 Net Sales at Rs 199.81 crore, up 23.67% Y-o-Y",
+          "item_url": "https://www.moneycontrol.com/news/business/earnings/sudarshan-standalone-march-2026-net-sales-at-rs-199-81-crore-up-23-67-y-o-y-13907817.html"
+        },
+        {
+          "source": "moneycontrol",
+          "event_type": "earnings_beat",
+          "sentiment": "positive",
+          "severity": "high",
+          "key_claim": "Mar'26 consolidated net sales: 220.92 crore, up 36.71% YoY; net profit: 10.73 crore, up 44.7% YoY; EPS basic: 0.48; Mar'26 quarterly results for Sudarshan Pharma Industries; stock closed at 30.26 on Apr 30, 2026 (BSE).",
+          "item_title": "Sudarshan Consolidated March 2026 Net Sales at Rs 220.92 crore, up 36.71% Y-o-Y",
+          "item_url": "https://www.moneycontrol.com/news/business/earnings/sudarshan-consolidated-march-2026-net-sales-at-rs-220-92-crore-up-36-71-y-o-y-13907752.html"
+        },
+        {
+          "source": "rss",
+          "event_type": "earnings_beat",
+          "sentiment": "positive",
+          "severity": "high",
+          "key_claim": "Q4 net profit rose 44.8% YoY to ₹10.73 crore; revenue growth 36.72% YoY to ₹220.92 crore. Full-year net profit up 55.64% and sales up 39.21%.",
+          "item_title": "Small-cap pharma stock under  ₹50 jumps 4% following Dalal Street rally",
+          "item_url": "https://www.livemint.com/market/stock-market-news/smallcap-pharma-stock-under-rs-50-jumps-4-following-dalal-street-rally-11777869261715.html"
+        }
+      ],
+      "bulk_deal": null,
+      "regime_posture": "risk_on",
+      "rank": 12,
+      "sector": "Healthcare",
+      "sector_key": "pharma"
+    },
+    {
+      "ticker": "SIS.NS",
+      "company": "SIS LIMITED",
+      "score": 16.0,
+      "sector_adj": 4.0,
+      "final_score": 20.0,
+      "signal_count": 3,
+      "source_count": 3,
+      "sources": [
+        "moneycontrol",
+        "rss",
+        "youtube"
+      ],
+      "event_types": [
+        "earnings_beat",
+        "guidance_raise"
+      ],
+      "key_signals": [
+        {
+          "source": "moneycontrol",
+          "event_type": "earnings_beat",
+          "sentiment": "positive",
+          "severity": "high",
+          "key_claim": "Mar'26 standalone net sales Rs 1,406.50 crore, up 10.86% YoY; net profit Rs 64.94 crore, up 341.59% YoY; EPS (basic) Rs 4.60.",
+          "item_title": "SIS Standalone March 2026 Net Sales at Rs 1,406.50 crore, up 10.86% Y-o-Y",
+          "item_url": "https://www.moneycontrol.com/news/business/earnings/sis-standalone-march-2026-net-sales-at-rs-1406-50-crore-up-10-86-y-o-y-13907874.html"
+        },
+        {
+          "source": "rss",
+          "event_type": "guidance_raise",
+          "sentiment": "positive",
+          "severity": "medium",
+          "key_claim": "SIS Ltd targets Rs 20,000 crore revenue by FY27 and aims to expand workforce to 5 lakh by 2030; guidance supported by network expansion, labour-code changes, and AI-driven efficiency.",
+          "item_title": "SIS Ltd eyes Rs 20,000 crore revenue in FY27; targets 5 lakh workforce by 2030",
+          "item_url": "https://economictimes.indiatimes.com/news/company/corporate-trends/sis-ltd-eyes-rs-20000-crore-revenue-in-fy27-targets-5-lakh-workforce-by-2030/articleshow/130728145.cms"
+        },
+        {
+          "source": "youtube",
+          "event_type": "earnings_beat",
+          "sentiment": "positive",
+          "severity": "high",
+          "key_claim": "Q4 numbers extremely strong with Top-line growth of 31% YoY; PAT is a record quarterly profit; margins around 4.5%; company trades at sub-13x; stock jumped ~15% intraday.",
+          "item_title": "CBJBLuWqWs0",
+          "item_url": "https://www.youtube.com/watch?v=CBJBLuWqWs0"
+        }
+      ],
+      "bulk_deal": null,
+      "regime_posture": "risk_on",
+      "rank": 13,
+      "sector": "Industrials",
+      "sector_key": "infra"
+    },
+    {
+      "ticker": "RAILTEL.NS",
+      "company": "Railtel Corporation Of India Limited",
+      "score": 18.0,
+      "sector_adj": 0.0,
+      "final_score": 18.0,
+      "signal_count": 2,
+      "source_count": 1,
+      "sources": [
+        "moneycontrol"
+      ],
+      "event_types": [
+        "earnings_beat"
+      ],
+      "key_signals": [
+        {
+          "source": "moneycontrol",
+          "event_type": "earnings_beat",
+          "sentiment": "positive",
+          "severity": "high",
+          "key_claim": "RailTel Corporation of India Q4: Profit up 25% to Rs 141.8 crore; revenue up 27.6% to Rs 1,668.9 crore.",
+          "item_title": " Stocks to Watch Today: Maruti Suzuki, Aster DM Health, IndiaMART, RailTel Corporation, ACC, Eveready...",
+          "item_url": "https://www.moneycontrol.com/news/business/markets/stocks-to-watch-today-maruti-suzuki-aster-dm-health-indiamart-railtel-corporation-acc-eveready-industries-avenue-supermarts-in-focus-on-4-may-13906713.html"
+        },
+        {
+          "source": "moneycontrol",
+          "event_type": "earnings_beat",
+          "sentiment": "positive",
+          "severity": "high",
+          "key_claim": "Q4 profit up 25% YoY to Rs 141.8 crore; revenue up 27.6% to Rs 1,668.9 crore",
+          "item_title": " Stocks to Watch Today: Maruti Suzuki, Aster DM Health, IndiaMART, RailTel Corporation, ACC, Eveready...",
+          "item_url": "https://www.moneycontrol.com/news/business/markets/stocks-to-watch-today-maruti-suzuki-aster-dm-health-indiamart-railtel-corporation-acc-eveready-industries-avenue-supermarts-in-focus-on-4-may-13906713.html"
+        }
+      ],
+      "bulk_deal": null,
+      "regime_posture": "risk_on",
+      "rank": 14,
+      "sector": "Communication Services",
+      "sector_key": null
+    },
+    {
+      "ticker": "BHAGERIA.NS",
+      "company": "Bhageria Industries Limited",
+      "score": -15.0,
+      "sector_adj": 4.0,
+      "final_score": -11.0,
+      "signal_count": 2,
+      "source_count": 1,
+      "sources": [
+        "moneycontrol"
+      ],
+      "event_types": [
+        "earnings_miss"
+      ],
+      "key_signals": [
+        {
+          "source": "moneycontrol",
+          "event_type": "earnings_miss",
+          "sentiment": "negative",
+          "severity": "high",
+          "key_claim": "Net Profit for Bhageria Industries' March 2026 quarter fell 24.92% YoY to Rs 11.83 crore despite net sales rising 48.15% YoY to Rs 270.56 crore; EPS declined to Rs 2.71.",
+          "item_title": "Bhageria Indu Consolidated March 2026 Net Sales at Rs 270.56 crore, up 48.15% Y-o-Y",
+          "item_url": "https://www.moneycontrol.com/news/business/earnings/bhageria-indu-consolidated-march-2026-net-sales-at-rs-270-56-crore-up-48-15-y-o-y-13907747.html"
+        },
+        {
+          "source": "moneycontrol",
+          "event_type": "earnings_miss",
+          "sentiment": "negative",
+          "severity": "medium",
+          "key_claim": "Mar'26 standalone net profit ₹14.10 cr, down 14.6% YoY; net sales ₹266.75 cr, up 45.24% YoY; Basic/Diluted EPS ₹3.23.",
+          "item_title": "Bhageria Indu Standalone March 2026 Net Sales at Rs 266.75 crore, up 45.24% Y-o-Y",
+          "item_url": "https://www.moneycontrol.com/news/business/earnings/bhageria-indu-standalone-march-2026-net-sales-at-rs-266-75-crore-up-45-24-y-o-y-13907880.html"
+        }
+      ],
+      "bulk_deal": null,
+      "regime_posture": "risk_on",
+      "rank": 15,
+      "sector": "Basic Materials",
+      "sector_key": "metal"
+    }
+  ],
+  "phase_c_run_at": "2026-05-06T05:58:37.626937+05:30",
+  "sector_map": {
+    "BHEL.NS": "Industrials",
+    "ACC.NS": "Basic Materials",
+    "MARUTI.NS": "Consumer Cyclical",
+    "IDEAFORGE.NS": "Technology",
+    "CSLFINANCE.NS": "Financial Services",
+    "BAJFINANCE.NS": "Financial Services",
+    "SUNPHARMA.NS": "Healthcare",
+    "SONAMLTD.NS": "Consumer Cyclical",
+    "SMCGLOBAL.NS": "Financial Services",
+    "BANDHANBNK.NS": "Financial Services",
+    "EVEREADY.NS": "Industrials",
+    "RAILTEL.NS": "Communication Services",
+    "DBREALTY.NS": "Real Estate",
+    "SIS.NS": "Industrials",
+    "BHAGERIA.NS": "Basic Materials"
+  }
+}

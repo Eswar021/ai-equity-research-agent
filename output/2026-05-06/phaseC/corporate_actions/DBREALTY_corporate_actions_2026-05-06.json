@@ -1,0 +1,173 @@
+{
+  "fetched_at": "2026-05-06T05:57:20.269535+05:30",
+  "ticker": "DBREALTY.NS",
+  "nse_actions": [
+    {
+      "symbol": "DBREALTY",
+      "series": "EQ",
+      "purpose": "Demerger",
+      "ex_date": "18-Jul-2025",
+      "record_date": "18-Jul-2025",
+      "bc_start": "-",
+      "bc_end": "-",
+      "face_value": "10",
+      "company": "Valor Estate Limited"
+    },
+    {
+      "symbol": "DBREALTY",
+      "series": "EQ",
+      "purpose": "Annual General Meeting",
+      "ex_date": "22-Sep-2023",
+      "record_date": "-",
+      "bc_start": "24-Sep-2023",
+      "bc_end": "30-Sep-2023",
+      "face_value": "10",
+      "company": "Valor Estate Limited"
+    },
+    {
+      "symbol": "DBREALTY",
+      "series": "EQ",
+      "purpose": "Annual General Meeting",
+      "ex_date": "22-Sep-2022",
+      "record_date": "-",
+      "bc_start": "24-Sep-2022",
+      "bc_end": "30-Sep-2022",
+      "face_value": "10",
+      "company": "Valor Estate Limited"
+    },
+    {
+      "symbol": "DBREALTY",
+      "series": "EQ",
+      "purpose": " Annual General Meeting",
+      "ex_date": "22-Sep-2021",
+      "record_date": "-",
+      "bc_start": "24-Sep-2021",
+      "bc_end": "30-Sep-2021",
+      "face_value": "10",
+      "company": "Valor Estate Limited"
+    },
+    {
+      "symbol": "DBREALTY",
+      "series": "EQ",
+      "purpose": " Annual General Meeting",
+      "ex_date": "14-Dec-2020",
+      "record_date": "-",
+      "bc_start": "16-Dec-2020",
+      "bc_end": "22-Dec-2020",
+      "face_value": "10",
+      "company": "Valor Estate Limited"
+    },
+    {
+      "symbol": "DBREALTY",
+      "series": "EQ",
+      "purpose": " Annual General Meeting",
+      "ex_date": "19-Sep-2019",
+      "record_date": "-",
+      "bc_start": "21-Sep-2019",
+      "bc_end": "30-Sep-2019",
+      "face_value": "10",
+      "company": "Valor Estate Limited"
+    },
+    {
+      "symbol": "DBREALTY",
+      "series": "EQ",
+      "purpose": " Annual General Meeting",
+      "ex_date": "18-Sep-2018",
+      "record_date": "-",
+      "bc_start": "21-Sep-2018",
+      "bc_end": "29-Sep-2018",
+      "face_value": "10",
+      "company": "Valor Estate Limited"
+    },
+    {
+      "symbol": "DBREALTY",
+      "series": "EQ",
+      "purpose": " Annual General Meeting  ",
+      "ex_date": "20-Sep-2017",
+      "record_date": "-",
+      "bc_start": "22-Sep-2017",
+      "bc_end": "29-Sep-2017",
+      "face_value": "10",
+      "company": "Valor Estate Limited"
+    },
+    {
+      "symbol": "DBREALTY",
+      "series": "EQ",
+      "purpose": " Annual General Meeting",
+      "ex_date": "20-Sep-2016",
+      "record_date": "-",
+      "bc_start": "22-Sep-2016",
+      "bc_end": "29-Sep-2016",
+      "face_value": "10",
+      "company": "Valor Estate Limited"
+    },
+    {
+      "symbol": "DBREALTY",
+      "series": "EQ",
+      "purpose": " Annual General Meeting",
+      "ex_date": "16-Sep-2015",
+      "record_date": "-",
+      "bc_start": "21-Sep-2015",
+      "bc_end": "26-Sep-2015",
+      "face_value": "10",
+      "company": "Valor Estate Limited"
+    },
+    {
+      "symbol": "DBREALTY",
+      "series": "EQ",
+      "purpose": "Annual General Meeting",
+      "ex_date": "18-Sep-2014",
+      "record_date": "-",
+      "bc_start": "22-Sep-2014",
+      "bc_end": "27-Sep-2014",
+      "face_value": "10",
+      "company": "Valor Estate Limited"
+    },
+    {
+      "symbol": "DBREALTY",
+      "series": "EQ",
+      "purpose": "Annual General Meeting",
+      "ex_date": "19-Sep-2013",
+      "record_date": "-",
+      "bc_start": "23-Sep-2013",
+      "bc_end": "28-Sep-2013",
+      "face_value": "10",
+      "company": "Valor Estate Limited"
+    },
+    {
+      "symbol": "DBREALTY",
+      "series": "EQ",
+      "purpose": "Annual General Meeting",
+      "ex_date": "13-Sep-2012",
+      "record_date": "-",
+      "bc_start": "17-Sep-2012",
+      "bc_end": "22-Sep-2012",
+      "face_value": "10",
+      "company": "Valor Estate Limited"
+    },
+    {
+      "symbol": "DBREALTY",
+      "series": "EQ",
+      "purpose": "Annual General Meeting",
+      "ex_date": "14-Sep-2011",
+      "record_date": "-",
+      "bc_start": "16-Sep-2011",
+      "bc_end": "21-Sep-2011",
+      "face_value": "10",
+      "company": "Valor Estate Limited"
+    },
+    {
+      "symbol": "DBREALTY",
+      "series": "EQ",
+      "purpose": "Annual General Meeting",
+      "ex_date": "22-Sep-2010",
+      "record_date": "-",
+      "bc_start": "24-Sep-2010",
+      "bc_end": "29-Sep-2010",
+      "face_value": "10",
+      "company": "Valor Estate Limited"
+    }
+  ],
+  "yf_dividends": [],
+  "yf_splits": []
+}
