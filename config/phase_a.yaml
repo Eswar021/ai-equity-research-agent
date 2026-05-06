@@ -102,108 +102,108 @@ gmail:
 # max_long:   videos per channel with duration 20+ min (deep dives, full shows)
 # enabled: set false to pause a channel without removing it
 youtube:
-  days_back: 5
+  days_back: 3
   # search_query: keyword filter passed to YouTube API for this channel.
   #   Set on broad news channels that post non-market content (elections, sports, etc.)
   #   so only market-relevant videos are fetched.
   #   Omit (or set null) for dedicated market channels where ALL content is relevant.
   channels:
     # ── Live market news (English) — mixed content, needs keyword filter ────
-    - channel_id:   "UCJqW2-XLS1rVynF4MLVMMxA"
-      handle:       "@CNBCtv18"
-      name:         "CNBC TV18"
-      language:     en
-      category:     news
-      max_short:    10
-      max_medium:   5
-      max_long:     5
-      enabled:      true
-      search_query: "Nifty OR Sensex OR stock market OR earnings OR results OR RBI"
+    # - channel_id:   "UCJqW2-XLS1rVynF4MLVMMxA"
+    #   handle:       "@CNBCtv18"
+    #   name:         "CNBC TV18"
+    #   language:     en
+    #   category:     news
+    #   max_short:    10
+    #   max_medium:   5
+    #   max_long:     5
+    #   enabled:      true
+    #   search_query: "Nifty OR Sensex OR stock market OR earnings OR results OR RBI"
 
-    - channel_id:   "UCI_mwTKUhicNzFrhm33MzBQ"
-      handle:       "@ETNow"
-      name:         "ET Now"
-      language:     en
-      category:     news
-      max_short:    10
-      max_medium:   5
-      max_long:     5
-      enabled:      true
-      search_query: "Nifty OR Sensex OR stock market OR earnings OR results OR RBI"
+    # - channel_id:   "UCI_mwTKUhicNzFrhm33MzBQ"
+    #   handle:       "@ETNow"
+    #   name:         "ET Now"
+    #   language:     en
+    #   category:     news
+    #   max_short:    10
+    #   max_medium:   5
+    #   max_long:     5
+    #   enabled:      true
+    #   search_query: "Nifty OR Sensex OR stock market OR earnings OR results OR RBI"
 
-    - channel_id:   "UC3uJIdRFTGgLWrUziaHbzrg"
-      handle:       "@NDTVProfit"
-      name:         "NDTV Profit"
-      language:     en
-      category:     news
-      max_short:    10
-      max_medium:   5
-      max_long:     5
-      enabled:      true
-      search_query: "Nifty OR Sensex OR stock market OR earnings OR results OR RBI"
+    # - channel_id:   "UC3uJIdRFTGgLWrUziaHbzrg"
+    #   handle:       "@NDTVProfit"
+    #   name:         "NDTV Profit"
+    #   language:     en
+    #   category:     news
+    #   max_short:    10
+    #   max_medium:   5
+    #   max_long:     5
+    #   enabled:      true
+    #   search_query: "Nifty OR Sensex OR stock market OR earnings OR results OR RBI"
 
-    - channel_id:   "UChftTVI0QJmyXkajQYt2tiQ"
-      handle:       "@moneycontrol"
-      name:         "Moneycontrol"
-      language:     en
-      category:     news
-      max_short:    10
-      max_medium:   5
-      max_long:     5
-      enabled:      true
-      search_query: "Nifty OR Sensex OR stock market OR earnings OR results OR RBI"
+    # - channel_id:   "UChftTVI0QJmyXkajQYt2tiQ"
+    #   handle:       "@moneycontrol"
+    #   name:         "Moneycontrol"
+    #   language:     en
+    #   category:     news
+    #   max_short:    10
+    #   max_medium:   5
+    #   max_long:     5
+    #   enabled:      true
+    #   search_query: "Nifty OR Sensex OR stock market OR earnings OR results OR RBI"
 
-    # ── Market analysis (English) — dedicated market channel, no filter ─────
-    - channel_id:  "UCmkNoDHBfKzPnXWTNoYQc7A"
-      handle:      "@StockEdge"
-      name:        "StockEdge"
-      language:    en
-      category:    analysis
-      max_short:   5
-      max_medium:  3
-      max_long:    3
-      enabled:     true
+    # # ── Market analysis (English) — dedicated market channel, no filter ─────
+    # - channel_id:  "UCmkNoDHBfKzPnXWTNoYQc7A"
+    #   handle:      "@StockEdge"
+    #   name:        "StockEdge"
+    #   language:    en
+    #   category:    analysis
+    #   max_short:   5
+    #   max_medium:  3
+    #   max_long:    3
+    #   enabled:     true
 
-    # ── Education & fundamental research (English) — no filter ───────────────
-    - channel_id:  "UCe3qdG0A_gr-sEdat5y2twQ"
-      handle:      "@CARachanaRanade"
-      name:        "CA Rachana Ranade"
-      language:    en
-      category:    education
-      max_short:   5
-      max_medium:  3
-      max_long:    3
-      enabled:     true
+    # # ── Education & fundamental research (English) — no filter ───────────────
+    # - channel_id:  "UCe3qdG0A_gr-sEdat5y2twQ"
+    #   handle:      "@CARachanaRanade"
+    #   name:        "CA Rachana Ranade"
+    #   language:    en
+    #   category:    education
+    #   max_short:   5
+    #   max_medium:  3
+    #   max_long:    3
+    #   enabled:     true
 
-    - channel_id:  "UCwAdQUuPT6laN-AQR17fe1g"
-      handle:      "@pranjalkamra"
-      name:        "Pranjal Kamra"
-      language:    en
-      category:    education
-      max_short:   5
-      max_medium:  3
-      max_long:    3
-      enabled:     true
+    # - channel_id:  "UCwAdQUuPT6laN-AQR17fe1g"
+    #   handle:      "@pranjalkamra"
+    #   name:        "Pranjal Kamra"
+    #   language:    en
+    #   category:    education
+    #   max_short:   5
+    #   max_medium:  3
+    #   max_long:    3
+    #   enabled:     true
 
-    - channel_id:  "UCBnG19e3YPT3OTMY7uFfu7A"
-      handle:      "@elearnmarkets"
-      name:        "Vivek Bajaj – Elearnmarkets"
-      language:    en
-      category:    education
-      max_short:   5
-      max_medium:  3
-      max_long:    3
-      enabled:     true
+    # - channel_id:  "UCBnG19e3YPT3OTMY7uFfu7A"
+    #   handle:      "@elearnmarkets"
+    #   name:        "Vivek Bajaj – Elearnmarkets"
+    #   language:    en
+    #   category:    education
+    #   max_short:   5
+    #   max_medium:  3
+    #   max_long:    3
+    #   enabled:     true
 
-    - channel_id:  "UC59YUBhNLMkS2Q8NBWBGHAA"
-      handle:      "@zerodha"
-      name:        "Zerodha"
-      language:    en
-      category:    education
-      max_short:   5
-      max_medium:  3
-      max_long:    3
-      enabled:     true
+    # - channel_id:  "UC59YUBhNLMkS2Q8NBWBGHAA"
+    #   handle:      "@zerodha"
+    #   name:        "Zerodha"
+    #   language:    en
+    #   category:    education
+    #   max_short:   5
+    #   max_medium:  3
+    #   max_long:    3
+    #   enabled:     true
 
     # ── Telugu market content — 100% market focused, no filter ──────────────
     - channel_id:  "UCeEP6GESh2t4-e2132uj3Sg"

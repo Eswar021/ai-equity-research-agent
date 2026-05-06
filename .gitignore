@@ -23,7 +23,7 @@ venv/
 .env.*
 
 # All Phase A/B/C outputs (large JSON files, regenerated each run)
-# output/
+output/
 
 # Cached NSE symbol list (auto-refreshes)
 # context_ext_layer/phaseB_CS/nse_equity_cache.json

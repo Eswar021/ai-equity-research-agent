@@ -33,6 +33,10 @@ from config.paths import (
     GMAIL_OUTPUT_DIR, SIGNALS_OUTPUT_DIR, LLM_LOGS_DIR,
 )
 from context_ext_layer.utils.ticker_extractor import lookup_ticker, extract_tickers
+from context_ext_layer.utils.nse_symbols import load_symbols as _load_symbols
+
+# Cached at import time — avoids re-reading the JSON file on every _resolve_ticker call
+_NSE_SYMBOLS: dict = _load_symbols()
 
 _IST = timezone(timedelta(hours=5, minutes=30))
 
@@ -222,14 +226,16 @@ def _collect_youtube(dir_path: Path) -> list[dict]:
             transcript = data.get("transcript", "")
             if len(transcript) < _MIN_TEXT_LEN:
                 continue
+            title = data.get("title") or data.get("video_id", f.stem)
             items.append({
                 "source":        "youtube",
                 "source_file":   str(f),
                 "source_weight": _SOURCE_WEIGHT["youtube"],
+                "source_label":  data.get("channel_name", "youtube"),
                 "item_index":    0,
-                "title":         data.get("video_id", f.stem),
+                "title":         title[:120],
                 "url":           data.get("video_url", ""),
-                "published":     data.get("extracted_at", ""),
+                "published":     data.get("published_at") or data.get("extracted_at", ""),
                 # Transcripts can be very long — first 3500 chars covers ~10 min
                 "text":          transcript[:_MAX_TEXT_LEN],
             })
@@ -244,7 +250,7 @@ def _collect_gmail(dir_path: Path) -> list[dict]:
     for f in sorted(dir_path.glob("*.json")):
         try:
             data = json.loads(f.read_text())
-            for idx, email in enumerate(data.get("emails", [])):
+            for idx, email in enumerate(data.get("newsletters", data.get("emails", []))):
                 body = email.get("body", "") or email.get("snippet", "")
                 text = f"{email.get('subject', '')}\n\n{body}".strip()
                 if len(text) < _MIN_TEXT_LEN:
@@ -290,6 +296,13 @@ def _resolve_ticker(ticker_hint: str) -> tuple[str | None, str | None]:
     """
     if not ticker_hint or len(ticker_hint) < 2:
         return None, None
+
+    # 0. Direct NSE symbol lookup — LLM often returns raw symbols (KOTAKBANK, DMART, INFY)
+    #    rather than company names; fuzzy/alias passes can't handle those.
+    hint_clean = ticker_hint.upper().replace(".NS", "").replace(".BO", "").strip()
+    direct = _NSE_SYMBOLS.get(hint_clean + ".NS")
+    if direct:
+        return direct["ticker"], direct["name"]
 
     # 1. Check aliases first (exact, case-insensitive) — most reliable
     found = extract_tickers(ticker_hint)

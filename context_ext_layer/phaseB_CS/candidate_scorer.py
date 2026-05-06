@@ -290,10 +290,6 @@ def score_candidates(
 
         final_score = base_score + sector_adj
 
-        # Filter weak signals
-        if abs(final_score) < _MIN_SCORE_THRESHOLD:
-            continue
-
         candidates.append({
             "ticker":          ticker,
             "company":         td["company"] or ticker,
@@ -310,24 +306,38 @@ def score_candidates(
             "regime_posture":  regime.get("market_posture", "unknown"),
         })
 
-    # Sort by abs(final_score) — both high-conviction buys and sells are candidates
+    # Sort all by abs(final_score) — both high-conviction buys and sells surface
     candidates.sort(key=lambda c: abs(c["final_score"]), reverse=True)
-    candidates = candidates[:_MAX_CANDIDATES]
 
-    # Assign ranks
+    # Assign global rank across all candidates (not just selected ones)
     for i, c in enumerate(candidates, 1):
         c["rank"] = i
 
-    return candidates
+    # Mark which ones are selected for Phase C deep dive
+    selected: list[dict] = []
+    for c in candidates:
+        above_threshold = abs(c["final_score"]) >= _MIN_SCORE_THRESHOLD
+        in_top_n        = c["rank"] <= _MAX_CANDIDATES
+        c["selected_for_phase_c"] = above_threshold and in_top_n
+        if c["selected_for_phase_c"]:
+            selected.append(c)
+
+    return {
+        "all_candidates": candidates,
+        "selected":       selected,
+    }
 
 
 def save_candidates(
-    candidates:   list[dict],
-    regime:       dict,
-    signals_file: str,
-    bulk_file:    str | None = None,
+    scored_result: dict,
+    regime:        dict,
+    signals_file:  str,
+    bulk_file:     str | None = None,
 ) -> str:
-    """Save ranked candidates to output/phaseB/candidates/."""
+    """Save scored result (all_candidates + selected_for_phase_c) to phaseB/candidates/."""
+    all_candidates = scored_result.get("all_candidates", [])
+    selected       = scored_result.get("selected", [])
+
     CANDIDATES_OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
     today    = datetime.now(_IST).strftime("%Y-%m-%d")
     out_file = CANDIDATES_OUTPUT_DIR / f"candidates_{today}.json"
@@ -335,6 +345,14 @@ def save_candidates(
     output = {
         "generated_at":   datetime.now(_IST).isoformat(),
         "market_posture": regime.get("market_posture", "unknown"),
+
+        "selection_rules": {
+            "min_abs_score_for_deep_dive": _MIN_SCORE_THRESHOLD,
+            "max_selected_for_phase_c":    _MAX_CANDIDATES,
+        },
+
+        "all_candidates_count": len(all_candidates),
+        "selected_count":       len(selected),
 
         # Full source provenance for downstream modules
         "phase_b_inputs": {
@@ -344,13 +362,12 @@ def save_candidates(
         },
 
         "scoring_config": {
-            "source_weights":  _SOURCE_WEIGHT,
+            "source_weights":   _SOURCE_WEIGHT,
             "severity_weights": _SEVERITY_WEIGHT,
-            "bulk_buy_score":  _BULK_BUY_SCORE,
-            "bulk_sell_score": _BULK_SELL_SCORE,
-            "sector_bonus":    _SECTOR_BONUS,
-            "sector_penalty":  _SECTOR_PENALTY,
-            "min_threshold":   _MIN_SCORE_THRESHOLD,
+            "bulk_buy_score":   _BULK_BUY_SCORE,
+            "bulk_sell_score":  _BULK_SELL_SCORE,
+            "sector_bonus":     _SECTOR_BONUS,
+            "sector_penalty":   _SECTOR_PENALTY,
         },
 
         "regime_summary": {
@@ -360,8 +377,10 @@ def save_candidates(
             "avoid_sectors":   regime.get("sectors", {}).get("avoid", []),
         },
 
-        "total_candidates": len(candidates),
-        "candidates":       candidates,
+        # All scored tickers — used by Layer 2 for trend tracking
+        "all_candidates": all_candidates,
+        # Subset passed to Phase C deep dive
+        "selected_for_phase_c": selected,
     }
 
     out_file.write_text(json.dumps(output, ensure_ascii=False, indent=2))
@@ -396,19 +415,24 @@ if __name__ == "__main__":
     print(f"  Bulk deals loaded: {len(deals)}")
     print(f"  Bulk tickers     : {len(bulk_sigs)}\n")
 
-    candidates = score_candidates(signals_data, regime, bulk_sigs)
+    scored = score_candidates(signals_data, regime, bulk_sigs)
+    selected       = scored["selected"]
+    all_candidates = scored["all_candidates"]
 
-    print(f"  {'Rank':4}  {'Ticker':20}  {'Score':7}  {'Signals':8}  {'Sources':6}  Top Event")
-    print("  " + "-" * 75)
-    for c in candidates:
+    print(f"\n  All scored tickers : {len(all_candidates)}")
+    print(f"  Selected (Phase C) : {len(selected)}\n")
+    print(f"  {'Rank':4}  {'Ticker':20}  {'Score':7}  {'Signals':8}  {'Sources':6}  {'Sel':4}  Top Event")
+    print("  " + "-" * 82)
+    for c in all_candidates:
         score_str = f"{c['final_score']:+.1f}"
+        sel_mark  = "✓" if c["selected_for_phase_c"] else " "
         print(f"  {c['rank']:4}  {c['ticker']:20}  {score_str:7}  "
-              f"{c['signal_count']:8}  {c['source_count']:6}  "
+              f"{c['signal_count']:8}  {c['source_count']:6}  {sel_mark:4}  "
               f"{c['event_types'][0] if c['event_types'] else '—'}")
-        if c.get("key_signals"):
+        if c.get("key_signals") and c["selected_for_phase_c"]:
             ks = c["key_signals"][0]
             print(f"        ↳ {ks['key_claim'][:70]}")
 
     signals_path = str(_latest_file(SIGNALS_OUTPUT_DIR) or "")
-    saved = save_candidates(candidates, regime, signals_path)
+    saved = save_candidates(scored, regime, signals_path)
     print(f"\n  Saved → {saved}")

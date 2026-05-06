@@ -157,6 +157,4 @@ def run(skip_yt: bool = False) -> dict:
 
 if __name__ == "__main__":
     skip_yt = "--skip-yt" in sys.argv
-    # run(skip_yt=skip_yt)
-    
-    run(skip_yt= "--skip-yt")
+    run(skip_yt=skip_yt)
