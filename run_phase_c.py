@@ -139,8 +139,11 @@ def run(tickers: list[str] | None = None, skip_screener: bool = False) -> dict:
         return {}
 
     cand_data  = _load_json(cand_file)
-    # "selected_for_phase_c" is the new key; "candidates" is the fallback for older output files
-    candidates = cand_data.get("selected_for_phase_c", cand_data.get("candidates", []))
+    candidates = cand_data.get(
+        "listed_targets",
+        cand_data.get("selected_for_phase_c",
+        cand_data.get("candidates", []))
+    )
 
     regime_file = _latest_file(MARKET_REGIME_OUTPUT_DIR)
     regime      = _load_json(regime_file) if regime_file else {}
@@ -239,7 +242,8 @@ def run(tickers: list[str] | None = None, skip_screener: bool = False) -> dict:
         **cand_data,
         "phase_c_run_at":       datetime.now(_IST).isoformat(),
         "sector_map":           sector_map,
-        "selected_for_phase_c": candidates,   # sector-re-ranked top 25
+        "listed_targets":       candidates,        # canonical key
+        "selected_for_phase_c": candidates,        # backward-compat alias
         "selected_count":       len(candidates),
     }
     final_file.write_text(json.dumps(final_output, ensure_ascii=False, indent=2))

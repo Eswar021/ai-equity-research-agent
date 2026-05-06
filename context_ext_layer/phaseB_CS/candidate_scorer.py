@@ -76,6 +76,9 @@ _MIN_SCORE_THRESHOLD = 3.0
 # Maximum candidates to return.
 _MAX_CANDIDATES = 25
 
+# Minimum relevance score for thematic (non-listed) entities to appear in output.
+_MIN_THEMATIC_SCORE = 1.5
+
 
 # ── NSE sector label → index name mapping (used to align with regime sectors) ─
 # Regime sectors use short names ('it', 'pharma'); we need to match against
@@ -205,7 +208,7 @@ def score_candidates(
     favored_sectors = set(regime.get("sectors", {}).get("favored", []))
     avoid_sectors   = set(regime.get("sectors", {}).get("avoid",   []))
 
-    # ── Accumulate per-ticker data from LLM signals ──────────────────────────
+    # ── Loop 1: Accumulate per-ticker data from listed LLM signals ───────────
     ticker_data: dict[str, dict] = defaultdict(lambda: {
         "score":        0.0,
         "signal_count": 0,
@@ -215,49 +218,96 @@ def score_candidates(
         "company":      None,
     })
 
+    # ── Loop 2: Accumulate thematic (non-listed) entity data ──────────────────
+    # Keyed by lowercased entity_name for deduplication; preserves original name.
+    thematic_data: dict[str, dict] = defaultdict(lambda: {
+        "entity_name":     "",
+        "entity_type":     "",
+        "relevance_score": 0.0,
+        "mention_count":   0,
+        "sources":         set(),
+        "event_types":     [],
+        "key_events":      [],
+    })
+
     for item in signals_data.get("items", []):
         for sig in item.get("signals", []):
-            ticker = sig.get("ticker")
-            if not ticker:
-                continue  # unresolved tickers don't contribute
+            if "_error" in sig:
+                continue
 
-            src      = sig.get("source", "")
-            severity = sig.get("severity", "low")
-            sentiment= sig.get("sentiment", "neutral")
+            ticker      = sig.get("ticker")
+            entity_type = sig.get("entity_type", "listed")
+            src         = sig.get("source", "")
+            severity    = sig.get("severity", "low")
+            sentiment   = sig.get("sentiment", "neutral")
 
             sw = _SOURCE_WEIGHT.get(src, 1.0)
             ev = _SEVERITY_WEIGHT.get(severity, 1.0)
             sm = _SENTIMENT_MOD.get(sentiment, 0.4)
 
-            contribution = sw * ev * sm
+            # Loop 1: listed company with a resolved NSE ticker
+            if entity_type == "listed" and ticker:
+                contribution = sw * ev * sm
+                td = ticker_data[ticker]
+                td["score"]        += contribution
+                td["signal_count"] += 1
+                td["sources"].add(src)
 
-            td = ticker_data[ticker]
-            td["score"]        += contribution
-            td["signal_count"] += 1
-            td["sources"].add(src)
+                etype = sig.get("event_type", "other")
+                if etype not in td["event_types"]:
+                    td["event_types"].append(etype)
 
-            etype = sig.get("event_type", "other")
-            if etype not in td["event_types"]:
-                td["event_types"].append(etype)
+                td["key_signals"].append({
+                    "source":     src,
+                    "event_type": etype,
+                    "sentiment":  sentiment,
+                    "severity":   severity,
+                    "key_claim":  sig.get("key_claim", ""),
+                    "item_title": sig.get("item_title", ""),
+                    "item_url":   sig.get("item_url", ""),
+                    "_score":     abs(contribution),
+                })
+                td["key_signals"].sort(key=lambda x: x["_score"], reverse=True)
+                td["key_signals"] = td["key_signals"][:3]
 
-            # Keep top 3 key signals by contribution magnitude
-            td["key_signals"].append({
-                "source":     src,
-                "event_type": etype,
-                "sentiment":  sentiment,
-                "severity":   severity,
-                "key_claim":  sig.get("key_claim", ""),
-                "item_title": sig.get("item_title", ""),
-                "item_url":   sig.get("item_url", ""),
-                "_score":     abs(contribution),
-            })
-            td["key_signals"].sort(key=lambda x: x["_score"], reverse=True)
-            td["key_signals"] = td["key_signals"][:3]
+                if not td["company"] and sig.get("company"):
+                    td["company"] = sig["company"]
 
-            if not td["company"] and sig.get("company"):
-                td["company"] = sig["company"]
+            # Loop 2: non-listed entity OR unresolved listed
+            elif entity_type != "listed" or not ticker:
+                entity_name = sig.get("entity_name") or sig.get("company") or ""
+                if not entity_name:
+                    continue
 
-    # ── Merge bulk deal signals ───────────────────────────────────────────────
+                relevance = sw * ev * abs(sm)   # abs() — negative macro still relevant
+                key = entity_name.lower().strip()
+                th = thematic_data[key]
+
+                if not th["entity_name"]:
+                    th["entity_name"] = entity_name
+                    th["entity_type"] = entity_type
+
+                th["relevance_score"] += relevance
+                th["mention_count"]   += 1
+                th["sources"].add(src)
+
+                etype = sig.get("event_type", "other")
+                if etype not in th["event_types"]:
+                    th["event_types"].append(etype)
+
+                th["key_events"].append({
+                    "source":     src,
+                    "event_type": etype,
+                    "sentiment":  sentiment,
+                    "severity":   severity,
+                    "key_claim":  sig.get("key_claim", ""),
+                    "item_title": sig.get("item_title", ""),
+                    "_score":     relevance,
+                })
+                th["key_events"].sort(key=lambda x: x["_score"], reverse=True)
+                th["key_events"] = th["key_events"][:3]
+
+    # ── Merge bulk deal signals into Loop 1 ───────────────────────────────────
     for ticker, bd in bulk_signals.items():
         td = ticker_data[ticker]
         td["score"]        += bd["score"]
@@ -277,54 +327,62 @@ def score_candidates(
             "date":  bd.get("deal_date", ""),
         }
 
-    # ── Apply sector alignment adjustment ────────────────────────────────────
+    # ── Build listed candidates list ──────────────────────────────────────────
     candidates: list[dict] = []
     for ticker, td in ticker_data.items():
-        base_score     = td["score"]
-        sector_adj     = 0.0
-        sector_matched = None
-
-        # We don't have the sector per ticker here — use event_types as a proxy
-        # Phase C will add proper sector data; here we do best-effort
-        # (A full solution would look up the sector from yfinance or NSE list)
-
-        final_score = base_score + sector_adj
+        base_score  = td["score"]
+        final_score = base_score  # sector adj added in Phase C
 
         candidates.append({
             "ticker":          ticker,
             "company":         td["company"] or ticker,
             "score":           round(base_score, 2),
-            "sector_adj":      round(sector_adj, 2),
+            "sector_adj":      0.0,
             "final_score":     round(final_score, 2),
             "signal_count":    td["signal_count"],
             "source_count":    len(td["sources"]),
             "sources":         sorted(td["sources"]),
-            "event_types":     list(dict.fromkeys(td["event_types"])),  # dedup, order-preserving
+            "event_types":     list(dict.fromkeys(td["event_types"])),
             "key_signals":     [{k: v for k, v in s.items() if k != "_score"}
                                 for s in td["key_signals"]],
             "bulk_deal":       td.get("bulk_deal"),
             "regime_posture":  regime.get("market_posture", "unknown"),
         })
 
-    # Sort all by abs(final_score) — both high-conviction buys and sells surface
     candidates.sort(key=lambda c: abs(c["final_score"]), reverse=True)
-
-    # Assign global rank across all candidates (not just selected ones)
     for i, c in enumerate(candidates, 1):
         c["rank"] = i
 
-    # Mark which ones are selected for Phase C deep dive
-    selected: list[dict] = []
+    listed_targets: list[dict] = []
     for c in candidates:
         above_threshold = abs(c["final_score"]) >= _MIN_SCORE_THRESHOLD
         in_top_n        = c["rank"] <= _MAX_CANDIDATES
         c["selected_for_phase_c"] = above_threshold and in_top_n
         if c["selected_for_phase_c"]:
-            selected.append(c)
+            listed_targets.append(c)
+
+    # ── Build thematic targets list ───────────────────────────────────────────
+    thematic_targets: list[dict] = []
+    for key, th in thematic_data.items():
+        if th["relevance_score"] < _MIN_THEMATIC_SCORE:
+            continue
+        thematic_targets.append({
+            "entity_name":     th["entity_name"],
+            "entity_type":     th["entity_type"],
+            "relevance_score": round(th["relevance_score"], 2),
+            "mention_count":   th["mention_count"],
+            "source_count":    len(th["sources"]),
+            "sources":         sorted(th["sources"]),
+            "event_types":     list(dict.fromkeys(th["event_types"])),
+            "key_events":      [{k: v for k, v in e.items() if k != "_score"}
+                                for e in th["key_events"]],
+        })
+    thematic_targets.sort(key=lambda t: t["relevance_score"], reverse=True)
 
     return {
-        "all_candidates": candidates,
-        "selected":       selected,
+        "all_candidates":   candidates,
+        "listed_targets":   listed_targets,
+        "thematic_targets": thematic_targets,
     }
 
 
@@ -334,9 +392,10 @@ def save_candidates(
     signals_file:  str,
     bulk_file:     str | None = None,
 ) -> str:
-    """Save scored result (all_candidates + selected_for_phase_c) to phaseB/candidates/."""
-    all_candidates = scored_result.get("all_candidates", [])
-    selected       = scored_result.get("selected", [])
+    """Save scored result (all_candidates + listed_targets + thematic_targets) to phaseB/candidates/."""
+    all_candidates   = scored_result.get("all_candidates", [])
+    listed_targets   = scored_result.get("listed_targets", scored_result.get("selected", []))
+    thematic_targets = scored_result.get("thematic_targets", [])
 
     CANDIDATES_OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
     today    = datetime.now(_IST).strftime("%Y-%m-%d")
@@ -349,10 +408,12 @@ def save_candidates(
         "selection_rules": {
             "min_abs_score_for_deep_dive": _MIN_SCORE_THRESHOLD,
             "max_selected_for_phase_c":    _MAX_CANDIDATES,
+            "min_thematic_relevance":      _MIN_THEMATIC_SCORE,
         },
 
-        "all_candidates_count": len(all_candidates),
-        "selected_count":       len(selected),
+        "all_candidates_count":   len(all_candidates),
+        "listed_targets_count":   len(listed_targets),
+        "thematic_targets_count": len(thematic_targets),
 
         # Full source provenance for downstream modules
         "phase_b_inputs": {
@@ -377,10 +438,14 @@ def save_candidates(
             "avoid_sectors":   regime.get("sectors", {}).get("avoid", []),
         },
 
-        # All scored tickers — used by Layer 2 for trend tracking
-        "all_candidates": all_candidates,
-        # Subset passed to Phase C deep dive
-        "selected_for_phase_c": selected,
+        # All scored listed tickers — used for trend tracking
+        "all_candidates":    all_candidates,
+        # Top listed tickers passed to Phase C deep dive
+        "listed_targets":    listed_targets,
+        # Backward-compat alias for run_phase_c.py
+        "selected_for_phase_c": listed_targets,
+        # Non-listed thematic entities: private companies, sector themes, macro/policy events
+        "thematic_targets":  thematic_targets,
     }
 
     out_file.write_text(json.dumps(output, ensure_ascii=False, indent=2))
@@ -415,12 +480,14 @@ if __name__ == "__main__":
     print(f"  Bulk deals loaded: {len(deals)}")
     print(f"  Bulk tickers     : {len(bulk_sigs)}\n")
 
-    scored = score_candidates(signals_data, regime, bulk_sigs)
-    selected       = scored["selected"]
-    all_candidates = scored["all_candidates"]
+    scored           = score_candidates(signals_data, regime, bulk_sigs)
+    all_candidates   = scored["all_candidates"]
+    listed_targets   = scored["listed_targets"]
+    thematic_targets = scored["thematic_targets"]
 
     print(f"\n  All scored tickers : {len(all_candidates)}")
-    print(f"  Selected (Phase C) : {len(selected)}\n")
+    print(f"  Listed (Phase C)   : {len(listed_targets)}")
+    print(f"  Thematic targets   : {len(thematic_targets)}\n")
     print(f"  {'Rank':4}  {'Ticker':20}  {'Score':7}  {'Signals':8}  {'Sources':6}  {'Sel':4}  Top Event")
     print("  " + "-" * 82)
     for c in all_candidates:
@@ -432,6 +499,16 @@ if __name__ == "__main__":
         if c.get("key_signals") and c["selected_for_phase_c"]:
             ks = c["key_signals"][0]
             print(f"        ↳ {ks['key_claim'][:70]}")
+
+    if thematic_targets:
+        print(f"\n  Top Thematic Targets:")
+        print(f"  {'Type':8}  {'Score':7}  {'Mentions':8}  Entity")
+        print("  " + "-" * 65)
+        for t in thematic_targets[:10]:
+            print(f"  {t['entity_type']:8}  {t['relevance_score']:7.1f}  "
+                  f"{t['mention_count']:8}  {t['entity_name'][:45]}")
+            if t.get("key_events"):
+                print(f"        ↳ {t['key_events'][0].get('key_claim','')[:65]}")
 
     signals_path = str(_latest_file(SIGNALS_OUTPUT_DIR) or "")
     saved = save_candidates(scored, regime, signals_path)

@@ -2,11 +2,13 @@
 context_ext_layer/phaseB_CS/news_signal_extractor.py  —  Phase B, Module B2
 
 Walks every Phase A text output, calls an LLM (one call per article) to
-extract structured company-specific events, then resolves company names
-to NSE tickers.
+extract market-relevant entities and events, then resolves listed-company
+names to NSE tickers. Non-listed entities (private companies, sector themes,
+macro events, policy signals) are preserved as-is without ticker resolution.
 
-LLM: default Gemini Flash (cheap, fast). Caller can pass any LangChain LLM.
-Ticker resolution: uses ticker_extractor.py (NSE symbol list + fuzzy match).
+LLM: default OpenAI (configurable). Caller can pass any LangChain LLM.
+Ticker resolution: only attempted for entity_type="listed". Uses
+  ticker_extractor.py (NSE symbol list + fuzzy match).
 
 Inputs  : all output/phaseA/ text sources (MC, ET, RSS, newsdata, mediastack,
            youtube, gmail)
@@ -60,38 +62,53 @@ _LLM_DELAY     = 0.4   # seconds between calls to respect rate limits
 
 # ── Pydantic output schema ────────────────────────────────────────────────────
 
-class NewsSignal(BaseModel):
-    ticker_hint: str
+class MarketEvent(BaseModel):
+    entity_name: str       # company name / theme label / macro event name
+    entity_type: Literal[
+        "listed",          # NSE/BSE-listed company
+        "private",         # unlisted/private company (Zepto, OpenAI India JV, etc.)
+        "sector",          # thematic trend (e.g. "AI data center power demand")
+        "macro",           # macroeconomic event (RBI rate, crude oil, rupee move)
+        "policy",          # government/regulatory action (PLI scheme, SEBI rule)
+    ]
     event_type: Literal[
         "earnings_beat", "earnings_miss", "earnings_inline",
         "guidance_raise", "guidance_cut", "dividend", "buyback",
         "management_change", "regulatory_action", "merger_acquisition",
         "analyst_upgrade", "analyst_downgrade", "block_deal",
-        "macro_impact", "other",
+        "macro_impact", "policy_change", "other",
     ]
     sentiment: Literal["positive", "negative", "neutral"]
     severity:  Literal["high", "medium", "low"]
     key_claim: str
+    sector_theme: str      # broader theme for listed/private (e.g. "green energy capex"); "" otherwise
 
-class NewsSignals(BaseModel):
-    signals: list[NewsSignal]
+class DocumentIntelligence(BaseModel):
+    events: list[MarketEvent]
 
 
 # ── LLM prompt template ───────────────────────────────────────────────────────
 
-_SYSTEM_PROMPT = """You are a financial analyst specializing in Indian equity markets (NSE/BSE).
-Extract company-specific, market-moving events from the news text provided.
+_SYSTEM_PROMPT = """You are a financial intelligence analyst covering Indian markets (NSE/BSE).
+Extract ALL market-relevant signals from the news text. Classify each signal by entity_type:
+
+entity_type=listed  : NSE/BSE-listed company event (earnings, M&A, analyst rating, block deal, etc.)
+entity_type=private : Private/unlisted entity (startup, foreign company, JV not yet listed)
+entity_type=sector  : Broad sector or thematic trend (e.g. "quick-commerce ecosystem", "AI power demand")
+entity_type=macro   : Macroeconomic event (RBI rate decision, crude oil move, rupee, US Fed)
+entity_type=policy  : Government/regulatory policy (PLI scheme, budget measure, SEBI rule change)
 
 Rules:
-- Only include events for specific listed companies (NSE/BSE). Ignore Nifty/Sensex index commentary.
+- entity_name: for listed/private = company name; for sector = theme label; for macro/policy = event name
+- sector_theme: for listed/private signals, add broader theme if applicable (e.g. "data center capex"); leave "" otherwise
 - earnings_beat  : actual results above estimates OR clearly positive YoY growth stated
 - earnings_miss  : actual results below estimates OR clearly negative YoY growth stated
 - earnings_inline: results in line with expectations
-- severity=high  : >15% YoY swing, M&A, CEO/MD exit, major regulatory action, fraud
-- severity=medium: <15% swing, analyst rating change, guidance update, large block deal
+- severity=high  : >15% YoY swing, M&A, CEO/MD exit, major regulatory action, RBI rate change, budget measure
+- severity=medium : analyst rating change, guidance update, large block deal, sector rotation signal
 - severity=low   : dividends, bonus shares, routine board meeting, minor disclosures
-- Non-English text (Hindi, Telugu, etc.): extract events if company names are identifiable
-- Return an empty signals list if no company-specific actionable events are found"""
+- Non-English text (Hindi, Telugu, etc.): extract if entity names are identifiable
+- Return an empty events list if no market-relevant signals are found"""
 
 _prompt = ChatPromptTemplate.from_messages([
     ("system", _SYSTEM_PROMPT),
@@ -285,38 +302,43 @@ def collect_all_items() -> list[dict]:
 
 # ── Ticker resolution ─────────────────────────────────────────────────────────
 
-def _resolve_ticker(ticker_hint: str) -> tuple[str | None, str | None]:
+def _resolve_ticker(entity_name: str, entity_type: str) -> tuple[str | None, str | None]:
     """
-    Map a company name/hint from the LLM to an NSE ticker.
-    Returns (ticker, company_name) or (None, None) if unresolved.
+    Map an entity to an NSE ticker. Ticker resolution is only attempted for
+    entity_type="listed" — all other entity types skip directly to name preservation.
 
-    Threshold is set high (82) to avoid false positives like
-    "indigo" → "Indo-National" or "spicejet" → "Spacenet Enterprises".
-    The ALIASES dict in ticker_extractor.py is the safety net for common names.
+    For listed entities, three-pass resolution:
+      Pass 0: direct NSE symbol (KOTAKBANK → KOTAKBANK.NS)
+      Pass 1: alias dict (colloquial names: "kotak bank", "sbi", "tcs" …)
+      Pass 2: fuzzy match on simplified NSE names, threshold=82
+    Returns (ticker, company_name) or (None, preserved_name) if unresolved.
     """
-    if not ticker_hint or len(ticker_hint) < 2:
+    if not entity_name or len(entity_name) < 2:
         return None, None
 
-    # 0. Direct NSE symbol lookup — LLM often returns raw symbols (KOTAKBANK, DMART, INFY)
-    #    rather than company names; fuzzy/alias passes can't handle those.
-    hint_clean = ticker_hint.upper().replace(".NS", "").replace(".BO", "").strip()
+    # Non-listed entities: skip all NSE lookups, preserve name as-is
+    if entity_type != "listed":
+        return None, entity_name.strip()
+
+    # Pass 0: direct NSE symbol — LLM often returns raw symbols (KOTAKBANK, DMART, INFY)
+    hint_clean = entity_name.upper().replace(".NS", "").replace(".BO", "").strip()
     direct = _NSE_SYMBOLS.get(hint_clean + ".NS")
     if direct:
         return direct["ticker"], direct["name"]
 
-    # 1. Check aliases first (exact, case-insensitive) — most reliable
-    found = extract_tickers(ticker_hint)
+    # Pass 1: alias dict (exact, case-insensitive) — most reliable for short names
+    found = extract_tickers(entity_name)
     if found:
         return found[0]["ticker"], found[0]["company"]
 
-    # 2. Fuzzy lookup with a high threshold to avoid false positives
-    result = lookup_ticker(ticker_hint, threshold=82)
+    # Pass 2: fuzzy match — threshold 82 avoids false positives like
+    #   "indigo" → "Indo-National" or "spicejet" → "Spacenet Enterprises"
+    result = lookup_ticker(entity_name, threshold=82)
     if result:
         return result["ticker"], result["name"]
 
-    # 3. Unresolved — return None ticker but preserve the hint as company name
-    #    so the signal is still recorded (useful for Phase C lookup by name)
-    return None, ticker_hint.title()
+    # Unresolved listed: preserve hint so signal is still recorded
+    return None, entity_name.title()
 
 
 # ── LLM extraction ────────────────────────────────────────────────────────────
@@ -328,7 +350,7 @@ def extract_signals_for_item(item: dict, pipeline) -> list[dict]:
     """
     try:
         result  = pipeline.invoke({"text": item["text"]})
-        signals = result.signals
+        signals = result.events
     except Exception as e:
         _log_call(item, [], error=str(e))
         return [{"_error": str(e), "_item_title": item["title"]}]
@@ -337,7 +359,7 @@ def extract_signals_for_item(item: dict, pipeline) -> list[dict]:
 
     resolved = []
     for sig in signals:
-        ticker, company = _resolve_ticker(sig.ticker_hint)
+        ticker, company = _resolve_ticker(sig.entity_name, sig.entity_type)
         resolved.append({
             "source":         item["source"],
             "source_file":    item["source_file"],
@@ -346,13 +368,16 @@ def extract_signals_for_item(item: dict, pipeline) -> list[dict]:
             "item_title":     item["title"],
             "item_url":       item.get("url", ""),
             "item_published": item.get("published", ""),
-            "ticker_hint":    sig.ticker_hint,
+            "entity_name":    sig.entity_name,
+            "entity_type":    sig.entity_type,
+            "ticker_hint":    sig.entity_name if sig.entity_type == "listed" else None,
             "ticker":         ticker,
             "company":        company,
             "event_type":     sig.event_type,
             "sentiment":      sig.sentiment,
             "severity":       sig.severity,
             "key_claim":      sig.key_claim,
+            "sector_theme":   sig.sector_theme,
         })
     return resolved
 
@@ -377,11 +402,11 @@ def extract_all_signals(llm=None, verbose: bool = True) -> dict:
     if verbose:
         print(f"  Collected {len(items)} items from Phase A sources")
 
-    pipeline = _prompt | llm.with_structured_output(NewsSignals)
+    pipeline = _prompt | llm.with_structured_output(DocumentIntelligence)
 
     all_signals:  list[dict] = []
     processed_items: list[dict] = []
-    failed = skipped = 0
+    failed = 0
 
     for i, item in enumerate(items):
         sigs = extract_signals_for_item(item, pipeline)
@@ -431,6 +456,8 @@ def extract_all_signals(llm=None, verbose: bool = True) -> dict:
             "total_items_scanned":  len(items),
             "items_with_signals":   items_with_signals,
             "total_signals":        len(all_signals),
+            "listed_signals":       sum(1 for s in all_signals if s.get("entity_type") == "listed"),
+            "thematic_signals":     sum(1 for s in all_signals if s.get("entity_type") != "listed"),
             "items_failed_llm":     failed,
         },
         "items": processed_items,
@@ -484,7 +511,7 @@ if __name__ == "__main__":
 
     from llm.llm_client import make_llm
     llm      = make_llm(provider=provider, temperature=0.05)
-    pipeline = _prompt | llm.with_structured_output(NewsSignals)
+    pipeline = _prompt | llm.with_structured_output(DocumentIntelligence)
 
     processed_items: list[dict] = []
     all_signals:     list[dict] = []
@@ -516,7 +543,7 @@ if __name__ == "__main__":
         print(f"  [{item['source']}] {item['title'][:65]}")
         if sigs:
             for s in sigs:
-                ticker = s.get("ticker") or "?unresolved?"
+                ticker = s.get("ticker") or f"[{s.get('entity_type','?')}]"
                 print(f"    → {ticker:22s}  {s.get('event_type','?'):20s}  "
                       f"[{s.get('sentiment','?')}/{s.get('severity','?')}]  "
                       f"{s.get('key_claim','')[:55]}")
@@ -544,13 +571,18 @@ if __name__ == "__main__":
             "total_items_scanned":  len(sample),
             "items_with_signals":   items_with_sigs,
             "total_signals":        len(all_signals),
+            "listed_signals":       sum(1 for s in all_signals if s.get("entity_type") == "listed"),
+            "thematic_signals":     sum(1 for s in all_signals if s.get("entity_type") != "listed"),
             "items_failed_llm":     failed,
         },
         "items": processed_items,
     }
 
     saved = save_signals(result)
-    print(f"\n  Total signals extracted : {len(all_signals)}")
+    st = result["stats"]
+    print(f"\n  Total signals extracted : {st['total_signals']}")
+    print(f"    listed                : {st['listed_signals']}")
+    print(f"    thematic (non-listed) : {st['thematic_signals']}")
     print(f"  Items with signals      : {items_with_sigs}/{len(sample)}")
     print(f"  LLM failures            : {failed}")
     print(f"  Signals saved → {saved}")

@@ -150,7 +150,6 @@ def run(skip_signals: bool = False, provider: str = "openai") -> dict:
         scored = _run("Scoring candidates", score_candidates,
                       signals_data, regime, bulk_sigs)
         scored = scored or {}
-        selected = scored.get("selected", [])
 
         if scored:
             candidates_file = _run("Saving candidates", save_candidates,
@@ -160,19 +159,21 @@ def run(skip_signals: bool = False, provider: str = "openai") -> dict:
         print("  –  Skipped (missing signals or regime data)")
 
     # ── Summary ───────────────────────────────────────────────────────────────
-    selected = scored.get("selected", []) if scored else []
-    elapsed  = (datetime.now(_IST) - start).seconds
+    listed_targets   = scored.get("listed_targets", scored.get("selected", [])) if scored else []
+    thematic_targets = scored.get("thematic_targets", []) if scored else []
+    elapsed          = (datetime.now(_IST) - start).seconds
     print(f"\n{'═'*60}")
     print(f"  Phase B complete — {elapsed}s")
     print(f"  Market posture   : {regime.get('market_posture','?').upper() if regime else '?'}")
     print(f"  All scored       : {len(scored.get('all_candidates', []))}")
-    print(f"  Selected (Phase C): {len(selected)}")
+    print(f"  Listed (Phase C) : {len(listed_targets)}")
+    print(f"  Thematic targets : {len(thematic_targets)}")
     print(f"{'═'*60}")
 
-    if selected:
+    if listed_targets:
         print(f"\n  {'Rank':4}  {'Ticker':20}  {'Score':7}  {'Sigs':5}  {'Srcs':5}  Top Event")
         print(f"  {'─'*70}")
-        for c in selected[:10]:
+        for c in listed_targets[:10]:
             score_s = f"{c['final_score']:+.1f}"
             etype   = c['event_types'][0] if c.get('event_types') else '—'
             print(f"  {c['rank']:4}  {c['ticker']:20}  {score_s:7}  "
@@ -180,16 +181,22 @@ def run(skip_signals: bool = False, provider: str = "openai") -> dict:
             if c.get("key_signals"):
                 print(f"        ↳ {c['key_signals'][0].get('key_claim','')[:65]}")
 
+    if thematic_targets:
+        print(f"\n  Top Thematic Targets:")
+        for t in thematic_targets[:5]:
+            print(f"    [{t['entity_type']:8s}] {t['entity_name'][:45]:45s}  score={t['relevance_score']:.1f}")
+
     if candidates_file:
         print(f"\n  Output → {candidates_file}")
     print()
 
     return {
-        "regime":          regime,
-        "regime_file":     regime_file,
-        "signals_file":    signals_file,
-        "candidates":      selected,
-        "candidates_file": candidates_file,
+        "regime":           regime,
+        "regime_file":      regime_file,
+        "signals_file":     signals_file,
+        "candidates":       listed_targets,
+        "thematic_targets": thematic_targets,
+        "candidates_file":  candidates_file,
     }
 
 
