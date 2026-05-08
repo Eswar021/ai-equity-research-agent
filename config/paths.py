@@ -45,3 +45,23 @@ EXCHANGE_FILINGS_OUTPUT_DIR  = PHASE_C_DIR / "exchange_filings"
 CORPORATE_ACTIONS_OUTPUT_DIR = PHASE_C_DIR / "corporate_actions"
 SEC_OUTPUT_DIR               = PHASE_C_DIR / "sec_filings"
 FNO_TICKER_OUTPUT_DIR        = PHASE_C_DIR / "fno_data"   # per-ticker F&O
+
+# ── Phase D: Research Target Planner (proxy mapping themes → listed) ─────────
+PHASE_D_DIR                  = OUTPUT_DIR / "phaseD"
+PROXY_MAPPINGS_DIR           = PHASE_D_DIR / "proxy_mappings"
+PROXY_LLM_LOGS_DIR           = PHASE_D_DIR / "llm_proxy_logs"
+
+# ── Phase E: Evidence Builder ────────────────────────────────────────────────
+PHASE_E_DIR                  = OUTPUT_DIR / "phaseE"
+EVIDENCE_CARDS_DIR           = PHASE_E_DIR / "evidence_cards"
+
+# ── Phase F: Analysis Agents ─────────────────────────────────────────────────
+PHASE_F_DIR                  = OUTPUT_DIR / "phaseF"
+ANALYST_OUTPUT_DIR           = PHASE_F_DIR / "analyst_views"
+ANALYST_LLM_LOGS_DIR         = PHASE_F_DIR / "llm_analyst_logs"
+
+# ── Phase G: Final Report ────────────────────────────────────────────────────
+PHASE_G_DIR                  = OUTPUT_DIR / "phaseG"
+
+# ── User portfolio (optional) ────────────────────────────────────────────────
+PORTFOLIO_FILE               = PROJECT_ROOT / "config" / "portfolio.json"

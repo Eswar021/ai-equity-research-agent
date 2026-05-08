@@ -22,6 +22,9 @@ venv/
 .env
 .env.*
 
+# User portfolio (private — example file is committed)
+config/portfolio.json
+
 # All Phase A/B/C outputs (large JSON files, regenerated each run)
 output/
 
