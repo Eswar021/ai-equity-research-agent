@@ -20,6 +20,8 @@ Standalone test:
 
 import json
 import time
+import threading
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
 from typing import Literal
@@ -58,7 +60,9 @@ _SOURCE_WEIGHT: dict[str, float] = {
 
 _MIN_TEXT_LEN  = 80    # skip items shorter than this (titles only, no content)
 _MAX_TEXT_LEN  = 3500  # truncate to keep LLM calls cheap
-_LLM_DELAY     = 0.4   # seconds between calls to respect rate limits
+_LLM_DELAY     = 0.4   # seconds between calls (sequential/test mode only)
+
+_log_lock = threading.Lock()   # guards JSONL log file under concurrent writes
 
 # ── Pydantic output schema ────────────────────────────────────────────────────
 
@@ -139,8 +143,9 @@ def _log_call(item: dict, signals: list, error: str | None = None) -> None:
         "signals":      signals,
         "error":        error,
     }
-    with _log_file.open("a", encoding="utf-8") as f:
-        f.write(json.dumps(record, ensure_ascii=False) + "\n")
+    with _log_lock:
+        with _log_file.open("a", encoding="utf-8") as f:
+            f.write(json.dumps(record, ensure_ascii=False) + "\n")
 
 
 # ── Item collectors — one per source type ────────────────────────────────────
@@ -382,10 +387,15 @@ def extract_signals_for_item(item: dict, pipeline) -> list[dict]:
     return resolved
 
 
-def extract_all_signals(llm=None, verbose: bool = True) -> dict:
+def extract_all_signals(llm=None, verbose: bool = True, max_workers: int = 25) -> dict:
     """
     Walk all Phase A sources, call LLM per item, aggregate signals.
     Returns a result dict ready for save_signals().
+
+    max_workers controls concurrent LLM calls. Tune to your provider's RPM:
+      OpenAI gpt-5-nano (paid) → 25-50 workers (calls <1s each; 5000+ RPM on tier 2+)
+      OpenAI tier 1 (500 RPM)  → 8-10 workers
+      Gemini Flash              → 5-8 workers
     """
     if llm is None:
         from llm.llm_client import make_llm
@@ -399,30 +409,49 @@ def extract_all_signals(llm=None, verbose: bool = True) -> dict:
         print(f"  LLM call log → {log_path}")
 
     items = collect_all_items()
+    total = len(items)
     if verbose:
-        print(f"  Collected {len(items)} items from Phase A sources")
+        print(f"  Collected {total} items from Phase A sources")
+        print(f"  Running {max_workers} concurrent LLM workers …\n")
 
     pipeline = _prompt | llm.with_structured_output(DocumentIntelligence)
 
-    all_signals:  list[dict] = []
-    processed_items: list[dict] = []
+    # Submit all items to the thread pool; track original index for ordered reassembly
+    results_by_idx: list[list[dict]] = [[] for _ in range(total)]
+    completed_count = 0
     failed = 0
 
+    with ThreadPoolExecutor(max_workers=max_workers) as executor:
+        future_to_idx = {
+            executor.submit(extract_signals_for_item, item, pipeline): i
+            for i, item in enumerate(items)
+        }
+        for future in as_completed(future_to_idx):
+            i    = future_to_idx[future]
+            item = items[i]
+            try:
+                sigs = future.result()
+            except Exception as e:
+                sigs = [{"_error": str(e), "_item_title": item["title"]}]
+            results_by_idx[i] = sigs
+            completed_count += 1
+            if verbose:
+                n   = len([s for s in sigs if "_error" not in s])
+                tag = f"+{n} sig" if n else "  —  "
+                print(f"  {completed_count:4}/{total}  [{item['source'][:2].upper()}]  "
+                      f"{tag}  {item['title'][:55]}")
+
+    # Reassemble in original submission order
+    all_signals:     list[dict] = []
+    processed_items: list[dict] = []
+
     for i, item in enumerate(items):
-        sigs = extract_signals_for_item(item, pipeline)
-        time.sleep(_LLM_DELAY)
-
-        n = len([s for s in sigs if "_error" not in s])
-        if verbose:
-            tag = f"+{n} sig" if n else "  —  "
-            print(f"  {i+1:4}/{len(items)}  [{item['source'][:2].upper()}]  {tag}  {item['title'][:55]}")
-
+        sigs = results_by_idx[i]
         has_error = any("_error" in s for s in sigs)
         if has_error:
             failed += 1
             sigs = []
 
-        # Build per-item record with full context
         item_record = {
             "source":        item["source"],
             "source_file":   item["source_file"],

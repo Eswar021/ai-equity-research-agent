@@ -62,6 +62,7 @@ def run(
     skip_to:         str | None = None,
     single_ticker:   str | None = None,
     provider:        str = "openai",
+    max_workers:     int = 25,
 ) -> dict:
     start = datetime.now(_IST)
     explicit_skips: set[str] = set()
@@ -88,7 +89,7 @@ def run(
     if _should_run("B", skip_to, explicit_skips):
         _banner("Phase B — Market Intelligence", "─")
         from run_phase_b import run as run_b
-        results["phase_b"] = run_b(skip_signals=skip_signals, provider=provider)
+        results["phase_b"] = run_b(skip_signals=skip_signals, provider=provider, max_workers=max_workers)
     else:
         print("\n  ─  Phase B skipped")
 
@@ -154,9 +155,10 @@ if __name__ == "__main__":
     skip_signals  = "--skip-signals" in sys.argv
     skip_screener = "--skip-screener" in sys.argv
 
-    skip_to = None
-    provider = "openai"
+    skip_to       = None
+    provider      = "openai"
     single_ticker = None
+    max_workers   = 25
 
     for i, arg in enumerate(sys.argv):
         if arg.startswith("--skip-to="):
@@ -171,6 +173,10 @@ if __name__ == "__main__":
             single_ticker = arg.split("=", 1)[1]
         elif arg == "--ticker" and i + 1 < len(sys.argv):
             single_ticker = sys.argv[i + 1]
+        elif arg.startswith("--workers="):
+            max_workers = int(arg.split("=", 1)[1])
+        elif arg == "--workers" and i + 1 < len(sys.argv):
+            max_workers = int(sys.argv[i + 1])
 
     run(
         skip_phase_a=skip_phase_a,
@@ -180,4 +186,5 @@ if __name__ == "__main__":
         skip_to=skip_to,
         single_ticker=single_ticker,
         provider=provider,
+        max_workers=max_workers,
     )

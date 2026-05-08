@@ -51,7 +51,7 @@ def _run(label: str, fn, *args, **kwargs):
 
 # ── Main ──────────────────────────────────────────────────────────────────────
 
-def run(skip_signals: bool = False, provider: str = "openai") -> dict:
+def run(skip_signals: bool = False, provider: str = "openai", max_workers: int = 25) -> dict:
     start = datetime.now(_IST)
     print(f"\n{'═'*60}")
     print(f"  Phase B — Candidate Selection")
@@ -119,7 +119,7 @@ def run(skip_signals: bool = False, provider: str = "openai") -> dict:
         
         print(f"\n  Running LLM ({provider}) on {len(items)} items...")
         signals_data = _run("Signal extraction", extract_all_signals,
-                            llm=llm, verbose=True)
+                            llm=llm, verbose=True, max_workers=max_workers)
 
         if signals_data:
             signals_file = _run("Saving signals", save_signals, signals_data)
@@ -203,11 +203,16 @@ def run(skip_signals: bool = False, provider: str = "openai") -> dict:
 if __name__ == "__main__":
     skip_signals = "--skip-signals" in sys.argv
 
-    provider = "openai"
-    for arg in sys.argv:
+    provider    = "openai"
+    max_workers = 25
+    for i, arg in enumerate(sys.argv):
         if arg.startswith("--provider="):
             provider = arg.split("=", 1)[1]
-        elif arg == "--provider" and sys.argv.index(arg) + 1 < len(sys.argv):
-            provider = sys.argv[sys.argv.index(arg) + 1]
+        elif arg == "--provider" and i + 1 < len(sys.argv):
+            provider = sys.argv[i + 1]
+        elif arg.startswith("--workers="):
+            max_workers = int(arg.split("=", 1)[1])
+        elif arg == "--workers" and i + 1 < len(sys.argv):
+            max_workers = int(sys.argv[i + 1])
 
-    run(skip_signals=skip_signals, provider=provider)
+    run(skip_signals=skip_signals, provider=provider, max_workers=max_workers)
