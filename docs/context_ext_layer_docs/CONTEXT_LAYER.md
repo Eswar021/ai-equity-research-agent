@@ -10,13 +10,25 @@ All timestamps are **IST (Asia/Kolkata, UTC+5:30)**.
 
 ---
 
-## Three-Phase Architecture
+## Seven-Phase Architecture
 
-| Phase | Folder | Purpose |
-|---|---|---|
-| **A — Broad Market Discovery** | `phaseA_BMD/` | Market-wide data — no ticker needed. Runs daily to get the full market picture. |
-| **B — Candidate Selection** | `phaseB_CS/` | Reads Phase A output, extracts signals via LLM, scores tickers, produces a ranked candidate list. |
-| **C — Company Deep Dive** | `phaseC_CDD/` | Per-ticker deep dive — fundamentals, filings, price data for each candidate. |
+```
+Phase A  →  Phase B  →  Phase D  →  Phase C  →  Phase E  →  Phase F  →  Phase G
+Collect      Filter      Proxy map    Deep dive    Evidence    Analyst     Report
+                         themes       tickers      cards       views       + CIO
+```
+
+| Phase | Folder | Purpose | LLM |
+|---|---|---|---|
+| **A — Broad Market Discovery** | `phaseA_BMD/` | Market-wide data — no ticker needed. Runs daily to get the full market picture. | None |
+| **B — Market Intelligence** | `phaseB_CS/` | B1: market regime. B2: LLM extracts entity-centric signals from all Phase A text. B3: scores + ranks listed tickers and thematic targets. | Yes (B2) |
+| **D — Proxy Mapper** | `phaseD_RTP/` | Maps thematic targets (private cos, macro events, sector themes) to 3–5 NSE-listed proxy tickers; merges into candidate list. | Yes |
+| **C — Company Deep Dive** | `phaseC_CDD/` | Per-ticker deep dive — fundamentals, filings, price data for each candidate (including proxy-mapped tickers). | None |
+| **E — Evidence Card Builder** | `phaseE_EB/` | Pure Python aggregation: combines all Phase C outputs per ticker into one structured evidence card for the analyst. | None |
+| **F — Stock Analyst** | `phaseF_AA/` | One LLM call per ticker: invest/watch/avoid recommendation with thesis, drivers, risks, cited source URLs. | Yes |
+| **G — CIO + Report** | `phaseG_FR/` | G1: single LLM synthesis over all analyst views → top picks, sector warnings, macro coherence. G2: pure Python report formatter. | Yes (G1) |
+
+> **Execution order is A → B → D → C → E → F → G.** Phase D runs before Phase C so proxy-mapped tickers are in the candidate list before the deep dive starts.
 
 ---
 
@@ -24,10 +36,22 @@ All timestamps are **IST (Asia/Kolkata, UTC+5:30)**.
 
 | Script | Purpose |
 |---|---|
+| `run_pipeline.py` | **Primary entry point.** Full A→B→D→C→E→F→G run with `--skip-to`, `--skip-phase-a`, `--ticker`, `--provider`, `--workers` flags |
 | `run_phase_a.py` | Runs all Phase A collectors in sequence |
-| `run_phase_b.py` | Runs B1 → B2 → B3 in sequence. Flags: `--skip-signals` (reuse last signals file), `--provider=openai\|lmstudio` |
-| `run_phase_c.py` | Runs Phase C deep dive on all candidates. Flags: `--skip-screener` (skip screener.in scrape), `--ticker BHEL.NS` (single ticker test) |
-| `inspect_phase_a.py` | Diagnostic health check — shows file counts, item counts, content quality for all Phase A outputs and key market data values. No side effects. |
+| `run_phase_b.py` | Runs B1 → B2 → B3 in sequence. Flags: `--skip-signals`, `--provider`, `--workers` |
+| `run_phase_c.py` | Runs Phase C deep dive on all candidates. Flags: `--skip-screener`, `--ticker BHEL.NS`, `--workers` |
+| `inspect_phase_a.py` | Diagnostic health check — file counts, item counts, content quality per Phase A source. No side effects. |
+
+**Common `run_pipeline.py` invocations:**
+```bash
+python run_pipeline.py                    # full E2E
+python run_pipeline.py --skip-phase-a     # reuse today's Phase A output
+python run_pipeline.py --skip-to C        # skip A+B+D, run C→E→F→G
+python run_pipeline.py --skip-to F        # re-run only analyst + report
+python run_pipeline.py --ticker BHEL.NS   # single-ticker debug run (skips A)
+python run_pipeline.py --provider gemini  # use Gemini for all LLM phases
+python run_pipeline.py --workers 15       # override concurrency (default 25)
+```
 
 ---
 
@@ -75,14 +99,28 @@ context_ext_layer/
 │   ├── browser_scraper.py   JS-rendered websites (Playwright)
 │   └── generic.py           Any open website (article text via trafilatura)
 │
-├── phaseB_CS/               Phase B — Candidate Selection
+├── phaseB_CS/               Phase B — Market Intelligence
 │   ├── market_regime.py     B1: rule-based macro regime (no LLM)
-│   ├── news_signal_extractor.py  B2: LLM extracts events from all Phase A text
-│   └── candidate_scorer.py  B3: ranks tickers by signal strength + regime fit
+│   ├── news_signal_extractor.py  B2: LLM extracts entity-centric signals from all Phase A text
+│   └── candidate_scorer.py  B3: ranks listed tickers and thematic targets by signal strength
+│
+├── phaseD_RTP/              Phase D — Proxy Mapper
+│   └── proxy_mapper.py      LLM maps thematic targets → 3-5 NSE-listed proxy tickers
+│
+├── phaseE_EB/               Phase E — Evidence Card Builder
+│   └── evidence_card_builder.py  Pure Python: aggregates 8 Phase C files → one evidence card per ticker
+│
+├── phaseF_AA/               Phase F — Stock Analyst Agent
+│   └── stock_analyst.py     One LLM call per ticker: invest/watch/avoid + thesis + cited URLs
+│
+├── phaseG_FR/               Phase G — CIO Synthesis + Report
+│   ├── cio_synthesis.py     Single LLM call over all analyst views → ranked top picks
+│   └── report_synthesizer.py  Pure Python: formats final .md + .json report
 │
 ├── utils/                   Shared utilities (used across phases)
 │   ├── ticker_extractor.py  NSE ticker resolution (alias dict + fuzzy match)
 │   ├── nse_symbols.py       NSE symbol list manager (2360 stocks, 7-day cache)
+│   ├── portfolio.py         Loads config/portfolio.json; exposes portfolio_flag(), held_tickers()
 │   └── nse_equity_cache.json  cached NSE symbol list (auto-refreshed)
 │
 └── phaseC_CDD/              Phase C — Company Deep Dive (per-ticker)
@@ -96,8 +134,14 @@ context_ext_layer/
     ├── corporate_actions.py  Dividends, splits, bonuses, buybacks
     └── sec_filings.py        US company SEC EDGAR filings
 
+config/
+├── portfolio.json           User's holdings + watchlist (gitignored — private)
+├── portfolio.example.json   Committed example with schema documentation
+├── paths.py                 All output path constants (shared across all phases)
+└── rss_feeds.py             RSS feed list for Phase A
+
 llm/
-└── llm_client.py            make_llm() factory — OpenAI, LMStudio providers
+└── llm_client.py            make_llm() factory — OpenAI, Gemini, LMStudio providers
 
 output/
 └── {YYYY-MM-DD}/            One dated folder per daily run
@@ -116,16 +160,31 @@ output/
     ├── phaseB/              Phase B outputs
     │   ├── market_regime/   market_regime_{date}.json
     │   ├── signals/         signals_{date}.json  (all LLM-extracted signals)
-    │   ├── candidates/      candidates_{date}.json + candidates_{date}_final.json
+    │   ├── candidates/      candidates_{date}.json  (listed_targets + thematic_targets)
+    │   │                    candidates_{date}_final.json  (after Phase C sector re-scoring)
+    │   │                    sector_map_{date}.json  (yfinance sector → regime key log)
     │   └── signal_logs/     signals_{date}.jsonl  (one LLM call record per item)
-    └── phaseC/              Phase C outputs (per-ticker, module-based dirs)
-        ├── market_data/     {TICKER}_{date}.json + {TICKER}_history_1y_{date}.json
-        ├── screener_in/     {company_slug}_{hash}.json
-        ├── peer_comparison/ {TICKER}_peers_{date}.json
-        ├── analyst_estimates/ {TICKER}_analyst_estimates_{date}.json
-        ├── exchange_filings/  {TICKER}_announcements_{date}.json
-        │                      {TICKER}_filing_docs_{date}.json
-        └── corporate_actions/ {TICKER}_corporate_actions_{date}.json
+    ├── phaseD/              Phase D outputs
+    │   ├── proxy_mappings/  proxy_mappings_{date}.json  (theme → proxy tickers)
+    │   └── llm_proxy_logs/  proxy_{date}.jsonl
+    ├── phaseC/              Phase C outputs (per-ticker, module-based dirs)
+    │   ├── market_data/     {TICKER}_{date}.json
+    │   ├── screener_in/     {company_slug}_{hash}.json
+    │   ├── peer_comparison/ {TICKER}_peers_{date}.json
+    │   ├── analyst_estimates/ {TICKER}_analyst_estimates_{date}.json
+    │   ├── exchange_filings/  {TICKER}_announcements_{date}.json
+    │   ├── filing_docs/       {TICKER}_filing_docs_{date}.json
+    │   └── corporate_actions/ {TICKER}_corporate_actions_{date}.json
+    ├── phaseE/              Phase E outputs
+    │   └── evidence_cards/  {TICKER}.json  (one aggregated card per ticker)
+    ├── phaseF/              Phase F outputs
+    │   ├── analyst_views/   {TICKER}.json  (invest/watch/avoid + thesis + sources)
+    │   └── llm_analyst_logs/  analyst_{date}.jsonl
+    └── phaseG/              Phase G outputs
+        ├── report_{date}.md          Human-readable research report
+        ├── report_{date}.json        Machine-readable version
+        ├── cio_synthesis_{date}.json CIO top picks + sector warnings + narrative
+        └── cio_log_{date}.jsonl      CIO LLM call log
 ```
 
 ---
@@ -148,6 +207,7 @@ Central factory for creating LangChain LLM instances used across all phases.
 | Provider | Env var | Default model | Notes |
 |---|---|---|---|
 | `openai` | `OPENAI_API_KEY_S_M_R` | `gpt-5-nano` (or `OPENAI_MODEL` env var) | Default provider |
+| `gemini` | `GEMINI_API_KEY` | `gemini-2.0-flash-lite` | Google Gemini via LangChain |
 | `lmstudio` | `LMSTUDIO_API_KEY` | `qwen/qwen2.5-coder-14b` | Local model via LM Studio |
 
 **Usage**
@@ -560,13 +620,13 @@ Runs in three sequential steps (B1 → B2 → B3), orchestrated by `run_phase_b.
 
 ## B2 — news_signal_extractor.py
 
-**What it does:** Walks all Phase A text outputs, calls the LLM once per article to extract structured company-specific events, then resolves company names to NSE tickers.
+**What it does:** Walks all Phase A text outputs, calls the LLM once per article/item using an **entity-centric schema** — each signal is associated with a named entity that may be a listed company, private company, sector theme, macro event, or policy development. Company names are resolved to NSE tickers post-LLM; non-listed entities flow through as thematic targets.
 
-**LLM approach:** Uses LangChain structured output — `pipeline = prompt | llm.with_structured_output(NewsSignals)` — built once before the loop, not per item. Pydantic enforces the output schema; no manual JSON parsing.
+**LLM approach:** Uses LangChain structured output — `pipeline = prompt | llm.with_structured_output(DocumentIntelligence)` — built once before the loop. Parallel processing via `ThreadPoolExecutor(max_workers=25)`.
 
-**Content filtering:** Items with body/summary < 40 chars are skipped (title-only articles add noise, no signal). Items with total text < 80 chars are also skipped.
+**Content filtering:** Items with body/summary < 40 chars are skipped. Items with total text < 80 chars are also skipped.
 
-**Source weights** (how credible each source's signals are during scoring):
+**Source weights:**
 
 | Source | Weight |
 |---|---|
@@ -578,26 +638,35 @@ Runs in three sequential steps (B1 → B2 → B3), orchestrated by `run_phase_b.
 | mediastack | 1.5 |
 | youtube | 1.0 |
 
-**LLM output schema (per signal):**
+**Entity-centric LLM output schema (per signal):**
 
-| Field | Type | Source |
+| Field | Type | Description |
 |---|---|---|
-| `ticker_hint` | str | LLM |
-| `event_type` | enum | LLM |
+| `entity_name` | str | Company/theme name as in article |
+| `entity_type` | enum | `listed` / `private` / `sector` / `macro` / `policy` |
+| `event_type` | enum | See event types below |
 | `sentiment` | positive/negative/neutral | LLM |
 | `severity` | high/medium/low | LLM |
-| `key_claim` | str | LLM |
-| `ticker` | NSE symbol or null | resolved post-LLM |
-| `company` | full name | resolved post-LLM |
+| `key_claim` | str | One-sentence claim from the article |
+| `source_url` | str | Article URL (preserved for analyst citation) |
+| `ticker` | NSE symbol or null | Resolved post-LLM for `listed` entities |
+| `company` | full name | Resolved post-LLM for `listed` entities |
+
+**Entity types explained:**
+- `listed` — NSE-listed company → ticker resolved, added to `listed_targets`
+- `private` — unlisted company (e.g. Zepto, Swiggy) → flows as thematic target
+- `sector` — sector theme (e.g. "quick-commerce ecosystem") → thematic target
+- `macro` — macro event (e.g. "RBI rate cut") → thematic target
+- `policy` — government policy (e.g. "PLI scheme expansion") → thematic target
 
 **Event types:** `earnings_beat`, `earnings_miss`, `earnings_inline`, `guidance_raise`, `guidance_cut`, `dividend`, `buyback`, `management_change`, `regulatory_action`, `merger_acquisition`, `analyst_upgrade`, `analyst_downgrade`, `block_deal`, `macro_impact`, `other`
 
-**LLM call logging:** Every call (prompt input + signal output + any error) is appended to `output/logs/llm_calls/signals_{date}.jsonl` as one JSON record per line.
+**LLM call logging:** Every call appended to `output/{date}/phaseB/signal_logs/signals_{date}.jsonl`.
 
 **Key functions**
 - `collect_all_items()` → list of all filtered text items from Phase A
 - `extract_signals_for_item(item, pipeline)` → list of resolved signal dicts
-- `extract_all_signals(llm, verbose)` → full result dict
+- `extract_all_signals(llm, verbose, max_workers=25)` → full result dict
 - `save_signals(result)` → saves `signals_{date}.json`, returns file path
 
 **Output structure**
@@ -614,8 +683,9 @@ Runs in three sequential steps (B1 → B2 → B3), orchestrated by `run_phase_b.
       "signal_count": 2,
       "signals": [
         {
-          "source": "moneycontrol", "source_weight": 3.0,
-          "ticker_hint": "Infosys", "ticker": "INFY.NS", "company": "Infosys Limited",
+          "source": "moneycontrol", "source_weight": 3.0, "source_url": "https://...",
+          "entity_name": "Infosys", "entity_type": "listed",
+          "ticker": "INFY.NS", "company": "Infosys Limited",
           "event_type": "earnings_beat", "sentiment": "positive", "severity": "high",
           "key_claim": "Q4 net profit up 22% YoY, beats Street estimate by 8%"
         }
@@ -629,7 +699,7 @@ Runs in three sequential steps (B1 → B2 → B3), orchestrated by `run_phase_b.
 
 ## B3 — candidate_scorer.py
 
-**What it does:** Combines signals from B2 + regime from B1 + bulk/block deals to produce a ranked candidate list for Phase C. All scoring is deterministic — no LLM.
+**What it does:** Combines signals from B2 + regime from B1 + bulk/block deals to produce two lists: `listed_targets` (NSE-ticker candidates for Phase C deep dive) and `thematic_targets` (non-listed entities for Phase D proxy mapping). All scoring is deterministic — no LLM.
 
 **Scoring formula per signal:**
 ```
@@ -642,26 +712,39 @@ signal_score = source_weight × severity_weight × sentiment_modifier
 | sentiment_modifier | positive=+1.0, negative=-1.0, neutral=+0.4 |
 | bulk buy | +5.0 flat bonus |
 | bulk sell | -5.0 flat penalty |
-| sector in regime favored | +4.0 bonus |
-| sector in regime avoid | -3.0 penalty |
+| sector in regime favored | +4.0 bonus (applied in Phase C after yfinance sector fetch) |
+| sector in regime avoid | -3.0 penalty (same) |
 
-**Filtering:** Candidates with `|final_score| < 3.0` are dropped. Maximum 15 candidates returned.
+**Filtering:** Candidates with `|score| < 3.0` are dropped. Top 25 by `|score|` are selected (sorted by absolute value so strong avoids surface alongside strong buys).
 
 **Key functions**
-- `score_candidates(signals_data, regime, bulk_signals)` → list of candidate dicts
+- `score_candidates(signals_data, regime, bulk_signals)` → `{listed_targets, thematic_targets}`
 - `save_candidates(candidates, regime, signals_file, bulk_file)` → saves `candidates_{date}.json`
 
-**Output (per candidate)**
+**Output structure**
 ```json
 {
-  "rank": 1, "ticker": "INFY.NS", "company": "Infosys Limited",
-  "final_score": 18.5, "signal_count": 4, "source_count": 2,
-  "event_types": ["earnings_beat", "analyst_upgrade"],
-  "sector": "Technology",
-  "regime_alignment": "neutral",
-  "key_signals": [
-    { "key_claim": "Q4 net profit up 22% YoY, beats estimate by 8%",
-      "sentiment": "positive", "severity": "high", "source": "moneycontrol" }
+  "generated_at": "...",
+  "listed_targets": [
+    {
+      "rank": 1, "ticker": "INFY.NS", "company": "Infosys Limited",
+      "score": 18.5, "signal_count": 4, "source_count": 2,
+      "event_types": ["earnings_beat", "analyst_upgrade"],
+      "selected_for_phase_c": true,
+      "key_signals": [
+        { "key_claim": "Q4 net profit up 22%...", "sentiment": "positive",
+          "severity": "high", "source": "moneycontrol", "url": "https://..." }
+      ]
+    }
+  ],
+  "thematic_targets": [
+    {
+      "entity_name": "quick-commerce ecosystem", "entity_type": "sector",
+      "relevance_score": 8.4, "mention_count": 6,
+      "key_events": [
+        { "key_claim": "Zepto raises $350M at $5B valuation...", "source_url": "..." }
+      ]
+    }
   ]
 }
 ```
@@ -671,7 +754,7 @@ signal_score = source_weight × severity_weight × sentiment_modifier
 ## utils/ticker_extractor.py
 
 **Why it matters:**
-Phase B's LLM returns company names as written in articles ("Infosys", "IndiGo", "HDFC Bank"). This module maps those names to NSE tickers. Located in `utils/` because it is a shared utility used internally by `news_signal_extractor.py`, not a pipeline step.
+Phase B's LLM returns company names as written in articles ("Infosys", "IndiGo", "HDFC Bank"). This module maps those names to NSE tickers. Located in `utils/` because it is a shared utility used by `news_signal_extractor.py` (Phase B) and `proxy_mapper.py` (Phase D).
 
 **Two-pass resolution:**
 1. **Aliases dict** — short/colloquial names (SBI → SBIN.NS, TCS → TCS.NS, IndiGo → INDIGO.NS ...)
@@ -683,17 +766,33 @@ Phase B's LLM returns company names as written in articles ("Infosys", "IndiGo",
 
 **Dependency:** `utils/nse_symbols.py` — downloads NSE equity list on first use, caches locally at `utils/nse_equity_cache.json`, auto-refreshes every 7 days.
 
-**Output — extract_tickers**
-```json
-[
-  { "company": "Reliance Industries Limited", "ticker": "RELIANCE.NS" },
-  { "company": "Tata Consultancy Services Limited", "ticker": "TCS.NS" }
-]
-```
-
 **Output — lookup_ticker**
 ```json
 { "ticker": "SUNPHARMA.NS", "name": "Sun Pharmaceutical Industries Limited", "score": 100.0 }
+```
+
+---
+
+## utils/portfolio.py
+
+**What it does:** Loads `config/portfolio.json` (user's private holdings/watchlist). Returns empty structures if the file doesn't exist — the pipeline runs cleanly without a portfolio configured.
+
+**Key functions**
+- `load_portfolio()` → full dict `{holdings, watchlist, avoid_list}`, or `{}` if file missing
+- `portfolio_flag(ticker)` → `"held"` / `"watchlisted"` / `"avoided"` / `"none"`
+- `held_tickers()` → `set[str]` of tickers in holdings
+
+**Used by:** Phase E (adds `portfolio_flag` to evidence card), Phase F analyst prompt (frames as hold/exit when `held`), report synthesizer (Portfolio Review section).
+
+**Portfolio schema (`config/portfolio.json`):**
+```json
+{
+  "holdings": [
+    {"ticker": "HDFCBANK.NS", "qty": 100, "avg_price": 1450}
+  ],
+  "watchlist": ["BHEL.NS", "TATAPOWER.NS"],
+  "avoid_list": ["YESBANK.NS"]
+}
 ```
 
 ---
@@ -895,3 +994,228 @@ url: str   screener.in company URL
 | `text_form_types` | `["8-K"]` | Which form types to download text for |
 
 **Input:** `ticker: str` — US ticker ("AAPL", "MSFT", "GOOGL")
+
+---
+
+---
+
+# Phase D — Proxy Mapper
+
+---
+
+## phaseD_RTP/proxy_mapper.py
+
+**Why it exists:** ~40% of signals extracted by Phase B are about non-listed entities — Zepto, RBI rate decisions, PLI scheme expansions. These have no NSE ticker so Phase C can't deep-dive them. Phase D asks an LLM: "which NSE-listed companies are most directly impacted by this theme?" Resolved proxy tickers are force-added to the candidate list so they get the full Phase C treatment.
+
+**Inputs:**
+- `output/{date}/phaseB/candidates/candidates_{date}.json` → `thematic_targets` list
+
+**LLM schema (per thematic target):**
+```
+ProxyTicker:
+  company_name  str           Indian company name (resolved to ticker post-LLM)
+  relationship  Literal[beneficiary, competitor, supplier, customer, proxy]
+  impact        Literal[positive, negative, neutral]
+  confidence    Literal[high, medium, low]
+  reason        str           1-sentence justification
+```
+
+**Parallel processing:** `ThreadPoolExecutor(max_workers=15)` — one task per thematic target.
+
+**Merge logic:**
+- If proxy ticker already in `listed_targets`: append `proxy_links` metadata to that candidate
+- If new: add to `listed_targets` with `selected_for_phase_c=True` (forced — themes are high-signal even at low raw score)
+
+**Key functions**
+- `map_theme(theme, llm, pipeline)` → list of resolved proxy dicts
+- `map_all_themes(themes, llm, verbose, max_workers=15)` → all mappings
+- `run(provider, verbose, max_workers)` → reads candidates, maps themes, saves outputs, returns summary
+
+**Outputs:**
+- Updates `candidates_{date}.json` with augmented `listed_targets`
+- Writes `output/{date}/phaseD/proxy_mappings/proxy_mappings_{date}.json`
+- LLM call log: `output/{date}/phaseD/llm_proxy_logs/proxy_{date}.jsonl`
+
+**Proxy mappings output (per theme):**
+```json
+{
+  "entity_name": "quick-commerce ecosystem",
+  "entity_type": "sector",
+  "relevance_score": 8.4,
+  "proxies": [
+    {
+      "company_name": "Delhivery Ltd",
+      "ticker": "DELHIVERY.NS",
+      "relationship": "beneficiary",
+      "impact": "positive",
+      "confidence": "high",
+      "reason": "Delhivery handles last-mile logistics for Zepto and Blinkit orders"
+    }
+  ]
+}
+```
+
+---
+
+---
+
+# Phase E — Evidence Card Builder
+
+---
+
+## phaseE_EB/evidence_card_builder.py
+
+**Why it exists:** Phase C produces 8 separate JSON files per ticker. The analyst LLM (Phase F) needs ONE structured input per call — passing 8 raw dumps inflates the context with irrelevant fields. Phase E is a pure-Python aggregation step (no LLM) that extracts the relevant fields from all 8 Phase C files and assembles a compact, analyst-ready card per ticker.
+
+**Computed fields (not stored anywhere upstream):**
+- `price_vs_52w_high_pct` — how far below 52-week high the current price is
+- `sentiment_score` — weighted sum of `severity_weight × sentiment_sign` across all signals
+- `signal_density` — `signal_count / source_count`
+- `1y_return_pct`, `max_drawdown_pct` — computed from price history
+
+**Key functions**
+- `build_card(ticker, regime, signals_data, portfolio_flag)` → evidence card dict
+- `run(tickers=None, verbose=True)` → builds cards for all Phase C tickers, saves outputs
+
+**Output schema (`phaseE/evidence_cards/{TICKER}.json`):**
+```json
+{
+  "ticker": "BHEL.NS",
+  "company": "Bharat Heavy Electricals Ltd",
+  "generated_at": "...",
+  "portfolio_flag": "watchlisted",
+  "regime": { "posture": "neutral", "favored_sectors": [...], "avoid_sectors": [...] },
+  "signals": {
+    "score": 18.4, "signal_count": 7, "source_count": 4,
+    "event_types": ["analyst_upgrade", "earnings_beat"],
+    "key_claims": [
+      {"key_claim": "...", "source": "moneycontrol", "url": "https://...", "severity": "high"}
+    ],
+    "sentiment_score": 12.5, "signal_density": 1.75
+  },
+  "fundamentals": {
+    "price": 286, "sector": "Industrials",
+    "price_vs_52w_high_pct": -8.2, "1y_return_pct": 24.5, "max_drawdown_pct": -18.0,
+    "revenue_cagr_5y": 14, "profit_cagr_5y": 22, "roe_pct": 16.4, "debt_to_equity": 0.18,
+    "pe_ratio": 24.5, "sector_avg_pe": 28.1
+  },
+  "analyst_consensus": { "rating": "BUY", "target_upside_pct": 12.4, "n_analysts": 18 },
+  "recent_filings": [{"date": "...", "title": "...", "url": "..."}],
+  "recent_corporate_actions": [{"type": "dividend", "date": "...", "details": "₹2.5/share"}],
+  "data_gaps": ["screener_in"]
+}
+```
+
+The `data_gaps` list names any Phase C module that returned null data — the analyst uses this to lower conviction.
+
+---
+
+---
+
+# Phase F — Stock Analyst Agent
+
+---
+
+## phaseF_AA/stock_analyst.py
+
+**What it does:** One LLM call per ticker. Reads the ticker's evidence card (Phase E) and returns a structured Pydantic recommendation. Parallel processing via `ThreadPoolExecutor(max_workers=10)`.
+
+**Portfolio-aware:** When `portfolio_flag = "held"`, the prompt instructs the analyst to frame the output as a hold/exit decision rather than an entry decision.
+
+**Decision rules baked into the prompt:**
+- `invest` requires positive `sentiment_score`, fundamentals not red-flagged, ≥ 2 distinct sources
+- `avoid` if sharply negative `sentiment_score` OR red flags (D/E > 2, declining ROE, regulatory action)
+- `watch` when signal is real but conviction insufficient
+- `conviction = "high"` requires ≥ 3 sources AND alignment with regime `favored_sectors`
+- Lower conviction one notch if `data_gaps` is non-empty
+
+**Output schema:**
+```python
+class StockAnalystView(BaseModel):
+    ticker:          str
+    company:         str
+    recommendation:  Literal["invest", "watch", "avoid"]
+    conviction:      Literal["high", "medium", "low"]
+    thesis:          str              # 2-3 sentences
+    key_drivers:     list[str]        # 3-5 bullets, must cite evidence card numbers
+    key_risks:       list[str]        # 2-3 bullets
+    time_horizon:    Literal["short", "medium", "long"]
+    price_action:    Literal["buy_now", "wait_for_dip", "hold", "exit", "n/a"]
+    sources_cited:   list[str]        # URLs from evidence_card.signals[*].url
+    signal_score:    float            # passed through from evidence card
+    price:           float            # current price
+    sector:          str
+    data_gaps:       list[str]        # passed through from evidence card
+```
+
+**Key functions**
+- `analyze_card(card, llm, pipeline)` → `StockAnalystView` dict
+- `run(tickers=None, provider="openai", verbose=True, max_workers=10)` → saves all views, returns summary
+
+**Outputs:**
+- `output/{date}/phaseF/analyst_views/{TICKER}.json` — one per ticker
+- `output/{date}/phaseF/llm_analyst_logs/analyst_{date}.jsonl` — LLM call log
+
+**Standalone run:** `python context_ext_layer/phaseF_AA/stock_analyst.py [--ticker BHEL.NS] [--provider openai]`
+
+---
+
+---
+
+# Phase G — CIO Synthesis + Report
+
+---
+
+## phaseG_FR/cio_synthesis.py
+
+**Why it exists:** Phase F analysts each see ONE stock in isolation — they cannot know that 7 of 12 invest calls are in the same sector, or that two picks are proxies for the same theme. The CIO synthesis is a single LLM call that sees ALL analyst views together. Its job is synthesis, not re-analysis: pick the 3–5 worth acting on today given sector concentration, theme overlap, regime alignment, and portfolio state.
+
+**Input:** All `analyst_views/*.json` + latest `market_regime_{date}.json` + `portfolio.json` (if present)
+
+**Compressed view format:** Views are compressed to one line per ticker (ticker, recommendation, conviction, sector, sentiment_score) to fit all 25 tickers within a single prompt context window.
+
+**LLM settings:** `temperature=0.2` — higher than the per-ticker analysts (synthesis requires judgment, not just rule application).
+
+**Output schema:**
+```python
+class TopPick(BaseModel):
+    ticker:          str
+    rank:            int              # 1-5
+    recommendation:  Literal["invest", "watch"]
+    why_selected:    str              # 1-2 sentence rationale
+
+class CIOSynthesis(BaseModel):
+    top_picks:            list[TopPick]    # 3-5 picks
+    daily_narrative:      str             # 2-3 sentences: today's market story
+    sector_warnings:      list[str]       # concentration / cluster warnings
+    portfolio_actions:    list[str]       # hold/exit actions if portfolio.json exists
+    macro_coherence_note: str             # do picks align with today's macro regime?
+```
+
+**Key functions**
+- `run(provider="openai", verbose=True)` → loads views, calls LLM, saves `cio_synthesis_{date}.json`
+
+**Output:** `output/{date}/phaseG/cio_synthesis_{date}.json`
+
+---
+
+## phaseG_FR/report_synthesizer.py
+
+**What it does:** Pure Python — no LLM. Reads all Phase F analyst views + Phase B regime + Phase G CIO synthesis and formats a complete daily research report.
+
+**Report sections:**
+1. **Market Regime** — posture, FII/VIX/crude/FX values, favored/avoid sectors
+2. **Today's Action Plan** (CIO Synthesis) — top picks table, sector warnings, portfolio actions, macro coherence note
+3. **Top Buys** — all `invest` recommendations, sorted by conviction × |score|, with thesis/drivers/risks/sources
+4. **Top Avoids** — all `avoid` recommendations
+5. **Watchlist Movers** — top 10 `watch` recommendations
+6. **Portfolio Review** — only if `config/portfolio.json` exists; holdings hold/exit table + watchlist updates
+7. **New Themes Worth Monitoring** — top thematic targets from Phase B (the non-listed ones)
+8. **Data Gaps** — modules that returned null for ≥1 ticker
+
+**Key functions**
+- `synthesize()` → builds and saves `report_{date}.md` + `report_{date}.json`, returns counts dict
+
+**Outputs:**
+- `output/{date}/phaseG/report_{date}.md` — human-readable markdown report
+- `output/{date}/phaseG/report_{date}.json` — machine-readable version (same structure)

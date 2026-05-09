@@ -229,3 +229,134 @@ yfinance returns GICS-style sector strings ("Technology", "Consumer Cyclical", "
 ### Effect on ranking
 
 The adjustment is intentionally small relative to signal scores: **+4.0** for favoured sectors, **−3.0** for avoided sectors. BHEL at +75 gets +4 (Industrials → infra, regime-favoured) → +79. SUNPHARMA at +24 gets −3 (Healthcare → pharma, regime-avoided) → +21. The purpose is tie-breaking and nudging regime-aligned stocks up — not overriding strong signal scores.
+
+### Sector mapping log
+
+After Phase C completes, `sector_map_{date}.json` records for every ticker: the raw yfinance sector string, the mapped regime key, whether it fell in favored/avoid, and the adj applied. Tickers where `mapped_key` is null despite having a non-null raw sector are flagged with a note suggesting the alias be added to `_SECTOR_ALIASES`. This surfaces silent misses where a sector's signals were not getting their regime bonus.
+
+---
+
+## 7. Entity-centric Signal Extraction (Phase B2 — revised schema)
+
+The original schema assumed every signal maps to a listed company. The revised schema separates entity types:
+
+| `entity_type` | What it represents | Ticker resolution |
+|---|---|---|
+| `listed` | NSE/BSE-listed company | Three-pass: direct symbol → alias dict → fuzzy @82 |
+| `private` | Unlisted/foreign entity (Zepto, OpenAI JV) | Skipped — name preserved as thematic target |
+| `sector` | Broad theme ("quick-commerce ecosystem") | Skipped — preserved as thematic target |
+| `macro` | Macroeconomic event (RBI rate, crude move) | Skipped — preserved as thematic target |
+| `policy` | Government/regulatory action (PLI, SEBI rule) | Skipped — preserved as thematic target |
+
+The `sector_theme` field on every signal captures the broader investment theme for listed/private entities (e.g. "green energy capex" on an NTPC signal). This flows into the evidence card and helps the analyst identify cross-stock thematic clusters.
+
+**Three-pass ticker resolution for listed entities:**
+1. Pass 0: Direct NSE symbol match (`KOTAKBANK` → `KOTAKBANK.NS`)
+2. Pass 1: Alias dict (`"kotak bank"`, `"sbi"`, `"tcs"` ...)
+3. Pass 2: Fuzzy match at threshold 82
+
+If all three passes fail, the signal is preserved with `ticker=null` and `entity_type=listed` — it surfaces as an unresolved listed signal in the output stats.
+
+---
+
+## 8. Proxy Mapping (Phase D)
+
+### Problem
+
+After Phase B, roughly 40–60 thematic targets exist: private companies, sector trends, macro events. These have high signal value but no NSE ticker, so Phase C cannot process them.
+
+### Solution
+
+For each thematic target, one LLM call asks: *"which 3–5 NSE-listed Indian companies are most directly impacted by this theme/entity?"* The LLM returns company names with relationship type (beneficiary, competitor, supplier, customer, proxy), impact direction (positive/negative/neutral), and confidence level.
+
+### Resolution
+
+Each returned company name goes through `lookup_ticker(name, threshold=82)` — the same fuzzy engine as Phase B. Unresolved names are dropped (better to miss than to hallucinate a ticker).
+
+### Merge logic
+
+- **Ticker already in listed_targets**: append a `proxy_links` entry with theme source, relationship, impact, confidence, reason
+- **New ticker**: create a new listed_target entry with `score = theme_relevance × 0.6 × impact_sign`, `selected_for_phase_c=True` (forced — themes are high-signal even at low score)
+
+After merging, all listed_targets are re-ranked by `|final_score|`.
+
+### Why score damping = 0.6
+
+A proxy ticker's signal is second-order: the theme mentions the underlying entity, not the listed company directly. 0.6 damping reflects that the listed company's exposure to the theme is inferred, not directly evidenced. The result: proxy tickers enter the candidate pool but rank below directly-mentioned stocks with similar scores.
+
+---
+
+## 9. Evidence Card Aggregation (Phase E)
+
+Phase C produces 8 separate JSON files per ticker. Phase E assembles them into one analyst-ready card.
+
+**Key computed fields (not in raw Phase C output):**
+
+| Field | Computation |
+|---|---|
+| `price_vs_52w_high_pct` | `(price / 52w_high - 1) × 100` — how far from peak |
+| `max_drawdown_1y_pct` | `min(daily_return_pct)` over 1-year OHLCV history |
+| `sentiment_score` | `Σ (severity_weight × sentiment_sign)` over key_signals |
+| `signal_density` | `signal_count / source_count` — signals per source (high density = concentrated attention) |
+
+**Screener.in file lookup** uses a one-time index built from all screener files: slugified company name → filepath. Fallback: first-6-characters prefix match on the slug. This is needed because screener saves files as `{company_slug}_{hash}.json` — the hash is not predictable from the ticker.
+
+**Data gaps** are recorded explicitly: if a Phase C module returned no file for a ticker, its name goes into `evidence_card.data_gaps`. The analyst prompt instructs the LLM to lower conviction by one notch when data_gaps is non-empty.
+
+---
+
+## 10. Stock Analyst Decision Rules (Phase F)
+
+The analyst LLM is given strict decision rules in the system prompt — not left to its own judgment:
+
+**Recommendation thresholds:**
+
+| Recommendation | Conditions |
+|---|---|
+| `invest` | positive `sentiment_score` AND (`revenue_cagr_5y > 8%` OR `profit_cagr_5y > 10%`) AND ≥2 distinct sources |
+| `avoid` | sharply negative `sentiment_score` OR fundamental red flags (negative profit growth, high P/E with declining ROE, regulatory action) |
+| `watch` | real signal but conviction insufficient — low source count, mixed sentiment, or data gaps |
+
+**Conviction thresholds:**
+
+| Conviction | Conditions |
+|---|---|
+| `high` | ≥3 distinct sources AND regime favored sector AND no material data_gaps |
+| `medium` | some triangulation but missing one of: source diversity / regime alignment / fundamentals |
+| `low` | single source, conflicting signals, or major data_gaps |
+
+Non-empty `data_gaps` automatically lowers conviction by one notch (high→medium, medium→low).
+
+**Price action** is portfolio-flag-aware: if `portfolio_flag="held"`, only `hold` or `exit` are allowed. For `none/watchlisted/avoided`: `buy_now`, `wait_for_dip`, or `n/a`.
+
+**Sources cited**: analyst must include 1–3 actual URLs from `evidence_card.signals.key_claims[*].url`. Invented URLs are not allowed per prompt rule.
+
+---
+
+## 11. CIO Synthesis (Phase G1)
+
+### The gap Phase F leaves
+
+Phase F analysts each see exactly one evidence card. They cannot see that 7 of 12 invest calls are in Industrials, or that NTPC and CESC are both high-conviction buys for the same power-demand theme (redundant portfolio exposure), or that the regime is cautious but 70% of calls are bullish (tension to flag).
+
+### Single LLM call over all views
+
+The CIO prompt receives a compressed table of all analyst views (one line per ticker: ticker | sector | recommendation | conviction | price_action | thesis[:80]) plus the regime snapshot and portfolio holdings.
+
+Token budget: ~30 views × ~100 tokens = ~3K tokens input, ~500 output. One call.
+
+### What the CIO is explicitly forbidden from doing
+
+The prompt rule: *"Do NOT re-analyze stocks — the analysts already did that."* The CIO's job is synthesis over the full set, not re-judging individual stocks. This keeps the output honest (it can only reference what the analysts already established) and keeps the call cheap.
+
+### Top picks selection criteria (in priority order)
+
+1. Regime alignment — favored-sector stocks rank higher, all else equal
+2. Theme de-duplication — if two stocks serve the same thesis, pick the stronger proxy
+3. Sector concentration — avoid picking >40% from one sector
+4. Portfolio overlap — skip if user already holds a stock with the same investment thesis
+5. Catalyst immediacy — a high-conviction watch with an imminent catalyst can outrank a generic invest
+
+### Fallback behaviour
+
+If the CIO LLM call fails or hasn't run, `report_synthesizer.py` generates the report without the "Today's Action Plan" section. The rest of the report is unchanged. No code modification needed — the section builder returns an empty string if `cio_synthesis_{date}.json` does not exist.
