@@ -18,15 +18,15 @@ Collect      Filter      Proxy map    Deep dive    Evidence    Analyst     Repor
                          themes       tickers      cards       views       + CIO
 ```
 
-| Phase | Folder | Purpose | LLM |
+| Phase | Module location | Purpose | LLM |
 |---|---|---|---|
-| **A — Broad Market Discovery** | `phaseA_BMD/` | Market-wide data — no ticker needed. Runs daily to get the full market picture. | None |
-| **B — Market Intelligence** | `phaseB_CS/` | B1: market regime. B2: LLM extracts entity-centric signals from all Phase A text. B3: scores + ranks listed tickers and thematic targets. | Yes (B2) |
-| **D — Proxy Mapper** | `phaseD_RTP/` | Maps thematic targets (private cos, macro events, sector themes) to 3–5 NSE-listed proxy tickers; merges into candidate list. | Yes |
-| **C — Company Deep Dive** | `phaseC_CDD/` | Per-ticker deep dive — fundamentals, filings, price data for each candidate (including proxy-mapped tickers). | None |
-| **E — Evidence Card Builder** | `phaseE_EB/` | Pure Python aggregation: combines all Phase C outputs per ticker into one structured evidence card for the analyst. | None |
-| **F — Stock Analyst** | `phaseF_AA/` | One LLM call per ticker: invest/watch/avoid recommendation with thesis, drivers, risks, cited source URLs. | Yes |
-| **G — CIO + Report** | `phaseG_FR/` | G1: single LLM synthesis over all analyst views → top picks, sector warnings, macro coherence. G2: pure Python report formatter. | Yes (G1) |
+| **A — Broad Market Discovery** | `context_ext_layer/phaseA_BMD/` | Market-wide data — no ticker needed. Runs daily to get the full market picture. | None |
+| **B — Market Intelligence** | `intelligence_layer/market_opportunity_intelligence/` (B1) · `intelligence_layer/extraction/` (B2) · `intelligence_layer/research_target_planner/` (B3) | B1: market regime. B2: LLM extracts entity-centric signals from all Phase A text. B3: scores + ranks listed tickers and thematic targets. | Yes (B2) |
+| **D — Proxy Mapper** | `intelligence_layer/research_target_planner/` | Maps thematic targets (private cos, macro events, sector themes) to 3–5 NSE-listed proxy tickers; merges into candidate list. | Yes |
+| **C — Company Deep Dive** | `context_ext_layer/phaseC_CDD/` | Per-ticker deep dive — fundamentals, filings, price data for each candidate (including proxy-mapped tickers). | None |
+| **E — Evidence Card Builder** | `evidence_layer/` | Pure Python aggregation: combines all Phase C outputs per ticker into one structured evidence card for the analyst. | None |
+| **F — Stock Analyst** | `agents/` | One LLM call per ticker: invest/watch/avoid recommendation with thesis, drivers, risks, cited source URLs. | Yes |
+| **G — CIO + Report** | `portfolio_layer/` | G1: single LLM synthesis over all analyst views → top picks, sector warnings, macro coherence. G2: pure Python report formatter. | Yes (G1) |
 
 > **Execution order is A → B → D → C → E → F → G.** Phase D runs before Phase C so proxy-mapped tickers are in the candidate list before the deep dive starts.
 
@@ -82,8 +82,8 @@ python run_pipeline.py --workers 15       # override concurrency (default 25)
 All outputs land in `output/{YYYY-MM-DD}/` — each daily run gets its own dated folder. Phase A, B, and C all write to the same date folder when run on the same day.
 
 ```
-context_ext_layer/
-├── phaseA_BMD/              Phase A — Broad Market Discovery
+context_ext_layer/           Phase A (Layer 1) + Phase C (Layer 7) collectors
+├── phaseA_BMD/              Phase A — Broad Market Discovery (Layer 1)
 │   ├── rss.py               RSS feed headlines + summaries (11 feeds)
 │   ├── moneycontrol.py      Moneycontrol news by category
 │   ├── economic_times.py    Economic Times news by category
@@ -99,40 +99,102 @@ context_ext_layer/
 │   ├── browser_scraper.py   JS-rendered websites (Playwright)
 │   └── generic.py           Any open website (article text via trafilatura)
 │
-├── phaseB_CS/               Phase B — Market Intelligence
-│   ├── market_regime.py     B1: rule-based macro regime (no LLM)
-│   ├── news_signal_extractor.py  B2: LLM extracts entity-centric signals from all Phase A text
-│   └── candidate_scorer.py  B3: ranks listed tickers and thematic targets by signal strength
+├── phaseC_CDD/              Phase C — Company Deep Dive (Layer 7)
+│   ├── screener_in.py        Company financials + filings (Indian stocks)
+│   ├── market_data.py        Current price snapshot
+│   ├── price_history.py      Historical OHLCV data
+│   ├── peer_comparison.py    Industry peer comparison
+│   ├── analyst_estimates.py  Analyst price targets, EPS/revenue estimates
+│   ├── exchange_filings.py   NSE corporate announcements
+│   ├── filing_docs.py        Concall transcripts + investor presentations
+│   ├── corporate_actions.py  Dividends, splits, bonuses, buybacks
+│   └── sec_filings.py        US company SEC EDGAR filings
 │
-├── phaseD_RTP/              Phase D — Proxy Mapper
-│   └── proxy_mapper.py      LLM maps thematic targets → 3-5 NSE-listed proxy tickers
+└── utils/                   Shared utilities (used across all layers)
+    ├── ticker_extractor.py  NSE ticker resolution (alias dict + fuzzy match)
+    ├── nse_symbols.py       NSE symbol list manager (2360 stocks, 7-day cache)
+    ├── portfolio.py         Loads config/portfolio.json; exposes portfolio_flag(), held_tickers()
+    └── nse_equity_cache.json  cached NSE symbol list (auto-refreshed)
+
+intelligence_layer/          Layers 2–6: Canonicalization → Extraction → Memory → Intelligence → Planning
+├── source_canonicalization/ Layer 2 — Source Canonicalization (stubs; build from layer_2.md)
+│   ├── source_registry.py
+│   ├── document_normalizer.py
+│   ├── deduplicator.py
+│   └── content_quality_checker.py
 │
-├── phaseE_EB/               Phase E — Evidence Card Builder
-│   └── evidence_card_builder.py  Pure Python: aggregates 8 Phase C files → one evidence card per ticker
+├── extraction/              Layer 3 — Intelligence Extraction (Phase B2)
+│   ├── news_signal_extractor.py   ← Phase B2 (moved from phaseB_CS/)
+│   ├── entity_extractor.py         (stub; build from layer_3.md)
+│   ├── fact_extractor.py           (stub)
+│   ├── claim_extractor.py          (stub)
+│   ├── event_extractor.py          (stub)
+│   ├── theme_extractor.py          (stub)
+│   └── market_signal_builder.py    (stub)
 │
-├── phaseF_AA/               Phase F — Stock Analyst Agent
-│   └── stock_analyst.py     One LLM call per ticker: invest/watch/avoid + thesis + cited URLs
+├── memory/                  Layer 4 — Memory Qualification (stubs; build from layer_4.md)
+│   ├── memory_qualifier.py
+│   ├── memory_writer.py
+│   ├── memory_retriever.py
+│   ├── thesis_memory_manager.py
+│   └── memory_decay_manager.py
 │
-├── phaseG_FR/               Phase G — CIO Synthesis + Report
-│   ├── cio_synthesis.py     Single LLM call over all analyst views → ranked top picks
-│   └── report_synthesizer.py  Pure Python: formats final .md + .json report
+├── market_opportunity_intelligence/  Layer 5 — Market & Opportunity Intelligence (Phase B1)
+│   ├── market_regime_agent.py     ← Phase B1 (moved from phaseB_CS/market_regime.py)
+│   ├── sector_theme_agent.py       (stub; build from layer_5.md)
+│   ├── event_impact_classifier.py  (stub)
+│   ├── opportunity_hypothesis_generator.py  (stub)
+│   ├── cross_domain_mapper.py      (stub)
+│   └── time_horizon_classifier.py  (stub)
 │
-├── utils/                   Shared utilities (used across phases)
-│   ├── ticker_extractor.py  NSE ticker resolution (alias dict + fuzzy match)
-│   ├── nse_symbols.py       NSE symbol list manager (2360 stocks, 7-day cache)
-│   ├── portfolio.py         Loads config/portfolio.json; exposes portfolio_flag(), held_tickers()
-│   └── nse_equity_cache.json  cached NSE symbol list (auto-refreshed)
-│
-└── phaseC_CDD/              Phase C — Company Deep Dive (per-ticker)
-    ├── screener_in.py        Company financials + filings (Indian stocks)
-    ├── market_data.py        Current price snapshot
-    ├── price_history.py      Historical OHLCV data
-    ├── peer_comparison.py    Industry peer comparison
-    ├── analyst_estimates.py  Analyst price targets, EPS/revenue estimates
-    ├── exchange_filings.py   NSE corporate announcements
-    ├── filing_docs.py        Concall transcripts + investor presentations
-    ├── corporate_actions.py  Dividends, splits, bonuses, buybacks
-    └── sec_filings.py        US company SEC EDGAR filings
+└── research_target_planner/ Layer 6 — Research Target Planner (Phase B3 + Phase D)
+    ├── target_ranker.py           ← Phase B3 (moved from phaseB_CS/candidate_scorer.py)
+    ├── proxy_mapper.py            ← Phase D (moved from phaseD_RTP/)
+    ├── entity_resolver.py          (stub; build from layer_6.md)
+    ├── ticker_resolver.py          (stub)
+    ├── target_type_classifier.py   (stub)
+    └── deep_dive_plan_builder.py   (stub)
+
+evidence_layer/              Layer 8 — Evidence Builder (Phase E)
+├── evidence_card_builder.py     ← Phase E (moved from phaseE_EB/)
+├── numeric_feature_engineer.py  (stub; build from layer_5.md Evidence Builder section)
+├── text_chunker.py              (stub)
+├── vector_indexer.py            (stub — v2)
+├── thesis_card_builder.py       (stub)
+└── context_packet_builder.py    (stub)
+
+agents/                      Layer 9 — Specialist Analysis Agents (Phase F)
+├── stock_analyst.py              ← Phase F (moved from phaseF_AA/)
+├── market_agent.py               (stub; build from layer_6.md Layer 9 section)
+├── sector_agent.py               (stub)
+├── stock_fundamental_agent.py    (stub)
+├── valuation_agent.py            (stub)
+├── event_impact_agent.py         (stub)
+├── risk_agent.py                 (stub)
+├── opportunity_proxy_agent.py    (stub)
+└── thesis_agent.py               (stub — v2 multi-agent ensemble)
+
+portfolio_layer/             Layer 10 — CIO Synthesis + Final Report (Phase G)
+├── cio_synthesis.py              ← Phase G1 (moved from phaseG_FR/)
+├── report_synthesizer.py         ← Phase G2 (moved from phaseG_FR/)
+├── opportunity_ranker.py         (stub; build from layer_6.md Layer 10 section)
+├── portfolio_fit_agent.py        (stub)
+├── time_horizon_view_builder.py  (stub)
+└── final_research_synthesizer.py (stub — v2 combined evolution)
+
+orchestration/               Layer 0 — Research Orchestrator (stubs; build from layer_0_implementation_design.md)
+├── run_mode_detector.py
+├── collection_planner.py
+├── run_state_manager.py
+└── schemas.py
+
+guardrails/                  Cross-cutting — Hallucination Control + Audit
+├── evidence_validator.py
+├── source_traceability_checker.py
+├── contradiction_checker.py
+├── confidence_calibrator.py
+├── severity_gate.py
+└── final_output_guardrail.py
 
 config/
 ├── portfolio.json           User's holdings + watchlist (gitignored — private)
@@ -562,13 +624,13 @@ Same input/output structure as `newsdata_io.py`.
 
 ---
 
-# Phase B — Candidate Selection
+# Phase B — Market Intelligence (Layers 3, 5, 6)
 
 Runs in three sequential steps (B1 → B2 → B3), orchestrated by `run_phase_b.py`.
 
 ---
 
-## B1 — market_regime.py
+## B1 — market_regime_agent.py · `intelligence_layer/market_opportunity_intelligence/`
 
 **What it does:** Reads the latest Phase A macro outputs and computes a structured market regime using rule-based thresholds — no LLM involved.
 
@@ -618,7 +680,7 @@ Runs in three sequential steps (B1 → B2 → B3), orchestrated by `run_phase_b.
 
 ---
 
-## B2 — news_signal_extractor.py
+## B2 — news_signal_extractor.py · `intelligence_layer/extraction/`
 
 **What it does:** Walks all Phase A text outputs, calls the LLM once per article/item using an **entity-centric schema** — each signal is associated with a named entity that may be a listed company, private company, sector theme, macro event, or policy development. Company names are resolved to NSE tickers post-LLM; non-listed entities flow through as thematic targets.
 
@@ -697,7 +759,7 @@ Runs in three sequential steps (B1 → B2 → B3), orchestrated by `run_phase_b.
 
 ---
 
-## B3 — candidate_scorer.py
+## B3 — target_ranker.py · `intelligence_layer/research_target_planner/`
 
 **What it does:** Combines signals from B2 + regime from B1 + bulk/block deals to produce two lists: `listed_targets` (NSE-ticker candidates for Phase C deep dive) and `thematic_targets` (non-listed entities for Phase D proxy mapping). All scoring is deterministic — no LLM.
 
@@ -999,11 +1061,11 @@ url: str   screener.in company URL
 
 ---
 
-# Phase D — Proxy Mapper
+# Phase D — Proxy Mapper (Layer 6)
 
 ---
 
-## phaseD_RTP/proxy_mapper.py
+## proxy_mapper.py · `intelligence_layer/research_target_planner/`
 
 **Why it exists:** ~40% of signals extracted by Phase B are about non-listed entities — Zepto, RBI rate decisions, PLI scheme expansions. These have no NSE ticker so Phase C can't deep-dive them. Phase D asks an LLM: "which NSE-listed companies are most directly impacted by this theme?" Resolved proxy tickers are force-added to the candidate list so they get the full Phase C treatment.
 
@@ -1059,11 +1121,11 @@ ProxyTicker:
 
 ---
 
-# Phase E — Evidence Card Builder
+# Phase E — Evidence Card Builder (Layer 8)
 
 ---
 
-## phaseE_EB/evidence_card_builder.py
+## evidence_card_builder.py · `evidence_layer/`
 
 **Why it exists:** Phase C produces 8 separate JSON files per ticker. The analyst LLM (Phase F) needs ONE structured input per call — passing 8 raw dumps inflates the context with irrelevant fields. Phase E is a pure-Python aggregation step (no LLM) that extracts the relevant fields from all 8 Phase C files and assembles a compact, analyst-ready card per ticker.
 
@@ -1112,11 +1174,11 @@ The `data_gaps` list names any Phase C module that returned null data — the an
 
 ---
 
-# Phase F — Stock Analyst Agent
+# Phase F — Stock Analyst Agent (Layer 9)
 
 ---
 
-## phaseF_AA/stock_analyst.py
+## stock_analyst.py · `agents/`
 
 **What it does:** One LLM call per ticker. Reads the ticker's evidence card (Phase E) and returns a structured Pydantic recommendation. Parallel processing via `ThreadPoolExecutor(max_workers=10)`.
 
@@ -1156,17 +1218,17 @@ class StockAnalystView(BaseModel):
 - `output/{date}/phaseF/analyst_views/{TICKER}.json` — one per ticker
 - `output/{date}/phaseF/llm_analyst_logs/analyst_{date}.jsonl` — LLM call log
 
-**Standalone run:** `python context_ext_layer/phaseF_AA/stock_analyst.py [--ticker BHEL.NS] [--provider openai]`
+**Standalone run:** `python agents/stock_analyst.py [--ticker BHEL.NS] [--provider openai]`
 
 ---
 
 ---
 
-# Phase G — CIO Synthesis + Report
+# Phase G — CIO Synthesis + Report (Layer 10)
 
 ---
 
-## phaseG_FR/cio_synthesis.py
+## cio_synthesis.py · `portfolio_layer/`
 
 **Why it exists:** Phase F analysts each see ONE stock in isolation — they cannot know that 7 of 12 invest calls are in the same sector, or that two picks are proxies for the same theme. The CIO synthesis is a single LLM call that sees ALL analyst views together. Its job is synthesis, not re-analysis: pick the 3–5 worth acting on today given sector concentration, theme overlap, regime alignment, and portfolio state.
 
@@ -1199,7 +1261,7 @@ class CIOSynthesis(BaseModel):
 
 ---
 
-## phaseG_FR/report_synthesizer.py
+## report_synthesizer.py · `portfolio_layer/`
 
 **What it does:** Pure Python — no LLM. Reads all Phase F analyst views + Phase B regime + Phase G CIO synthesis and formats a complete daily research report.
 

@@ -96,7 +96,7 @@ def run(
     # ── Phase D: Proxy Mapper (Layer 3) ───────────────────────────────────────
     if _should_run("D", skip_to, explicit_skips):
         _banner("Phase D — Proxy Mapper (themes → listed proxies)", "─")
-        from context_ext_layer.phaseD_RTP.proxy_mapper import run as run_d
+        from intelligence_layer.research_target_planner.proxy_mapper import run as run_d
         results["phase_d"] = run_d(provider=provider, verbose=True, max_workers=max_workers)
     else:
         print("\n  ─  Phase D skipped")
@@ -113,7 +113,7 @@ def run(
     # ── Phase E: Evidence Card Builder (Layer 5) ──────────────────────────────
     if _should_run("E", skip_to, explicit_skips):
         _banner("Phase E — Evidence Card Builder", "─")
-        from context_ext_layer.phaseE_EB.evidence_card_builder import run as run_e
+        from evidence_layer.evidence_card_builder import run as run_e
         ticker_list = [single_ticker] if single_ticker else None
         results["phase_e"] = run_e(tickers=ticker_list, verbose=True)
     else:
@@ -122,7 +122,7 @@ def run(
     # ── Phase F: Stock Analyst (Layer 6) ──────────────────────────────────────
     if _should_run("F", skip_to, explicit_skips):
         _banner("Phase F — Stock Analyst", "─")
-        from context_ext_layer.phaseF_AA.stock_analyst import run as run_f
+        from agents.stock_analyst import run as run_f
         ticker_list = [single_ticker] if single_ticker else None
         results["phase_f"] = run_f(tickers=ticker_list, provider=provider, verbose=True, max_workers=max_workers)
     else:
@@ -131,11 +131,11 @@ def run(
     # ── Phase G: CIO Synthesis + Final Report (Layer 7) ──────────────────────
     if _should_run("G", skip_to, explicit_skips):
         _banner("Phase G — CIO Synthesis", "─")
-        from context_ext_layer.phaseG_FR.cio_synthesis import run as run_cio
+        from portfolio_layer.cio_synthesis import run as run_cio
         results["phase_g_cio"] = run_cio(provider=provider, verbose=True)
 
         _banner("Phase G — Report Synthesizer", "─")
-        from context_ext_layer.phaseG_FR.report_synthesizer import synthesize
+        from portfolio_layer.report_synthesizer import synthesize
         results["phase_g"] = synthesize()
     else:
         print("\n  ─  Phase G skipped")

@@ -1,6 +1,6 @@
 {
-  "refreshed": "2026-05-03",
-  "count": 2360,
+  "refreshed": "2026-05-10",
+  "count": 2367,
   "symbols": {
     "20MICRONS.NS": {
       "ticker": "20MICRONS.NS",
@@ -116,6 +116,11 @@
       "ticker": "AAVAS.NS",
       "name": "Aavas Financiers Limited",
       "simplified": "aavas financiers"
+    },
+    "ABAN.NS": {
+      "ticker": "ABAN.NS",
+      "name": "Aban Offshore Limited",
+      "simplified": "aban offshore"
     },
     "ABANSENT.NS": {
       "ticker": "ABANSENT.NS",
@@ -3087,6 +3092,11 @@
       "name": "Emami Realty Limited",
       "simplified": "emami realty"
     },
+    "EMBDL.NS": {
+      "ticker": "EMBDL.NS",
+      "name": "Embassy Developments Limited",
+      "simplified": "embassy developments"
+    },
     "EMCURE.NS": {
       "ticker": "EMCURE.NS",
       "name": "Emcure Pharmaceuticals Limited",
@@ -3937,6 +3947,11 @@
       "name": "GPT Infraprojects Limited",
       "simplified": "gpt infraprojects"
     },
+    "GRADIENTE.NS": {
+      "ticker": "GRADIENTE.NS",
+      "name": "Gradiente Infotainment Limited",
+      "simplified": "gradiente infotainment"
+    },
     "GRANDOAK.NS": {
       "ticker": "GRANDOAK.NS",
       "name": "Grand Oak Canyons Distillery Limited",
@@ -4654,8 +4669,8 @@
     },
     "IGIL.NS": {
       "ticker": "IGIL.NS",
-      "name": "International Gemmological Institute (India) Limited",
-      "simplified": "gemmological institute ()"
+      "name": "International Gemological Institute Limited",
+      "simplified": "gemological institute"
     },
     "IGL.NS": {
       "ticker": "IGL.NS",
@@ -5691,6 +5706,11 @@
       "ticker": "KIRLPNU.NS",
       "name": "Kirloskar Pneumatic Company Limited",
       "simplified": "kirloskar pneumatic"
+    },
+    "KISSHT.NS": {
+      "ticker": "KISSHT.NS",
+      "name": "OnEMI Technology Solutions Limited",
+      "simplified": "onemi"
     },
     "KITEX.NS": {
       "ticker": "KITEX.NS",
@@ -7187,6 +7207,11 @@
       "name": "Network18 Media & Investments Limited",
       "simplified": "network18 media & investments"
     },
+    "NEUEON.NS": {
+      "ticker": "NEUEON.NS",
+      "name": "Neueon Corporation Limited",
+      "simplified": "neueon"
+    },
     "NEULANDLAB.NS": {
       "ticker": "NEULANDLAB.NS",
       "name": "Neuland Laboratories Limited",
@@ -8632,6 +8657,11 @@
       "name": "Rhetan TMT Limited",
       "simplified": "rhetan tmt"
     },
+    "RHFL.NS": {
+      "ticker": "RHFL.NS",
+      "name": "Reliance Home Finance Limited",
+      "simplified": "reliance home"
+    },
     "RHIM.NS": {
       "ticker": "RHIM.NS",
       "name": "RHI MAGNESITA INDIA LIMITED",
@@ -9086,6 +9116,11 @@
       "ticker": "SANSTAR.NS",
       "name": "Sanstar Limited",
       "simplified": "sanstar"
+    },
+    "SANWARIA.NS": {
+      "ticker": "SANWARIA.NS",
+      "name": "Sanwaria Consumer Limited",
+      "simplified": "sanwaria consumer"
     },
     "SAPPHIRE.NS": {
       "ticker": "SAPPHIRE.NS",

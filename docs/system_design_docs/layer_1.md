@@ -542,15 +542,15 @@ Avoid hardcoding imports everywhere.
 ```python
 COLLECTOR_REGISTRY = {
     "rss": {
-        "module_path": "context_ext_layer.phaseA_broad_context.rss",
+        "module_path": "context_ext_layer.phaseA_BMD.rss",
         "functions": ["save_feed", "save_all_feeds"]
     },
     "moneycontrol": {
-        "module_path": "context_ext_layer.phaseA_broad_context.moneycontrol",
+        "module_path": "context_ext_layer.phaseA_BMD.moneycontrol",
         "functions": ["save_category"]
     },
     "market_data": {
-        "module_path": "context_ext_layer.phaseC_targeted_deep_dive.market_data",
+        "module_path": "context_ext_layer.phaseC_CDD.market_data",
         "functions": ["save_market_snapshot"]
     }
 }

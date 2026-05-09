@@ -60,7 +60,7 @@ def run(skip_signals: bool = False, provider: str = "openai", max_workers: int =
 
     # ── B1. Market Regime ─────────────────────────────────────────────────────
     print("\n── B1. Market Regime (rule-based) ───────────────────────")
-    from context_ext_layer.phaseB_CS.market_regime import compute_regime, save_regime
+    from intelligence_layer.market_opportunity_intelligence.market_regime_agent import compute_regime, save_regime
 
     regime      = _run("Computing regime", compute_regime)
     regime_file = _run("Saving regime",    save_regime)
@@ -79,7 +79,7 @@ def run(skip_signals: bool = False, provider: str = "openai", max_workers: int =
 
     # ── B2. News Signal Extraction (LLM) ──────────────────────────────────────
     print("\n── B2. News Signal Extraction (LLM) ─────────────────────")
-    from context_ext_layer.phaseB_CS.news_signal_extractor import (
+    from intelligence_layer.extraction.news_signal_extractor import (
         extract_all_signals, save_signals, collect_all_items,
     )
     from config.paths import SIGNALS_OUTPUT_DIR
@@ -131,7 +131,7 @@ def run(skip_signals: bool = False, provider: str = "openai", max_workers: int =
 
     # ── B3. Candidate Scoring ─────────────────────────────────────────────────
     print("\n── B3. Candidate Scoring ────────────────────────────────")
-    from context_ext_layer.phaseB_CS.candidate_scorer import (
+    from intelligence_layer.research_target_planner.target_ranker import (
         load_bulk_deals, _build_bulk_signals, score_candidates, save_candidates,
     )
     from config.paths import BULK_DEALS_OUTPUT_DIR

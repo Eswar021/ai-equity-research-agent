@@ -1,5 +1,5 @@
 {
-  "_comment": "Optional portfolio file. Copy to config/portfolio.json and edit. The .json variant is gitignored. Used by phaseE_EB (evidence builder) and phaseF_AA (analyst) for portfolio-aware recommendations.",
+  "_comment": "Optional portfolio file. Copy to config/portfolio.json and edit. The .json variant is gitignored. Used by evidence_layer (evidence builder) and agents/stock_analyst.py for portfolio-aware recommendations.",
   "holdings": [
     {"ticker": "HDFCBANK.NS",  "qty": 100, "avg_price": 1450, "type": "stock"},
     {"ticker": "INFY.NS",      "qty": 50,  "avg_price": 1620, "type": "stock"},
