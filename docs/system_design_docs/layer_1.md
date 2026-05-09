@@ -2337,19 +2337,33 @@ Your repo already has these modules organized under `context_ext_layer`, along w
 
 # What needs to be added or improved
 
-## Must add now
+## Current implementation status
+
+Items 6-9 are implemented as a single simplified bundler module:
 
 ```text
-1. layer1_runner.py
-2. collector_registry.py
-3. raw_source_record_builder.py
-4. collection_status_tracker.py
-5. freshness_classifier.py
-6. raw_context_bundle_builder.py
-7. raw_source_records.json output
-8. collection_status.json output
-9. data_freshness_report.json output
+context_ext_layer/layer1_bundler.py   ← DONE
 ```
+
+It runs as the final step of `run_phase_a.py` and produces all four contract files in `output/{date}/layer1/`.  The full modular orchestration (items 1-5 below) is deferred until Layer 0 drives Layer 1.
+
+## Must add (deferred to Layer 0 integration)
+
+```text
+1. layer1_runner.py          ← deferred: needed when Layer 0 drives Layer 1
+2. collector_registry.py     ← deferred: needed for plan-driven execution
+3. raw_source_record_builder.py  ← deferred: layer1_bundler.py covers minimal version
+4. collection_status_tracker.py  ← deferred: layer1_bundler.py covers minimal version
+5. freshness_classifier.py   ← deferred: embedded in layer1_bundler._MODULE_META
+```
+
+Layer 7 equivalent:
+
+```text
+context_ext_layer/layer7_bundler.py   ← DONE
+```
+
+It runs as the final step of `run_phase_c.py` and produces `raw_deep_dive_bundle.json` plus the three supporting files in `output/{date}/layer7/`.
 
 ## Should add soon
 

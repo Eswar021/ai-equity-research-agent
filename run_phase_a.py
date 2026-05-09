@@ -145,14 +145,30 @@ def run(skip_yt: bool = False) -> dict:
             save_all_channels, channels, days,
         )
 
+    # ── Layer 1 bundler — assemble Layer 2 contract files ────────────────────
+    print("\n── Layer 1 Bundle ───────────────────────────────────────")
+    from context_ext_layer.layer1_bundler import bundle as bundle_layer1
+    try:
+        b = bundle_layer1()
+        print(f"  ✓  raw_context_bundle.json  ({b['total_items']} items, "
+              f"{b['modules_ok']} modules ok, {b['modules_empty']} empty)")
+        print(f"  ✓  raw_source_records.json")
+        print(f"  ✓  collection_status.json")
+        print(f"  ✓  data_freshness_report.json")
+        print(f"  Output  →  output/layer1/")
+    except Exception as e:
+        print(f"  ✗  Layer 1 bundle failed: {e}")
+        b = {}
+
     # ── Summary ───────────────────────────────────────────────────────────────
     elapsed = (datetime.now(_IST) - start).seconds
     print(f"\n{'═'*60}")
     print(f"  Done in {elapsed}s — {len(all_files)} file(s) collected")
-    print(f"  Output  →  output/phaseA/")
+    print(f"  Phase A →  output/phaseA/")
+    print(f"  Layer 1 →  output/layer1/")
     print(f"{'═'*60}\n")
 
-    return {"files": all_files, "total": len(all_files)}
+    return {"files": all_files, "total": len(all_files), "layer1_bundle": b}
 
 
 if __name__ == "__main__":

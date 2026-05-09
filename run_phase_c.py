@@ -341,18 +341,35 @@ def run(tickers: list[str] | None = None, skip_screener: bool = False, max_worke
     }
     final_file.write_text(json.dumps(final_output, ensure_ascii=False, indent=2))
 
+    # ── Layer 7 bundler — assemble Layer 2 second-pass contract files ─────────
+    print(f"\n── Layer 7 Bundle ───────────────────────────────────────")
+    from context_ext_layer.layer7_bundler import bundle as bundle_layer7
+    try:
+        b7 = bundle_layer7(ticker_results=ticker_results)
+        print(f"  ✓  raw_deep_dive_bundle.json  ({b7['total_tickers']} tickers, "
+              f"{b7['modules_ok']} modules ok)")
+        print(f"  ✓  raw_source_records.json")
+        print(f"  ✓  collection_status.json")
+        print(f"  ✓  data_freshness_report.json")
+        print(f"  Output  →  output/layer7/")
+    except Exception as e:
+        print(f"  ✗  Layer 7 bundle failed: {e}")
+        b7 = {}
+
     # ── Summary ───────────────────────────────────────────────────────────────
     elapsed = (datetime.now(_IST) - start).seconds
     print(f"\n{'═'*60}")
     print(f"  Phase C complete — {elapsed}s")
     print(f"  Tickers processed : {len(run_tickers)}")
     print(f"  Final candidates  → {final_file.name}")
+    print(f"  Layer 7 bundle    →  output/layer7/")
     print(f"{'═'*60}\n")
 
     return {
         "candidates_final_file": str(final_file),
         "sector_map":            sector_map,
         "ticker_results":        ticker_results,
+        "layer7_bundle":         b7,
     }
 
 

@@ -63,5 +63,11 @@ ANALYST_LLM_LOGS_DIR         = PHASE_F_DIR / "llm_analyst_logs"
 # ── Phase G: Final Report ────────────────────────────────────────────────────
 PHASE_G_DIR                  = OUTPUT_DIR / "phaseG"
 
+# ── Layer 1 contract output (produced by layer1_bundler after Phase A) ───────
+LAYER1_DIR = OUTPUT_DIR / "layer1"
+
+# ── Layer 7 contract output (produced by layer7_bundler after Phase C) ───────
+LAYER7_DIR = OUTPUT_DIR / "layer7"
+
 # ── User portfolio (optional) ────────────────────────────────────────────────
 PORTFOLIO_FILE               = PROJECT_ROOT / "config" / "portfolio.json"
