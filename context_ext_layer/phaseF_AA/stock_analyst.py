@@ -17,7 +17,8 @@ Standalone test:
 """
 
 import json
-import time
+import threading
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
 from typing import Literal
@@ -33,7 +34,7 @@ from config.paths import (
 
 _IST = timezone(timedelta(hours=5, minutes=30))
 
-_LLM_DELAY = 0.4   # seconds between calls
+_log_lock = threading.Lock()   # guards JSONL log under concurrent writes
 
 
 # ── Pydantic output schema ────────────────────────────────────────────────────
@@ -161,8 +162,9 @@ def _log_call(ticker: str, view: dict | None, error: str | None = None) -> None:
         "view":   view,
         "error":  error,
     }
-    with _log_file.open("a", encoding="utf-8") as f:
-        f.write(json.dumps(record, ensure_ascii=False) + "\n")
+    with _log_lock:
+        with _log_file.open("a", encoding="utf-8") as f:
+            f.write(json.dumps(record, ensure_ascii=False) + "\n")
 
 
 # ── Card → prompt-input dict ──────────────────────────────────────────────────
@@ -309,9 +311,10 @@ def save_view(view: dict) -> str:
 # ── Top-level run ─────────────────────────────────────────────────────────────
 
 def run(
-    tickers:   list[str] | None = None,
-    provider:  str = "openai",
-    verbose:   bool = True,
+    tickers:     list[str] | None = None,
+    provider:    str  = "openai",
+    verbose:     bool = True,
+    max_workers: int  = 10,
 ) -> dict:
     """Analyze every evidence card (or a filtered subset) and save the views."""
     if not EVIDENCE_CARDS_DIR.exists():
@@ -336,37 +339,56 @@ def run(
     llm = make_llm(provider=provider, temperature=0.1)
     pipeline = _prompt | llm.with_structured_output(StockAnalystView)
     if verbose:
-        print(f"  Provider: {llm.__class__.__name__}  Model: {getattr(llm,'model_name','N/A')}\n")
+        print(f"  Provider: {llm.__class__.__name__}  Model: {getattr(llm,'model_name','N/A')}")
+        print(f"  Running {max_workers} concurrent workers …\n")
 
-    views    = []
-    failed   = 0
-    rec_counts = {"invest": 0, "watch": 0, "avoid": 0}
+    total = len(card_files)
+    results_by_idx: list[dict | None] = [None] * total
+    completed = 0
 
-    for i, card_file in enumerate(card_files, 1):
+    def _worker(card_file: Path) -> dict:
         try:
             card = json.loads(card_file.read_text())
         except Exception as e:
-            if verbose: print(f"  ✗  {card_file.name}: {e}")
+            return {"_error": str(e), "ticker": card_file.stem}
+        return analyze_card(card, pipeline)
+
+    with ThreadPoolExecutor(max_workers=max_workers) as executor:
+        future_to_idx = {
+            executor.submit(_worker, cf): i
+            for i, cf in enumerate(card_files)
+        }
+        for future in as_completed(future_to_idx):
+            i    = future_to_idx[future]
+            try:
+                view = future.result()
+            except Exception as e:
+                view = {"_error": str(e), "ticker": card_files[i].stem}
+            results_by_idx[i] = view
+            completed += 1
+            if verbose:
+                if "_error" in view:
+                    print(f"  {completed:3}/{total}  {view.get('ticker','?'):20s}  ✗  {view['_error']}")
+                else:
+                    print(f"  {completed:3}/{total}  {view['ticker']:20s}  "
+                          f"{view['recommendation']:6s}  {view['conviction']:6s}  "
+                          f"price_action={view['price_action']:13s}  "
+                          f"thesis={view['thesis'][:50]}")
+
+    # Save in original order; count results
+    views: list[dict] = []
+    failed = 0
+    rec_counts = {"invest": 0, "watch": 0, "avoid": 0}
+
+    for view in results_by_idx:
+        if view is None:
             continue
-
-        view = analyze_card(card, pipeline)
-        time.sleep(_LLM_DELAY)
-
         if "_error" in view:
             failed += 1
-            if verbose:
-                print(f"  {i:3}/{len(card_files)}  {card.get('ticker','?'):20s}  ✗  {view['_error']}")
             continue
-
         save_view(view)
         rec_counts[view["recommendation"]] = rec_counts.get(view["recommendation"], 0) + 1
         views.append(view)
-
-        if verbose:
-            print(f"  {i:3}/{len(card_files)}  {view['ticker']:20s}  "
-                  f"{view['recommendation']:6s}  {view['conviction']:6s}  "
-                  f"price_action={view['price_action']:13s}  "
-                  f"thesis={view['thesis'][:50]}")
 
     if verbose:
         print(f"\n  Analyst views saved → {ANALYST_OUTPUT_DIR}")

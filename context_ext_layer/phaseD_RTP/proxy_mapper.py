@@ -17,7 +17,8 @@ Standalone test:
 """
 
 import json
-import time
+import threading
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
 from typing import Literal
@@ -34,8 +35,8 @@ from context_ext_layer.utils.ticker_extractor import lookup_ticker
 
 _IST = timezone(timedelta(hours=5, minutes=30))
 
-_LLM_DELAY        = 0.4    # seconds between LLM calls
 _FUZZY_THRESHOLD  = 82     # same as news_signal_extractor — avoids false matches
+_log_lock = threading.Lock()   # guards JSONL log under concurrent writes
 _PROXY_SCORE_DAMP = 0.6    # proxy-mapped tickers get theme_relevance × this as score
 _MAX_PROXIES_PER_THEME = 5
 
@@ -111,8 +112,9 @@ def _log_call(theme: dict, proxies: list, error: str | None = None) -> None:
         "proxies":        proxies,
         "error":          error,
     }
-    with _log_file.open("a", encoding="utf-8") as f:
-        f.write(json.dumps(record, ensure_ascii=False) + "\n")
+    with _log_lock:
+        with _log_file.open("a", encoding="utf-8") as f:
+            f.write(json.dumps(record, ensure_ascii=False) + "\n")
 
 
 # ── Helpers ───────────────────────────────────────────────────────────────────
@@ -186,8 +188,17 @@ def map_theme_to_proxies(theme: dict, pipeline) -> list[dict]:
     return resolved
 
 
-def map_all_themes(themes: list[dict], llm=None, verbose: bool = True) -> list[dict]:
-    """Run proxy mapping on every thematic target. Returns flat list of mappings."""
+def map_all_themes(
+    themes:      list[dict],
+    llm=None,
+    verbose:     bool = True,
+    max_workers: int  = 15,
+) -> list[dict]:
+    """
+    Run proxy mapping on every thematic target. Returns flat list of mappings.
+    max_workers: concurrent LLM calls (Phase D typically has 30-50 themes,
+    so 15 workers finishes in ~3-5s vs ~30s sequential on gpt-5-nano).
+    """
     if not themes:
         return []
 
@@ -198,22 +209,38 @@ def map_all_themes(themes: list[dict], llm=None, verbose: bool = True) -> list[d
     log_path = _init_log("proxy")
     if verbose:
         print(f"  Proxy LLM log → {log_path}")
+        print(f"  Running {max_workers} concurrent workers on {len(themes)} themes …\n")
 
-    pipeline = _prompt | llm.with_structured_output(ProxyMapping)
+    pipeline  = _prompt | llm.with_structured_output(ProxyMapping)
+    total     = len(themes)
+    results_by_idx: list[list[dict]] = [[] for _ in range(total)]
+    completed = 0
 
+    with ThreadPoolExecutor(max_workers=max_workers) as executor:
+        future_to_idx = {
+            executor.submit(map_theme_to_proxies, theme, pipeline): i
+            for i, theme in enumerate(themes)
+        }
+        for future in as_completed(future_to_idx):
+            i     = future_to_idx[future]
+            theme = themes[i]
+            try:
+                proxies = future.result()
+            except Exception as e:
+                proxies = []
+                if verbose:
+                    print(f"  ✗  {theme.get('entity_name','?')[:50]}: {e}")
+            results_by_idx[i] = proxies
+            completed += 1
+            if verbose:
+                tag    = f"+{len(proxies)} proxies" if proxies else "  none  "
+                entity = theme.get("entity_name", "?")[:50]
+                print(f"  {completed:3}/{total}  [{theme.get('entity_type','?'):8s}]  {tag}  {entity}")
+
+    # Flatten in original theme order for deterministic output
     mappings: list[dict] = []
-    for i, theme in enumerate(themes):
-        proxies = map_theme_to_proxies(theme, pipeline)
-        time.sleep(_LLM_DELAY)
-
-        if verbose:
-            tag = f"+{len(proxies)} proxies" if proxies else "  none  "
-            entity = theme.get("entity_name", "?")[:50]
-            print(f"  {i+1:3}/{len(themes)}  [{theme.get('entity_type','?'):8s}]  {tag}  {entity}")
-
-        for p in proxies:
-            mappings.append(p)
-
+    for proxies in results_by_idx:
+        mappings.extend(proxies)
     return mappings
 
 
@@ -320,7 +347,7 @@ def save_proxy_mappings(mappings: list[dict]) -> str:
 
 # ── Top-level run ─────────────────────────────────────────────────────────────
 
-def run(provider: str = "openai", verbose: bool = True) -> dict:
+def run(provider: str = "openai", verbose: bool = True, max_workers: int = 15) -> dict:
     """Full proxy mapping run: load latest candidates → map themes → merge → save."""
     cand_file = _latest_candidates_file()
     if not cand_file:
@@ -343,7 +370,7 @@ def run(provider: str = "openai", verbose: bool = True) -> dict:
     from llm.llm_client import make_llm
     llm = make_llm(provider=provider, temperature=0.1)
 
-    mappings = map_all_themes(themes, llm=llm, verbose=verbose)
+    mappings = map_all_themes(themes, llm=llm, verbose=verbose, max_workers=max_workers)
 
     mappings_file = save_proxy_mappings(mappings)
     if verbose:

@@ -173,6 +173,45 @@ def _build_portfolio_review(views_by_ticker: dict) -> str:
     return "\n".join(lines)
 
 
+def _build_cio_section(cio: dict) -> str:
+    if not cio or "top_picks" not in cio:
+        return ""
+
+    picks = cio.get("top_picks", [])
+    lines = ["## Today's Action Plan _(CIO Synthesis)_\n"]
+
+    lines.append(f"_{cio.get('daily_narrative', '')}_\n")
+
+    if picks:
+        lines.append("### Top Picks\n")
+        lines.append("| # | Ticker | Type | Why |")
+        lines.append("|---|--------|------|-----|")
+        for p in picks:
+            tag = "**BUY**" if p.get("recommendation") == "invest" else "_Watch_"
+            lines.append(f"| {p['rank']} | **{p['ticker']}** | {tag} | {p.get('why_selected','')} |")
+        lines.append("")
+
+    warnings = cio.get("sector_warnings", [])
+    if warnings:
+        lines.append("**Sector / concentration warnings:**")
+        for w in warnings:
+            lines.append(f"- ⚠ {w}")
+        lines.append("")
+
+    actions = cio.get("portfolio_actions", [])
+    if actions:
+        lines.append("**Portfolio actions:**")
+        for a in actions:
+            lines.append(f"- {a}")
+        lines.append("")
+
+    note = cio.get("macro_coherence_note", "")
+    if note:
+        lines.append(f"**Macro coherence:** {note}\n")
+
+    return "\n".join(lines)
+
+
 def _build_themes_section(candidates_data: dict) -> str:
     themes = candidates_data.get("thematic_targets", []) or []
     if not themes:
@@ -230,6 +269,10 @@ def synthesize() -> dict:
     cand_file = _latest(CANDIDATES_OUTPUT_DIR, "candidates_*.json")
     cand_data = _load_json(cand_file) if cand_file else {}
 
+    today_short = datetime.now(_IST).strftime("%Y-%m-%d")
+    cio_file    = PHASE_G_DIR / f"cio_synthesis_{today_short}.json"
+    cio_data    = _load_json(cio_file) if cio_file.exists() else {}
+
     # Group by recommendation
     invests = sorted([v for v in views if v["recommendation"] == "invest"],
                      key=_conviction_score, reverse=True)
@@ -251,12 +294,19 @@ def synthesize() -> dict:
         "---\n",
         _build_regime_section(regime),
         "---\n",
+    ]
+
+    cio_md = _build_cio_section(cio_data)
+    if cio_md:
+        md_parts += [cio_md, "---\n"]
+
+    md_parts += [
         _build_table(invests, "Top Buys"),
         "---\n",
         _build_table(avoids, "Top Avoids"),
         "---\n",
         _build_table(watches[:10], "Watchlist Movers"),
-    ]
+    ]  # end md_parts
 
     portfolio_md = _build_portfolio_review(views_by_ticker)
     if portfolio_md:
@@ -271,7 +321,6 @@ def synthesize() -> dict:
     md_text = "\n".join(md_parts)
 
     PHASE_G_DIR.mkdir(parents=True, exist_ok=True)
-    today_short = datetime.now(_IST).strftime("%Y-%m-%d")
     md_file   = PHASE_G_DIR / f"report_{today_short}.md"
     json_file = PHASE_G_DIR / f"report_{today_short}.json"
 

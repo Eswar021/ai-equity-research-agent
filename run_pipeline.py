@@ -97,7 +97,7 @@ def run(
     if _should_run("D", skip_to, explicit_skips):
         _banner("Phase D — Proxy Mapper (themes → listed proxies)", "─")
         from context_ext_layer.phaseD_RTP.proxy_mapper import run as run_d
-        results["phase_d"] = run_d(provider=provider, verbose=True)
+        results["phase_d"] = run_d(provider=provider, verbose=True, max_workers=max_workers)
     else:
         print("\n  ─  Phase D skipped")
 
@@ -106,7 +106,7 @@ def run(
         _banner("Phase C — Company Deep Dive", "─")
         from run_phase_c import run as run_c
         ticker_list = [single_ticker] if single_ticker else None
-        results["phase_c"] = run_c(tickers=ticker_list, skip_screener=skip_screener)
+        results["phase_c"] = run_c(tickers=ticker_list, skip_screener=skip_screener, max_workers=max_workers)
     else:
         print("\n  ─  Phase C skipped")
 
@@ -124,12 +124,16 @@ def run(
         _banner("Phase F — Stock Analyst", "─")
         from context_ext_layer.phaseF_AA.stock_analyst import run as run_f
         ticker_list = [single_ticker] if single_ticker else None
-        results["phase_f"] = run_f(tickers=ticker_list, provider=provider, verbose=True)
+        results["phase_f"] = run_f(tickers=ticker_list, provider=provider, verbose=True, max_workers=max_workers)
     else:
         print("\n  ─  Phase F skipped")
 
-    # ── Phase G: Final Report (Layer 7) ───────────────────────────────────────
+    # ── Phase G: CIO Synthesis + Final Report (Layer 7) ──────────────────────
     if _should_run("G", skip_to, explicit_skips):
+        _banner("Phase G — CIO Synthesis", "─")
+        from context_ext_layer.phaseG_FR.cio_synthesis import run as run_cio
+        results["phase_g_cio"] = run_cio(provider=provider, verbose=True)
+
         _banner("Phase G — Report Synthesizer", "─")
         from context_ext_layer.phaseG_FR.report_synthesizer import synthesize
         results["phase_g"] = synthesize()

@@ -23,6 +23,8 @@ Usage:
 import json
 import sys
 import time
+import threading
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
 
@@ -46,8 +48,9 @@ _SECTOR_ALIASES: dict[str, list[str]] = {
 
 _SECTOR_BONUS   =  4.0
 _SECTOR_PENALTY = -3.0
-_MODULE_DELAY   =  1.5   # seconds between module calls for one ticker
-_TICKER_DELAY   =  2.0   # extra pause between tickers
+_MODULE_DELAY   =  1.5   # seconds between module calls for one ticker (kept in parallel mode)
+
+_print_lock = threading.Lock()   # serialises per-ticker output blocks
 
 
 # ── Helpers ───────────────────────────────────────────────────────────────────
@@ -61,6 +64,16 @@ def _run(label: str, fn, *args, **kwargs):
     except Exception as e:
         print(f"    ✗  {label}: {e}")
         return None
+
+
+def _run_q(label: str, fn, *args, **kwargs) -> tuple:
+    """Quiet version — returns (result, status_line) without printing."""
+    try:
+        result = fn(*args, **kwargs)
+        name   = Path(result).name if isinstance(result, str) else "ok"
+        return result, f"    ✓  {label}: {name}"
+    except Exception as e:
+        return None, f"    ✗  {label}: {e}"
 
 
 def _screener_url(ticker: str) -> str:
@@ -125,7 +138,7 @@ def _apply_sector_scores(
 
 # ── Main ──────────────────────────────────────────────────────────────────────
 
-def run(tickers: list[str] | None = None, skip_screener: bool = False) -> dict:
+def run(tickers: list[str] | None = None, skip_screener: bool = False, max_workers: int = 3) -> dict:
     start = datetime.now(_IST)
     print(f"\n{'═'*60}")
     print(f"  Phase C — Company Deep Dive")
@@ -168,82 +181,162 @@ def run(tickers: list[str] | None = None, skip_screener: bool = False) -> dict:
     from context_ext_layer.phaseC_CDD.filing_docs       import save_filing_docs
     from context_ext_layer.phaseC_CDD.corporate_actions import save_corporate_actions
 
-    # ── Per-ticker loop ───────────────────────────────────────────────────────
+    total = len(run_tickers)
+    print(f"  Workers          : {max_workers} concurrent tickers")
+
+    # ── Per-ticker worker (closure over imports + skip_screener) ─────────────
+    def _process_ticker(ticker: str, idx: int) -> tuple[str, str, dict, list[str]]:
+        """
+        Runs all 8 modules for one ticker.
+        Returns (ticker, raw_yf_sector, module_results, output_lines).
+        All module delays preserved — they protect individual API sources.
+        Output is buffered and flushed as a clean block to avoid interleaving.
+        """
+        lines: list[str] = []
+        pad = "─" * max(0, 44 - len(ticker))
+        lines.append(f"\n── {idx}/{total}  {ticker}  {pad}")
+
+        res    = {}
+        sector = ""
+
+        result, msg = _run_q("Market data", save_stock, ticker)
+        res["market_data"] = result
+        lines.append(msg)
+        if result:
+            md = _load_json(result)
+            sector = md.get("sector", "")
+            lines.append(f"       sector: {sector or '—'}"
+                         f"  price: {md.get('price', '?')}"
+                         f"  mktcap: {md.get('market_cap', '?')}")
+        time.sleep(_MODULE_DELAY)
+
+        result, msg = _run_q("Price history (1y)", save_history, ticker, "1y")
+        res["price_history"] = result
+        lines.append(msg)
+        time.sleep(_MODULE_DELAY)
+
+        if not skip_screener:
+            result, msg = _run_q("Screener.in", save_company, _screener_url(ticker))
+            res["screener_in"] = result
+            lines.append(msg)
+            time.sleep(_MODULE_DELAY)
+
+        result, msg = _run_q("Peer comparison", save_peer_comparison, ticker)
+        res["peer_comparison"] = result
+        lines.append(msg)
+        time.sleep(_MODULE_DELAY)
+
+        result, msg = _run_q("Analyst estimates", save_analyst_estimates, ticker)
+        res["analyst_estimates"] = result
+        lines.append(msg)
+        time.sleep(_MODULE_DELAY)
+
+        result, msg = _run_q("Exchange filings", save_announcements, ticker, 50, True)
+        res["exchange_filings"] = result
+        lines.append(msg)
+        time.sleep(_MODULE_DELAY)
+
+        result, msg = _run_q("Filing docs", save_filing_docs, ticker, 4, 2)
+        res["filing_docs"] = result
+        lines.append(msg)
+        time.sleep(_MODULE_DELAY)
+
+        result, msg = _run_q("Corporate actions", save_corporate_actions, ticker)
+        res["corporate_actions"] = result
+        lines.append(msg)
+
+        succeeded = sum(1 for v in res.values() if v is not None)
+        lines.append(f"    → {succeeded}/{len(res)} modules OK")
+        return ticker, sector, res, lines
+
+    # ── Parallel ticker loop ──────────────────────────────────────────────────
     sector_map:     dict[str, str]  = {}
     ticker_results: dict[str, dict] = {}
 
-    for i, ticker in enumerate(run_tickers, 1):
-        pad = "─" * max(0, 44 - len(ticker))
-        print(f"\n── {i}/{len(run_tickers)}  {ticker}  {pad}")
+    with ThreadPoolExecutor(max_workers=max_workers) as executor:
+        future_to_meta = {
+            executor.submit(_process_ticker, ticker, i): ticker
+            for i, ticker in enumerate(run_tickers, 1)
+        }
+        for future in as_completed(future_to_meta):
+            try:
+                ticker, sector, res, lines = future.result()
+            except Exception as e:
+                ticker = future_to_meta[future]
+                sector, res, lines = "", {}, [f"\n── ✗  {ticker}: {e}"]
 
-        res = {}
-
-        # C1: market data — run first so we get the sector
-        res["market_data"] = _run("Market data", save_stock, ticker)
-        if res["market_data"]:
-            md = _load_json(res["market_data"])
-            sector_map[ticker] = md.get("sector", "")
-            print(f"       sector: {sector_map[ticker] or '—'}"
-                  f"  price: {md.get('price', '?')}"
-                  f"  mktcap: {md.get('market_cap', '?')}")
-        time.sleep(_MODULE_DELAY)
-
-        # C2: price history (1 year)
-        res["price_history"] = _run("Price history (1y)", save_history, ticker, "1y")
-        time.sleep(_MODULE_DELAY)
-
-        # C3: screener.in (optional — slowest, scrapes website)
-        if not skip_screener:
-            res["screener_in"] = _run("Screener.in", save_company, _screener_url(ticker))
-            time.sleep(_MODULE_DELAY)
-
-        # C4: peer comparison
-        res["peer_comparison"] = _run("Peer comparison", save_peer_comparison, ticker)
-        time.sleep(_MODULE_DELAY)
-
-        # C5: analyst estimates
-        res["analyst_estimates"] = _run("Analyst estimates", save_analyst_estimates, ticker)
-        time.sleep(_MODULE_DELAY)
-
-        # C6: NSE announcements (material events only)
-        res["exchange_filings"] = _run("Exchange filings", save_announcements, ticker, 50, True)
-        time.sleep(_MODULE_DELAY)
-
-        # C7: concall transcripts + investor presentations
-        res["filing_docs"] = _run("Filing docs", save_filing_docs, ticker, 4, 2)
-        time.sleep(_MODULE_DELAY)
-
-        # C8: corporate actions (dividends, splits, buybacks)
-        res["corporate_actions"] = _run("Corporate actions", save_corporate_actions, ticker)
-
-        ticker_results[ticker] = res
-        succeeded = sum(1 for v in res.values() if v is not None)
-        print(f"    → {succeeded}/{len(res)} modules OK")
-        time.sleep(_TICKER_DELAY)
+            sector_map[ticker]     = sector
+            ticker_results[ticker] = res
+            with _print_lock:
+                print("\n".join(lines))
 
     # ── Sector re-scoring ─────────────────────────────────────────────────────
     print(f"\n── Sector re-scoring ────────────────────────────────────")
-    print(f"  {'Rank':4}  {'Ticker':20}  {'Score':7}  {'Adj':5}  {'Final':7}  Sector")
-    print(f"  {'─'*65}")
+    print(f"  {'Rank':4}  {'Ticker':20}  {'Score':7}  {'Adj':5}  {'Final':7}  Sector  →  Mapped Key")
+    print(f"  {'─'*75}")
 
     candidates = _apply_sector_scores(candidates, regime, sector_map)
 
+    favored_set = set(regime.get("sectors", {}).get("favored", []))
+    avoid_set   = set(regime.get("sectors", {}).get("avoid",   []))
+
     for c in candidates:
-        adj_s   = f"{c['sector_adj']:+.0f}" if c["sector_adj"] != 0 else "  — "
+        adj_s      = f"{c['sector_adj']:+.0f}" if c["sector_adj"] != 0 else "  — "
+        mapped_key = c.get("sector_key") or "—"
+        flag       = " ★" if c.get("sector_key") in favored_set else \
+                     " ✗" if c.get("sector_key") in avoid_set   else ""
         print(f"  {c['rank']:4}  {c['ticker']:20}  {c.get('score',0):+7.1f}  "
-              f"{adj_s:5}  {c['final_score']:+7.1f}  {c.get('sector','?')}")
+              f"{adj_s:5}  {c['final_score']:+7.1f}  "
+              f"{c.get('sector','?')[:22]:22s}  →  {mapped_key}{flag}")
+
+    # ── Sector mapping log ────────────────────────────────────────────────────
+    today    = datetime.now(_IST).strftime("%Y-%m-%d")
+    unmapped = []
+    log_rows = []
+    for c in candidates:
+        raw    = sector_map.get(c["ticker"], "") or ""
+        mapped = c.get("sector_key")
+        adj    = c.get("sector_adj", 0)
+        row = {
+            "ticker":         c["ticker"],
+            "yf_sector_raw":  raw or None,
+            "mapped_key":     mapped,
+            "in_favored":     mapped in favored_set if mapped else False,
+            "in_avoid":       mapped in avoid_set   if mapped else False,
+            "adj_applied":    adj,
+            "score_before":   round(c["final_score"] - adj, 2),
+            "final_score":    c["final_score"],
+        }
+        if not mapped and raw:
+            row["note"] = f"'{raw}' has no alias entry — add to _SECTOR_ALIASES if relevant"
+            unmapped.append(raw)
+        elif not raw:
+            row["note"] = "market_data returned no sector"
+        log_rows.append(row)
+
+    sector_log = {
+        "generated_at":   datetime.now(_IST).isoformat(),
+        "regime_favored": list(favored_set),
+        "regime_avoid":   list(avoid_set),
+        "unmapped_raw_sectors": sorted(set(unmapped)),
+        "mappings":       log_rows,
+    }
+    log_file = CANDIDATES_OUTPUT_DIR / f"sector_map_{today}.json"
+    log_file.write_text(json.dumps(sector_log, ensure_ascii=False, indent=2))
+    print(f"\n  Sector map log  → {log_file.name}")
+    if unmapped:
+        print(f"  ⚠  Unmapped sectors (no adj applied): {sorted(set(unmapped))}")
 
     # ── Save final candidates ─────────────────────────────────────────────────
     CANDIDATES_OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
-    today      = datetime.now(_IST).strftime("%Y-%m-%d")
     final_file = CANDIDATES_OUTPUT_DIR / f"candidates_{today}_final.json"
 
     final_output = {
         **cand_data,
         "phase_c_run_at":       datetime.now(_IST).isoformat(),
         "sector_map":           sector_map,
-        "listed_targets":       candidates,        # canonical key
-        "selected_for_phase_c": candidates,        # backward-compat alias
+        "listed_targets":       candidates,
+        "selected_for_phase_c": candidates,
         "selected_count":       len(candidates),
     }
     final_file.write_text(json.dumps(final_output, ensure_ascii=False, indent=2))
@@ -266,11 +359,16 @@ def run(tickers: list[str] | None = None, skip_screener: bool = False) -> dict:
 if __name__ == "__main__":
     skip_screener = "--skip-screener" in sys.argv
 
-    single = None
-    for arg in sys.argv[1:]:
+    single      = None
+    max_workers = 3
+    for i, arg in enumerate(sys.argv[1:], 1):
         if arg.startswith("--ticker="):
             single = [arg.split("=", 1)[1]]
-        elif arg == "--ticker" and sys.argv.index(arg) + 1 < len(sys.argv):
-            single = [sys.argv[sys.argv.index(arg) + 1]]
+        elif arg == "--ticker" and i + 1 < len(sys.argv):
+            single = [sys.argv[i + 1]]
+        elif arg.startswith("--workers="):
+            max_workers = int(arg.split("=", 1)[1])
+        elif arg == "--workers" and i + 1 < len(sys.argv):
+            max_workers = int(sys.argv[i + 1])
 
-    run(tickers=single, skip_screener=skip_screener)
+    run(tickers=single, skip_screener=skip_screener, max_workers=max_workers)
