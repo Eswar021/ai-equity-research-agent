@@ -63,5 +63,40 @@ ANALYST_LLM_LOGS_DIR         = PHASE_F_DIR / "llm_analyst_logs"
 # ── Phase G: Final Report ────────────────────────────────────────────────────
 PHASE_G_DIR                  = OUTPUT_DIR / "phaseG"
 
+<<<<<<< Updated upstream
+=======
+# ── Layer 1 contract output (produced by layer1_bundler after Phase A) ───────
+LAYER1_DIR = OUTPUT_DIR / "layer1"
+
+# ── Layer 2 contract output (produced by layer2_runner) ──────────────────────
+LAYER2_DIR = OUTPUT_DIR / "layer2"
+
+# ── Layer 7 contract output (produced by layer7_bundler after Phase C) ───────
+LAYER7_DIR = OUTPUT_DIR / "layer7"
+
+# ── Layer 3 contract output (produced by layer3_runner) ──────────────────────
+LAYER3_DIR              = OUTPUT_DIR / "layer3"
+LAYER3_LLM_LOGS_DIR     = LAYER3_DIR / "llm_extraction_logs"
+LAYER3_PROMPT_LOGS_DIR  = LAYER3_DIR / "prompt_logs"
+
+# ── Layer 4 contract output (produced by layer4_runner) ──────────────────────
+LAYER4_DIR                   = OUTPUT_DIR / "layer4"
+
+# ── Layer 5 contract output (produced by layer5_runner) ──────────────────────
+LAYER5_DIR                   = OUTPUT_DIR / "layer5"
+
+# ── Persistent memory store (cross-run, in db/) ───────────────────────────────
+DB_MEMORY_DIR                    = DB_DIR / "memory"
+DB_WORKING_MEMORY_DIR            = DB_MEMORY_DIR / "working_memory"
+DB_SHORT_TERM_MEMORY_FILE        = DB_MEMORY_DIR / "short_term_market_memory.jsonl"
+DB_WATCH_MEMORY_FILE             = DB_MEMORY_DIR / "watch_memory.jsonl"
+DB_LONG_TERM_MEMORY_FILE         = DB_MEMORY_DIR / "long_term_investment_memory.jsonl"
+DB_THESIS_MEMORY_FILE            = DB_MEMORY_DIR / "thesis_memory.jsonl"
+DB_PORTFOLIO_MEMORY_FILE         = DB_MEMORY_DIR / "portfolio_memory.jsonl"
+DB_ENTITY_MEMORY_INDEX_FILE      = DB_MEMORY_DIR / "entity_memory_index.json"
+DB_THEME_MEMORY_INDEX_FILE       = DB_MEMORY_DIR / "theme_memory_index.json"
+DB_MEMORY_AUDIT_INDEX_FILE       = DB_MEMORY_DIR / "memory_audit_index.jsonl"
+
+>>>>>>> Stashed changes
 # ── User portfolio (optional) ────────────────────────────────────────────────
 PORTFOLIO_FILE               = PROJECT_ROOT / "config" / "portfolio.json"

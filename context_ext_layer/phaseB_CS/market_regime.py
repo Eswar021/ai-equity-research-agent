@@ -366,4 +366,182 @@ if __name__ == "__main__":
         print(f"    {name:25s}  PE={data['pe']:6.1f}  [{data['pe_signal']}]  1Y={data['change_1y']}%")
 
     saved = save_regime()
+
+
+# ── Layer 5 integration ───────────────────────────────────────────────────────
+
+def build_layer5_market_view(market_signals: list[dict],
+                              memory_context: dict,
+                              run_id: str = "") -> dict:
+    """
+    Build the Layer 5 market_view.json output.
+
+    Calls compute_regime() for the base rule-based regime, then enriches
+    with Layer 3 market_signal_cards and Layer 4 short-term memory context.
+
+    Returns a market_view dict matching the Layer 5 schema.
+    """
+    from datetime import datetime, timezone, timedelta
+    _IST_local = timezone(timedelta(hours=5, minutes=30))
+    today      = datetime.now(_IST_local).strftime("%Y%m%d")
+
+    # Base regime from phaseA raw data
+    regime = compute_regime()
+    posture = regime.get("market_posture", "selective_research")
+    signals = regime.get("signals", {})
+    raw     = regime.get("raw_data", {})
+
+    # Enrich with L3 institutional flow signals
+    fii_l3 = _extract_fii_from_signals(market_signals)
+    if fii_l3 is not None and raw.get("fii_net_cr") is None:
+        raw["fii_net_cr"] = fii_l3
+
+    # Enrich with L4 memory: recurring short-term themes
+    short_term_mem = memory_context.get("relevant_short_term_memory") or []
+    recurring_themes = [r.get("summary", "") for r in short_term_mem if r.get("occurrence_count", 1) >= 3]
+
+    # Derive Layer 5 schema fields from regime
+    regime_label   = _posture_to_regime(posture)
+    risk_level     = _posture_to_risk(posture)
+    trend_state    = _signals_to_trend(signals)
+    val_state      = _pe_to_valuation(signals.get("nifty_pe", "unknown"))
+    flow_state     = _fii_to_flow(signals.get("fii", "unknown"), signals.get("breadth", "unknown"))
+    vol_state      = _vix_to_vol(signals.get("vix", "unknown"))
+    recommended    = posture
+
+    reasoning = _build_reasoning(signals, raw, recurring_themes)
+    data_gaps  = _identify_gaps(raw)
+
+    supporting_refs: list[dict] = []
+    for sig in (market_signals or [])[:5]:
+        for r in (sig.get("source_refs") or [])[:2]:
+            supporting_refs.append(r)
+
+    return {
+        "market_view_id":           f"MKT_VIEW_{today}_INDIA",
+        "research_run_id":          run_id,
+        "market":                   "india",
+        "regime":                   regime_label,
+        "risk_level":               risk_level,
+        "trend_state":              trend_state,
+        "valuation_state":          val_state,
+        "liquidity_flow_state":     flow_state,
+        "volatility_state":         vol_state,
+        "recommended_posture":      recommended,
+        "not_final_recommendation": True,
+        "reasoning_summary":        reasoning,
+        "supporting_refs":          supporting_refs[:10],
+        "data_gaps":                data_gaps,
+        "confidence":               _confidence(signals),
+        "raw_data":                 raw,
+        "sectors":                  regime.get("sectors", {}),
+        "recurring_memory_themes":  recurring_themes[:5],
+    }
+
+
+def _extract_fii_from_signals(signals: list[dict]) -> float | None:
+    for sig in signals:
+        if sig.get("metric_name") == "fii_net_flow" and sig.get("metric_value") is not None:
+            try:
+                return float(sig["metric_value"])
+            except (TypeError, ValueError):
+                pass
+    return None
+
+
+def _posture_to_regime(posture: str) -> str:
+    return {
+        "aggressive_research": "risk_on",
+        "selective_research":  "neutral_to_cautious",
+        "cautious_watchlist":  "risk_off",
+        "defensive":           "risk_off",
+        "wait":                "uncertain",
+    }.get(posture, "neutral")
+
+
+def _posture_to_risk(posture: str) -> str:
+    return {
+        "aggressive_research": "low",
+        "selective_research":  "medium",
+        "cautious_watchlist":  "high",
+        "defensive":           "high",
+        "wait":                "uncertain",
+    }.get(posture, "medium")
+
+
+def _signals_to_trend(signals: dict) -> str:
+    breadth = signals.get("breadth", "unknown")
+    if breadth == "bullish":    return "bullish"
+    if breadth == "bearish":    return "bearish"
+    if breadth == "neutral":    return "sideways"
+    return "uncertain"
+
+
+def _pe_to_valuation(pe_signal: str) -> str:
+    return {"expensive": "expensive", "fair": "fair", "cheap": "cheap"}.get(pe_signal, "uncertain")
+
+
+def _fii_to_flow(fii_sig: str, breadth_sig: str) -> str:
+    if fii_sig in ("buying",):             return "positive"
+    if fii_sig in ("heavy_selling",):      return "negative"
+    if fii_sig in ("selling",):
+        return "mixed" if breadth_sig == "bullish" else "negative"
+    return "mixed"
+
+
+def _vix_to_vol(vix_sig: str) -> str:
+    return {"fear": "high", "elevated": "elevated", "moderate": "moderate", "calm": "low"}.get(
+        vix_sig, "uncertain"
+    )
+
+
+def _build_reasoning(signals: dict, raw: dict, recurring_themes: list[str]) -> list[str]:
+    r: list[str] = []
+    fii  = signals.get("fii", "unknown")
+    vix  = signals.get("vix", "unknown")
+    br   = signals.get("breadth", "unknown")
+    pe   = signals.get("nifty_pe", "unknown")
+    inr  = signals.get("usd_inr", "unknown")
+
+    if fii == "buying":
+        r.append("FII flows are positive — supportive for market liquidity.")
+    elif fii in ("selling", "heavy_selling"):
+        fii_val = raw.get("fii_net_cr")
+        r.append(f"FII net selling ({fii_val} ₹cr) — liquidity headwind.")
+    if vix == "fear":
+        r.append("India VIX elevated — heightened market fear; caution warranted.")
+    elif vix == "calm":
+        r.append("India VIX low — market complacency; volatility could pick up.")
+    if br == "bullish":
+        r.append("Market breadth is strong — broad participation in the rally.")
+    elif br == "bearish":
+        r.append("Weak breadth — rally is narrow or broad selling underway.")
+    if pe in ("expensive",):
+        r.append("Nifty valuations appear stretched; selective stock picking preferred.")
+    if inr in ("weak", "very_weak"):
+        r.append("Rupee weakness adds to imported inflation and FII exit pressure.")
+    for t in recurring_themes[:2]:
+        r.append(f"Memory: recurring short-term signal — {t}")
+    if not r:
+        r.append("Mixed signals; selective research posture recommended.")
+    return r
+
+
+def _identify_gaps(raw: dict) -> list[str]:
+    gaps: list[str] = []
+    if raw.get("ad_ratio") is None:
+        gaps.append("Market breadth (A/D ratio) not available")
+    if raw.get("nifty_pe") is None:
+        gaps.append("Nifty valuation (PE/PB) not available")
+    if raw.get("fii_net_cr") is None:
+        gaps.append("FII net flow not available")
+    if raw.get("vix_india") is None:
+        gaps.append("India VIX not available")
+    return gaps
+
+
+def _confidence(signals: dict) -> float:
+    known = sum(1 for v in signals.values() if v != "unknown")
+    total = len(signals) or 1
+    return round(0.4 + 0.5 * (known / total), 2)
     print(f"\n  Saved → {saved}")
