@@ -66,6 +66,9 @@ PHASE_G_DIR                  = OUTPUT_DIR / "phaseG"
 # ── Layer 1 contract output (produced by layer1_bundler after Phase A) ───────
 LAYER1_DIR = OUTPUT_DIR / "layer1"
 
+# ── Layer 2 contract output (produced by layer2_runner) ──────────────────────
+LAYER2_DIR = OUTPUT_DIR / "layer2"
+
 # ── Layer 7 contract output (produced by layer7_bundler after Phase C) ───────
 LAYER7_DIR = OUTPUT_DIR / "layer7"
 
