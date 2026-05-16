@@ -63,16 +63,11 @@ ANALYST_LLM_LOGS_DIR         = PHASE_F_DIR / "llm_analyst_logs"
 # ── Phase G: Final Report ────────────────────────────────────────────────────
 PHASE_G_DIR                  = OUTPUT_DIR / "phaseG"
 
-<<<<<<< Updated upstream
-=======
 # ── Layer 1 contract output (produced by layer1_bundler after Phase A) ───────
 LAYER1_DIR = OUTPUT_DIR / "layer1"
 
 # ── Layer 2 contract output (produced by layer2_runner) ──────────────────────
 LAYER2_DIR = OUTPUT_DIR / "layer2"
-
-# ── Layer 7 contract output (produced by layer7_bundler after Phase C) ───────
-LAYER7_DIR = OUTPUT_DIR / "layer7"
 
 # ── Layer 3 contract output (produced by layer3_runner) ──────────────────────
 LAYER3_DIR              = OUTPUT_DIR / "layer3"
@@ -85,6 +80,21 @@ LAYER4_DIR                   = OUTPUT_DIR / "layer4"
 # ── Layer 5 contract output (produced by layer5_runner) ──────────────────────
 LAYER5_DIR                   = OUTPUT_DIR / "layer5"
 
+# ── Layer 6 contract output (produced by layer6_runner) ──────────────────────
+LAYER6_DIR                   = OUTPUT_DIR / "layer6"
+
+# ── Layer 7 contract output (produced by layer7_bundler after Phase C) ───────
+LAYER7_DIR = OUTPUT_DIR / "layer7"
+
+# ── Layer 8 contract output (produced by layer8_runner) ──────────────────────
+LAYER8_DIR = OUTPUT_DIR / "layer8"
+
+# ── Layer 9 contract output (produced by layer9_runner) ──────────────────────
+LAYER9_DIR = OUTPUT_DIR / "layer9"
+
+# ── Layer 10 contract output (produced by layer10_runner) ────────────────────
+LAYER10_DIR = OUTPUT_DIR / "layer10"
+
 # ── Persistent memory store (cross-run, in db/) ───────────────────────────────
 DB_MEMORY_DIR                    = DB_DIR / "memory"
 DB_WORKING_MEMORY_DIR            = DB_MEMORY_DIR / "working_memory"
@@ -96,7 +106,5 @@ DB_PORTFOLIO_MEMORY_FILE         = DB_MEMORY_DIR / "portfolio_memory.jsonl"
 DB_ENTITY_MEMORY_INDEX_FILE      = DB_MEMORY_DIR / "entity_memory_index.json"
 DB_THEME_MEMORY_INDEX_FILE       = DB_MEMORY_DIR / "theme_memory_index.json"
 DB_MEMORY_AUDIT_INDEX_FILE       = DB_MEMORY_DIR / "memory_audit_index.jsonl"
-
->>>>>>> Stashed changes
 # ── User portfolio (optional) ────────────────────────────────────────────────
 PORTFOLIO_FILE               = PROJECT_ROOT / "config" / "portfolio.json"
