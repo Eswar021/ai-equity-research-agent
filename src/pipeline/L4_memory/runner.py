@@ -151,22 +151,10 @@ def _recommended_type(total_score: int, event_type: str, watch_types: set) -> st
     return None
 
 
-def _make_source_ref(rec: dict) -> dict:
-    return {
-        "record_id":         rec["id"],
-        "source":            rec.get("source", ""),
-        "source_type":       rec.get("source_type", ""),
-        "supporting_text":   (rec.get("content") or "")[:300],
-        "published_at":      rec.get("published_at"),
-        "source_reliability": rec.get("source_reliability", ""),
-    }
-
-
 def _score_record(rec: dict, entity_index: dict, cfg: dict) -> list[dict]:
     watch_types = set(cfg.get("watch_event_types", []))
     threshold   = int(cfg.get("worth_storing_threshold", 40))
     ext_conf    = rec.get("extraction_confidence", "")
-    source_ref  = _make_source_ref(rec)
     candidates  = []
 
     for event in rec.get("events", []):
@@ -190,7 +178,6 @@ def _score_record(rec: dict, entity_index: dict, cfg: dict) -> list[dict]:
             "confidence":              round(total / 100, 2),
             "worth_storing":           worth,
             "recommended_memory_type": _recommended_type(total, etype, watch_types),
-            "source_ref":              source_ref,
         })
 
     for signal in rec.get("market_signals", []):
@@ -213,7 +200,6 @@ def _score_record(rec: dict, entity_index: dict, cfg: dict) -> list[dict]:
             "confidence":              round(total / 100, 2),
             "worth_storing":           worth,
             "recommended_memory_type": _recommended_type(total, "", watch_types),
-            "source_ref":              source_ref,
         })
 
     return candidates

@@ -71,6 +71,7 @@ class MarketSignal(BaseModel):
     confidence: Literal["high", "medium", "low"]
 
 class DocumentExtraction(BaseModel):
+    analysis:              str
     entities:              list[Entity]
     facts:                 list[Fact]
     events:                list[Event]
@@ -87,16 +88,22 @@ class BatchExtraction(BaseModel):
 # ---------------------------------------------------------------------------
 
 _SINGLE_PROMPT = ChatPromptTemplate.from_template(
-    "You are an investment intelligence extractor for India's stock market.\n"
-    "Be concise — max 10 words per text field. Top 5 items per category max.\n\n"
-    "Extract investment-relevant information from the article below:\n\n"
-    "{content}"
+    "You are an investment intelligence analyst for a stock market research system.\n"
+    "The research team is based in India and primarily invests via NSE/BSE,\n"
+    "but actively tracks global markets and international opportunities too.\n\n"
+    "Your job:\n"
+    "1. In 'analysis': briefly assess what is investment-relevant about this article\n"
+    "   (companies, sectors, macro trends, risks, opportunities — global or India).\n"
+    "2. Then extract structured signals. Be concise — max 10 words per text field.\n"
+    "   Top 5 items per category. Skip anything with no investment relevance.\n\n"
+    "Article:\n{content}"
 )
 
 _BATCH_PROMPT = ChatPromptTemplate.from_template(
-    "You are an investment intelligence extractor for India's stock market.\n"
-    "Be concise — max 8 words per field. Top 3 items per category max.\n\n"
-    "Extract from these {n} headlines in order (return exactly {n} results):\n\n"
+    "You are an investment intelligence analyst for a stock market research system.\n"
+    "The research team is based in India but tracks global markets and opportunities.\n"
+    "Extract structured signals from these {n} headlines in order.\n"
+    "Return exactly {n} results. Be concise — max 8 words per field. Top 3 per category.\n\n"
     "{headlines}"
 )
 
@@ -106,6 +113,7 @@ _BATCH_PROMPT = ChatPromptTemplate.from_template(
 # ---------------------------------------------------------------------------
 
 _EMPTY_EXTRACTION = {
+    "analysis":              "",
     "entities":              [],
     "facts":                 [],
     "events":                [],
@@ -161,9 +169,9 @@ def _extract_single(
     call_id: str,
     log_path: Path,
     lock: threading.Lock,
+    model_name: str = "",
 ) -> dict:
-    content  = _safe(rec.get("content", ""))
-    prompt_str = f"[single] {rec['id']}"
+    content = _safe(rec.get("content", ""))
     t0 = time.time()
 
     try:
@@ -193,8 +201,8 @@ def _extract_single(
         "timestamp":  _now_ist(),
         "layer":      "L3",
         "trigger":    rec["id"],
-        "model":      prompt_str,
-        "prompt":     rec.get("content", "")[:500] + "...",
+        "model":      model_name,
+        "prompt":     rec.get("content", ""),
         "response":   response_str,
         "parsed_ok":  parsed_ok,
         "tokens_in":  tokens_in,
@@ -217,10 +225,11 @@ def _extract_batch(
     call_id: str,
     log_path: Path,
     lock: threading.Lock,
+    model_name: str = "",
 ) -> list[dict]:
     n         = len(batch)
     headlines = "\n".join(
-        f"{i + 1}. {_safe(rec.get('title') or rec.get('content', '')[:150])}"
+        f"{i + 1}. {_safe(rec.get('title') or rec.get('content', ''))}"
         for i, rec in enumerate(batch)
     )
     t0 = time.time()
@@ -258,8 +267,8 @@ def _extract_batch(
         "timestamp":  _now_ist(),
         "layer":      "L3",
         "trigger":    f"batch [{', '.join(r['id'] for r in batch)}]",
-        "model":      f"[batch n={n}]",
-        "prompt":     headlines[:500],
+        "model":      model_name,
+        "prompt":     headlines,
         "response":   response_str,
         "parsed_ok":  parsed_ok,
         "tokens_in":  tokens_in,
@@ -290,6 +299,7 @@ def run(run_date: str | None = None) -> Path:
     skip_types  = set(l3_cfg.get("skip_source_types", ["market_snapshot", "corporate_action"]))
 
     llm          = make_llm(provider=provider, model=model)
+    model_name   = model or "gpt-5-nano"
     single_chain = _SINGLE_PROMPT | llm.with_structured_output(DocumentExtraction, include_raw=True)
     batch_chain  = _BATCH_PROMPT  | llm.with_structured_output(BatchExtraction,    include_raw=True)
 
@@ -336,11 +346,11 @@ def run(run_date: str | None = None) -> Path:
 
     with ThreadPoolExecutor(max_workers=max_workers) as pool:
         batch_futures = {
-            pool.submit(_extract_batch, batch, batch_chain, cid, log_path, lock): batch
+            pool.submit(_extract_batch, batch, batch_chain, cid, log_path, lock, model_name): batch
             for batch, cid in batch_jobs
         }
         ind_futures = {
-            pool.submit(_extract_single, rec, single_chain, cid, log_path, lock): rec
+            pool.submit(_extract_single, rec, single_chain, cid, log_path, lock, model_name): rec
             for rec, cid in ind_jobs
         }
 
