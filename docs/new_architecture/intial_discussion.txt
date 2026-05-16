@@ -1,0 +1,548 @@
+MY MESSAGE:
+
+phase a/layer 0 or 1:
+
+1. the modules we have not are like little bit complicated, i am thinking of organising them like a layer wise, something like below
+
+src/pipeline/layer_1_broad_scrapping
+src/pipeline/layer_2_raw_bundle
+...
+
+and for memory and other important parts may be they are under
+
+src/memory - does this makes sense??
+so now they will be properly organised 
+
+2. and also i think there are many files with similar fucntionalities i think we can just merge them, so we will have less number of files from each layer folder or are all those seperate kind of modules? what do you say isn't better to just simplify them because there are so many files
+
+
+3. and also i think we made our project too  complex and didnt keep it simple like instead of focusing on main logic i think we added many complex system like scoring, canonical and stuff do we really need them?? i mean if those are really needed and really helps with the better decision fine if not they are just adding too complexity without any gain
+
+4.
+And also present it seems like each layer is interacting with different output files like sine we are like maintaining the ids to the downstream layers outpupts instead of building the context its like are those models tracking back to the upstream lyaer output files to get those context finallY??
+
+Are we not like keep on adding the data from layer to layer?? And we instead tracking back by like ids and stuff how is that working exactly like what are the files that are being tracked back, aren't we making it too complex? Is that really necessary.
+
+Cant we like keep on building the data for example we have raw data, then we will have normalised that like in layer 1, then we will have more data from layer 2 if that is really necessary like document_id etc.., then from layer 3 will append more data to those individual documents, like it seems like layer 3 will extract data from each document right so for each documen in the bundle we will append this data if we have any got form the llm understood??
+Then from that file we will pass it to layer 4 to create the memories or whatever, so this layer will be taking the bundle and creating the memories, and then this same layer will append the momories right? So yeah like in the last or at the tops it will just append the memories, and then at layer 5 it seems like we will extract some signals and what not from the layer 5, so it like for each documen wise of what? If it is document wise them why not again just append those to the each document right??
+
+And may be if we are grouping then we will have that bundle then we will have the finally transformed grouping the file like same content but just the struucture change to gruoping the contents by like whatever we are doing with layer 5.
+
+Then we will have the deep dive targert form the layer 6
+
+Then layer 7 will append more deep dive targets data right? And it seems like layer 7 will utilize the data from the layer 1 or some phase b or phase a modules right?? I am not sure.
+
+Then at layer 8 we will have more evidence bulder right like is this at the docuemtn level or group level or what and again how we can mend them????
+
+Then finally we use context builded file to pass them to specilaist agents right?? Then that will be appended to the data, and then will be passed to the layer 10. isn't this simple like having all the data at one place I know it might created duplication but help us to easily check the data and to comprehend easily. Like each layer will have there individual moduls outputs but at the end that layer ouputs will be appeded to the data file tha will be passed to all the layers
+
+So I just want ot like simplify the system, so why don’t we like start fresh now we will create like a src/pipeline/ folder and in side this we will now build each and every layer one by one since we already have the modules in the system we can just refer them while bulding but if those are not properly build before like if that logic is not correct and they are bullt by hardcoding we have to think and we have to think like how to simplify without losing our main goal which is the final analysis like every data we are going to apped we have to think if that is goin to help for downstream agent if no then we are not going to build tha module, so just anlays end to end and do a detailed deep analysis not just the docs but the actual logic code files then only you can properly see what our system is because docs are not upto date
+
+
+
+
+
+Layer 1:
+
+1. why dont i see the file that you mentioned are you just reading the docs and answering me? are you not checking the actual functionality? it seems like they are many files that are missing i am not sure why, like layer2_runner.py is also missing and it seems all the files under "intelligence_layer/source_canonicalization" are missing, do you have the content of those files or may be they are not buld but the cache files are there anyway check and list out all the files that needs to be rebuilt
+
+Layer 1 — Bundle → layer1/
+Script: context_ext_layer/layer1_bundler.py
+
+
+2. in output/<date>/layer1/collection_status.json
+what does it mean by modules_total and modules_ok - what are we actually considering as modules?? and is total records key is like all the individual articles/records from each source collected right??
+
+
+3. in data_freshness_report.json
+
+why do we have like modules as keys and also like by_module key maintaining the same records is that a mistake or intentional??
+
+
+
+
+
+
+
+
+
+
+Layer 2
+
+1. okay i understood that phase a module is for extraction and layer 1 is for building a single file with all that data for the downstream agents layers right?? so what is the significance of layer 2, like what exactly we are using that, and what exactly is freshness validator how that is being calculated??
+
+Source Canonicalization → layer2/
+Script: intelligence_layer/source_canonicalization/layer2_runner.py
+
+540 raw records
+    │
+    ├─ text normalizer → clean_text, remove boilerplate
+    ├─ freshness validator → is this >48h old? flag it
+    ├─ content fingerprint → SHA256 for dedup
+    ├─ deduplicator → drop near-duplicates
+    ├─ quality checker → too short? no date? flag it
+    └─ reliability tagger → moneycontrol=high, random RSS=low
+
+2. what is the duplicate_map.json
+
+how are they founding duplicates based on the keywords or what? or some harcoded logic? if so we need to change i think am i right??
+
+3. and i see in the layer1/collection_status.json i see there are 540 documents are collected overall and i see in the layer2__manifest i see there are 530 canonical what does it mean like what happend to other 10???
+
+4. and dont you think layer2_manifest.json and quality_report.json are similar type of records that should be merged? or not??
+
+5. and what does it mean by quarantine.json?? what are the three fields in that file actually mean??? do we really need this file
+
+
+
+
+
+layer 3:
+
+
+1. and why does this log file didnt have the final input and output from that llm call? is that gap or intentional??? 
+
+"/2026-05-10/layer3/llm_extraction_logs" 
+
+
+2. entity_registry.json       ← 830 entities
+
+we have ~540 documents right so from where we got 830, what does that exactly mean?? are those like chucks?? if so how exacly we are getting that chunks is that some hardcoded/keyword based chunk size or what??
+
+and i think we are maintainnig a lot of meta data like document_Id, source_id, chunk_id and also in other layers also we really need these many id's i mean i know it will be easy to back track but it is making it complex, i mean if it is necessary but cant we make them simple or so??
+
+3. how are we calculating the below list??
+    like how are we saying, document duplicates? 
+    low_quality
+    why it is saying only 509 records are processed, and why llm_documnets_proceesed: 507??
+    rule_based_records_processed": 4 - what rule exactly??
+
+
+  "quality_summary": {
+    "documents_processed": 509,
+    "structured_records_processed": 4,
+    "documents_skipped_duplicates": 21,
+    "documents_skipped_low_quality": 0,
+    "llm_documents_processed": 507,
+    "llm_extraction_failures": 0,
+    "rule_based_records_processed": 4,
+    "entities_extracted": 830,
+    "facts_extracted": 826,
+    "claims_extracted": 494,
+    "events_extracted": 148,
+    "themes_extracted": 263,
+    "market_signals_extracted": 164,
+    "quarantined_objects": 0,
+    "precheck_warnings": 451,
+    "contradiction_hints": 54,
+    "average_confidence": 0.744
+  }
+
+4. and what data we are sending to llm are those like parts of the each document instead of sending the whole document at onces?? like passing each chunk? so based on the number chunk we will have tha many llm calls in this layer??
+
+
+5. and what does these mean "entity_registry, fact_cards, claim_cards, event_cards, theme_cards, market_signal_cards"
+
+is this data being extracted by llm? like if we pass a chunk/record it will like extract all the data from that single chunk is that it? if so why are we maintaining them sepereately we should maintain at the entity/document level right? so like for each document/entity we will have all that info at one place or all those different???
+
+6. and what is contradiction.json are also gettin this module data from the llm? like explain me what that is
+
+are we using any hardcoded/keywoard based logic?? or what??
+
+like under layer3/ output folder exaplain what each files is and how we are getting those existing filds data for each item in that file??? like in belos section where they are getting that data from? are those being hardcoded or what or llm being generated??? and like how market_signal.json 
+
+output/2026-05-10/layer3/intelligence_bundle.json
+    {
+      "entity_id": "ENT_20260510_0005",
+      "entity_name": "Infosys",
+      "normalized_name": "Infosys Limited",
+      "entity_type": "listed_company",
+      "market_status": "listed",
+      "ticker": "INFY.NS",
+      "ticker_hint": null,
+      "exchange": "NSE",
+      "country": "India",
+      "market": "india",
+      "aliases": [
+        "Infosys",
+        "Infosys Limited"
+      ],
+      "resolution_status": "resolved",
+      "source_refs": [
+        {
+          "document_id": "DOC_20260510_00029",
+          "source_id": "mediastack",
+          "chunk_id": "DOC_20260510_00029_C01",
+          "supporting_text": "Airtel And Infosys Top Losers",
+          "published_at": "2026-05-04T09:56:18+00:00",
+          "source_reliability": "medium"
+        }
+      ],
+      "mention_count": 1,
+      "confidence": 0.88,
+      "confidence_reasons": [
+        "source_reliability=medium (-0.02)",
+        "supporting_text_present"
+      ],
+      "precheck_warnings": []
+    },
+
+
+
+
+
+
+
+
+
+
+Layer 4:
+
+1. and in layer 4 output folder why there are many files cant we just have few may be one or 2, i mean if necessary more but are those necessary or can we simplify??
+
+
+2. What it does: Two jobs — (1) filter what's worth storing in long-term memory, (2) pull relevant past memory to inform this run.
+
+how it is finding the relevant memory?? 
+
+
+3. also if we are getting all the below details at the entity level why dont we store them in few files intead of scattering them all or those files have different data am i just understanding that properly check that???
+
+
+4. 
+how is this happening actually
+db/memory/ (persistent across ALL runs):
+Like what are the modules are present and what is the purpose of each module, and how many llm modules are there??? Like we deciding whether that is new/store/skip/update/deacy, and aslo like how are we deciding wfhat past data to pull for this run??
+
+830 entities + 826 facts + 494 claims + 148 events + 263 themes
+    │
+    ├─ memory_scorer       → score each object: worth storing? (novelty × recurrence × importance)
+    ├─ memory_decay_engine → apply decay to old memories (fading relevance)
+    ├─ memory_writer       → actually write to db/memory/ JSONL files
+    └─ memory_reader       → pull RELEVANT past memories for this run
+
+
+db/memory/
+  short_term_market_memory.jsonl   ← signals from last few days
+  watch_memory.jsonl               ← stocks on watchlist
+  thesis_memory.jsonl              ← active investment theses
+  long_term_investment_memory.jsonl← structural sector views
+  entity_memory_index.json         ← ticker → [memory_id, ...]
+  theme_memory_index.json
+
+5.
+In the memory_context_packet, we have some contents but is that enough like there is not context of what that is right?so are we properly storing the memory? And also what are all the files under db/memory are like some only have just id's is that intentional?? How to read them like are they interlinked?? Or what??
+
+
+
+
+
+
+
+Layer 5:
+  1. And what is ahppenign exactly in layer 5? Is this completely rule based and is there any keyword/hardcoding is happening and is that fine, becauase in future if we want to change anythign we have to change those also right? I think that Is not a good work right? Like if you can explain what is happening in this layer, like what is this layers goals may be we can think of that, and if may be if this layer is useless we can remove this?? It seems llm is involved in this layer, so what exactly is llm doing and what is llm outputing?? Like what is the llm output format??
+  2. How each output file is being generated by tha layer 5??
+
+
+
+Layer 6: how exactly ranking is happenign??
+
+  1. Are these like hardcoded or do we have any properly system to rank them??
+  2. Like how we are deciding to whether to deepdive or not? Wath_targets, and others in this layers output how are they being retrieve what is the logic/??
+
+
+
+Layer 7/8/9/10: like above exaplain like what exactly is happening in these layers understood?
+
+
+
+
+
+
+
+CLAUDE RESPONSE:
+
+
+
+HONEST STATE OF THE CODEBASE
+Files that don't exist (only .pyc cache, no source):
+
+context_ext_layer/layer1_bundler.py — MISSING (on a different branch)
+intelligence_layer/source_canonicalization/layer2_runner.py — MISSING
+All of intelligence_layer/source_canonicalization/*.py — MISSING (only compiled cache remains)
+So L1 and L2 were run from another branch (v2-design/layer-2), produced output for the 2026-05-10 test run, but were never merged. The source code is gone from develop.
+
+YOUR 4 BIG QUESTIONS
+1. Should we reorganize into src/pipeline/layer_N_...?
+Yes, and here's the honest structure you need:
+
+
+src/
+  pipeline/
+    layer1_scraping/          ← Phase A collectors (rss, news, youtube, fii_dii, macro, etc.)
+    layer2_canonicalize/      ← MISSING — needs to be rebuilt
+    layer3_intelligence/      ← exists in intelligence_layer/canonical_intelligence_extraction/
+    layer4_memory/            ← exists in intelligence_layer/memory_qualification/
+    layer5_hypotheses/        ← exists in intelligence_layer/market_opportunity_intelligence/
+    layer6_targets/           ← exists in intelligence_layer/research_target_planner/
+    layer7_deep_dive/         ← exists in intelligence_layer/targeted_deep_dive/
+    layer8_evidence/          ← exists in intelligence_layer/evidence_builder/
+    layer9_agents/            ← exists in intelligence_layer/specialist_analysis/
+    layer10_report/           ← exists in intelligence_layer/final_synthesis_layer/
+  memory/                     ← db/memory/ (persistent store)
+  config/                     ← paths.py, portfolio.json
+  llm/                        ← llm_client.py
+This is a clean move. Most code already exists, it's just scattered.
+
+2. Can we merge files? What's redundant?
+Yes, lots of redundancy. Here's what you can cut:
+
+Layer 3 outputs 12 files — can be 2:
+
+Keep	Remove (already inside intelligence_bundle.json)
+intelligence_bundle.json	entity_registry.json
+layer3_manifest.json	fact_cards.json
+claim_cards.json
+event_cards.json
+theme_cards.json
+market_signal_cards.json
+object_link_map.json
+unresolved_entities.json
+contradiction_hints.json
+extraction_quality_report.json
+All the separate files are exact copies of what's already inside intelligence_bundle.json. No downstream layer reads them separately — they all read the bundle. Keep the bundle and manifest only.
+
+Layer 4 outputs 9 files — can be 3:
+
+Keep	Remove
+memory_context_packet.json	memory_candidates.json (debug only)
+layer4_manifest.json	memory_decisions.json (can merge into manifest)
+new_memory_records.json (subset of decisions)
+updated_memory_records.json (subset of decisions)
+thesis_updates.json (redundant with above)
+memory_decay_report.json (debug only)
+quarantine.json (debug only)
+memory_quality_report.json (debug only)
+The only file downstream layers actually need is memory_context_packet.json. Everything else is audit logging.
+
+3. Is the system too complex? What's worth keeping?
+Here's the honest breakdown:
+
+Feature	Worth keeping?	Why
+L3 extraction (entities/facts/claims/events/themes)	YES	This is the core value — structured intel from raw text
+Source reliability tagging	YES	LLM agents need to know if a claim came from moneycontrol vs random RSS
+Content deduplication (SHA fingerprint)	YES	Without it you'd process the same article 3× from different feeds
+L4 memory / recall	YES but simpler	The recall concept is valuable; the 10-dimension scoring formula is overkill
+L5 hypothesis generation	YES	Cross-document signal grouping into investable ideas is the key value
+L6 target selection	YES but less hardcoding	Selection logic is right; the 9-dimension scoring with magic numbers is fragile
+Canonicalization (L2)	DEBATABLE	Quality-checking is good; the full normalization pipeline may be overkill
+ID chains (doc→chunk→object→evidence)	NO for chunks	Chunk IDs are created and discarded in L3; they serve no downstream purpose
+12 separate files per layer	NO	Debugging convenience, not functional value
+quality_report.json, manifest.json per layer	MERGE into 1	Just one run_summary.json per layer
+4. ID tracking vs cumulative data — you're right, the current approach is wrong
+You identified the real issue. Right now the system works like this:
+
+
+L3 extracts entity "Infosys" from DOC_001_C01 → assigns ENT_00005
+L8 creates evidence card EV_001 → references ENT_00005
+L9 agent gets EV_001 → has to look up ENT_00005 to understand context
+L10 gets scorecard → references EV_001 → still separated from the source doc
+The agent at L9 never sees the original text. It only sees IDs pointing back to other files.
+
+Your proposed approach — build forward, accumulate — is actually simpler and more powerful for the agents:
+
+
+RAW: { title: "Infosys Q4...", text: "...", source: "moneycontrol" }
+
+After L2: same doc + { clean_text, quality_score, reliability: "high", is_duplicate: false }
+
+After L3: same doc + { entities: ["Infosys"], facts: [{...}], events: [{...}], confidence: 0.88 }
+
+After L5 (grouping): a DIFFERENT structure — hypotheses that reference doc IDs
+The key insight you're missing: L5 onward is cross-document. Hypotheses, targets, scorecards — these span 50+ documents. You can't "append" them to individual documents because they don't belong to one document. So the pipeline naturally splits into two data shapes:
+
+
+Phase 1: per-document accumulation (L1 → L2 → L3)
+  → one growing JSON per doc
+
+Phase 2: cross-document synthesis (L5 onward)
+  → new objects (hypotheses, targets, scorecards) that reference doc IDs
+What you CAN simplify: instead of ENT_00005 pointing to DOC_001_C01 which points to raw_file_rss_0023.json, just embed the key context (entity name, supporting text, source name, reliability) directly in the entity object. No ID lookback needed.
+
+LAYER-BY-LAYER SPECIFIC ANSWERS
+Layer 1
+Q: What are "modules" in collection_status.json?
+The 11 scrapers: rss, moneycontrol, economic_times, newsdata_io, mediastack, gmail, youtube, fii_dii, bulk_deals, macro_data, fno_data. One "module" = one collector script. "total_records" = sum of all individual articles/rows/signals collected across all 11.
+
+Q: data_freshness_report.json — are module keys at top-level AND under by_module a bug?
+Yes, that's a redundancy bug. The top-level keys are the same data repeated under by_module. Should be cleaned up to just use by_module.
+
+Layer 2
+Layer 2 source code doesn't exist — only cached .pyc files from another branch. Here's what it was supposed to do (from reading the compiled logic):
+
+Q: What's the significance of L2? Why not just pass raw data to L3?
+Two reasons that are genuinely valuable:
+
+Deduplication — the same article is fetched by RSS AND moneycontrol AND newsdata_io. Without dedup, L3 runs 3× the LLM calls on identical content. SHA fingerprint dedup is fast and worth keeping.
+Quality filtering — articles with <100 chars or no date are noise. Filtering before LLM calls saves cost.
+Q: How does dedup work — keyword or hash?
+SHA-256 of clean text (not keywords). Smart — language-agnostic and cheap to compute.
+
+Q: What's quarantine.json?
+Records that fail quality checks — too short, no publication date, unparseable encoding. Three fields: record_id, reason (too_short / no_date / decode_error), source_module. Do you need it? Only for debugging. Can be removed from production.
+
+Q: 540 → 530, where did 10 go?
+10 records were quarantined or detected as near-duplicates (SHA fingerprint match). That's the dedup working correctly.
+
+Q: layer2_manifest vs quality_report — should they merge?
+Yes. The manifest tracks output file paths; the quality report tracks record counts. They should be one run_summary.json.
+
+Layer 3
+Q: Why 830 entities from 540 docs?
+One document can mention multiple companies. A single Moneycontrol article about "TCS and Infosys both beat estimates" yields 2 entities. At an average of ~1.5 entities per doc, 540 × 1.5 = 810, close to 830. Not chunks — just multiple entities per document.
+
+Q: How are chunks made?
+Hardcoded max 3,500 characters, split at sentence boundaries. A 10,000-char article → 3 chunks → 3 LLM calls. Short articles (< 3,500 chars) → 1 chunk → 1 LLM call. Headlines (<200 chars) get batched 8 at a time into 1 call.
+
+Q: Why 509 processed, 507 LLM, 4 rule-based?
+
+540 input records
+21 skipped as duplicates (SHA dedup from L2)
+509 remain for processing
+4 are structured records (FII/DII numbers, bulk deals) → rule-based extractor, no LLM
+505 text documents → routed to LLM, 507 because some structured records also run a light LLM pass
+The 2 gap is rounding in the counter.
+Q: Do LLM logs have full prompt + response?
+No — only summary stats (doc_id, chunk_id, counts of extracted objects, errors). This is a gap. If you want to debug hallucinations you need the actual prompts logged.
+
+Q: Are all 5 object types extracted by one LLM call?
+Yes — one prompt per chunk extracts entities + facts + claims + events + themes simultaneously. This is efficient (1 call not 5) but means the prompt is complex.
+
+Q: What's contradiction_hints.json?
+100% rule-based. If fact_card says "Infosys revenue grew 15%" and another fact_card says "Infosys revenue fell 3%", the contradiction detector flags it by entity name + metric. No LLM involved.
+
+Q: Are there unnecessary IDs?
+Chunk IDs are unnecessary — they're created during extraction and no downstream layer ever uses them. After L3, only document_id and object_id (entity_id, fact_id, etc.) matter. Chunk IDs add complexity with zero downstream value.
+
+Layer 4
+Q: Why so many output files?
+9 files when 1 would do. The only file anyone downstream reads is memory_context_packet.json. Everything else (memory_candidates.json, memory_decisions.json, new_memory_records.json, etc.) is audit logging written for debugging. All can be collapsed into a single layer4_summary.json.
+
+Q: How does memory recall work?
+Entity name lookup in entity_memory_index.json (a dict: {"infosys": ["MEM_001", "MEM_045"]}) → fetches those memory records. Not semantic search, not vector similarity — just string matching on entity name. Simple and works for now but will break if entity names vary ("Infosys" vs "Infosys Ltd").
+
+Q: How many LLM calls?
+Zero. Entirely rule-based. Scoring is a formula, recall is index lookup.
+
+Q: Is the memory context packet enough context for L5?
+Partially. It returns past memory objects but strips the original supporting text. So L5 knows "Infosys was watchlisted 2 weeks ago" but not "because revenue guidance was cut by 5%". The original context is lost in the compression. This is a real gap.
+
+Layer 5
+Q: What is L5 doing exactly?
+
+Groups related signals together — e.g., all mentions of "US tariffs on software" → one signal group
+LLM call per group: "Given these grouped signals, what's the investment hypothesis?" → returns structured hypothesis with beneficiaries, time horizon, deep-dive questions
+Separately: rule-based market regime assessment (is market bullish/bearish/neutral based on FII flows, volatility, breadth)
+Q: Is there hardcoding?
+Yes — meaningful hardcoding:
+
+Priority scoring weights (investment_relevance: high=30, medium=15, low=0)
+Max 50 LLM calls per run (cap to control cost)
+Signal grouping thresholds
+These are all tunable but need manual changes to the source code. Not great long-term.
+
+Q: What does LLM output?
+
+
+{
+  "hypothesis": "US tariff uncertainty will depress IT sector margins for mid-caps",
+  "beneficiaries": ["TCS", "Infosys"],
+  "time_horizon": "medium_term",
+  "strength": "medium",
+  "deep_dive_questions": ["What is revenue exposure to US?", "What hedging is in place?"],
+  "invalidating_conditions": ["Trade deal signed", "USD/INR reversal"]
+}
+Q: How are the 6 output files generated?
+
+File	How
+opportunity_hypotheses.json	LLM output (one per signal group)
+market_view.json	Rule-based (FII flows + VIX + breadth → regime formula)
+signal_groups.json	Rule-based (group signals by shared entities/themes)
+sector_theme_views.json	Rule-based (count signals per sector)
+event_impact_views.json	Rule-based (severity × scope classification)
+cross_domain_chains.json	Not implemented — always empty list
+Layer 6
+Q: Is ranking hardcoded?
+Yes — 9 dimensions with hardcoded weights:
+
+listed_company gets 15 actionability points, macro_theme gets only 5
+Time horizon: short_term = 10 points, long_term = 4 points
+Score ≥80 → deep dive, <35 → reject
+These numbers were chosen by judgment, not learned from data. They work but are brittle — if you want to prioritize long-term plays the whole scoring table needs to change.
+
+Q: How are watch/reject/deep_dive decisions made?
+Pure rule: priority_label from scoring → mapped to action. No LLM, no learning.
+
+Layer 7
+Q: What collectors run and where is the code?
+Reuses Phase A/C modules from context_ext_layer/:
+
+market_data → price, volume, 52w range (via yfinance or similar)
+screener_in → P/E, ROE, debt/equity, CAGR from screener.in scraper
+peer_comparison → sector peers from existing data
+analyst_estimates → consensus ratings
+exchange_filings → NSE filing download
+corporate_actions → dividends, splits from NSE
+Q: Does L7 reuse Phase A/B modules?
+Yes — it calls the same collector functions used in Phase A/C, just parameterized with the 7 selected target tickers instead of broad market.
+
+Layer 8
+Q: Is evidence building LLM or rule-based?
+Entirely rule-based. It joins L3 intelligence (what was said about this company) + L7 data (actual numbers) + L5 hypotheses (what we expected to find) → produces structured evidence cards. No LLM calls. Pure Python logic.
+
+Q: Is data duplicated in agent_context_packets?
+Yes, intentionally — each packet is a self-contained brief for one agent so the agent doesn't need to fetch from other files. The duplication is acceptable for LLM consumption but the packets contain a subset, not the full dump.
+
+Layer 9
+Q: What do the 4 agents actually do?
+
+Agent	Question it answers	LLM schema
+fundamental_agent	Is this a quality business? Revenue quality, margins, moat, mgmt	FundamentalAssessment: score 0-100 per dimension, key findings, risks
+valuation_agent	Is it cheap or expensive vs peers/history?	ValuationAssessment: P/E vs sector, upside to target, value label
+risk_agent	What are the real risks? Data gaps? Red flags?	RiskAssessment: risk severity per category, critical_data_gaps
+thesis_validation_agent	Given the above 3, does the original hypothesis hold?	ThesisValidation: supports/neutral/contradicts, updated confidence
+Thesis agent runs LAST and receives the previous 3 assessments as context — so it integrates them. That's the right design.
+
+Q: How many LLM calls?
+4 agents × 7 targets = 28 calls. All parallel-capable but currently run sequentially per agent type.
+
+Layer 10
+Q: What are the 14 LLM calls?
+
+7 × target synthesis (one per target: "given everything, what's the final view?")
+7 × scenario building (one per target: "what's the bull/base/bear case?")
+Everything else (scoring formula, recommendation policy, confidence calibration, memory instructions, report writing) is rule-based.
+
+Q: How does the scoring formula work?
+
+
+score = 0.25×fundamental + 0.20×valuation + 0.20×thesis + 0.20×(100-risk) + 0.15×market_alignment
+      − penalties (for each: data_gap>3 → -5, high_risk_flag → -8, agent_disagreement → -4)
+All hardcoded weights. The final label (research_candidate / watchlist / avoid / too_speculative) is then applied by a rule-based policy engine.
+
+VERDICT: WHAT TO REBUILD vs REUSE
+Layer	Verdict	Reason
+L1 (scraping)	Reuse, restructure path	11 scrapers work; just move to src/pipeline/layer1_scraping/
+L2 (canonicalize)	Rebuild — simpler	Missing source. Rebuild as: SHA dedup + length filter. Drop the full "canonicalization" ceremony
+L3 (extraction)	Reuse	The LLM extraction logic is solid. Simplify output to 2 files (bundle + manifest)
+L4 (memory)	Reuse, simplify output	Logic is good. Drop 7 of the 9 output files
+L5 (hypotheses)	Reuse	Hypothesis generation is the core value. Remove cross_domain_chains (never implemented)
+L6 (targets)	Reuse, make weights configurable	Logic is right; move hardcoded weights to config file
+L7 (deep dive)	Reuse	Works. Restructure paths
+L8 (evidence)	Reuse, simplify	Drop redundant intermediate files
+L9 (agents)	Reuse	Works well. Could parallelize
+L10 (report)	Reuse	Works.
+The restructure to src/pipeline/ is mostly a folder move + removing redundant files. The logic itself in L3–L10 is sound. The main real rebuild needed is L2 (missing source code) and making the hardcoded weights configurable.
+
+Want me to start the restructure? I'd suggest doing it in this order: (1) create src/pipeline/ structure, (2) move existing layers, (3) rebuild L2 simply, (4) strip redundant output files per layer.
+

@@ -1,0 +1,71 @@
+sources:
+
+  rss:
+    enabled: true
+    feeds:
+      - { name: "Mint",              url: "https://www.livemint.com/rss/news" }
+      - { name: "NDTV Profit",       url: "https://feeds.feedburner.com/ndtvprofit-latest" }
+      - { name: "Economic Times",    url: "https://economictimes.indiatimes.com/markets/rss.cms" }
+      - { name: "Moneycontrol",      url: "https://www.moneycontrol.com/rss/latestnews.xml" }
+      - { name: "Hindu Business",    url: "https://www.thehindubusinessline.com/feeder/default.rss" }
+      - { name: "Yahoo Finance IN",  url: "https://in.finance.yahoo.com/news/rssindex" }
+      - { name: "Investing.com IN",  url: "https://www.investing.com/rss/news_25.rss" }
+
+  moneycontrol:
+    enabled: true
+    days_back: 2
+    max_pages: 5
+    categories: [markets, stocks, earnings, economy, companies]
+
+  economic_times:
+    enabled: true
+    days_back: 2
+    max_pages: 5
+    categories: [stocks_news, expert_view, stocks_recos]
+
+  newsdata_io:
+    enabled: true
+    queries:
+      - "NSE BSE stock market India"
+      - "Nifty Sensex earnings results"
+      - "RBI repo rate inflation India"
+      - "FII DII institutional flows India"
+
+  mediastack:
+    enabled: true
+    queries:
+      - "Nifty Sensex"
+      - "NSE earnings results"
+
+  gmail:
+    enabled: true
+    max_per_source: 5
+    sources:
+      - { type: from_domain,       value: "busline.hindugroup.org" }
+      - { type: subject_keyword,   value: "Mint Morning Briefing" }
+      - { type: subject_keyword,   value: "Zerodha Pulse" }
+      - { type: from_domain,       value: "morningstar.com" }
+
+  youtube:
+    enabled: true
+    days_back: 3
+    max_medium: 3
+    max_long: 2
+    channels:
+      - { name: "Day Trader Telugu", channel_id: "UCxxx", enabled: true }
+
+  india_macro:
+    enabled: true
+
+  us_macro:
+    enabled: true
+
+  fii_dii:
+    enabled: true
+
+  bulk_deals:
+    enabled: true
+
+  fno:
+    enabled: true
+    symbols: [NIFTY, BANKNIFTY]
