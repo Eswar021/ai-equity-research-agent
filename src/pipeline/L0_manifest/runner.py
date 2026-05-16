@@ -3,6 +3,7 @@ L0 Manifest — resolves config files into a single run_manifest.json for the ru
 
 Reads:
     src/config/l1_sources.yaml   → layer_1 source config
+    src/config/l2_filters.yaml   → layer_2 dedup + quality filter thresholds
 
 Writes:
     output/{date}/run_manifest.json  → config snapshot consumed by all downstream layers
@@ -10,9 +11,10 @@ Writes:
 LLM: no
 
 Module execution order:
-    1. Load l1_sources.yaml
-    2. Build manifest dict with run_date, run_id, created_at, layer_1 keys
-    3. Write run_manifest.json
+    1. Load l1_sources.yaml → layer_1 config
+    2. Load l2_filters.yaml → layer_2 config
+    3. Build manifest dict with run_date, run_id, created_at, layer_1, layer_2 keys
+    4. Write run_manifest.json
 
 Usage:
     python -m src.pipeline.L0_manifest.runner              # today
@@ -29,6 +31,7 @@ import yaml
 from src.config.settings import IST, PROJECT_ROOT, output_dir, today
 
 _L1_SOURCES_YAML = PROJECT_ROOT / "src" / "config" / "l1_sources.yaml"
+_L2_FILTERS_YAML = PROJECT_ROOT / "src" / "config" / "l2_filters.yaml"
 
 
 def _load_l1_config() -> dict:
@@ -41,18 +44,30 @@ def _load_l1_config() -> dict:
     return sources
 
 
+def _load_l2_config() -> dict:
+    if not _L2_FILTERS_YAML.exists():
+        raise FileNotFoundError(f"L2 filters config not found: {_L2_FILTERS_YAML}")
+    raw = yaml.safe_load(_L2_FILTERS_YAML.read_text())
+    cfg = raw.get("layer_2")
+    if not isinstance(cfg, dict):
+        raise ValueError(f"l2_filters.yaml must have a top-level 'layer_2' dict, got: {type(cfg)}")
+    return cfg
+
+
 def run(run_date: str | None = None) -> Path:
     date    = run_date or today()
     out_dir = output_dir(date)
     out_dir.mkdir(parents=True, exist_ok=True)
 
     l1_cfg = _load_l1_config()
+    l2_cfg = _load_l2_config()
 
     manifest = {
         "run_date":   date,
         "run_id":     f"RUN_{date.replace('-', '')}_{datetime.now(IST).strftime('%H%M')}",
         "created_at": datetime.now(IST).isoformat(),
         "layer_1":    l1_cfg,
+        "layer_2":    l2_cfg,
     }
 
     out_path = out_dir / "run_manifest.json"

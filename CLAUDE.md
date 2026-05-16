@@ -216,6 +216,19 @@ One line per call (JSONL). Appended as calls complete — do not batch-write at 
 
 Each new layer appends its own key (`layer_2`, `layer_3`, ...) as it is built.
 
+**How to add a new layer's config to the manifest (do this every time):**
+
+1. Create `src/config/l{N}_<name>.yaml` with the layer's thresholds and settings.
+   Top-level key must be `layer_{N}:` (e.g. `layer_2:`, `layer_3:`).
+2. Add a `_load_l{N}_config()` function to `src/pipeline/L0_manifest/runner.py`
+   that loads the yaml and validates the top-level key exists.
+3. Call it in `run()` and add the result to the manifest dict as `"layer_{N}": l{N}_cfg`.
+4. Update the L0 docstring (Reads: / Module execution order:) to mention the new yaml.
+5. Re-run L0 before running the new layer — the manifest must contain the key.
+
+Layers with no configurable thresholds (e.g. a pure-transform layer) can skip the yaml
+and instead write their config directly as a literal dict inside `_load_l{N}_config()`.
+
 ---
 
 ## Layers Are Self-Contained Applications

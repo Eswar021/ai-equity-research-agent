@@ -1,0 +1,20 @@
+layer_2:
+  content_length_min: 100      # chars; below this → low_content flag
+  stale_hours: 48              # hours since published_at; older → stale flag
+
+  source_reliability:
+    high:
+      - moneycontrol
+      - economic_times
+    medium:
+      - rss
+      - newsdata_io
+      - gmail
+      - youtube
+      - india_macro
+      - us_macro
+      - fii_dii
+      - fno
+    low:
+      - mediastack
+      - bulk_deals
