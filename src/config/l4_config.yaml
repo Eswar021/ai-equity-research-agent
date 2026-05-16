@@ -1,0 +1,9 @@
+layer_4:
+  worth_storing_threshold: 40   # min composite score → worth_storing: true (for L10 to act on)
+  long_term_threshold: 65       # score >= this → recommend long_term_investment_memory
+  max_recall_per_entity: 5      # cap recalled memory records per entity lookup
+
+  watch_event_types:            # always worth_storing regardless of score → watch_memory
+    - earnings
+    - merger
+    - regulatory
