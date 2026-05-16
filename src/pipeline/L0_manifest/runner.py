@@ -4,6 +4,7 @@ L0 Manifest — resolves config files into a single run_manifest.json for the ru
 Reads:
     src/config/l1_sources.yaml   → layer_1 source config
     src/config/l2_filters.yaml   → layer_2 dedup + quality filter thresholds
+    src/config/l3_config.yaml    → layer_3 LLM extraction settings
 
 Writes:
     output/{date}/run_manifest.json  → config snapshot consumed by all downstream layers
@@ -13,8 +14,9 @@ LLM: no
 Module execution order:
     1. Load l1_sources.yaml → layer_1 config
     2. Load l2_filters.yaml → layer_2 config
-    3. Build manifest dict with run_date, run_id, created_at, layer_1, layer_2 keys
-    4. Write run_manifest.json
+    3. Load l3_config.yaml  → layer_3 config
+    4. Build manifest dict with run_date, run_id, created_at, layer_1, layer_2, layer_3 keys
+    5. Write run_manifest.json
 
 Usage:
     python -m src.pipeline.L0_manifest.runner              # today
@@ -32,6 +34,7 @@ from src.config.settings import IST, PROJECT_ROOT, output_dir, today
 
 _L1_SOURCES_YAML = PROJECT_ROOT / "src" / "config" / "l1_sources.yaml"
 _L2_FILTERS_YAML = PROJECT_ROOT / "src" / "config" / "l2_filters.yaml"
+_L3_CONFIG_YAML  = PROJECT_ROOT / "src" / "config" / "l3_config.yaml"
 
 
 def _load_l1_config() -> dict:
@@ -54,6 +57,16 @@ def _load_l2_config() -> dict:
     return cfg
 
 
+def _load_l3_config() -> dict:
+    if not _L3_CONFIG_YAML.exists():
+        raise FileNotFoundError(f"L3 config not found: {_L3_CONFIG_YAML}")
+    raw = yaml.safe_load(_L3_CONFIG_YAML.read_text())
+    cfg = raw.get("layer_3")
+    if not isinstance(cfg, dict):
+        raise ValueError(f"l3_config.yaml must have a top-level 'layer_3' dict, got: {type(cfg)}")
+    return cfg
+
+
 def run(run_date: str | None = None) -> Path:
     date    = run_date or today()
     out_dir = output_dir(date)
@@ -61,6 +74,7 @@ def run(run_date: str | None = None) -> Path:
 
     l1_cfg = _load_l1_config()
     l2_cfg = _load_l2_config()
+    l3_cfg = _load_l3_config()
 
     manifest = {
         "run_date":   date,
@@ -68,6 +82,7 @@ def run(run_date: str | None = None) -> Path:
         "created_at": datetime.now(IST).isoformat(),
         "layer_1":    l1_cfg,
         "layer_2":    l2_cfg,
+        "layer_3":    l3_cfg,
     }
 
     out_path = out_dir / "run_manifest.json"
