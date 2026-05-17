@@ -3,7 +3,7 @@ layer_3:
   model: gpt-5-nano            # overrides OPENAI_MODEL env var when set
   batch_size: 20               # short records per batch call
   short_content_chars: 200     # below this → batched; at or above → individual call
-  max_workers: 10              # parallel LLM calls (ThreadPoolExecutor)
+  max_workers: 25              # parallel LLM calls (ThreadPoolExecutor)
 
   skip_source_types:           # no LLM for these — entities derived from metadata
     - market_snapshot
