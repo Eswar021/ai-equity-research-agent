@@ -1,0 +1,39 @@
+layer_6:
+  # Strength scoring (0-30) — from L5 LLM-assessed strength field
+  strength_weights:
+    strong: 30
+    medium: 15
+    weak:    5
+
+  # Signal volume scoring (0-30) — rewards hypotheses backed by many signals
+  signal_count_weight: 2
+  signal_count_cap: 30
+
+  # Source diversity scoring (0-20) — prevents single-source noise from ranking highly
+  source_diversity_weight: 5
+  source_diversity_cap: 20
+
+  # Market regime alignment bonus (0-20)
+  # Aligns hypothesis urgency with current market conditions before expensive L7 research
+  regime_alignment:
+    bull:      { short_term: 20, medium_term: 20, intraday: 15, long_term: 10 }
+    bear:      { short_term: 10, medium_term: 20, intraday:  5, long_term: 20 }
+    sideways:  { short_term: 10, medium_term: 10, intraday: 10, long_term: 10 }
+    uncertain: { short_term:  5, medium_term:  5, intraday:  5, long_term:  5 }
+
+  # Bucket thresholds
+  max_deep_dive: 7           # hard cap — L7 researches exactly this many targets per day
+  deep_dive_min_score: 55    # must score above this to qualify for deep_dive
+  watchlist_min_score: 30    # below this → skip (not worth tracking today)
+
+  # Entity name normalization for deduplication
+  # Strips these suffixes before comparing names (case-insensitive)
+  dedup_strip_suffixes:
+    - " ltd"
+    - " limited"
+    - " corp"
+    - " corporation"
+    - " inc"
+    - " plc"
+    - " co"
+    - " company"
