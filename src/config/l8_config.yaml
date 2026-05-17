@@ -7,7 +7,7 @@ layer_8:
   # hypothesis_source records generated the thesis directly — agents need the actual source text.
   # entity_match records are supporting context — analysis + signals is sufficient.
   # To also include full content for entity_match, add "entity_match" to this list.
-  include_full_content_for: ["hypothesis_source"]
+  include_full_content_for: ["hypothesis_source", "entity_match"]
   max_content_chars: 8000      # safety cap: truncate very long articles at this char limit
 
   # Maps L7 null fields to the analysis they block in L9 agents.
