@@ -116,16 +116,38 @@ def _build_groups(records: list[dict], memory: list[dict]) -> list[dict]:
             "sources":     sorted(sources),
         })
 
-    # --- entity-centric groups (orphans only) ---
+    # --- entity-centric groups (investable entities only, non-context mentions only) ---
+    # Only build groups for entities an investor can actually trade (investable=True).
+    # Within each entity group, only include records where the entity is a meaningful signal
+    # (direct_subject or affected_entity) — skip records where it's just background context.
+    # Falls back to type-based investability check if L3 data predates the investable field.
+    # Requires >= 2 qualifying records so single-mention noise doesn't generate a hypothesis.
+    _INVESTABLE_TYPES = {"company", "sector", "commodity", "currency"}
+
     entity_to_records: dict[str, list[dict]] = {}
     for rec in records:
         for ent in rec.get("entities", []):
             name = ent.get("name", "").strip()
-            if name and name.lower() not in theme_covered_entities:
-                entity_to_records.setdefault(name, []).append(rec)
+            if not name:
+                continue
+
+            # investable check — use field if present, else fall back to type
+            investable = ent.get("investable")
+            if investable is None:
+                investable = ent.get("type", "") in _INVESTABLE_TYPES
+            if not investable:
+                continue
+
+            # skip context_mention — this record has no meaningful signal for this entity
+            if ent.get("signal_type", "direct_subject") == "context_mention":
+                continue
+
+            entity_to_records.setdefault(name, []).append(rec)
 
     entity_groups: list[dict] = []
     for entity, recs in entity_to_records.items():
+        if len(recs) < 2:
+            continue
         entities, events, signals, facts, record_ids, sources = _union_group(recs)
         entity_groups.append({
             "group_type":  "entity_centric",
@@ -459,8 +481,11 @@ def run(run_date: str | None = None) -> Path:
     filtered.sort(key=lambda g: g["weight_score"], reverse=True)
     selected = filtered[:max_hyp]
 
+    n_theme_sel  = sum(1 for g in selected if g["group_type"] == "theme_centric")
+    n_entity_sel = sum(1 for g in selected if g["group_type"] == "entity_centric")
     print(f"  After filter (min_signals={min_signals}, min_weight={min_weight}): "
-          f"{len(filtered)} groups → selecting top {len(selected)}")
+          f"{len(filtered)} groups → selecting top {len(selected)} "
+          f"(theme={n_theme_sel}, entity={n_entity_sel})")
 
     # Market regime (rule-based, no LLM)
     regime = _derive_market_regime(records)
@@ -540,6 +565,9 @@ def run(run_date: str | None = None) -> Path:
         "hypotheses": hypotheses,
     }, indent=2, ensure_ascii=False))
 
+    theme_hyps  = sum(1 for h in hypotheses if h["group_type"] == "theme_centric")
+    entity_hyps = sum(1 for h in hypotheses if h["group_type"] == "entity_centric")
+
     (out_dir / "summary.json").write_text(json.dumps({
         "date":               date,
         "total_records":      len(records),
@@ -547,6 +575,8 @@ def run(run_date: str | None = None) -> Path:
         "groups_after_filter": len(filtered),
         "groups_selected":    len(selected),
         "hypotheses_generated": len(hypotheses),
+        "theme_centric":      theme_hyps,
+        "entity_centric":     entity_hyps,
         "parse_failures":     parse_failures,
         "total_tokens_in":    tokens_in_total,
         "total_tokens_out":   tokens_out_total,

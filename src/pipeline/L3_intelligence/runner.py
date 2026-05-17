@@ -49,9 +49,11 @@ from src.llm.client import make_llm
 # ---------------------------------------------------------------------------
 
 class Entity(BaseModel):
-    name:    str
-    type:    Literal["company", "person", "index", "sector"]
-    context: str
+    name:        str
+    type:        Literal["company", "person", "index", "sector", "commodity", "currency"]
+    investable:  bool
+    signal_type: Literal["direct_subject", "affected_entity", "context_mention"]
+    context:     str
 
 class Fact(BaseModel):
     text:   str
@@ -89,22 +91,57 @@ class BatchExtraction(BaseModel):
 
 _SINGLE_PROMPT = ChatPromptTemplate.from_template(
     "You are an investment intelligence analyst for a stock market research system.\n"
-    "The research team is based in India and primarily invests via NSE/BSE,\n"
-    "but actively tracks global markets and international opportunities too.\n\n"
-    "Your job:\n"
-    "1. In 'analysis': briefly assess what is investment-relevant about this article\n"
-    "   (companies, sectors, macro trends, risks, opportunities — global or India).\n"
-    "2. Then extract structured signals. Be concise — max 10 words per text field.\n"
-    "   Top 5 items per category. Skip anything with no investment relevance.\n\n"
+    "The team is based in India and invests via NSE/BSE but tracks global markets too.\n\n"
+    "Step 1 — analysis: assess what is investment-relevant (companies, sectors, macro, risks, opportunities).\n\n"
+    "Step 2 — extract structured signals. Max 10 words per text field. Top 5 per category.\n"
+    "Skip anything with no investment relevance.\n\n"
+    "Entity extraction rules:\n"
+    "  type:\n"
+    "    company   → listed or unlisted firm (TCS, Apple, Zomato)\n"
+    "    sector    → industry group (Banking, IT, Pharma, EV, Defence)\n"
+    "    commodity → raw material / metal / energy (Gold, Crude Oil, Silver, Natural Gas)\n"
+    "    currency  → FX pair or currency (USD/INR, Rupee, EUR, DXY)\n"
+    "    index     → market index used as benchmark (Nifty 50, S&P 500, Bank Nifty)\n"
+    "    person    → individual (CEO, minister, politician, central banker)\n\n"
+    "  investable — can an investor directly buy/sell this via exchange or ETF?\n"
+    "    company: true | sector: true (via ETFs/funds) | commodity: true (MCX, ETFs)\n"
+    "    currency: true (forex) | index: false | person: false\n\n"
+    "  signal_type — what role does this entity play in THIS article?\n"
+    "    direct_subject  → article is primarily ABOUT this entity\n"
+    "                      (earnings report, merger, regulatory action targeting it)\n"
+    "    affected_entity → an investor should buy/sell this based on what the article says\n"
+    "                      (rate cut → banking stocks benefit; PLI scheme → sector gains)\n"
+    "    context_mention → mentioned as background only, not a trading signal\n"
+    "                      (Nifty fell 0.5% as context; US markets as backdrop)\n\n"
+    "  Examples:\n"
+    "    'TCS Q4 results beat estimates by 8%%'\n"
+    "      TCS → company, investable=true, direct_subject\n\n"
+    "    'RBI cuts repo rate by 25bps'\n"
+    "      RBI → person, investable=false, direct_subject\n"
+    "      HDFC Bank → company, investable=true, affected_entity\n"
+    "      Banking sector → sector, investable=true, affected_entity\n"
+    "      Nifty 50 → index, investable=false, context_mention\n\n"
+    "    'Modi announces PLI scheme for semiconductors'\n"
+    "      Narendra Modi → person, investable=false, direct_subject\n"
+    "      Tata Electronics → company, investable=true, affected_entity\n"
+    "      Semiconductor sector → sector, investable=true, affected_entity\n\n"
+    "    'Gold hits all-time high on safe-haven demand'\n"
+    "      Gold → commodity, investable=true, direct_subject\n"
+    "      Titan Company → company, investable=true, affected_entity\n\n"
     "Article:\n{content}"
 )
 
 _BATCH_PROMPT = ChatPromptTemplate.from_template(
-    "You are an investment intelligence analyst for a stock market research system.\n"
-    "The research team is based in India but tracks global markets and opportunities.\n"
+    "You are an investment intelligence analyst. The team is based in India but tracks global markets.\n"
     "Extract structured signals from these {n} headlines in order.\n"
-    "Return exactly {n} results. Be concise — max 8 words per field. Top 3 per category.\n\n"
-    "{headlines}"
+    "Return exactly {n} results. Max 8 words per field. Top 3 per category.\n\n"
+    "Entity rules:\n"
+    "  type: company | sector | commodity | currency | index | person\n"
+    "  investable: true if directly tradeable (stocks, sector ETFs, commodities, forex); "
+    "false for indices and persons\n"
+    "  signal_type: direct_subject (article is ABOUT it) | "
+    "affected_entity (should be traded based on this) | context_mention (background only)\n\n"
+    "Headlines:\n{headlines}"
 )
 
 
@@ -146,14 +183,33 @@ def _derive_from_metadata(rec: dict) -> dict:
     if stype == "corporate_action":
         symbol = metadata.get("symbol", "")
         if symbol:
-            ext["entities"] = [{"name": symbol, "type": "company", "context": "bulk/block deal"}]
+            ext["entities"] = [{
+                "name":        symbol,
+                "type":        "company",
+                "investable":  True,
+                "signal_type": "direct_subject",
+                "context":     "bulk/block deal",
+            }]
 
     elif stype == "market_snapshot":
         snap_type = metadata.get("snapshot_type", rec.get("source", ""))
-        name_map  = {"india_macro": "NIFTY 50", "fii_dii": "FII/DII",
-                     "us_macro": "US Markets", "fno": "NIFTY Options"}
-        ext["entities"] = [{"name": name_map.get(snap_type, snap_type),
-                             "type": "index", "context": "market snapshot"}]
+        # india_macro / us_macro / fno are indices used as backdrop
+        # fii_dii IS the subject of that snapshot (institutional flow data)
+        name_map = {
+            "india_macro": "NIFTY 50",
+            "fii_dii":     "FII/DII Flows",
+            "us_macro":    "US Markets",
+            "fno":         "NIFTY Options",
+        }
+        name  = name_map.get(snap_type, snap_type)
+        stype_entity = "direct_subject" if snap_type == "fii_dii" else "context_mention"
+        ext["entities"] = [{
+            "name":        name,
+            "type":        "index",
+            "investable":  False,
+            "signal_type": stype_entity,
+            "context":     "market snapshot",
+        }]
 
     ext["extraction_confidence"] = "derived"
     return ext
