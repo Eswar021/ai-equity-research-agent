@@ -18,6 +18,7 @@ Available layers:
     7  — Deep Dive       data collect → target_evidence_bundles.json
     8  — Evidence Build  join+assemble→ evidence_packets.json
     9  — Specialist      4 LLM agents → scorecards.json        (LLM)
+    10 — Final Report   composite score + 2 LLM agents → final_report.md (LLM)
 
 Usage:
     python -m src.pipeline.runner 0 1 2 3 4 5 6 7 8 9  # specific layers
@@ -41,7 +42,8 @@ LAYERS = {
     6: ("L6", "src.pipeline.L6_target_selection.runner"),
     7: ("L7", "src.pipeline.L7_deep_dive.runner"),
     8: ("L8", "src.pipeline.L8_evidence_builder.runner"),
-    9: ("L9", "src.pipeline.L9_specialist.runner"),
+    9:  ("L9",  "src.pipeline.L9_specialist.runner"),
+    10: ("L10", "src.pipeline.L10_final_report.runner"),
 }
 
 

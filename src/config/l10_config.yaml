@@ -1,0 +1,35 @@
+layer_10:
+  provider: openai
+  model: null
+  max_workers: 4
+
+  # Composite scoring weights — must sum to 1.0
+  weights:
+    fundamental:      0.25
+    valuation:        0.20
+    thesis:           0.20
+    risk_inverted:    0.20   # applied as (100 - risk_score)
+    market_alignment: 0.15
+
+  # Market alignment base score by regime
+  regime_base_score:
+    bull:      75
+    sideways:  50
+    bear:      25
+    uncertain: 50
+
+  # Market alignment thesis strength adjustment
+  thesis_strength_adj:
+    strong: 10
+    medium:  0
+    weak:  -10
+
+  # FII net flow threshold (crore) — beyond ±threshold, apply ±10 to market_alignment
+  fii_adj_threshold: 500
+
+  # Watchlist decision thresholds
+  high_conviction_threshold: 70   # → strong_buy
+  watch_threshold: 55             # → buy; below → avoid
+
+  # Only persist to db/memory/ if composite_score >= this
+  memory_threshold: 55

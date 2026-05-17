@@ -154,6 +154,18 @@ def run(run_date: str | None = None) -> Path:
     for pkt in packets:
         tid = pkt["target_id"]
         r   = phase1[tid]
+
+        price_data: dict = {}
+        for ticker, tdata in pkt.get("market_data", {}).items():
+            p  = tdata.get("price", {})
+            ac = tdata.get("analyst_consensus", {})
+            price_data[ticker] = {
+                "current":        p.get("current"),
+                "analyst_target": ac.get("target_price_mean"),
+                "upside_pct":     ac.get("upside_pct"),
+                "analyst_count":  ac.get("analyst_count"),
+            }
+
         scorecards.append({
             "target_id":         tid,
             "target_entity":     pkt["target_entity"],
@@ -161,6 +173,10 @@ def run(run_date: str | None = None) -> Path:
             "score":             pkt.get("score"),
             "time_horizon":      pkt.get("time_horizon"),
             "strength":          pkt.get("strength"),
+            "thesis":            pkt.get("thesis", {}),
+            "resolution":        pkt.get("resolution", {}),
+            "macro_context":     pkt.get("macro_context", {}),
+            "price_data":        price_data,
             "fundamental":       r.get("fundamental", {}),
             "valuation":         r.get("valuation", {}),
             "risk":              r.get("risk", {}),

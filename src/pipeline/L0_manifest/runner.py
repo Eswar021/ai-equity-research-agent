@@ -11,6 +11,7 @@ Reads:
     src/config/l7_config.yaml    → layer_7 deep-dive collection settings
     src/config/l8_config.yaml    → layer_8 evidence builder settings
     src/config/l9_config.yaml    → layer_9 specialist analysis agent settings
+    src/config/l10_config.yaml   → layer_10 final report + composite scoring settings
 
 Writes:
     output/{date}/run_manifest.json  → config snapshot consumed by all downstream layers
@@ -18,17 +19,18 @@ Writes:
 LLM: no
 
 Module execution order:
-    1. Load l1_sources.yaml → layer_1 config
-    2. Load l2_filters.yaml → layer_2 config
-    3. Load l3_config.yaml  → layer_3 config
-    4. Load l4_config.yaml  → layer_4 config
-    5. Load l5_config.yaml  → layer_5 config
-    6. Load l6_config.yaml  → layer_6 config
-    7. Load l7_config.yaml  → layer_7 config
-    8. Load l8_config.yaml  → layer_8 config
-    9. Load l9_config.yaml  → layer_9 config
-   10. Build manifest dict with run_date, run_id, created_at, layer_1..9 keys
-   11. Write run_manifest.json
+    1.  Load l1_sources.yaml  → layer_1 config
+    2.  Load l2_filters.yaml  → layer_2 config
+    3.  Load l3_config.yaml   → layer_3 config
+    4.  Load l4_config.yaml   → layer_4 config
+    5.  Load l5_config.yaml   → layer_5 config
+    6.  Load l6_config.yaml   → layer_6 config
+    7.  Load l7_config.yaml   → layer_7 config
+    8.  Load l8_config.yaml   → layer_8 config
+    9.  Load l9_config.yaml   → layer_9 config
+   10.  Load l10_config.yaml  → layer_10 config
+   11. Build manifest dict with run_date, run_id, created_at, layer_1..10 keys
+   12. Write run_manifest.json
 
 Usage:
     python -m src.pipeline.L0_manifest.runner              # today
@@ -53,6 +55,7 @@ _L6_CONFIG_YAML  = PROJECT_ROOT / "src" / "config" / "l6_config.yaml"
 _L7_CONFIG_YAML  = PROJECT_ROOT / "src" / "config" / "l7_config.yaml"
 _L8_CONFIG_YAML  = PROJECT_ROOT / "src" / "config" / "l8_config.yaml"
 _L9_CONFIG_YAML  = PROJECT_ROOT / "src" / "config" / "l9_config.yaml"
+_L10_CONFIG_YAML = PROJECT_ROOT / "src" / "config" / "l10_config.yaml"
 
 
 def _load_l1_config() -> dict:
@@ -145,6 +148,16 @@ def _load_l9_config() -> dict:
     return cfg
 
 
+def _load_l10_config() -> dict:
+    if not _L10_CONFIG_YAML.exists():
+        raise FileNotFoundError(f"L10 config not found: {_L10_CONFIG_YAML}")
+    raw = yaml.safe_load(_L10_CONFIG_YAML.read_text())
+    cfg = raw.get("layer_10")
+    if not isinstance(cfg, dict):
+        raise ValueError(f"l10_config.yaml must have a top-level 'layer_10' dict, got: {type(cfg)}")
+    return cfg
+
+
 def run(run_date: str | None = None) -> Path:
     date    = run_date or today()
     out_dir = output_dir(date)
@@ -158,7 +171,8 @@ def run(run_date: str | None = None) -> Path:
     l6_cfg = _load_l6_config()
     l7_cfg = _load_l7_config()
     l8_cfg = _load_l8_config()
-    l9_cfg = _load_l9_config()
+    l9_cfg  = _load_l9_config()
+    l10_cfg = _load_l10_config()
 
     manifest = {
         "run_date":   date,
@@ -173,6 +187,7 @@ def run(run_date: str | None = None) -> Path:
         "layer_7":    l7_cfg,
         "layer_8":    l8_cfg,
         "layer_9":    l9_cfg,
+        "layer_10":   l10_cfg,
     }
 
     out_path = out_dir / "run_manifest.json"
