@@ -42,7 +42,13 @@ def _overlap_score(record: dict, candidates: set[str]) -> int:
 
 
 def _slim(record: dict, relevance_type: str, max_facts: int, max_events: int) -> dict:
-    """Extract only what L9 agents need — no full content text."""
+    """Extract what L9 agents need — analysis summary + structured extracts, no raw content.
+
+    analysis: L3's investment-relevant summary of the article — the reasoning behind signals.
+    themes: investment context framing (rate cut, NIM expansion, asset quality, etc.)
+    Full article content is excluded — analysis already distilled it, and raw text
+    bloats the prompt without adding value over the structured extractions.
+    """
     return {
         "record_id":          record.get("id", ""),
         "source":             record.get("source", ""),
@@ -50,6 +56,8 @@ def _slim(record: dict, relevance_type: str, max_facts: int, max_events: int) ->
         "title":              record.get("title"),
         "published_at":       record.get("published_at"),
         "relevance_type":     relevance_type,
+        "analysis":           record.get("analysis", ""),
+        "themes":             record.get("themes", []),
         "market_signals":     record.get("market_signals", []),
         "key_facts":          record.get("facts", [])[:max_facts],
         "key_events":         record.get("events", [])[:max_events],
