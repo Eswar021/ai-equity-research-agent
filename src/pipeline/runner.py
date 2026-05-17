@@ -13,11 +13,12 @@ Available layers:
     2  — Dedup + Filter  dedup+quality→ filtered_records.json
     3  — Intelligence    LLM extract  → enriched_records.json  (LLM)
     4  — Memory          recall+score → memory_context.json
+    5  — Hypothesis      groups+LLM   → hypotheses.json        (LLM)
 
 Usage:
-    python -m src.pipeline.runner 0 1 2 3 4   # specific layers
-    python -m src.pipeline.runner 3            # just L3
-    python -m src.pipeline.runner all          # entire pipeline
+    python -m src.pipeline.runner 0 1 2 3 4 5  # specific layers
+    python -m src.pipeline.runner 5             # just L5
+    python -m src.pipeline.runner all           # entire pipeline
 """
 
 import sys
@@ -32,6 +33,7 @@ LAYERS = {
     2: ("L2", "src.pipeline.L2_dedup_quality.runner"),
     3: ("L3", "src.pipeline.L3_intelligence.runner"),
     4: ("L4", "src.pipeline.L4_memory.runner"),
+    5: ("L5", "src.pipeline.L5_hypothesis.runner"),
 }
 
 

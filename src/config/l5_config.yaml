@@ -1,0 +1,13 @@
+layer_5:
+  provider: openai
+  model: gpt-5-nano
+  max_hypotheses: 50        # cap LLM calls — top groups by weight score
+  max_workers: 15           # parallel LLM calls (ThreadPoolExecutor)
+  min_signal_count: 2       # skip groups with fewer events+signals than this
+  min_weight_score: 30      # skip groups below this weight (noise filter)
+
+  # Scoring weights for group prioritization
+  event_weight: 20          # per worth_storing event in group
+  signal_weight: 15         # per worth_storing market_signal in group
+  source_diversity_weight: 5 # per unique source in group
+  memory_hit_weight: 15     # per recalled memory tied to this group's entities
