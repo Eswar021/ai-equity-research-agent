@@ -1,0 +1,18 @@
+layer_8:
+  max_supporting_news: 15      # max L4 records per target in supporting_news
+  max_facts_per_record: 3      # max facts extracted from each matched record
+  max_events_per_record: 3     # max events extracted from each matched record
+  min_entity_match_score: 2    # minimum score to include entity_match records (filters noise)
+
+  # Maps L7 null fields to the analysis they block in L9 agents.
+  # Add new entries here as new fields are collected in L7 — no code change needed.
+  gap_impacts:
+    pb:                     "P/B ratio comparison with sector peers"
+    roe_pct:                "return-on-equity analysis and quality scoring"
+    roce_pct:               "capital efficiency assessment"
+    revenue_growth_ttm_pct: "revenue growth trajectory scoring"
+    pat_growth_ttm_pct:     "earnings trend analysis"
+    net_npa_pct:            "asset quality assessment (banks only)"
+    nim_pct:                "net interest margin trend (banks only)"
+    promoter_pledge_pct:    "promoter stress signal detection"
+    fii_change_qoq_pct:     "institutional flow momentum assessment"
