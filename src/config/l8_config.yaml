@@ -4,6 +4,12 @@ layer_8:
   max_events_per_record: 3     # max events extracted from each matched record
   min_entity_match_score: 2    # minimum score to include entity_match records (filters noise)
 
+  # hypothesis_source records generated the thesis directly — agents need the actual source text.
+  # entity_match records are supporting context — analysis + signals is sufficient.
+  # To also include full content for entity_match, add "entity_match" to this list.
+  include_full_content_for: ["hypothesis_source"]
+  max_content_chars: 8000      # safety cap: truncate very long articles at this char limit
+
   # Maps L7 null fields to the analysis they block in L9 agents.
   # Add new entries here as new fields are collected in L7 — no code change needed.
   gap_impacts:

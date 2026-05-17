@@ -41,15 +41,23 @@ def _overlap_score(record: dict, candidates: set[str]) -> int:
     return hits * 2 + len(record.get("market_signals", []))
 
 
-def _slim(record: dict, relevance_type: str, max_facts: int, max_events: int) -> dict:
-    """Extract what L9 agents need — analysis summary + structured extracts, no raw content.
+def _slim(
+    record: dict,
+    relevance_type: str,
+    max_facts: int,
+    max_events: int,
+    include_content: bool = False,
+    max_content_chars: int = 8000,
+) -> dict:
+    """Extract what L9 agents need for one news record.
 
-    analysis: L3's investment-relevant summary of the article — the reasoning behind signals.
-    themes: investment context framing (rate cut, NIM expansion, asset quality, etc.)
-    Full article content is excluded — analysis already distilled it, and raw text
-    bloats the prompt without adding value over the structured extractions.
+    hypothesis_source records (include_content=True): full article text is included so
+    L9 agents reason from the actual source, not L3's potentially lossy summary.
+
+    entity_match records (include_content=False): analysis + structured extracts only —
+    these corroborate the thesis but didn't drive it; summaries are sufficient.
     """
-    return {
+    out = {
         "record_id":          record.get("id", ""),
         "source":             record.get("source", ""),
         "source_reliability": record.get("source_reliability", ""),
@@ -62,6 +70,10 @@ def _slim(record: dict, relevance_type: str, max_facts: int, max_events: int) ->
         "key_facts":          record.get("facts", [])[:max_facts],
         "key_events":         record.get("events", [])[:max_events],
     }
+    if include_content:
+        raw = record.get("content", "") or ""
+        out["content"] = raw[:max_content_chars]
+    return out
 
 
 def match(
@@ -76,23 +88,31 @@ def match(
     record_index: {record_id: record} built from all L4 records.
     all_records: flat L4 records list (used for entity_match scan).
     """
-    max_news  = cfg.get("max_supporting_news", 15)
-    max_facts = cfg.get("max_facts_per_record", 3)
-    max_evts  = cfg.get("max_events_per_record", 3)
-    min_score = cfg.get("min_entity_match_score", 2)
+    max_news         = cfg.get("max_supporting_news", 15)
+    max_facts        = cfg.get("max_facts_per_record", 3)
+    max_evts         = cfg.get("max_events_per_record", 3)
+    min_score        = cfg.get("min_entity_match_score", 2)
+    full_content_for = set(cfg.get("include_full_content_for", []))
+    max_chars        = cfg.get("max_content_chars", 8000)
 
     result: list[dict] = []
     seen:   set[str]   = set()
 
     # Pass 1 — hypothesis_source: exact record_ids from the L6 target
+    # These are the articles that generated the thesis — include full content if configured.
+    include_hyp_content = "hypothesis_source" in full_content_for
     for rid in target.get("record_ids", []):
         rec = record_index.get(rid)
         if rec:
-            result.append(_slim(rec, "hypothesis_source", max_facts, max_evts))
+            result.append(_slim(
+                rec, "hypothesis_source", max_facts, max_evts,
+                include_content=include_hyp_content, max_content_chars=max_chars,
+            ))
             seen.add(rid)
 
     # Pass 2 — entity_match: scan remaining records for name overlap
-    remaining = max_news - len(result)
+    include_ent_content = "entity_match" in full_content_for
+    remaining  = max_news - len(result)
     candidates = _candidate_names(target, bundle)
 
     if remaining > 0 and candidates:
@@ -107,6 +127,9 @@ def match(
 
         scored.sort(key=lambda x: x[0], reverse=True)
         for _, rec in scored[:remaining]:
-            result.append(_slim(rec, "entity_match", max_facts, max_evts))
+            result.append(_slim(
+                rec, "entity_match", max_facts, max_evts,
+                include_content=include_ent_content, max_content_chars=max_chars,
+            ))
 
     return result
