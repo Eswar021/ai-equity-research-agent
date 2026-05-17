@@ -15,11 +15,12 @@ Available layers:
     4  — Memory          recall+score → memory_context.json
     5  — Hypothesis      groups+LLM   → hypotheses.json        (LLM)
     6  — Target Select   score+bucket → selected_targets.json
+    7  — Deep Dive       data collect → target_evidence_bundles.json
 
 Usage:
-    python -m src.pipeline.runner 0 1 2 3 4 5 6  # specific layers
-    python -m src.pipeline.runner 6               # just L6
-    python -m src.pipeline.runner all             # entire pipeline
+    python -m src.pipeline.runner 0 1 2 3 4 5 6 7  # specific layers
+    python -m src.pipeline.runner 7                  # just L7
+    python -m src.pipeline.runner all                # entire pipeline
 """
 
 import sys
@@ -36,6 +37,7 @@ LAYERS = {
     4: ("L4", "src.pipeline.L4_memory.runner"),
     5: ("L5", "src.pipeline.L5_hypothesis.runner"),
     6: ("L6", "src.pipeline.L6_target_selection.runner"),
+    7: ("L7", "src.pipeline.L7_deep_dive.runner"),
 }
 
 

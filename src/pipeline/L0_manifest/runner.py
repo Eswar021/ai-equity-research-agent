@@ -8,6 +8,7 @@ Reads:
     src/config/l4_config.yaml    → layer_4 memory qualification thresholds
     src/config/l5_config.yaml    → layer_5 hypothesis generation settings
     src/config/l6_config.yaml    → layer_6 target selection thresholds
+    src/config/l7_config.yaml    → layer_7 deep-dive collection settings
 
 Writes:
     output/{date}/run_manifest.json  → config snapshot consumed by all downstream layers
@@ -21,8 +22,9 @@ Module execution order:
     4. Load l4_config.yaml  → layer_4 config
     5. Load l5_config.yaml  → layer_5 config
     6. Load l6_config.yaml  → layer_6 config
-    7. Build manifest dict with run_date, run_id, created_at, layer_1..6 keys
-    8. Write run_manifest.json
+    7. Load l7_config.yaml  → layer_7 config
+    8. Build manifest dict with run_date, run_id, created_at, layer_1..7 keys
+    9. Write run_manifest.json
 
 Usage:
     python -m src.pipeline.L0_manifest.runner              # today
@@ -44,6 +46,7 @@ _L3_CONFIG_YAML  = PROJECT_ROOT / "src" / "config" / "l3_config.yaml"
 _L4_CONFIG_YAML  = PROJECT_ROOT / "src" / "config" / "l4_config.yaml"
 _L5_CONFIG_YAML  = PROJECT_ROOT / "src" / "config" / "l5_config.yaml"
 _L6_CONFIG_YAML  = PROJECT_ROOT / "src" / "config" / "l6_config.yaml"
+_L7_CONFIG_YAML  = PROJECT_ROOT / "src" / "config" / "l7_config.yaml"
 
 
 def _load_l1_config() -> dict:
@@ -106,6 +109,16 @@ def _load_l6_config() -> dict:
     return cfg
 
 
+def _load_l7_config() -> dict:
+    if not _L7_CONFIG_YAML.exists():
+        raise FileNotFoundError(f"L7 config not found: {_L7_CONFIG_YAML}")
+    raw = yaml.safe_load(_L7_CONFIG_YAML.read_text())
+    cfg = raw.get("layer_7")
+    if not isinstance(cfg, dict):
+        raise ValueError(f"l7_config.yaml must have a top-level 'layer_7' dict, got: {type(cfg)}")
+    return cfg
+
+
 def run(run_date: str | None = None) -> Path:
     date    = run_date or today()
     out_dir = output_dir(date)
@@ -117,6 +130,7 @@ def run(run_date: str | None = None) -> Path:
     l4_cfg = _load_l4_config()
     l5_cfg = _load_l5_config()
     l6_cfg = _load_l6_config()
+    l7_cfg = _load_l7_config()
 
     manifest = {
         "run_date":   date,
@@ -128,6 +142,7 @@ def run(run_date: str | None = None) -> Path:
         "layer_4":    l4_cfg,
         "layer_5":    l5_cfg,
         "layer_6":    l6_cfg,
+        "layer_7":    l7_cfg,
     }
 
     out_path = out_dir / "run_manifest.json"

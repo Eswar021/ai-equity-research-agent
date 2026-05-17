@@ -28,8 +28,8 @@ config/portfolio.json
 # All Phase A/B/C outputs (large JSON files, regenerated each run)
 output/
 
-# Cached NSE symbol list (auto-refreshes)
-# context_ext_layer/phaseB_CS/nse_equity_cache.json
+# Cached NSE symbol list (auto-refreshes, runtime infrastructure)
+db/nse_equity_cache.json
 
 # DB / archive
 # db/

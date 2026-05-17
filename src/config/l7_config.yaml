@@ -1,0 +1,165 @@
+layer_7:
+  # Data collection settings
+  screener_request_delay_s: 1.5   # seconds between screener.in requests (anti-ban)
+  max_peers: 4                    # peer tickers to collect per target ticker
+  price_history_days: 200         # days of history for 200-DMA computation
+  max_corporate_actions: 3        # last N NSE corporate actions per ticker
+  max_recent_filings: 2           # last N material NSE announcements per ticker
+  max_workers: 4                  # parallel threads for yfinance + NSE API (NOT screener)
+  nse_symbols_refresh_days: 7     # how often to refresh the NSE equity cache
+
+  # NSE announcement types that count as material for investors.
+  # Anything not in this list is skipped during filing collection.
+  # Add/remove keywords here — no code change needed.
+  material_announcement_types:
+    - board meeting
+    - financial results
+    - dividend
+    - buyback
+    - change in director
+    - change in management
+    - merger
+    - acquisition
+    - demerger
+    - rights issue
+    - bonus
+    - split
+    - open offer
+    - delisting
+    - credit rating
+    - order won
+    - loss of order
+    - outcome of board meeting
+    - press release
+
+  # Colloquial aliases that fuzzy matching misses (abbreviations, brand names, common short forms).
+  # Key: what users/LLMs write → Value: NSE ticker symbol.
+  # Add new entries here when a target comes back unresolved — no code change needed.
+  company_aliases:
+    sbi: SBIN
+    tcs: TCS
+    hul: HINDUNILVR
+    hindustan unilever: HINDUNILVR
+    m&m: M-M
+    mahindra: M-M
+    l&t: LT
+    larsen: LT
+    lic: LICI
+    ioc: IOC
+    indian oil: IOC
+    bpcl: BPCL
+    hpcl: HINDPETRO
+    ongc: ONGC
+    ntpc: NTPC
+    gail: GAIL
+    sail: SAIL
+    bhel: BHEL
+    itc: ITC
+    acc: ACC
+    dlf: DLF
+    hdfc bank: HDFCBANK
+    hdfcbank: HDFCBANK
+    icici bank: ICICIBANK
+    kotak bank: KOTAKBANK
+    kotak mahindra: KOTAKBANK
+    axis bank: AXISBANK
+    yes bank: YESBANK
+    pnb: PNB
+    punjab national: PNB
+    bob: BANKBARODA
+    bank of baroda: BANKBARODA
+    reliance: RELIANCE
+    infosys: INFY
+    infy: INFY
+    wipro: WIPRO
+    hcltech: HCLTECH
+    hcl tech: HCLTECH
+    hcl technologies: HCLTECH
+    tech mahindra: TECHM
+    techm: TECHM
+    bajaj finance: BAJAJFIN
+    bajaj finserv: BAJAJFINSV
+    bajaj auto: BAJAJ-AUTO
+    maruti: MARUTI
+    maruti suzuki: MARUTI
+    tata motors: TATAMOTORS
+    tata steel: TATASTEEL
+    tata power: TATAPOWER
+    adani ports: ADANIPORTS
+    adani green: ADANIGREEN
+    adani enterprises: ADANIENT
+    sun pharma: SUNPHARMA
+    sun pharmaceutical: SUNPHARMA
+    dr reddy: DRREDDY
+    dr. reddy: DRREDDY
+    cipla: CIPLA
+    divis: DIVISLAB
+    asian paints: ASIANPAINT
+    titan: TITAN
+    ultratech: ULTRACEMCO
+    jsw steel: JSWSTEEL
+    power grid: POWERGRID
+    coal india: COALINDIA
+    paytm: PAYTM
+    zomato: ZOMATO
+    nykaa: FSN
+    indigo: INDIGO
+    interglobe: INDIGO
+    irctc: IRCTC
+    irfc: IRFC
+    rvnl: RVNL
+    hal: HAL
+    bel: BEL
+    mrf: MRF
+    pidilite: PIDILITIND
+    havells: HAVELLS
+    indusind: INDUSINDBK
+    indusind bank: INDUSINDBK
+    shriram finance: SHRIRAMFIN
+    cholamandalam: CHOLAFIN
+    muthoot: MUTHOOTFIN
+    srf: SRF
+    deepak nitrite: DEEPAKNI
+
+  # Commodity keyword → affected NSE tickers
+  # primary: direct beneficiaries/victims; secondary: indirect exposure
+  commodity_mappings:
+    crude_oil:
+      primary: [ONGC, OIL]              # upstream E&P: benefit from high crude
+      secondary: [BPCL, HINDPETRO, IOC] # downstream OMC: hurt by high crude
+    gold:
+      primary: [GOLDBEES]               # gold ETF proxy
+      secondary: [TITAN, RAJESHEXPO]    # jewelry demand play
+    natural_gas:
+      primary: [GAIL, IGL, MGL]
+    silver:
+      primary: [SILVERETF]
+    coal:
+      primary: [COALINDIA]
+      secondary: [NTPC, TATAPOWER]      # coal-fired power generation
+
+  # Sector theme keyword → top NSE constituents (top 5 by market cap)
+  sector_mappings:
+    it: [TCS, INFY, HCLTECH, WIPRO, TECHM]
+    software: [TCS, INFY, HCLTECH, WIPRO, TECHM]
+    banking: [HDFCBANK, ICICIBANK, SBIN, AXISBANK, KOTAKBANK]
+    bank: [HDFCBANK, ICICIBANK, SBIN, AXISBANK, KOTAKBANK]
+    pharma: [SUNPHARMA, DRREDDY, CIPLA, DIVISLAB, LUPIN]
+    pharmaceutical: [SUNPHARMA, DRREDDY, CIPLA, DIVISLAB, LUPIN]
+    auto: [MARUTI, TATAMOTORS, M-M, BAJAJ-AUTO, HEROMOTOCO]
+    automobile: [MARUTI, TATAMOTORS, M-M, BAJAJ-AUTO, HEROMOTOCO]
+    fmcg: [HINDUNILVR, ITC, NESTLEIND, BRITANNIA, DABUR]
+    oil: [RELIANCE, ONGC, BPCL, GAIL, IOC]         # matches "oil price", "oil sector", etc.
+    oil_gas: [RELIANCE, ONGC, BPCL, GAIL, IOC]
+    nbfc: [BAJAJFIN, CHOLAFIN, MUTHOOTFIN, SHRIRAMFIN]
+    real_estate: [DLF, GODREJPROP, PRESTIGE, OBEROIREALTY]
+    realty: [DLF, GODREJPROP, PRESTIGE, OBEROIREALTY]
+    cement: [ULTRACEMCO, SHREECEM, AMBUJACEM, ACC]
+    metals: [TATASTEEL, JSWSTEEL, HINDALCO, VEDL, SAIL]
+    steel: [TATASTEEL, JSWSTEEL, SAIL]
+    power: [NTPC, POWERGRID, ADANIPOWER, TATAPOWER]
+    telecom: [BHARTIARTL, VODAFONE]
+    defense: [HAL, BEL, MAZDOCK, PARAS]
+    chemicals: [SRF, PIIND, DEEPAKNI, NAVINFLUOR]
+    infra: [LT, IRCON, RVNL, NBCC]
+    infrastructure: [LT, IRCON, RVNL, NBCC]
