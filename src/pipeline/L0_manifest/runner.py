@@ -65,7 +65,7 @@ def _load_l1_config() -> dict:
     sources = raw.get("sources")
     if not isinstance(sources, dict):
         raise ValueError(f"l1_sources.yaml must have a top-level 'sources' dict, got: {type(sources)}")
-    return sources
+    return {**sources, "max_workers": raw.get("max_workers", 8)}
 
 
 def _load_l2_config() -> dict:
@@ -194,7 +194,7 @@ def run(run_date: str | None = None) -> Path:
     out_path.write_text(json.dumps(manifest, indent=2, ensure_ascii=False))
 
     print(f"  L0 done: run_manifest written → {out_path}")
-    print(f"  Layer 1 sources: {', '.join(k for k, v in l1_cfg.items() if v.get('enabled', True))}")
+    print(f"  Layer 1 sources: {', '.join(k for k, v in l1_cfg.items() if isinstance(v, dict) and v.get('enabled', True))}")
     return out_path
 
 
