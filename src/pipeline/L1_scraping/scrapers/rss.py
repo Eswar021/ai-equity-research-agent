@@ -1,7 +1,7 @@
 """RSS feed scraper — returns news_article records from configured feeds."""
 
 import time
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from email.utils import parsedate_to_datetime
 
 import feedparser
@@ -53,6 +53,9 @@ def collect(cfg: dict) -> list[dict]:
     if not feeds:
         raise ValueError("rss config missing 'feeds' list")
 
+    days_back = int(cfg.get("days_back", 3))
+    cutoff    = datetime.now(IST) - timedelta(days=days_back)
+
     records = []
     for feed_cfg in feeds:
         name = feed_cfg["name"]
@@ -67,6 +70,20 @@ def collect(cfg: dict) -> list[dict]:
                 if not (title or snippet):
                     continue
 
+                published_at = _parse_published(entry)
+
+                # Skip entries older than days_back — check BEFORE scraping the URL
+                # so we don't waste HTTP requests on ancient cached feed items.
+                if published_at:
+                    try:
+                        pub_dt = datetime.fromisoformat(published_at)
+                        if pub_dt.tzinfo is None:
+                            pub_dt = pub_dt.replace(tzinfo=IST)
+                        if pub_dt < cutoff:
+                            continue
+                    except Exception:
+                        pass
+
                 # Scrape full article body from the URL; fall back to feed snippet
                 body = scrape_url(link, title=title) if link else ""
                 content = body if body else snippet
@@ -77,7 +94,7 @@ def collect(cfg: dict) -> list[dict]:
                     "source_type":  "news_article",
                     "title":        title,
                     "url":          link,
-                    "published_at": _parse_published(entry),
+                    "published_at": published_at,
                     "content":      content,
                     "metadata":     {
                         "feed_name":    name,

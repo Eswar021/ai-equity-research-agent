@@ -79,6 +79,7 @@ def run(run_date: str | None = None) -> Path:
 
     content_length_min = int(l2_cfg.get("content_length_min", 100))
     stale_hours        = int(l2_cfg.get("stale_hours", 48))
+    drop_stale         = bool(l2_cfg.get("drop_stale", True))
     reliability_map    = _build_reliability_map(l2_cfg.get("source_reliability", {}))
 
     l1_path = output_dir(date) / "L1" / "raw_records.json"
@@ -94,8 +95,9 @@ def run(run_date: str | None = None) -> Path:
     filtered: list[dict] = []
 
     stats = {
-        "input_count":     len(raw_records),
+        "input_count":        len(raw_records),
         "duplicates_dropped": 0,
+        "stale_dropped":      0,
         "flags": {"low_content": 0, "stale": 0},
         "quality_tiers": {"high": 0, "medium": 0, "low": 0},
         "reliability": {"high": 0, "medium": 0, "low": 0},
@@ -125,6 +127,11 @@ def run(run_date: str | None = None) -> Path:
         if published_dt:
             pub_aware = published_dt if published_dt.tzinfo else published_dt.replace(tzinfo=IST)
             if pub_aware < stale_cutoff:
+                # market_snapshot and corporate_action records are generated at scrape
+                # time and should never be dropped on staleness grounds.
+                if drop_stale and rec.get("source_type") not in ("market_snapshot", "corporate_action"):
+                    stats["stale_dropped"] += 1
+                    continue
                 flags.append("stale")
                 stats["flags"]["stale"] += 1
 
@@ -159,19 +166,20 @@ def run(run_date: str | None = None) -> Path:
     }, indent=2, ensure_ascii=False))
 
     summary = {
-        "date":              date,
-        "input_count":       stats["input_count"],
-        "output_count":      len(filtered),
+        "date":               date,
+        "input_count":        stats["input_count"],
+        "output_count":       len(filtered),
         "duplicates_dropped": stats["duplicates_dropped"],
-        "flags":             stats["flags"],
-        "quality_tiers":     stats["quality_tiers"],
-        "reliability":       stats["reliability"],
-        "by_source":         stats["by_source"],
+        "stale_dropped":      stats["stale_dropped"],
+        "flags":              stats["flags"],
+        "quality_tiers":      stats["quality_tiers"],
+        "reliability":        stats["reliability"],
+        "by_source":          stats["by_source"],
     }
     (out_dir / "summary.json").write_text(json.dumps(summary, indent=2))
 
     print(f"  L2 done: {stats['input_count']} in → {len(filtered)} out "
-          f"({stats['duplicates_dropped']} dupes dropped)")
+          f"({stats['duplicates_dropped']} dupes, {stats['stale_dropped']} stale dropped)")
     print(f"  Quality: high={stats['quality_tiers']['high']}, "
           f"medium={stats['quality_tiers']['medium']}, "
           f"low={stats['quality_tiers']['low']}")

@@ -53,14 +53,19 @@ def _score(hyp: dict, regime: str, cfg: dict) -> tuple[int, dict]:
     regime_row     = regime_table.get(regime, regime_table.get("uncertain", {}))
     regime_score   = int(regime_row.get(horizon, 5))
 
-    total = strength_score + signal_score + diversity_score + regime_score
+    weight_bonus = min(
+        hyp.get("weight_score", 0) / cfg.get("weight_score_bonus_divisor", 150),
+        cfg.get("weight_score_bonus_cap", 10),
+    )
+    total = strength_score + signal_score + diversity_score + regime_score + weight_bonus
     breakdown = {
-        "strength":        strength_score,
-        "signal_volume":   signal_score,
+        "strength":         strength_score,
+        "signal_volume":    signal_score,
         "source_diversity": diversity_score,
         "regime_alignment": regime_score,
+        "weight_bonus":     round(weight_bonus, 2),
     }
-    return total, breakdown
+    return int(total), breakdown
 
 
 # ---------------------------------------------------------------------------

@@ -100,11 +100,16 @@ def _composite(sc: dict, cfg: dict) -> tuple[int, int]:
     return round(raw), ma
 
 
-def _recommendation(composite: int, cfg: dict) -> str:
+def _recommendation(sc: dict, composite: int, cfg: dict) -> str:
+    thesis_verdict = sc.get("thesis_validation", {}).get("verdict", "")
+    if thesis_verdict == "contradicted":
+        return "avoid"
     if composite >= cfg["high_conviction_threshold"]:
         return "strong_buy"
-    if composite >= cfg["watch_threshold"]:
+    if composite >= cfg["buy_threshold"]:
         return "buy"
+    if thesis_verdict == "insufficient_data" or composite >= cfg["watch_threshold"]:
+        return "watch"
     return "avoid"
 
 
@@ -357,7 +362,7 @@ def run(run_date: str | None = None) -> Path:
     scored = []
     for sc in scorecards:
         composite, ma = _composite(sc, cfg)
-        rec            = _recommendation(composite, cfg)
+        rec            = _recommendation(sc, composite, cfg)
         scored.append({
             "scorecard":       sc,
             "composite_score": composite,
@@ -411,6 +416,10 @@ def run(run_date: str | None = None) -> Path:
         for item in scored:
             sc  = item["scorecard"]
             tid = sc["target_id"]
+            res = sc.get("resolution", {})
+            if res.get("type") == "unresolved" or not res.get("tickers"):
+                print(f"    ⊘ {sc['target_entity']} scenarios skipped (no tickers)")
+                continue
             futures2[ex.submit(
                 run_scenarios,
                 sc, item["composite_score"], item["synthesis"],

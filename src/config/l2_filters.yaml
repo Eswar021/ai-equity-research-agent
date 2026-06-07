@@ -1,6 +1,7 @@
 layer_2:
   content_length_min: 100      # chars; below this → low_content flag
   stale_hours: 48              # hours since published_at; older → stale flag
+  drop_stale: true             # if true, stale records are dropped (not just flagged)
 
   source_reliability:
     high:

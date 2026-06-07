@@ -4,6 +4,7 @@ sources:
 
   rss:
     enabled: true
+    days_back: 3
     feeds:
       - { name: "Mint",              url: "https://www.livemint.com/rss/news" }
       - { name: "NDTV Profit",       url: "https://feeds.feedburner.com/ndtvprofit-latest" }

@@ -58,6 +58,41 @@ def _now_ist() -> str:
     return datetime.now(IST).isoformat()
 
 
+def _apply_risk_floor(risk: dict, market_data: dict) -> dict:
+    """
+    Post-process risk score: floor it upward when critical data is missing.
+    LLM advisory instructions for data gaps aren't reliably enforced, so we
+    apply a deterministic minimum here after the LLM returns its score.
+    """
+    missing_ownership = all(
+        td.get("ownership", {}).get("promoter_pct") is None
+        for td in market_data.values()
+    ) if market_data else True
+
+    missing_roe = all(
+        td.get("fundamentals", {}).get("roe_pct") is None
+        for td in market_data.values()
+    ) if market_data else True
+
+    floor = risk.get("score", 50)
+    if missing_ownership and missing_roe:
+        floor = max(floor, 70)
+    elif missing_ownership or missing_roe:
+        floor = max(floor, 60)
+
+    if floor != risk.get("score"):
+        risk = dict(risk)
+        risk["score"] = floor
+        parts = []
+        if missing_ownership:
+            parts.append("ownership data absent")
+        if missing_roe:
+            parts.append("ROE absent")
+        note = f"Risk floor applied ({', '.join(parts)}) → score raised to {floor}"
+        risk["key_findings"] = list(risk.get("key_findings", [])) + [note]
+    return risk
+
+
 def run(run_date: str | None = None) -> Path:
     t_start = time.time()
     date    = run_date or today()
@@ -166,6 +201,8 @@ def run(run_date: str | None = None) -> Path:
                 "analyst_count":  ac.get("analyst_count"),
             }
 
+        risk_result = _apply_risk_floor(r.get("risk", {}), pkt.get("market_data", {}))
+
         scorecards.append({
             "target_id":         tid,
             "target_entity":     pkt["target_entity"],
@@ -179,7 +216,7 @@ def run(run_date: str | None = None) -> Path:
             "price_data":        price_data,
             "fundamental":       r.get("fundamental", {}),
             "valuation":         r.get("valuation", {}),
-            "risk":              r.get("risk", {}),
+            "risk":              risk_result,
             "thesis_validation": r.get("thesis_validation", {}),
         })
 

@@ -32,7 +32,7 @@ from src.config.settings import IST
 
 class InvestmentNarrative(BaseModel):
     investment_narrative: str    # 3-4 paragraphs: evidence, conclusion, risk, timing
-    recommendation: Literal["strong_buy", "buy", "avoid"]
+    recommendation: Literal["strong_buy", "buy", "watch", "avoid"]
     entry_price_range: str       # specific ₹ range, e.g. "₹1,110–1,130 on dips"
     stop_loss_guide: str         # specific ₹ level, e.g. "₹950 (key support, -15%)"
     exit_triggers: list[str]     # 3-5 observable events that would invalidate thesis
@@ -62,9 +62,11 @@ class InvestmentScenarios(BaseModel):
 _RECOMMENDATION_ANCHOR = (
     "Recommendation must match composite_score exactly:\n"
     "  strong_buy : composite_score ≥ 70\n"
-    "  buy        : composite_score 55–69\n"
+    "  buy        : composite_score 62–69\n"
+    "  watch      : composite_score 55–61\n"
     "  avoid      : composite_score < 55\n"
     "Do NOT upgrade or downgrade from what the score mandates.\n"
+    "Exception: if thesis_validation verdict is 'contradicted', always use 'avoid'.\n"
 )
 
 
@@ -99,7 +101,7 @@ SYNTHESIS_PROMPT = ChatPromptTemplate.from_template(
     "- exit_triggers: 3-5 concrete observable events that would invalidate the thesis. "
     "Derive from the invalidation conditions — make each one actionable.\n"
     "- position_sizing_note: one sentence. Scale with conviction: "
-    "strong_buy → core position (3-5%), buy → half-size (1-2%), avoid → no position.\n"
+    "strong_buy → core position (3-5%), buy → half-size (1-2%), watch → starter (0.5-1%), avoid → no position.\n"
     "- catalysts: 3-5 near-term observable events that could accelerate the thesis.\n"
 )
 
@@ -113,13 +115,14 @@ SCENARIOS_PROMPT = ChatPromptTemplate.from_template(
     "INVESTMENT NARRATIVE (from synthesis step):\n{investment_narrative}\n\n"
     "INSTRUCTIONS:\n"
     "Produce three scenarios with specific ₹ price targets and % returns.\n\n"
-    "base_case (probability ~50-60%): most likely outcome. "
-    "Target should align with analyst consensus mean. 1-2 sentence description.\n\n"
-    "bull_case (probability ~20-30%): optimistic. "
-    "Target = analyst mean + 15-20% premium if catalysts deliver. 1-2 sentence description.\n\n"
-    "bear_case (probability ~15-25%): downside. "
-    "Target = current price impacted by the worst invalidating condition. "
-    "1-2 sentence description of what went wrong.\n\n"
+    "CRITICAL — calibrate targets to the time horizon shown above:\n"
+    "  short_term  (2–4 weeks): base = current price ±5–8% (momentum/news-driven move). "
+    "DO NOT use the analyst 12-month consensus as base — that is a year-long target, not a 2–4 week one.\n"
+    "  medium_term (1–3 months): base = current price + 25–40% of the analyst 12-month upside.\n"
+    "  long_term   (6–12 months): base aligns with the analyst consensus 12-month target.\n\n"
+    "base_case (probability ~50-60%): most likely outcome given the time horizon. 1-2 sentences.\n"
+    "bull_case (probability ~20-30%): optimistic scenario — 1.5–2× the base move. 1-2 sentences.\n"
+    "bear_case (probability ~15-25%): downside from the worst invalidating condition. 1-2 sentences.\n\n"
     "For price targets: use the PRIMARY ticker's current price as anchor. "
     "If it is a sector basket, pick the most liquid/representative ticker from the price data above.\n\n"
     "Compute return_pct = (price_target - current_price) / current_price × 100.\n"

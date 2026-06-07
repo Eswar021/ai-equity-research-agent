@@ -1,11 +1,8 @@
 """
-Master pipeline runner — run layers by number for today's date.
+Master pipeline runner — run layers by number.
 
 Layer selection is required. Nothing runs if omitted.
 Layers always execute in canonical order regardless of input order.
-
-For a specific date, run the individual layer directly:
-    python -m src.pipeline.L3_intelligence.runner --date 2026-05-17
 
 Available layers:
     0  — Manifest        config YAMLs → run_manifest.json
@@ -21,9 +18,10 @@ Available layers:
     10 — Final Report   composite score + 2 LLM agents → final_report.md (LLM)
 
 Usage:
-    python -m src.pipeline.runner 0 1 2 3 4 5 6 7 8 9  # specific layers
-    python -m src.pipeline.runner 9                     # just L9
-    python -m src.pipeline.runner all                   # entire pipeline
+    python -m src.pipeline.runner 0 1 2 3 4 5 6 7 8 9  # specific layers, today
+    python -m src.pipeline.runner 9                     # just L9, today
+    python -m src.pipeline.runner all                   # entire pipeline, today
+    python -m src.pipeline.runner 7 8 9 10 --date 2026-05-23  # specific date
 """
 
 import sys
@@ -66,11 +64,22 @@ def main() -> None:
 
     if not args:
         print(
-            "Usage: python -m src.pipeline.runner <layer> [layer ...] | all\n"
+            "Usage: python -m src.pipeline.runner <layer> [layer ...] | all [--date YYYY-MM-DD]\n"
             f"Layers: {', '.join(str(n) for n in LAYERS)}  or  all\n"
-            "Example: python -m src.pipeline.runner 0 1 2 3"
+            "Example: python -m src.pipeline.runner 0 1 2 3\n"
+            "         python -m src.pipeline.runner 7 8 9 10 --date 2026-05-23"
         )
         sys.exit(1)
+
+    # Extract --date YYYY-MM-DD if present
+    date_override = None
+    if "--date" in args:
+        idx = args.index("--date")
+        if idx + 1 >= len(args):
+            print("--date requires a value: --date YYYY-MM-DD")
+            sys.exit(1)
+        date_override = args[idx + 1]
+        args = args[:idx] + args[idx + 2:]
 
     if args == ["all"]:
         requested = sorted(LAYERS.keys())
@@ -84,7 +93,7 @@ def main() -> None:
             requested.append(int(a))
         requested = sorted(set(requested))
 
-    date = today()
+    date = date_override or today()
     layer_labels = [LAYERS[n][0] for n in requested]
 
     print(f"Date: {date}  |  Layers: {' → '.join(layer_labels)}")

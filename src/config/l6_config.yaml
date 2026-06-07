@@ -21,6 +21,12 @@ layer_6:
     sideways:  { short_term: 10, medium_term: 10, intraday: 10, long_term: 10 }
     uncertain: { short_term:  5, medium_term:  5, intraday:  5, long_term:  5 }
 
+  # Weight score bonus (0-10) — differentiates targets when all other caps are hit
+  # L5 weight_score is unbounded (~200-2000); dividing by 150 and capping at 10 gives
+  # meaningful separation without overwhelming the structured scoring above.
+  weight_score_bonus_divisor: 150
+  weight_score_bonus_cap: 10
+
   # Bucket thresholds
   max_deep_dive: 7           # hard cap — L7 researches exactly this many targets per day
   deep_dive_min_score: 55    # must score above this to qualify for deep_dive

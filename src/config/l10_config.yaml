@@ -29,7 +29,8 @@ layer_10:
 
   # Watchlist decision thresholds
   high_conviction_threshold: 70   # → strong_buy
-  watch_threshold: 55             # → buy; below → avoid
+  buy_threshold: 62               # → buy
+  watch_threshold: 55             # → watch; below → avoid
 
   # Only persist to db/memory/ if composite_score >= this
   memory_threshold: 55

@@ -39,6 +39,7 @@ def _num(text: str) -> float | None:
 
 
 def _parse_key_ratios(soup: BeautifulSoup) -> dict:
+    """Parse screener.in top-ratios section. Keys stored lowercase for robust matching."""
     ratios = {}
     ul = soup.find(id="top-ratios")
     if not ul:
@@ -46,14 +47,29 @@ def _parse_key_ratios(soup: BeautifulSoup) -> dict:
     for li in ul.find_all("li"):
         parts = [s.strip() for s in li.get_text(separator="|").split("|") if s.strip()]
         if len(parts) >= 2:
-            key = parts[0].strip()
+            key = parts[0].strip().lower()
             val = " ".join(parts[1:]).strip()
             ratios[key] = val
     return ratios
 
 
+def _r(key: str, ratios: dict) -> float | None:
+    """Case-insensitive partial key match against the ratios dict."""
+    key_lower = key.lower()
+    if key_lower in ratios:
+        return _num(ratios[key_lower])
+    for k, v in ratios.items():
+        if key_lower in k:
+            return _num(v)
+    return None
+
+
 def _parse_quarterly_table(soup: BeautifulSoup) -> list[dict]:
-    """Extract last 4 quarters of revenue, PAT, OPM from the quarters section."""
+    """
+    Extract latest 4 quarters of revenue, PAT, OPM from the quarters section.
+    Screener.in renders quarterly data oldest-first, so we take from the right end.
+    Also computes TTM YoY growth using last 8 quarters when available.
+    """
     section = soup.find(id="quarters")
     if not section:
         return []
@@ -64,8 +80,15 @@ def _parse_quarterly_table(soup: BeautifulSoup) -> list[dict]:
     thead = table.find("thead")
     if not thead:
         return []
-    quarters = [th.get_text(strip=True) for th in thead.find_all("th")][1:]
-    quarters = quarters[:4]  # last 4 quarters only
+    all_qs = [th.get_text(strip=True) for th in thead.find_all("th")][1:]
+    n_total = len(all_qs)
+    if n_total == 0:
+        return []
+
+    # Take up to 8 most recent quarters (oldest-first layout → rightmost = newest)
+    start = max(0, n_total - 8)
+    qs_8 = all_qs[start:]           # up to 8, oldest-of-8 first
+    n = len(qs_8)
 
     rows_by_metric: dict[str, list] = {}
     tbody = table.find("tbody")
@@ -75,21 +98,47 @@ def _parse_quarterly_table(soup: BeautifulSoup) -> list[dict]:
             if not cells:
                 continue
             metric = cells[0].get_text(strip=True).rstrip("+").strip()
-            values = [cells[i + 1].get_text(strip=True) if (i + 1) < len(cells) else "" for i in range(len(quarters))]
+            # Align cell indices to the same window [start .. start+n]
+            values = [
+                cells[start + i + 1].get_text(strip=True) if (start + i + 1) < len(cells) else ""
+                for i in range(n)
+            ]
             rows_by_metric[metric] = values
 
     revenue_row = rows_by_metric.get("Sales", rows_by_metric.get("Revenue", []))
     pat_row     = rows_by_metric.get("Net Profit", rows_by_metric.get("PAT", []))
     opm_row     = rows_by_metric.get("OPM %", rows_by_metric.get("Operating Profit Margin %", []))
 
+    # Build display result for the 4 most recent quarters (tail of qs_8)
     result = []
-    for i, quarter in enumerate(quarters):
+    display_start = max(0, n - 4)
+    for i in range(display_start, n):
         result.append({
-            "quarter":    quarter,
+            "quarter":    qs_8[i],
             "revenue_cr": _num(revenue_row[i]) if i < len(revenue_row) else None,
             "pat_cr":     _num(pat_row[i])     if i < len(pat_row)     else None,
             "opm_pct":    _num(opm_row[i])     if i < len(opm_row)     else None,
         })
+
+    # TTM YoY growth: last 4 quarters vs preceding 4 quarters
+    if result and n >= 8:
+        def _sum_q(row: list, idx_range) -> float | None:
+            vals = [_num(row[i]) for i in idx_range if i < len(row)]
+            nums = [v for v in vals if v is not None]
+            return sum(nums) if nums else None
+
+        ttm_rev  = _sum_q(revenue_row, range(4, 8))   # newest 4
+        prev_rev = _sum_q(revenue_row, range(0, 4))   # prior 4
+        ttm_pat  = _sum_q(pat_row,     range(4, 8))
+        prev_pat = _sum_q(pat_row,     range(0, 4))
+
+        result[0]["revenue_growth_yoy_pct"] = (
+            round((ttm_rev - prev_rev) / prev_rev * 100, 1) if ttm_rev and prev_rev else None
+        )
+        result[0]["pat_growth_yoy_pct"] = (
+            round((ttm_pat - prev_pat) / prev_pat * 100, 1) if ttm_pat and prev_pat else None
+        )
+
     return result
 
 
@@ -235,23 +284,25 @@ def fetch(ticker: str, request_delay_s: float = 1.5, max_peers: int = 4) -> dict
         soup = BeautifulSoup(resp.text, "html.parser")
 
         ratios = _parse_key_ratios(soup)
+        quarterly_trend = _parse_quarterly_table(soup)
 
-        def _r(key: str) -> float | None:
-            return _num(ratios.get(key))
+        # Pull TTM YoY growth rates computed inside _parse_quarterly_table
+        _q0 = quarterly_trend[0] if quarterly_trend else {}
+        rev_growth = _q0.pop("revenue_growth_yoy_pct", None)
+        pat_growth = _q0.pop("pat_growth_yoy_pct", None)
 
         fundamentals = {
-            "market_cap_cr":          _r("Market Cap"),
-            "pe_ttm":                 _r("Stock P/E"),
-            "pb":                     _r("Price to Book value"),
-            "roe_pct":                _r("Return on equity"),
-            "roce_pct":               _r("ROCE"),
-            "revenue_growth_ttm_pct": _r("Sales growth (3Yrs)"),
-            "net_npa_pct":            _r("Net NPA"),        # banks
-            "nim_pct":                _r("Net Interest Margin"),  # banks
-            "dividend_yield_pct":     _r("Dividend Yield"),
+            "market_cap_cr":          _r("market cap", ratios),
+            "pe_ttm":                 _r("stock p/e", ratios),
+            "pb":                     _r("price to book", ratios),
+            "roe_pct":                _r("return on equity", ratios) or _r("roe", ratios),
+            "roce_pct":               _r("roce", ratios),
+            "revenue_growth_ttm_pct": _r("sales growth", ratios) or rev_growth,
+            "pat_growth_ttm_pct":     pat_growth,
+            "net_npa_pct":            _r("net npa", ratios),
+            "nim_pct":                _r("net interest margin", ratios) or _r("nim", ratios),
+            "dividend_yield_pct":     _r("dividend yield", ratios),
         }
-
-        quarterly_trend = _parse_quarterly_table(soup)
         ownership       = _parse_shareholding(soup)
         peers           = _parse_peers(soup, max_peers=max_peers)
 
