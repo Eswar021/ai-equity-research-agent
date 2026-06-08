@@ -2,7 +2,7 @@
 
 import os
 import time
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 from urllib.parse import urlparse, parse_qs
 
 import requests
@@ -86,7 +86,7 @@ def collect(cfg: dict) -> list[dict]:
     if not channels:
         return []
 
-    published_after = (datetime.now(IST) - timedelta(days=days_back)).strftime("%Y-%m-%dT%H:%M:%SZ")
+    published_after = (datetime.now(timezone.utc) - timedelta(days=days_back)).strftime("%Y-%m-%dT%H:%M:%SZ")
     records = []
 
     for ch in channels:

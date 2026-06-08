@@ -19,15 +19,18 @@ Module execution order:
     3. Load L1/raw_records.json → extract macro_context
     4. Load NSE symbols (db/nse_equity_cache.json, auto-refresh every 7d)
     5. Create NSE session for corporate API calls
-    6. For each target:
+    6. For each deep_dive target:
        a. RESOLVE: commodity/sector keyword → tickers; company → fuzzy lookup
        b. COLLECT per ticker (yfinance parallel, screener serial, NSE parallel):
           market_data.fetch → price, RSI, DMAs, volume, analyst consensus
           screener_scraper.fetch → fundamentals, quarterly_trend, ownership, peers
           nse_collector.fetch → corporate_actions, recent_filings
        c. ASSEMBLE: determine collection_status per ticker, build ticker_data
-    7. Write L7/target_evidence_bundles.json
-    8. Write L7/summary.json
+    7. WATCHLIST FALLBACK: for any still-unresolved bundles, substitute the
+       highest-scoring watchlist target from L6 that resolves to valid tickers
+       (full metadata swap — watchlist target's own hypothesis replaces original)
+    8. Write L7/target_evidence_bundles.json
+    9. Write L7/summary.json
 
 Usage:
     python -m src.pipeline.L7_deep_dive.runner              # today
@@ -84,50 +87,104 @@ def _extract_macro(records: list[dict]) -> dict:
 
 
 # ---------------------------------------------------------------------------
-# Per-ticker collection
+# Target collection (resolve + collect all tickers for one target)
 # ---------------------------------------------------------------------------
 
-def _collect_ticker(
-    ticker: str,
-    nse_session,
+def _collect_for_target(
+    target: dict,
+    symbols: dict,
     cfg: dict,
+    aliases: dict,
+    nse_session,
+    material_types: set,
+    macro_context: dict,
+    stats: dict,
+    max_workers: int,
 ) -> dict:
-    """Collect all data for one NSE ticker. Never raises — marks status on failure."""
-    delay   = cfg.get("screener_request_delay_s", 1.5)
-    peers_n = cfg.get("max_peers", 4)
-    history = cfg.get("price_history_days", 200)
-    max_act = cfg.get("max_corporate_actions", 3)
-    max_fil = cfg.get("max_recent_filings", 2)
+    """
+    Resolve a target to NSE tickers, collect all market data, and return a bundle dict.
+    Updates stats in-place. Never raises.
+    Returns a bundle with resolution_type="unresolved" and empty ticker_data if no match.
+    """
+    rtype, tickers, note = resolve(target, symbols, cfg, aliases)
 
-    price_data = md.fetch(ticker, history_days=history)
-    scrape     = screener.fetch(ticker, request_delay_s=delay, max_peers=peers_n)
-    nse_data   = nse.fetch(ticker, nse_session, max_actions=max_act, max_filings=max_fil)
+    if rtype == "unresolved":
+        return {
+            **_target_meta(target),
+            "resolution_type":  "unresolved",
+            "resolved_tickers": [],
+            "resolution_note":  note,
+            "macro_context":    macro_context,
+            "ticker_data":      {},
+        }
 
-    has_price   = price_data is not None
-    has_scrape  = scrape is not None
+    # Phase A: yfinance + NSE in parallel
+    def _yf_nse(t: str) -> tuple[str, dict | None, dict]:
+        price = md.fetch(t, history_days=cfg.get("price_history_days", 200))
+        ndata = nse.fetch(t, nse_session,
+                          max_actions=cfg.get("max_corporate_actions", 3),
+                          max_filings=cfg.get("max_recent_filings", 2),
+                          material_types=material_types)
+        return t, price, ndata
 
-    if has_price and has_scrape:
-        status = "complete"
-    elif has_price or has_scrape:
-        status = "partial"
-    else:
-        status = "failed"
+    yf_results: dict[str, tuple] = {}
+    with ThreadPoolExecutor(max_workers=max_workers) as pool:
+        futures = {pool.submit(_yf_nse, t): t for t in tickers}
+        for fut in as_completed(futures):
+            t, price, ndata = fut.result()
+            yf_results[t] = (price, ndata)
 
-    result: dict = {"collection_status": status}
+    # Phase B: screener serial (rate-limited)
+    scrape_results: dict[str, dict | None] = {}
+    for t in tickers:
+        scrape_results[t] = screener.fetch(
+            t,
+            request_delay_s=cfg.get("screener_request_delay_s", 1.5),
+            max_peers=cfg.get("max_peers", 4),
+        )
 
-    if has_price:
-        result["price"]             = price_data["price"]
-        result["analyst_consensus"] = price_data.get("analyst_consensus")
-    if has_scrape:
-        result["fundamentals"]    = scrape["fundamentals"]
-        result["quarterly_trend"] = scrape["quarterly_trend"]
-        result["ownership"]       = scrape["ownership"]
-        result["peers"]           = scrape["peers"]
+    # Assemble per-ticker
+    ticker_data: dict[str, dict] = {}
+    for t in tickers:
+        price, ndata = yf_results.get(t, (None, {"corporate_actions": [], "recent_filings": []}))
+        scrape       = scrape_results.get(t)
+        has_price    = price is not None
+        has_scrape   = scrape is not None
 
-    result["corporate_actions"] = nse_data["corporate_actions"]
-    result["recent_filings"]    = nse_data["recent_filings"]
+        if has_price and has_scrape:
+            status = "complete"
+        elif has_price or has_scrape:
+            status = "partial"
+        else:
+            status = "failed"
 
-    return result
+        entry: dict = {"collection_status": status}
+        if has_price:
+            entry["price"]             = price["price"]
+            entry["analyst_consensus"] = price.get("analyst_consensus")
+            stats["yfinance_success"] += 1
+        if has_scrape:
+            entry["fundamentals"]    = scrape["fundamentals"]
+            entry["quarterly_trend"] = scrape["quarterly_trend"]
+            entry["ownership"]       = scrape["ownership"]
+            entry["peers"]           = scrape["peers"]
+            stats["screener_success"] += 1
+        entry["corporate_actions"] = ndata.get("corporate_actions", [])
+        entry["recent_filings"]    = ndata.get("recent_filings", [])
+        if ndata.get("corporate_actions") is not None:
+            stats["nse_success"] += 1
+
+        ticker_data[t] = entry
+        stats["total_tickers"] += 1
+
+    return {
+        **_target_meta(target),
+        "resolution_type":  rtype,
+        "resolved_tickers": tickers,
+        "resolution_note":  note,
+        "macro_context":    macro_context,
+        "ticker_data":      ticker_data,
+    }
 
 
 # ---------------------------------------------------------------------------
@@ -175,115 +232,73 @@ def run(run_date: str | None = None) -> Path:
     nse_session = nse.make_session()
 
     # Resolve + collect
-    run_start = time.time()
-    stats = {"total_tickers": 0, "yfinance_success": 0, "screener_success": 0, "nse_success": 0}
-
-    bundles: list[dict] = []
+    run_start   = time.time()
+    stats       = {"total_tickers": 0, "yfinance_success": 0, "screener_success": 0, "nse_success": 0}
     max_workers = l7_cfg.get("max_workers", 4)
 
+    bundles: list[dict] = []
     for target in targets:
-        rtype, tickers, note = resolve(target, symbols, l7_cfg, aliases)
-
+        bundle = _collect_for_target(
+            target, symbols, l7_cfg, aliases, nse_session,
+            material_types, macro_context, stats, max_workers,
+        )
+        rtype = bundle.get("resolution_type", "")
         if rtype == "unresolved":
-            print(f"  [UNRESOLVED] {target['target_entity']:35s}  — {note}")
-            bundles.append({
-                **_target_meta(target),
-                "resolution_type":    "unresolved",
-                "resolved_tickers":   [],
-                "resolution_note":    note,
-                "macro_context":      macro_context,
-                "ticker_data":        {},
-            })
-            continue
+            print(f"  [UNRESOLVED] {target['target_entity']:35s}")
+        else:
+            print(f"  [{rtype:9s}] {target['target_entity']:35s} → {bundle['resolved_tickers']}")
+        bundles.append(bundle)
 
-        print(f"  [{rtype:9s}] {target['target_entity']:35s} → {tickers}")
+    # Watchlist fallback: promote watchlist targets to replace unresolved deep_dive slots
+    unresolved_idxs = [i for i, b in enumerate(bundles) if b.get("resolution_type") == "unresolved"]
+    if unresolved_idxs:
+        watchlist_targets = [t for t in l6_data.get("targets", []) if t.get("bucket") == "watchlist"]
+        used_entities = {b["target_entity"].lower()
+                         for b in bundles if b.get("resolution_type") != "unresolved"}
 
-        # Collect yfinance + NSE data in parallel; screener must be serial (rate-limited)
-        ticker_data: dict[str, dict] = {}
-
-        # Phase A: yfinance + NSE in parallel
-        def _collect_yf_nse(t: str) -> tuple[str, dict, dict]:
-            price = md.fetch(t, history_days=l7_cfg.get("price_history_days", 200))
-            ndata = nse.fetch(t, nse_session,
-                              max_actions=l7_cfg.get("max_corporate_actions", 3),
-                              max_filings=l7_cfg.get("max_recent_filings", 2),
-                              material_types=material_types)
-            return t, price, ndata
-
-        yf_results: dict[str, tuple] = {}
-        with ThreadPoolExecutor(max_workers=max_workers) as pool:
-            futures = {pool.submit(_collect_yf_nse, t): t for t in tickers}
-            for fut in as_completed(futures):
-                t, price, ndata = fut.result()
-                yf_results[t]   = (price, ndata)
-
-        # Phase B: screener serial (rate-limited)
-        scrape_results: dict[str, dict | None] = {}
-        for t in tickers:
-            scrape_results[t] = screener.fetch(
-                t,
-                request_delay_s=l7_cfg.get("screener_request_delay_s", 1.5),
-                max_peers=l7_cfg.get("max_peers", 4),
-            )
-
-        # Assemble per-ticker
-        for t in tickers:
-            price, ndata   = yf_results.get(t, (None, {"corporate_actions": [], "recent_filings": []}))
-            scrape         = scrape_results.get(t)
-            has_price      = price is not None
-            has_scrape     = scrape is not None
-
-            if has_price and has_scrape:
-                status = "complete"
-            elif has_price or has_scrape:
-                status = "partial"
+        for idx in unresolved_idxs:
+            original_entity   = bundles[idx]["target_entity"]
+            original_target_id = bundles[idx]["target_id"]
+            for candidate in watchlist_targets:
+                if candidate["target_entity"].lower() in used_entities:
+                    continue
+                replacement = _collect_for_target(
+                    candidate, symbols, l7_cfg, aliases, nse_session,
+                    material_types, macro_context, stats, max_workers,
+                )
+                if replacement.get("resolution_type") == "unresolved":
+                    used_entities.add(candidate["target_entity"].lower())
+                    continue
+                replacement["target_id"]               = original_target_id
+                replacement["promoted_from_watchlist"] = True
+                replacement["original_target_entity"]  = original_entity
+                bundles[idx] = replacement
+                used_entities.add(candidate["target_entity"].lower())
+                print(f"  [PROMOTED   ] {original_entity:35s} → "
+                      f"{candidate['target_entity']} {replacement['resolved_tickers']}")
+                break
             else:
-                status = "failed"
+                print(f"  [UNRESOLVED ] {original_entity} — no watchlist substitute found")
 
-            entry: dict = {"collection_status": status}
-            if has_price:
-                entry["price"]             = price["price"]
-                entry["analyst_consensus"] = price.get("analyst_consensus")
-                stats["yfinance_success"] += 1
-            if has_scrape:
-                entry["fundamentals"]    = scrape["fundamentals"]
-                entry["quarterly_trend"] = scrape["quarterly_trend"]
-                entry["ownership"]       = scrape["ownership"]
-                entry["peers"]           = scrape["peers"]
-                stats["screener_success"] += 1
-            entry["corporate_actions"] = ndata.get("corporate_actions", [])
-            entry["recent_filings"]    = ndata.get("recent_filings", [])
-            if ndata.get("corporate_actions") is not None:
-                stats["nse_success"] += 1
-
-            ticker_data[t] = entry
-            stats["total_tickers"] += 1
-
-        bundles.append({
-            **_target_meta(target),
-            "resolution_type":  rtype,
-            "resolved_tickers": tickers,
-            "resolution_note":  note,
-            "macro_context":    macro_context,
-            "ticker_data":      ticker_data,
-        })
-
-    # Write outputs
-    out_path = out_dir / "target_evidence_bundles.json"
-    out_path.write_text(json.dumps({
-        "run_date":        date,
-        "run_id":          l6_data.get("run_id", ""),
-        "market_regime":   l6_data.get("market_regime", "uncertain"),
-        "total_targets":   len(bundles),
-        "collection_stats": stats,
-        "bundles":         bundles,
-    }, indent=2, ensure_ascii=False))
-
-    elapsed = round(time.time() - run_start, 1)
+    # Compute stats before writing
+    elapsed  = round(time.time() - run_start, 1)
     complete = sum(1 for b in bundles if any(v.get("collection_status") == "complete" for v in b.get("ticker_data", {}).values()))
     partial  = sum(1 for b in bundles if any(v.get("collection_status") == "partial"  for v in b.get("ticker_data", {}).values()))
     failed   = sum(1 for b in bundles if all(v.get("collection_status") == "failed"   for v in b.get("ticker_data", {}).values()) and b.get("ticker_data"))
     unres    = sum(1 for b in bundles if b.get("resolution_type") == "unresolved")
+    promoted = sum(1 for b in bundles if b.get("promoted_from_watchlist"))
+
+    # Write outputs
+    out_path = out_dir / "target_evidence_bundles.json"
+    out_path.write_text(json.dumps({
+        "run_date":               date,
+        "run_id":                 l6_data.get("run_id", ""),
+        "market_regime":          l6_data.get("market_regime", "uncertain"),
+        "total_targets":          len(bundles),
+        "promoted_from_watchlist": promoted,
+        "collection_stats":       stats,
+        "bundles":                bundles,
+    }, indent=2, ensure_ascii=False))
 
     (out_dir / "summary.json").write_text(json.dumps({
         "date":                   date,
@@ -293,6 +308,7 @@ def run(run_date: str | None = None) -> Path:
         "partial":                partial,
         "failed":                 failed,
         "unresolved":             unres,
+        "promoted_from_watchlist": promoted,
         "total_tickers":          stats["total_tickers"],
         "yfinance_success":       stats["yfinance_success"],
         "screener_success":       stats["screener_success"],
@@ -311,6 +327,7 @@ def run(run_date: str | None = None) -> Path:
 def _target_meta(t: dict) -> dict:
     return {
         "target_id":               t.get("target_id", ""),
+        "hypothesis_id":           t.get("hypothesis_id", ""),
         "target_entity":           t.get("target_entity", ""),
         "bucket":                  t.get("bucket", ""),
         "score":                   t.get("score", 0),
@@ -321,6 +338,7 @@ def _target_meta(t: dict) -> dict:
         "invalidating_conditions": t.get("invalidating_conditions", []),
         "beneficiaries":           t.get("beneficiaries", []),
         "group_type":              t.get("group_type", ""),
+        "record_ids":              t.get("record_ids", []),
     }
 
 

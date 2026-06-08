@@ -162,8 +162,8 @@ def run(run_date: str | None = None) -> Path:
     if not regime_path.exists():
         raise FileNotFoundError(f"L5 market_regime not found: {regime_path} — run L5 first")
 
-    hypotheses: list[dict] = json.loads(hyp_path.read_text()).get("hypotheses", [])
-    l5_data = json.loads(hyp_path.read_text())
+    l5_data    = json.loads(hyp_path.read_text())
+    hypotheses: list[dict] = l5_data.get("hypotheses", [])
     regime_data = json.loads(regime_path.read_text())
     regime = regime_data.get("regime", "uncertain")
 

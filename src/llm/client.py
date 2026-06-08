@@ -29,7 +29,7 @@ def make_llm(
 
     if provider == "openai":
         return ChatOpenAI(
-            model=model or os.getenv("OPENAI_MODEL", "gpt-5-nano"),
+            model=model or os.getenv("OPENAI_MODEL", "gpt-4o-mini"),
             api_key=os.getenv("OPENAI_API_KEY_S_M_R") or os.getenv("OPENAI_API_KEY"),
         )
 

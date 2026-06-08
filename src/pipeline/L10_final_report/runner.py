@@ -55,7 +55,8 @@ from src.pipeline.L10_final_report.agents import (
     run_scenarios,
 )
 
-_DB_MEMORY = PROJECT_ROOT / "db" / "memory" / "watch_memory.jsonl"
+_DB_MEMORY        = PROJECT_ROOT / "db" / "memory" / "watch_memory.jsonl"
+_ENTITY_IDX       = PROJECT_ROOT / "db" / "memory" / "entity_memory_index.json"
 
 _STATUS_RE = re.compile(r"\|\s*Status:\s*(not_triggered|watch|imminent)", re.IGNORECASE)
 
@@ -296,7 +297,11 @@ def _build_memory_entry(item: dict, run_date: str, run_id: str) -> dict:
         [sc["target_entity"]] + beneficiaries + resolution_tickers
     ))
 
+    entity_slug = re.sub(r"[^a-zA-Z0-9]", "_", sc["target_entity"])[:30].upper()
+    memory_id   = f"MEM_{run_date.replace('-', '')}_{entity_slug}"
+
     return {
+        "memory_id":               memory_id,
         "memory_type":             "investment_decision",
         "entity":                  sc["target_entity"],
         "tickers":                 resolution_tickers,
@@ -318,6 +323,30 @@ def _build_memory_entry(item: dict, run_date: str, run_id: str) -> dict:
         "summary":                 _fact_summary(sc, rec),
         "triggered_by_entities":   triggered_by,
     }
+
+
+def _update_entity_index(new_entries: list[dict]) -> None:
+    """Append memory_id pointers into entity_memory_index.json for all entity names."""
+    idx: dict[str, list[str]] = {}
+    if _ENTITY_IDX.exists():
+        try:
+            idx = json.loads(_ENTITY_IDX.read_text())
+        except Exception:
+            idx = {}
+
+    for entry in new_entries:
+        mid = entry.get("memory_id")
+        if not mid:
+            continue
+        for name in entry.get("triggered_by_entities", []):
+            key = name.lower().strip()
+            if key:
+                if mid not in idx.get(key, []):
+                    idx.setdefault(key, []).append(mid)
+
+    tmp = _ENTITY_IDX.with_suffix(".tmp")
+    tmp.write_text(json.dumps(idx, indent=2, ensure_ascii=False))
+    tmp.replace(_ENTITY_IDX)
 
 
 # ---------------------------------------------------------------------------
@@ -406,6 +435,13 @@ def run(run_date: str | None = None) -> Path:
             else:
                 synth_fail += 1
                 print(f"    ✗ {tid} synthesis: {result.get('error', result.get('parse_error', '?'))}")
+
+    # Post-synthesis: strip fabricated price fields from unresolved targets (no ticker = no valid anchor)
+    for item in scored:
+        res = item["scorecard"].get("resolution", {})
+        if res.get("type") == "unresolved" or not res.get("tickers"):
+            item["synthesis"]["entry_price_range"] = "n/a — no listed instrument"
+            item["synthesis"]["stop_loss_guide"]   = "n/a"
 
     # Phase 2: scenarios for all targets in parallel
     scen_ok = 0
@@ -499,17 +535,21 @@ def run(run_date: str | None = None) -> Path:
     }, indent=2, ensure_ascii=False))
 
     # Memory write-back — facts only, no LLM prose
-    mem_threshold = cfg.get("memory_threshold", 55)
-    mem_count = 0
+    mem_threshold  = cfg.get("memory_threshold", 55)
+    mem_count      = 0
+    new_mem_entries: list[dict] = []
     with _DB_MEMORY.open("a", encoding="utf-8") as mf:
         for item in ranked:
             if item["composite_score"] >= mem_threshold:
                 entry = _build_memory_entry(item, date, manifest["run_id"])
                 mf.write(json.dumps(entry, ensure_ascii=False) + "\n")
+                new_mem_entries.append(entry)
                 mem_count += 1
+    if new_mem_entries:
+        _update_entity_index(new_mem_entries)
 
     elapsed = round(time.time() - t_start, 1)
-    total_calls = len(scored) * 2
+    total_calls = synth_ok + synth_fail + scen_ok + scen_fail
     all_ok   = synth_ok + scen_ok
     all_fail = synth_fail + scen_fail
 

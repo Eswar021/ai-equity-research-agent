@@ -127,7 +127,10 @@ def _scrape_category(category: str, days_back: int, max_pages: int) -> list[dict
                             break
                     except Exception:
                         pass
+                listing_title = item.get("title", "")
                 item.update(art)
+                if not item.get("title"):
+                    item["title"] = listing_title
                 articles.append(item)
             except Exception:
                 articles.append(item)

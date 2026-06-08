@@ -4,8 +4,11 @@ import email
 import imaplib
 import os
 from email.header import decode_header
+from email.utils import parsedate_to_datetime
 
 from bs4 import BeautifulSoup
+
+from src.config.settings import IST
 
 _IMAP_HOST = "imap.gmail.com"
 
@@ -108,12 +111,17 @@ def collect(cfg: dict) -> list[dict]:
                     date_str = msg.get("Date", "")
                     body    = _extract_body(msg)
 
+                    try:
+                        published_at = parsedate_to_datetime(date_str).astimezone(IST).isoformat()
+                    except Exception:
+                        published_at = date_str or None
+
                     records.append({
                         "source":       "gmail",
                         "source_type":  "newsletter",
                         "title":        subject,
                         "url":          None,
-                        "published_at": date_str or None,
+                        "published_at": published_at,
                         "content":      body,
                         "metadata": {
                             "sender":  sender,

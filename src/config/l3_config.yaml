@@ -1,6 +1,6 @@
 layer_3:
   provider: openai             # openai | lmstudio | gemini
-  model: gpt-5-nano            # overrides OPENAI_MODEL env var when set
+  model: gpt-4o-mini           # non-reasoning model — extraction needs no chain-of-thought
   batch_size: 20               # short records per batch call
   short_content_chars: 200     # below this → batched; at or above → individual call
   max_workers: 15              # parallel LLM calls (ThreadPoolExecutor)

@@ -52,10 +52,13 @@ sources:
   youtube:
     enabled: true
     days_back: 3
-    max_medium: 3
-    max_long: 2
+    max_medium: 3    # medium-duration videos per channel per run
+    max_long: 2      # long-duration videos per channel per run
     channels:
-      - { name: "Day Trader Telugu", channel_id: "UCxxx", enabled: true }
+      - { name: "SOIC Finance",     channel_id: "UCB7GnQlJPIL6rBBqEoX87vA", enabled: true }
+      - { name: "Basant Maheshwari", channel_id: "UCqvuLvdIkUjAtSFrKw5LhXg", enabled: true }
+      - { name: "CA Rachana Ranade", channel_id: "UCe3qdG0A_gr-sEdat5y2twQ", enabled: true }
+      - { name: "Pranjal Kamra",    channel_id: "UCwAdQUuPT6laN-AQR17fe1g", enabled: true }
 
   india_macro:
     enabled: true

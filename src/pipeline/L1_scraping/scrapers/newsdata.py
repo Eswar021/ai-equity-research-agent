@@ -2,9 +2,11 @@
 
 import os
 import time
+from datetime import datetime, timezone
 
 import requests
 
+from src.config.settings import IST
 from src.pipeline.L1_scraping.scrapers._utils import scrape_url
 
 _API_KEY  = os.getenv("NEWSDATA_API", "")
@@ -41,7 +43,7 @@ def collect(cfg: dict) -> list[dict]:
         try:
             items = _fetch_query(query)
             for item in items:
-                url = item.get("link") or item.get("source_url", "")
+                url = item.get("link", "")
                 if url in seen_urls:
                     continue
                 seen_urls.add(url)
@@ -54,12 +56,25 @@ def collect(cfg: dict) -> list[dict]:
                 content = body if body else api_description
                 time.sleep(_SCRAPE_SLEEP)
 
+                # newsdata.io returns pubDate as "YYYY-MM-DD HH:MM:SS" in UTC (no tz marker).
+                # Parse explicitly so downstream fromisoformat() gets a timezone-aware string.
+                raw_pub = item.get("pubDate")
+                try:
+                    published_at = (
+                        datetime.strptime(raw_pub, "%Y-%m-%d %H:%M:%S")
+                        .replace(tzinfo=timezone.utc)
+                        .astimezone(IST)
+                        .isoformat()
+                    )
+                except Exception:
+                    published_at = raw_pub or None
+
                 records.append({
                     "source":       "newsdata_io",
                     "source_type":  "news_article",
                     "title":        title,
                     "url":          url or None,
-                    "published_at": item.get("pubDate"),
+                    "published_at": published_at,
                     "content":      content,
                     "metadata": {
                         "author":       (item.get("creator") or [""])[0] if isinstance(item.get("creator"), list) else "",

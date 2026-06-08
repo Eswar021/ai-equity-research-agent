@@ -258,7 +258,7 @@ def _extract_single(
         "layer":      "L3",
         "trigger":    rec["id"],
         "model":      model_name,
-        "prompt":     rec.get("content", ""),
+        "prompt":     _SINGLE_PROMPT.format(content=content),
         "response":   response_str,
         "parsed_ok":  parsed_ok,
         "tokens_in":  tokens_in,
@@ -324,7 +324,7 @@ def _extract_batch(
         "layer":      "L3",
         "trigger":    f"batch [{', '.join(r['id'] for r in batch)}]",
         "model":      model_name,
-        "prompt":     headlines,
+        "prompt":     _BATCH_PROMPT.format(n=n, headlines=headlines),
         "response":   response_str,
         "parsed_ok":  parsed_ok,
         "tokens_in":  tokens_in,
@@ -355,7 +355,7 @@ def run(run_date: str | None = None) -> Path:
     skip_types  = set(l3_cfg.get("skip_source_types", ["market_snapshot", "corporate_action"]))
 
     llm          = make_llm(provider=provider, model=model)
-    model_name   = model or "gpt-5-nano"
+    model_name   = model or "gpt-4o-mini"
     single_chain = _SINGLE_PROMPT | llm.with_structured_output(DocumentExtraction, include_raw=True)
     batch_chain  = _BATCH_PROMPT  | llm.with_structured_output(BatchExtraction,    include_raw=True)
 

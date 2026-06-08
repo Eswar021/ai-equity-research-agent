@@ -114,8 +114,8 @@ def fetch(ticker: str, history_days: int = 200) -> dict | None:
                 analyst["target_price_mean"] = round(target_mean, 2)
                 analyst["upside_pct"]        = upside
 
-            analyst["buy_count"]  = info.get("recommendationMean")  # 1=Strong Buy 5=Strong Sell
-            analyst["analyst_count"] = info.get("numberOfAnalystOpinions")
+            analyst["recommendation_mean"] = info.get("recommendationMean")  # 1=StrongBuy…5=StrongSell
+            analyst["analyst_count"]      = info.get("numberOfAnalystOpinions")
 
             # Forward EPS / forward P/E
             fwd_eps = info.get("forwardEps")

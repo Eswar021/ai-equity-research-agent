@@ -78,7 +78,13 @@ def collect(cfg: dict = {}) -> list[dict]:
             "fii":  cats.get("FII", {}),
             "dii":  cats.get("DII", {}),
         })
-    normalized.sort(key=lambda x: x["date"], reverse=True)
+    def _parse_nse_date(d: str) -> datetime:
+        try:
+            return datetime.strptime(d, "%d-%b-%Y")
+        except ValueError:
+            return datetime.min
+
+    normalized.sort(key=lambda x: _parse_nse_date(x["date"]), reverse=True)
 
     snapshot = {
         "fetched_at": datetime.now(IST).isoformat(),

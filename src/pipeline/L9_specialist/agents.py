@@ -195,7 +195,7 @@ VALUATION_PROMPT = ChatPromptTemplate.from_template(
     "null if no analyst coverage\n"
     "- margin_of_safety: describe the buffer between current price and fair value. "
     "Be specific — '34% upside to consensus target of ₹1,670' not 'moderate buffer'.\n"
-    "- analyst_consensus_alignment: interpret buy/hold/sell counts and target prices. "
+    "- analyst_consensus_alignment: interpret rec_mean (1=StrongBuy, 5=StrongSell) and target prices. "
     "State whether consensus supports entry at current price.\n"
     "- time_horizon_fit: does the current valuation specifically suit a {time_horizon} "
     "thesis? E.g., is there a near-term catalyst, or is this only compelling long-term?\n"
@@ -273,7 +273,7 @@ THESIS_PROMPT = ChatPromptTemplate.from_template(
     "agent assessments. High = score 75+, fundamental+valuation both solid, no imminent "
     "invalidation. Low = score <50, or any invalidation watch/imminent.\n"
     "- key_findings: 3-4 most important thesis validation observations\n"
-    "Use full article content where available (hypothesis_source records) — "
+    "Use full article content where available (primary records) — "
     "prefer primary source text over summarized analysis.\n"
 )
 
@@ -293,6 +293,7 @@ def _fmt_fundamentals(market_data: dict, target_entity: str = "") -> str:
     lines = []
     for ticker, data in market_data.items():
         f  = data.get("fundamentals", {})
+        ow = data.get("ownership", {})
         qt = data.get("quarterly_trend", [])
         lines.append(f"[{ticker}{'  (FINANCIAL — use NIM/ROE/GNPA framework)' if is_financial else ''}]")
         lines.append(
@@ -304,8 +305,8 @@ def _fmt_fundamentals(market_data: dict, target_entity: str = "") -> str:
         )
         if is_financial:
             lines.append(
-                f"  net_npa={f.get('net_npa_pct')}%  nim={f.get('nim_pct')}%  "
-                f"promoter_pledge={f.get('promoter_pledge_pct')}%"
+                f"  gross_npa={f.get('gross_npa_pct')}%  net_npa={f.get('net_npa_pct')}%  "
+                f"nim={f.get('nim_pct')}%  promoter_pledge={ow.get('promoter_pledge_pct')}%"
             )
         if qt:
             label = "spread%" if is_financial else "opm%"
@@ -336,7 +337,7 @@ def _fmt_valuation(market_data: dict) -> str:
             f"target_price={ac.get('target_price_mean')}  "
             f"upside={ac.get('upside_pct')}%  "
             f"analysts={ac.get('analyst_count')}  "
-            f"buy_count={ac.get('buy_count')}"
+            f"rec_mean={ac.get('recommendation_mean')} (1=StrongBuy 5=StrongSell)"
         )
         if qt:
             rev_trend = [f"{q.get('quarter','?')}: rev={q.get('revenue_cr')}cr pat={q.get('pat_cr')}cr"
@@ -358,11 +359,11 @@ def _fmt_risk_technicals(market_data: dict) -> str:
             f"vol_ratio={p.get('volume_ratio_20d')}"
         )
         lines.append(
-            f"  promoter_holding={ow.get('promoter_holding_pct')}%  "
-            f"promoter_pledge={f.get('promoter_pledge_pct')}%  "
-            f"fii_holding={ow.get('fii_holding_pct')}%  "
-            f"dii_holding={ow.get('dii_holding_pct')}%  "
-            f"fii_change_qoq={f.get('fii_change_qoq_pct')}%"
+            f"  promoter_holding={ow.get('promoter_pct')}%  "
+            f"promoter_pledge={ow.get('promoter_pledge_pct')}%  "
+            f"fii_holding={ow.get('fii_pct')}%  "
+            f"dii_holding={ow.get('dii_pct')}%  "
+            f"fii_change_qoq={ow.get('fii_change_qoq_pct')}%"
         )
     return "\n".join(lines) or "  (no market data)"
 
@@ -373,7 +374,7 @@ def _fmt_corporate_events(market_data: dict) -> str:
         "dividend", "change in director", "change in management",
         "outcome of board meeting", "credit rating", "qip", "ipo", "drhp",
         "buyback", "amalgamation", "merger", "financial results",
-        "outcome of agm", "press release", "change in management",
+        "outcome of agm", "press release",
     }
     lines = []
     for ticker, data in market_data.items():
@@ -430,21 +431,28 @@ def _fmt_news_signals(supporting_news: list[dict]) -> str:
     return "\n".join(lines) or "  (none)"
 
 
-def _fmt_gaps(gaps: list[dict], gap_type: str | None = None) -> str:
-    filtered = [g for g in gaps if gap_type is None or g.get("type") == gap_type]
+_DATA_GAP_TYPES = {"collection_failed", "collection_partial", "missing_field"}
+
+
+def _fmt_gaps(gaps: list[dict], gap_type: str | set | None = None) -> str:
+    if isinstance(gap_type, set):
+        filtered = [g for g in gaps if g.get("type") in gap_type]
+    else:
+        filtered = [g for g in gaps if gap_type is None or g.get("type") == gap_type]
     if not filtered:
         return "  (none)"
     lines = []
     for g in filtered:
-        if g.get("type") == "data_gap":
-            lines.append(f"  [{g.get('ticker','?')}] {g.get('field','?')} — blocks: {g.get('impact','?')}")
+        if g.get("type") in _DATA_GAP_TYPES:
+            field = g.get("field") or g.get("type", "?")
+            lines.append(f"  [{g.get('ticker','?')}] {field} — blocks: {g.get('impact','?')}")
         else:
             lines.append(f"  Q: {g.get('question','?')[:80]} — {g.get('impact','?')}")
     return "\n".join(lines)
 
 
 def _fmt_news_evidence(supporting_news: list[dict]) -> str:
-    """For thesis_validation: full content for hypothesis_source, analysis for entity_match."""
+    """For thesis_validation: full content for primary records, analysis for related records."""
     blocks: list[str] = []
     for rec in supporting_news:
         rtype    = rec.get("relevance_type", "entity_match")
@@ -452,7 +460,8 @@ def _fmt_news_evidence(supporting_news: list[dict]) -> str:
         src      = rec.get("source", "?")
         content  = rec.get("content", "")
         analysis = rec.get("analysis", "")
-        header   = f"--- [{rtype.upper()} | {src}] {title}"
+        label    = "primary" if rtype == "hypothesis_source" else "related"
+        header   = f"--- [{label} | {src}] {title}"
         if content:
             blocks.append(f"{header}\n{content[:3000]}")
         elif analysis:
@@ -521,7 +530,7 @@ def run_fundamental(
         "news_facts":        facts_str,
         "news_events":       events_str,
         "past_context":      past_str,
-        "data_gaps":         _fmt_gaps(gaps, "data_gap"),
+        "data_gaps":         _fmt_gaps(gaps, _DATA_GAP_TYPES),
     }
 
     t0 = time.time()
@@ -578,7 +587,7 @@ def run_valuation(
         "time_horizon":      packet.get("time_horizon", ""),
         "hypothesis":        thesis.get("hypothesis", ""),
         "market_data_block": _fmt_valuation(market_data),
-        "data_gaps":         _fmt_gaps(gaps, "data_gap"),
+        "data_gaps":         _fmt_gaps(gaps, _DATA_GAP_TYPES),
     }
 
     t0 = time.time()

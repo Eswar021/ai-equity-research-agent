@@ -69,7 +69,7 @@ def run(run_date: str | None = None) -> Path:
     l4_data      = json.loads(l4_path.read_text())
     all_records  = l4_data.get("records", [])
     record_index = {r["id"]: r for r in all_records if r.get("id")}
-    past_memories = l4_data.get("recalled_memories", [])  # populated once L4's store side works
+    past_memories = l4_data.get("memory", [])
     print(f"  L8: {len(all_records)} L4 records loaded, {len(past_memories)} recalled memories")
 
     # Load L5 — hypothesis text indexed by hypothesis_id
@@ -105,21 +105,25 @@ def run(run_date: str | None = None) -> Path:
 
     for target in targets:
         target_id  = target.get("target_id", "")
-        hyp_id     = target.get("hypothesis_id", "")
-        hypothesis = hyp_index.get(hyp_id, {})
         bundle     = bundle_index.get(target_id, {})
 
+        # For promoted watchlist targets, thesis metadata comes from the bundle (watchlist
+        # candidate), not from the original L6 deep_dive target — they are different entities.
+        thesis_src = bundle if bundle.get("promoted_from_watchlist") else target
+        hyp_id     = thesis_src.get("hypothesis_id", "") or target.get("hypothesis_id", "")
+        hypothesis = hyp_index.get(hyp_id, {})
+
         # Supporting news: 2-pass match
-        supporting_news = nm.match(target, bundle, record_index, all_records, l8_cfg)
+        supporting_news = nm.match(thesis_src, bundle, record_index, all_records, l8_cfg)
 
         # Past context: recalled memories for entities in this target (grows with pipeline history)
         past_context = [
             m for m in past_memories
-            if _memory_relevant(m, target, bundle)
+            if _memory_relevant(m, thesis_src, bundle)
         ]
 
         # Evidence gaps
-        evidence_gaps = gd.detect(bundle, target, supporting_news, l8_cfg)
+        evidence_gaps = gd.detect(bundle, thesis_src, supporting_news, l8_cfg)
 
         # Packet quality metrics
         hyp_src = sum(1 for r in supporting_news if r["relevance_type"] == "hypothesis_source")
@@ -132,18 +136,18 @@ def run(run_date: str | None = None) -> Path:
 
         packets.append({
             "target_id":     target_id,
-            "target_entity": target.get("target_entity", ""),
+            "target_entity": bundle.get("target_entity") or target.get("target_entity", ""),
             "bucket":        target.get("bucket", ""),
             "score":         target.get("score", 0),
             "score_breakdown": target.get("score_breakdown", {}),
-            "time_horizon":  target.get("time_horizon", ""),
-            "strength":      target.get("strength", ""),
+            "time_horizon":  thesis_src.get("time_horizon") or target.get("time_horizon", ""),
+            "strength":      thesis_src.get("strength") or target.get("strength", ""),
 
             "thesis": {
-                "hypothesis":           hypothesis.get("hypothesis") or target.get("hypothesis", ""),
-                "beneficiaries":        target.get("beneficiaries", []),
-                "deep_dive_questions":  target.get("deep_dive_questions", []),
-                "invalidating_conditions": target.get("invalidating_conditions", []),
+                "hypothesis":           hypothesis.get("hypothesis") or thesis_src.get("hypothesis", ""),
+                "beneficiaries":        thesis_src.get("beneficiaries", []),
+                "deep_dive_questions":  thesis_src.get("deep_dive_questions", []),
+                "invalidating_conditions": thesis_src.get("invalidating_conditions", []),
             },
 
             "resolution": {
@@ -222,7 +226,7 @@ def _memory_relevant(memory: dict, target: dict, bundle: dict) -> bool:
     candidates = {entity} | tickers | {
         b.lower() for b in target.get("beneficiaries", [])
     }
-    memory_entities = {e.get("name", "").lower() for e in memory.get("entities", [])}
+    memory_entities = {e.lower() for e in memory.get("triggered_by_entities", [])}
     return bool(candidates & memory_entities)
 
 

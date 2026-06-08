@@ -117,6 +117,8 @@ def run(run_date: str | None = None) -> Path:
     out_dir  = output_dir(date) / "L9"
     out_dir.mkdir(parents=True, exist_ok=True)
     log_path = out_dir / "llm_calls.jsonl"
+    if log_path.exists():
+        log_path.unlink()
     lock     = threading.Lock()
     counter  = itertools.count(1)
 

@@ -64,6 +64,42 @@ def _r(key: str, ratios: dict) -> float | None:
     return None
 
 
+def _parse_bank_npa_from_quarters(soup: BeautifulSoup) -> dict:
+    """
+    Extract the most recent non-empty Gross NPA % and Net NPA % from the quarters table.
+    Screener.in only populates these rows for select quarters (typically Sep/Mar),
+    so we scan right-to-left for the first non-empty value.
+    """
+    section = soup.find(id="quarters")
+    if not section:
+        return {}
+    table = section.find("table")
+    if not table:
+        return {}
+    tbody = table.find("tbody")
+    if not tbody:
+        return {}
+
+    result = {}
+    for tr in tbody.find_all("tr"):
+        cells = tr.find_all(["td", "th"])
+        if not cells:
+            continue
+        label = cells[0].get_text(strip=True).rstrip("+").strip()
+        if label not in ("Gross NPA %", "Net NPA %"):
+            continue
+        key = "gross_npa_pct" if label == "Gross NPA %" else "net_npa_pct"
+        # Scan from right (most recent) to find the first non-empty cell
+        for cell in reversed(cells[1:]):
+            raw = cell.get_text(strip=True)
+            if raw:
+                val = _num(raw)
+                if val is not None:
+                    result[key] = val
+                    break
+    return result
+
+
 def _parse_quarterly_table(soup: BeautifulSoup) -> list[dict]:
     """
     Extract latest 4 quarters of revenue, PAT, OPM from the quarters section.
@@ -285,21 +321,26 @@ def fetch(ticker: str, request_delay_s: float = 1.5, max_peers: int = 4) -> dict
 
         ratios = _parse_key_ratios(soup)
         quarterly_trend = _parse_quarterly_table(soup)
+        bank_npa        = _parse_bank_npa_from_quarters(soup)
 
         # Pull TTM YoY growth rates computed inside _parse_quarterly_table
         _q0 = quarterly_trend[0] if quarterly_trend else {}
         rev_growth = _q0.pop("revenue_growth_yoy_pct", None)
         pat_growth = _q0.pop("pat_growth_yoy_pct", None)
 
+        _current_price = _r("current price", ratios)
+        _book_value    = _r("book value", ratios)
+
         fundamentals = {
             "market_cap_cr":          _r("market cap", ratios),
             "pe_ttm":                 _r("stock p/e", ratios),
-            "pb":                     _r("price to book", ratios),
+            "pb":                     round(_current_price / _book_value, 2) if _current_price and _book_value else None,
             "roe_pct":                _r("return on equity", ratios) or _r("roe", ratios),
             "roce_pct":               _r("roce", ratios),
-            "revenue_growth_ttm_pct": _r("sales growth", ratios) or rev_growth,
+            "revenue_growth_ttm_pct": rev_growth or _r("sales growth", ratios),
             "pat_growth_ttm_pct":     pat_growth,
-            "net_npa_pct":            _r("net npa", ratios),
+            "gross_npa_pct":          bank_npa.get("gross_npa_pct"),
+            "net_npa_pct":            _r("net npa", ratios) or bank_npa.get("net_npa_pct"),
             "nim_pct":                _r("net interest margin", ratios) or _r("nim", ratios),
             "dividend_yield_pct":     _r("dividend yield", ratios),
         }

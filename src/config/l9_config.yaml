@@ -1,4 +1,4 @@
 layer_9:
   provider: openai
-  model: null          # null → use provider default
-  max_workers: 4       # concurrent LLM calls across all agent×target pairs
+  model: gpt-4o # null # gpt-4o          # null → use provider default
+  max_workers: 1       # concurrent LLM calls — thesis_validation ~12k tokens each; 2 workers stays under 30k TPM

@@ -146,6 +146,8 @@ def _build_groups(records: list[dict], memory: list[dict]) -> list[dict]:
 
     entity_groups: list[dict] = []
     for entity, recs in entity_to_records.items():
+        if entity.lower() in theme_covered_entities:
+            continue
         if len(recs) < 2:
             continue
         entities, events, signals, facts, record_ids, sources = _union_group(recs)
@@ -210,17 +212,6 @@ def _weight_group(group: dict, memory: list[dict], cfg: dict) -> int:
     source_w    = int(cfg.get("source_diversity_weight", 5))
     memory_w    = int(cfg.get("memory_hit_weight", 15))
 
-    candidates_from_records: list[dict] = []
-
-    worth_events  = sum(
-        1 for c in candidates_from_records if c.get("object_type") == "event" and c.get("worth_storing")
-    )
-    worth_signals = sum(
-        1 for c in candidates_from_records if c.get("object_type") == "market_signal" and c.get("worth_storing")
-    )
-
-    # worth_storing from the events/signals directly via candidate scores is not available here;
-    # use all events/signals count as a proxy (candidates are per-record, not per-group)
     worth_events  = len([e for e in group["events"]  if e.get("direction") in ("positive", "negative")])
     worth_signals = len([s for s in group["market_signals"] if s.get("direction") in ("bullish", "bearish")])
 
@@ -332,24 +323,13 @@ def _call_llm(
 
     latency_ms = round((time.time() - t0) * 1000)
 
-    # reconstruct prompt string for logging
-    formatted_prompt = (
-        f"Group name: {prompt_vars['group_name']}\n"
-        f"Group type: {prompt_vars['group_type']}\n"
-        f"Entities: {prompt_vars['entities']}\n\n"
-        f"Events:\n{prompt_vars['events']}\n\n"
-        f"Signals:\n{prompt_vars['signals']}\n\n"
-        f"Facts:\n{prompt_vars['facts']}\n\n"
-        f"Memory:\n{prompt_vars['memory_context']}"
-    )
-
     entry: dict = {
         "call_id":    call_id,
         "timestamp":  _now_ist(),
         "layer":      "L5",
         "trigger":    f"group:{group['group_type']}:{group['group_name']}",
         "model":      model_name,
-        "prompt":     formatted_prompt,
+        "prompt":     _PROMPT.format(**prompt_vars),
         "response":   response_str,
         "parsed_ok":  parsed_ok,
         "tokens_in":  tokens_in,
@@ -441,7 +421,7 @@ def run(run_date: str | None = None) -> Path:
     min_weight    = int(l5_cfg.get("min_weight_score", 30))
 
     llm        = make_llm(provider=provider, model=model)
-    model_name = model or "gpt-5-nano"
+    model_name = model or "gpt-4o-mini"
     chain      = _PROMPT | llm.with_structured_output(HypothesisOutput, include_raw=True)
 
     l4_path = output_dir(date) / "L4" / "memory_context.json"

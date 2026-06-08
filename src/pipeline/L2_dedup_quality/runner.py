@@ -61,7 +61,7 @@ def _parse_published(published_at: str | None) -> datetime | None:
 
 
 def _quality_tier(source_reliability: str, flags: list[str]) -> str:
-    if "low_content" in flags and len(flags) >= 1:
+    if "low_content" in flags:
         return "low"
     if source_reliability == "high" and not flags:
         return "high"
