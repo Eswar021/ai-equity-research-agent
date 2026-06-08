@@ -1,6 +1,6 @@
 layer_5:
   provider: openai
-  model: gpt-5-nano
+  model: gpt-4o-mini
   max_hypotheses: 50        # cap LLM calls — top groups by weight score
   max_workers: 15           # parallel LLM calls (ThreadPoolExecutor)
   min_signal_count: 2       # skip groups with fewer events+signals than this

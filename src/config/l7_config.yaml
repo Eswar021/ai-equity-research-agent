@@ -40,8 +40,8 @@ layer_7:
     tcs: TCS
     hul: HINDUNILVR
     hindustan unilever: HINDUNILVR
-    m&m: M-M
-    mahindra: M-M
+    m&m: M&M
+    mahindra: M&M
     l&t: LT
     larsen: LT
     lic: LICI
@@ -146,8 +146,8 @@ layer_7:
     bank: [HDFCBANK, ICICIBANK, SBIN, AXISBANK, KOTAKBANK]
     pharma: [SUNPHARMA, DRREDDY, CIPLA, DIVISLAB, LUPIN]
     pharmaceutical: [SUNPHARMA, DRREDDY, CIPLA, DIVISLAB, LUPIN]
-    auto: [MARUTI, TATAMOTORS, M-M, BAJAJ-AUTO, HEROMOTOCO]
-    automobile: [MARUTI, TATAMOTORS, M-M, BAJAJ-AUTO, HEROMOTOCO]
+    auto: [MARUTI, TATAMOTORS, M&M, BAJAJ-AUTO, HEROMOTOCO]
+    automobile: [MARUTI, TATAMOTORS, M&M, BAJAJ-AUTO, HEROMOTOCO]
     fmcg: [HINDUNILVR, ITC, NESTLEIND, BRITANNIA, DABUR]
     oil: [RELIANCE, ONGC, BPCL, GAIL, IOC]         # matches "oil price", "oil sector", etc.
     oil_gas: [RELIANCE, ONGC, BPCL, GAIL, IOC]
